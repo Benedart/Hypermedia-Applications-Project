@@ -1,6 +1,11 @@
 # Hypermedia Applications Project 2022/23
 
 ## Magiche istruzioni per il setup del progetto
+* [DB](#db)
+* [Backend](#backend)
+* [Frontend](#frontend)
+* [Git](#git)
+* [Useful resources](#useful-resources)
 
 ## DB
 You can find the db schema in the `deliverables` folder of the project. If something doesn't sound right about it, or if you encounter problems during your implementation (eg. you notice that you need to add some attributes), let everyone know asap, as db changes could impact the entire structure of the project. Thanksthanks.
