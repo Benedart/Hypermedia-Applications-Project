@@ -5,7 +5,9 @@ select projectid, title, preview, stage from projects
 select * from people
 
 -- info about the selected project
-select * from projects where ProjectID = %s
+select projectid, p.title, p.description, budget, yearoffoundation, supervisor, name, surname, a.areaid, a.title as area, a.type
+from ((projects as p join people on personId = supervisor) natural join refers as r) join areas as a on r.areaId = a.areaId
+where ProjectID = %s
 
 -- projects by date
 select projectid, title, preview, stage

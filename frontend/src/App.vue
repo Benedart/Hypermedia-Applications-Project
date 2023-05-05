@@ -20,8 +20,8 @@ export default {
   },
   mounted() {
     window.addEventListener('hashchange', () => {
-		  this.currentPath = window.location.hash
-		})
+      this.currentPath = window.location.hash
+    })
   }
 }
 </script>

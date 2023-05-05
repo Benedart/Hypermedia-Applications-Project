@@ -7,6 +7,8 @@ from dotenv import load_dotenv
 import json
 import os
 
+# TODO: handle null queries and input sanitization
+
 # loading the .env
 load_dotenv()
 
@@ -32,6 +34,8 @@ def hello_world():
     return "MEOW!"
 
 
+# ------------------- PROJECTS ------------------- #
+
 @app.route("/getProjects", methods=['GET'])
 def get_projects():
     cursor = db.cursor(dictionary=True)
@@ -42,6 +46,29 @@ def get_projects():
     return json.dumps(projects)
 
 
+@app.route("/getProject/<projectid>", methods=['GET'])
+def get_project(projectid):
+    cursor = db.cursor(dictionary=True)
+
+    query = """
+        select projectid, p.title, p.description, budget, yearoffoundation, supervisor, name, surname, a.areaid, a.title as area, a.type
+        from ((projects as p join people on personId = supervisor) natural join refers as r) join areas as a on r.areaId = a.areaId
+        where ProjectID = %s
+    """
+    tuple = (projectid,)
+
+    cursor.execute(query, tuple)
+    project = cursor.fetchone()
+
+    # make the budget serializable for json
+    # probably casting it to a string it's not the best solution, but for now it works
+    project['budget'] = str(project['budget'])
+
+    return json.dumps(project)
+
+
+# ------------------- PEOPLE ------------------- #
+
 @app.route("/getPeople", methods=['GET'])
 def get_people():
     cursor = db.cursor(dictionary=True)
@@ -50,6 +77,9 @@ def get_people():
     people = cursor.fetchall()
 
     return json.dumps(people)
+
+
+# ------------------- AREAS ------------------- #
 
 
 if __name__ == '__main__':

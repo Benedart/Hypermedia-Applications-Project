@@ -12,7 +12,7 @@ create table People(
 
 create table Projects(
 	ProjectID int unsigned auto_increment,
-	Title varchar(50) not null,
+	Title varchar(50) not null unique,
 	Preview varchar(100) not null,
 	Description varchar(1023) not null,
 	Budget decimal(10,2) not null check(Budget >= 0),
@@ -41,7 +41,7 @@ create table Partecipates(
 
 create table Areas(
 	AreaID int unsigned auto_increment,
-	Title varchar(50) not null,
+	Title varchar(50) not null unique,
 	Type varchar(50) not null,
 	Description varchar(255) not null,
 
