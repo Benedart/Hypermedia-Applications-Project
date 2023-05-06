@@ -13,7 +13,7 @@ create table People(
 create table Projects(
 	ProjectID int unsigned auto_increment,
 	Title varchar(60) not null unique,
-	Preview varchar(100) not null,
+	Preview varchar(250) not null,
 	Description varchar(1500) not null,
 	Budget decimal(10,2) not null check(Budget >= 0),
 	Stage varchar(50) not null,
