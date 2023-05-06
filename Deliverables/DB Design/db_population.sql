@@ -696,7 +696,7 @@ INSERT INTO Projects (Title, Preview, Description, Budget, Stage, YearOfFoundati
 VALUES (
 'MedAssist AI',
 'Healthcare technology start-up leveraging AI and machine learning to improve medical diagnosis, treatment, and management',
-'MedAssist AI is a healthcare technology start-up focused on leveraging artificial intelligence and machine learning to improve the diagnosis, treatment, and management of various medical conditions. The team is led by CEO Dr. Allison Grant and CTO Dr. Charles Kim, with experienced medical professionals, AI researchers, and software engineers. They offer a cutting-edge AI-driven diagnostic platform that analyzes medical images, laboratory test results, and patient history data to assist healthcare professionals in making more accurate and timely diagnoses. The platform also includes a suite of AI-powered tools for personalized treatment planning and remote patient monitoring, enabling better patient outcomes and more efficient healthcare delivery.',
+'MedAssist AI is a healthcare technology start-up focused on leveraging artificial intelligence and machine learning to improve the diagnosis, treatment, and management of various medical conditions. The team is led by CEO Dr. Allison Grant and CTO Dr. Charles Kim, with experienced medical professionals, AI researchers, and software engineers. They offer a cutting-edge AI-driven diagnostic platform that analyzes medical images, laboratory test results, and patient history data to assist healthcare professionals in making more accurate and timely diagnoses. The platform also includes a suite rof AI-powered tools for personalized treatment planning and remote patient monitoring, enabling better patient outcomes and more efficient healthcare delivery.',
 4200000.00,
 'Series B',
 2021,
@@ -805,16 +805,16 @@ VALUES
 -- Area #15
 INSERT INTO Areas (Title, Type, Description)
 VALUES
-('Artificial Intelligence (AI) and Machine Learning',
+('AI',
 'Technology',
-'These technologies involve the development of algorithms and systems that can learn from data, recognize patterns, and make decisions, improving various services across different sectors.');
+'Artificial Intelligence involves the development of algorithms and systems that can learn from data, recognize patterns, and make decisions, improving various services across different sectors.');
 
 -- Area #16
 INSERT INTO Areas (Title, Type, Description)
 VALUES
-('Internet of Things (IoT)',
+('IoT',
 'Technology',
-'IoT refers to the network of interconnected physical devices, sensors, and software that communicate and exchange data, providing real-time insights and personalized services across different industries.');
+'Internet of Things refers to the network of interconnected physical devices, sensors, and software that communicate and exchange data, providing real-time insights and personalized services across different industries.');
 
 -- Area #17
 INSERT INTO Areas (Title, Type, Description)
@@ -847,28 +847,28 @@ VALUES
 -- Area #21
 INSERT INTO Areas (Title, Type, Description)
 VALUES
-('Food Preservation and Supply Chain Optimization',
+('Food Preservation',
 'Technology',
 'This area focuses on developing innovative solutions to reduce food waste and promote sustainable food consumption through food preservation techniques and optimization of supply chains.');
 
 -- Area #22
 INSERT INTO Areas (Title, Type, Description)
 VALUES
-('Telehealth and Elderly Care',
+('Telehealth',
 'Technology',
 'Telehealth and elderly care involve the use of technology, such as telehealth platforms, to provide innovative, personalized, and accessible care solutions for the elderly population, often including remote medical consultations and monitoring.');
 
 -- Area #23
 INSERT INTO Areas (Title, Type, Description)
 VALUES
-('Vertical Farming and Urban Agriculture',
+('Vertical Farming',
 'Technology',
-'Vertical farming and urban agriculture focus on sustainable urban development by offering innovative vertical farming solutions for urban environments. These solutions often use advanced hydroponic technology, energy-efficient lighting, and IoT-enabled climate control systems.');
+'Urban agriculture focus on sustainable urban development by offering innovative vertical farming solutions for urban environments. These solutions often use advanced hydroponic technology, energy-efficient lighting, and IoT-enabled climate control systems.');
 
 -- Area #24
 INSERT INTO Areas (Title, Type, Description)
 VALUES
-('Medical Imaging and AI-powered Diagnostics',
+('Medical Imaging',
 'Technology',
 'This area combines artificial intelligence and machine learning with medical imaging to improve the diagnosis, treatment, and management of various medical conditions. This technology often includes AI-driven diagnostic platforms and personalized treatment planning tools.');
 
