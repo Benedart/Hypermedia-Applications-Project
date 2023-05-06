@@ -21,7 +21,7 @@ Make sure to be confident with the concepts of [venv](#venv) and [pip](#pip) bef
 
 `.\<name of your virtual environment>\Scripts\activate`
 * Install the required packages: `pip install -r requirements.txt`
-* Add the db credentials to the `.env` file (create it if missing)
+* Add the db credentials to the `.env` file (create it if missing). In particular, you need to define the `host`, `user`, `password` and `database` environment variables.
 *  Run the flask application: `flask --app server run`
 *  Go to the provided url to check that everything is working correctly
 
