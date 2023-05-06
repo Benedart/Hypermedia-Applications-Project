@@ -3,6 +3,8 @@ create table People(
 	Name varchar(50) not null,
 	Surname varchar(50) not null,
 	Age int unsigned not null check(Age >= 18),
+	Email varchar(100) unique not NULL,
+	Linkedin varchar (150) not null,
 	Picture blob,
 	CV varchar(1500) not null,
 	Role varchar(50) not null,
@@ -43,7 +45,7 @@ create table Areas(
 	AreaID int unsigned auto_increment,
 	Title varchar(50) not null unique,
 	Type varchar(50) not null,
-	Description varchar(255) not null,
+	Description varchar(1500) not null,
 
 	primary key(AreaID)
 );
