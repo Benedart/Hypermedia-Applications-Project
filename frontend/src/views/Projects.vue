@@ -1,3 +1,9 @@
+<script setup lang="ts">
+import { makeCall } from '@/utils/common'
+import ProjectFilter from '@/components/ProjectFilter.vue'
+import ProjectCard from '@/components/ProjectCard.vue'
+</script>
+
 <template>
     <header>
         <img src="@/assets/logo.png" width="50">
@@ -5,54 +11,42 @@
     <main>
         <h1>Projects</h1>
 
-        <div v-for="project in  projects " v-on:click="getProjectData(project.projectid)" class="card">
-            <div class="card" style="width: 18rem;" data-bs-toggle="modal" :data-bs-target="`#modal${project.projectid}`">
-                <img class="card-img-top" :src="`/images/projects/${project.title}.webp`" :alt="project.title">
-                <div class="card-body">
-                    <h5 class="card-title">{{ project.title }}</h5>
-                    <p class="card-text">{{ project.preview }}</p>
-                    <i>{{ project.stage }}</i>
-                </div>
-            </div>
+        <ProjectFilter @applyFilters="filterProjects" />
 
-            <!-- Modal -->
-            <div class="modal fade modal-xl" :id="`modal${project.projectid}`" tabindex="-1"
-                aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">{{ project.title }}</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            <i>{{ projectDetails.area }}</i>
-                            <p>Supervisor: {{ projectDetails.name + " " + projectDetails.surname }}</p>
-                            <p>{{ projectDetails.description }}</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
+        <ProjectCard v-for="project in  projects " :projectid="project.projectid" :title="project.title"
+            :preview="project.preview" :stage="project.stage" :areas="project.areas" />
     </main>
 </template>
 
-<script>
-import { makeCall } from '../utils/common'
-
+<script lang="ts">
 export default {
     data() {
         return {
+            // this will contain only the projects that match the filters
             projects: [
                 {
+                    projectid: -1,
                     title: 'project',
-                    ShortDescription: 'Questo progetto è bellissimo, davvero il futuro',
-                    Stage: 'bho'
+                    preview: 'Questo progetto è bellissimo, davvero il futuro',
+                    stage: 'stage'
                 },
             ],
 
-            projectDetails: {},
+            // this will contain all the projects, used to reset the filters
+            allProjects: [
+                {
+                    projectid: -1,
+                    title: 'project',
+                    preview: 'Questo progetto è bellissimo, davvero il futuro',
+                    stage: 'stage'
+                },
+            ],
         }
+    },
+
+    components: {
+        ProjectFilter,
+        ProjectCard
     },
 
     created() {
@@ -60,34 +54,56 @@ export default {
     },
 
     methods: {
+        filterProjects: function (filters: { areas: number[]; stages: string[]; supervisors: number[]; years: number[]; }) {
+            let areas = filters.areas
+            let stages = filters.stages
+            let supervisors = filters.supervisors
+            let years = filters.years
+
+            console.log("SELECTED FILTERS:")
+            console.log(areas)
+            console.log(stages)
+            console.log(supervisors)
+            console.log(years)
+
+            let filteredProjects = []
+            this.allProjects.forEach(project => {
+                // get all the ids of the areas of the project
+                let projectAreas = project.areas.map(area => area.areaid)
+
+                // apply the filters
+                let areaFilter = areas.length === 0 || areas.some(area => projectAreas.includes(area))
+                let stageFilter = stages.length === 0 || stages.includes(project.stage)
+                let supervisorFilter = supervisors.length === 0 || supervisors.includes(project.supervisor)
+                let yearFilter = years.length === 0 || years.includes(project.year)
+
+                console.log(years.includes(project.year))
+                console.log(typeof (years[0]) + " " + typeof (project.year))
+                console.log("FILTER RESULTS: " + areaFilter + " " + stageFilter + " " + supervisorFilter + " " + yearFilter + "")
+
+                // if all the filters are passed, add the project to the filtered projects
+                if (areaFilter && stageFilter && supervisorFilter && yearFilter) {
+                    filteredProjects.push(project)
+                }
+            })
+
+            this.projects = filteredProjects
+        },
+
         getData: function () {
             makeCall("GET", import.meta.env.VITE_APP_URL + "/getProjects",
                 (req) => {
                     if (req.readyState === 4) {
                         let message = req.responseText;
-                        console.log(message)
 
                         if (req.status === 200) {
                             let data = JSON.parse(message);
+
+                            console.log(data)
+
+                            // itintially all the projects are shown, so we save them in both arrays
+                            this.allProjects = data
                             this.projects = data
-                        } else {
-                            alert("Error, couldn't retrieve data");
-                        }
-                    }
-                }
-            )
-        },
-
-        getProjectData: function (projectid) {
-            makeCall("GET", import.meta.env.VITE_APP_URL + "/getProject/" + projectid,
-                (req) => {
-                    if (req.readyState === 4) {
-                        let message = req.responseText;
-                        console.log(message)
-
-                        if (req.status === 200) {
-                            let data = JSON.parse(message);
-                            this.projectDetails = data
                         } else {
                             alert("Error, couldn't retrieve data");
                         }
@@ -102,5 +118,10 @@ export default {
 <style>
 .card {
     cursor: pointer;
+}
+
+.card:hover {
+    filter: brightness(80%);
+    transition: 0.5s;
 }
 </style>

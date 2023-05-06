@@ -36,17 +36,36 @@ def hello_world():
 
 # ------------------- PROJECTS ------------------- #
 
+# get all projects
 @app.route("/getProjects", methods=['GET'])
 def get_projects():
     cursor = mysql.connection.cursor()
 
-    cursor.execute("select projectid, title, preview, stage from projects")
+    query = """
+        select projectid, title, preview, stage, yearoffoundation as year, supervisor
+        from projects
+    """
+    cursor.execute(query)
     projects = cursor.fetchall()
+
+    # get all areas for each project
+    for project in projects:
+        query = """
+            select areaid, title
+            from areas natural join refers
+            where projectid = %s
+        """
+        tuple = (project['projectid'],)
+
+        cursor.execute(query, tuple)
+        project['areas'] = cursor.fetchall()
+
     cursor.close()
 
     return json.dumps(projects)
 
 
+# get project details
 @app.route("/getProject/<projectid>", methods=['GET'])
 def get_project(projectid):
     cursor = mysql.connection.cursor()
@@ -69,8 +88,33 @@ def get_project(projectid):
     return json.dumps(project)
 
 
+# get all years in which there are projects
+@app.route("/getYears", methods=['GET'])
+def get_years():
+    cursor = mysql.connection.cursor()
+
+    cursor.execute("select distinct yearoffoundation from projects order by yearoffoundation")
+    years = cursor.fetchall()
+    cursor.close()
+
+    return json.dumps(years)
+
+# get all stages in which there are projects
+@app.route("/getStages", methods=['GET'])
+def get_stages():
+    cursor = mysql.connection.cursor()
+
+    cursor.execute("select distinct stage from projects order by stage")
+    stages = cursor.fetchall()
+    cursor.close()
+
+    return json.dumps(stages)
+
+
+
 # ------------------- PEOPLE ------------------- #
 
+# get all people
 @app.route("/getPeople", methods=['GET'])
 def get_people():
     cursor = mysql.connection.cursor()
@@ -81,7 +125,23 @@ def get_people():
 
     return json.dumps(people)
 
+# get all supervisors
+@app.route("/getSupervisors", methods=['GET'])
+def get_supervisors():
+    cursor = mysql.connection.cursor()
 
+    query = """
+        select distinct personid, name, surname
+        from people join projects on personid = supervisor
+        order by name, surname
+    """
+    cursor.execute(query)
+    supervisors = cursor.fetchall()
+    cursor.close()
+
+    return json.dumps(supervisors)
+
+# get all people working on a project
 @app.route("/getPeopleFromProject/<projectid>", methods=['GET'])
 def get_people_from_project(projectid):
     cursor = mysql.connection.cursor()
@@ -101,18 +161,12 @@ def get_people_from_project(projectid):
 
 # ------------------- AREAS ------------------- #
 
-@app.route("/getAreasFromProject/<projectid>", methods=['GET'])
-def get_areas_from_project(projectid):
+# get all areas
+@app.route("/getAreas", methods=['GET'])
+def get_areas():
     cursor = mysql.connection.cursor()
 
-    query = """
-        select areaid, title
-        from areas natural join refers
-        where projectid = %s
-    """
-    tuple = (projectid,)
-
-    cursor.execute(query, tuple)
+    cursor.execute("select * from areas")
     areas = cursor.fetchall()
     cursor.close()
 
