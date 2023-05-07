@@ -6,7 +6,9 @@ from dotenv import load_dotenv
 import json
 import os
 
-# TODO: handle null queries and input sanitization
+# TODO: 
+# - handle null queries and input sanitization
+# - find a better way to make the budget serializable for json
 
 # loading the .env
 load_dotenv()
@@ -42,7 +44,7 @@ def get_projects():
     cursor = mysql.connection.cursor()
 
     query = """
-        select projectid, title, preview, stage, yearoffoundation as year, supervisor
+        select projectid, title, preview, stage, budget, yearoffoundation as year, supervisor
         from projects
     """
     cursor.execute(query)
@@ -61,6 +63,10 @@ def get_projects():
         project['areas'] = cursor.fetchall()
 
     cursor.close()
+
+    # make the budget serializable for json
+    for project in projects:
+        project['budget'] = str(project['budget'])
 
     return json.dumps(projects)
 
@@ -109,6 +115,25 @@ def get_stages():
     cursor.close()
 
     return json.dumps(stages)
+
+# get project min and max budget
+@app.route("/getBudgetRange", methods=['GET'])
+def get_budget_range():
+    cursor = mysql.connection.cursor()
+
+    query = """
+        select min(budget) as min, max(budget) as max
+        from projects
+    """
+    cursor.execute(query)
+    budget_range = cursor.fetchone()
+    cursor.close()
+
+    # make it serializable for json
+    budget_range['min'] = str(budget_range['min'])
+    budget_range['max'] = str(budget_range['max'])
+
+    return json.dumps(budget_range)
 
 
 

@@ -54,7 +54,7 @@ export default {
     },
 
     methods: {
-        filterProjects: function (filters: { areas: number[]; stages: string[]; supervisors: number[]; years: number[]; }) {
+        filterProjects: function (filters: { areas: number[]; stages: string[]; supervisors: number[]; years: number[]; budget: { min: number; max: number; }; }) {
             let areas = filters.areas
             let stages = filters.stages
             let supervisors = filters.supervisors
@@ -76,13 +76,14 @@ export default {
                 let stageFilter = stages.length === 0 || stages.includes(project.stage)
                 let supervisorFilter = supervisors.length === 0 || supervisors.includes(project.supervisor)
                 let yearFilter = years.length === 0 || years.includes(project.year)
+                let budgetFilter = project.budget >= filters.budget.min && project.budget <= filters.budget.max
 
                 console.log(years.includes(project.year))
                 console.log(typeof (years[0]) + " " + typeof (project.year))
-                console.log("FILTER RESULTS: " + areaFilter + " " + stageFilter + " " + supervisorFilter + " " + yearFilter + "")
+                console.log("FILTER RESULTS: " + areaFilter + " " + stageFilter + " " + supervisorFilter + " " + yearFilter + " " + budgetFilter)
 
                 // if all the filters are passed, add the project to the filtered projects
-                if (areaFilter && stageFilter && supervisorFilter && yearFilter) {
+                if (areaFilter && stageFilter && supervisorFilter && yearFilter && budgetFilter) {
                     filteredProjects.push(project)
                 }
             })

@@ -11,7 +11,7 @@ import { makeCall } from '@/utils/common'
             </button>
             <form class="dropdown-menu p-4">
                 <div class="hstack gap-3">
-                    <div class="bg-light border">
+                    <div class="filter-col bg-light border">
                         Area
                         <hr>
                         <div v-for="area in areas" class="form-check">
@@ -22,7 +22,7 @@ import { makeCall } from '@/utils/common'
                             </label>
                         </div>
                     </div>
-                    <div class="bg-light border">
+                    <div class="filter-col bg-light border">
                         Years
                         <hr>
                         <div v-for="year in years" class="form-check">
@@ -32,7 +32,7 @@ import { makeCall } from '@/utils/common'
                             </label>
                         </div>
                     </div>
-                    <div class="bg-light border">
+                    <div class="filter-col bg-light border">
                         Stages
                         <hr>
                         <div v-for="stage in stages" class="form-check">
@@ -42,7 +42,7 @@ import { makeCall } from '@/utils/common'
                             </label>
                         </div>
                     </div>
-                    <div class="bg-light border">
+                    <div class="filter-col bg-light border">
                         Supervisors
                         <hr>
                         <div v-for="supervisor in supervisors" class="form-check">
@@ -53,10 +53,19 @@ import { makeCall } from '@/utils/common'
                             </label>
                         </div>
                     </div>
-                    <div class="bg-light border">
+                    <!-- TODO: make this prettier and possibly manage the overlapping of the ranges -->
+                    <div class="filter-col bg-light border">
                         Budget
                         <hr>
-                        :(
+                        <label for="minBudget" class="form-label">Min</label>
+                        <input type="range" class="form-range" :min="budget.min" :max="budget.max" step="10000"
+                            id="minBudget" oninput="this.nextElementSibling.value = this.value">
+                        <output>{{ budget.min }}</output>
+                        <br>
+                        <label for="maxBudget" class="form-label">Max</label>
+                        <input type="range" class="form-range" :min="budget.min" :max="budget.max" step="10000"
+                            :value="budget.max" id="maxBudget" oninput="this.nextElementSibling.value = this.value">
+                        <output>{{ budget.max }}</output>
                     </div>
                 </div>
                 <hr>
@@ -75,7 +84,10 @@ export default {
             years: [],
             stages: [],
             supervisors: [],
-            budgets: []
+            budget: {
+                min: 0,
+                max: 5
+            }
         }
     },
 
@@ -89,6 +101,8 @@ export default {
             let yearSelector = document.getElementsByName("yearSelector")
             let stageSelector = document.getElementsByName("stageSelector")
             let supervisorSelector = document.getElementsByName("supervisorSelector")
+            let minBudget = document.getElementById("minBudget")
+            let maxBudget = document.getElementById("maxBudget")
 
             let selectedAreas: number[] = []
             let selectedYears: number[] = []
@@ -123,7 +137,11 @@ export default {
                 areas: selectedAreas,
                 years: selectedYears,
                 stages: selectedStages,
-                supervisors: selectedSupervisors
+                supervisors: selectedSupervisors,
+                budget: {
+                    min: minBudget.value,
+                    max: maxBudget.value
+                }
             }
 
             this.$emit("applyFilters", filters)
@@ -193,7 +211,30 @@ export default {
                     }
                 }
             )
+
+            // get budgete range
+            makeCall("GET", import.meta.env.VITE_APP_URL + "/getBudgetRange",
+                (req) => {
+                    if (req.readyState === 4) {
+                        let message = req.responseText;
+
+                        if (req.status === 200) {
+                            let data = JSON.parse(message);
+                            this.budget = data
+                        } else {
+                            alert("Error, couldn't get the budget range");
+                        }
+                    }
+                }
+            )
         }
     }
 }
 </script>
+
+<style scoped>
+.dropdown-menu {
+    height: 50vh;
+    overflow-y: auto;
+}
+</style>
