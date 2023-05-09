@@ -1,10 +1,12 @@
 <script>
 import Home from './views/Home.vue'
 import Projects from './views/Projects.vue'
+import Areas from './views/Areas.vue'
 
 const routes = {
   '/': Home,
   '/projects': Projects,
+  '/areas': Areas
 }
 
 export default {

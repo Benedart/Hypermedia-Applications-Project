@@ -136,6 +136,25 @@ def get_budget_range():
     return json.dumps(budget_range)
 
 
+# get all projects which refer an area 
+@app.route("/getProjectsFromArea/<areaid>", methods=['GET'])
+def get_project_from_area(areaid):
+    cursor = mysql.connection.cursor()
+
+    query = """
+        select projectid, title
+        from projects natural join refers
+        where areaid = %s
+    """
+    tuple = (areaid,)
+
+    cursor.execute(query, tuple)
+    projects = cursor.fetchall()
+    cursor.close()
+
+    return json.dumps(projects)
+
+
 
 # ------------------- PEOPLE ------------------- #
 
@@ -191,11 +210,42 @@ def get_people_from_project(projectid):
 def get_areas():
     cursor = mysql.connection.cursor()
 
-    cursor.execute("select * from areas")
+    cursor.execute("select areaid, title, type from areas")
     areas = cursor.fetchall()
     cursor.close()
 
     return json.dumps(areas)
+
+# get area details
+# TO DO: aggiungi link ai progetti
+@app.route("/getArea/<areaid>", methods=['GET'])
+def get_area(areaid):
+    cursor = mysql.connection.cursor()
+
+    query = """
+        select areaid, title, type, description
+        from areas         
+        where areaid = %s
+    """
+    tuple = (areaid,)
+
+    cursor.execute(query, tuple)
+    project = cursor.fetchone()
+    cursor.close()
+
+    return json.dumps(project)
+
+@app.route("/getTypes", methods=['GET'])
+def get_types():
+    cursor = mysql.connection.cursor()
+
+    cursor.execute("select distinct type from areas order by type")
+    types = cursor.fetchall()
+    cursor.close()
+
+    return json.dumps(types)
+
+
 
 
 if __name__ == '__main__':
