@@ -11,9 +11,14 @@ import ProjectCard from '@/components/ProjectCard.vue'
     <main>
         <h1>Projects</h1>
 
+        <div class="search-wrapper panel-heading col-sm-12">
+            <input type="text" v-model="search" placeholder="Search" /> <br />
+            <br />
+        </div>
+
         <ProjectFilter @applyFilters="filterProjects" />
 
-        <ProjectCard v-for="project in  projects " :projectid="project.projectid" :title="project.title"
+        <ProjectCard v-for="project in  visibleProjects " :projectid="project.projectid" :title="project.title"
             :preview="project.preview" :stage="project.stage" :areas="project.areas" />
     </main>
 </template>
@@ -41,6 +46,8 @@ export default {
                     stage: 'stage'
                 },
             ],
+
+            search: ""
         }
     },
 
@@ -112,7 +119,18 @@ export default {
                 }
             )
         },
+    },
+
+    computed: {
+    visibleProjects() {
+      return this.projects.filter(p => {
+        // return true if the project should be visible
+
+        // check if the search string is a substring of the project title (case insensitive)
+        return p.title.toLowerCase().indexOf(this.search.toLowerCase()) != -1;
+      });
     }
+  }
 };
 </script>
 
