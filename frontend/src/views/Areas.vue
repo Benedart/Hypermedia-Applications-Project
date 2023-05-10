@@ -11,9 +11,13 @@ import AreaCard from '@/components/AreaCard.vue'
     <main>
         <h1>Areas</h1>
 
+        <div class="search-wrapper panel-heading col-sm-12">
+            <input type="text" v-model="search" placeholder="Search" /> <br />
+            <br />
+        </div>
         <AreaFilter @applyFilters="filterAreas" />
 
-        <AreaCard v-for="area in  areas " :areaid="area.areaid" :title="area.title"
+        <AreaCard v-for="area in  visibleAreas " :areaid="area.areaid" :title="area.title"
             :type="area.type" - />
     </main>
 </template>
@@ -39,6 +43,8 @@ export default {
                     type: 'type',
                 },
             ],
+
+            search: ""
         }
     },
 
@@ -98,7 +104,17 @@ export default {
                 }
             )
         },
+    },
+    computed: {
+    visibleAreas() {
+      return this.areas.filter(a => {
+        // return true if the area should be visible
+
+        // check if the search string is a substring of the area title (case insensitive)
+        return a.title.toLowerCase().indexOf(this.search.toLowerCase()) != -1;
+      });
     }
+  }
 };
 </script>
 
