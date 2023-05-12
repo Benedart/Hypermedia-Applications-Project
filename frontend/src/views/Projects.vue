@@ -126,8 +126,14 @@ export default {
       return this.projects.filter(p => {
         // return true if the project should be visible
 
+        let indexList = [0];
+        for (let i = 0; i < p.title.length; i++) {
+            const character = p.title.charAt(i);
+            if (character== " ")
+                indexList.push(i+1);
+        }
         // check if the search string is a substring of the project title (case insensitive)
-        return p.title.toLowerCase().indexOf(this.search.toLowerCase()) != -1;
+        return indexList.includes(p.title.toLowerCase().indexOf(this.search.toLowerCase()));
       });
     }
   }

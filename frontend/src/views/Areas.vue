@@ -17,8 +17,8 @@ import AreaCard from '@/components/AreaCard.vue'
         </div>
         <AreaFilter @applyFilters="filterAreas" />
 
-        <AreaCard v-for="area in  visibleAreas " :areaid="area.areaid" :title="area.title"
-            :type="area.type" - />
+        <AreaCard v-for="area in  visibleAreas " :areaid="area.AreaID" :title="area.Title"
+            :type="area.Type" - />
     </main>
 </template>
 
@@ -29,18 +29,21 @@ export default {
             // this will contain only the areas that match the filters
             areas: [
                 {
-                    areaid: -1,
-                    title: 'area',
-                    type: 'type',
+                    AreaID: -1,
+                    Title: 'area',
+                    Type: 'type',
+                    Description: 'descrizione simpatika'
+
                 },
             ],
 
             // this will contain all the areas, used to reset the filters
             allAreas: [
                 {
-                    areaid: -1,
-                    title: 'area',
-                    type: 'type',
+                    AreaID: -1,
+                    Title: 'area',
+                    Type: 'type',
+                    Description: 'descrizione simpatika'
                 },
             ],
 
@@ -68,7 +71,7 @@ export default {
             this.allAreas.forEach(area => {
 
                 // apply the filters
-                let typeFilter = types.length === 0 || types.includes(area.type)
+                let typeFilter = types.length === 0 || types.includes(area.Type)
                 
                 // if all the filters are passed, add the area to the filtered areas
                 if (typeFilter) {
@@ -110,8 +113,14 @@ export default {
       return this.areas.filter(a => {
         // return true if the area should be visible
 
+        let indexList = [0];
+        for (let i = 0; i < a.Title.length; i++) {
+            const character = a.Title.charAt(i);
+            if (character== " ")
+                indexList.push(i+1);
+        }
         // check if the search string is a substring of the area title (case insensitive)
-        return a.title.toLowerCase().indexOf(this.search.toLowerCase()) != -1;
+        return indexList.includes(a.Title.toLowerCase().indexOf(this.search.toLowerCase())) ;
       });
     }
   }

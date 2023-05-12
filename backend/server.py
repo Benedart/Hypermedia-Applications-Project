@@ -210,7 +210,7 @@ def get_people_from_project(projectid):
 def get_areas():
     cursor = mysql.connection.cursor()
 
-    cursor.execute("select areaid, title, type from areas")
+    cursor.execute("select * from areas")
     areas = cursor.fetchall()
     cursor.close()
 
