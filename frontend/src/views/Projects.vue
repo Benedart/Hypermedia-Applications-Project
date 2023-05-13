@@ -61,16 +61,14 @@ export default {
     },
 
     methods: {
-        filterProjects: function (filters: { areas: number[]; stages: string[]; supervisors: number[]; years: number[]; budget: { min: number; max: number; }; }) {
+        filterProjects: function (filters: { areas: number[]; stages: string[]; years: number[]; }) {
             let areas = filters.areas
             let stages = filters.stages
-            let supervisors = filters.supervisors
             let years = filters.years
 
             console.log("SELECTED FILTERS:")
             console.log(areas)
             console.log(stages)
-            console.log(supervisors)
             console.log(years)
 
             let filteredProjects = []
@@ -81,16 +79,14 @@ export default {
                 // apply the filters
                 let areaFilter = areas.length === 0 || areas.some(area => projectAreas.includes(area))
                 let stageFilter = stages.length === 0 || stages.includes(project.stage)
-                let supervisorFilter = supervisors.length === 0 || supervisors.includes(project.supervisor)
                 let yearFilter = years.length === 0 || years.includes(project.year)
-                let budgetFilter = project.budget >= filters.budget.min && project.budget <= filters.budget.max
 
                 console.log(years.includes(project.year))
                 console.log(typeof (years[0]) + " " + typeof (project.year))
-                console.log("FILTER RESULTS: " + areaFilter + " " + stageFilter + " " + supervisorFilter + " " + yearFilter + " " + budgetFilter)
+                console.log("FILTER RESULTS: " + areaFilter + " " + stageFilter + " " + yearFilter)
 
                 // if all the filters are passed, add the project to the filtered projects
-                if (areaFilter && stageFilter && supervisorFilter && yearFilter && budgetFilter) {
+                if (areaFilter && stageFilter && yearFilter) {
                     filteredProjects.push(project)
                 }
             })
@@ -122,22 +118,22 @@ export default {
     },
 
     computed: {
-    visibleProjects() {
-      return this.projects.filter(p => {
-        // return true if the project should be visible
+        visibleProjects() {
+            return this.projects.filter(p => {
+                // return true if the project should be visible
 
-        let indexList = [0];
-        for (let i = 0; i < p.title.length; i++) {
-            const character = p.title.charAt(i);
-            if (character== " ")
-                indexList.push(i+1);
+                let indexList = [0];
+                for (let i = 0; i < p.title.length; i++) {
+                    const character = p.title.charAt(i);
+                    if (character == " ")
+                        indexList.push(i + 1);
+                }
+                // check if the search string is a substring of the project title (case insensitive)
+                return indexList.includes(p.title.toLowerCase().indexOf(this.search.toLowerCase()));
+            });
         }
-        // check if the search string is a substring of the project title (case insensitive)
-        return indexList.includes(p.title.toLowerCase().indexOf(this.search.toLowerCase()));
-      });
     }
-  }
-};
+}
 </script>
 
 <style>

@@ -17,8 +17,7 @@ import AreaCard from '@/components/AreaCard.vue'
         </div>
         <AreaFilter @applyFilters="filterAreas" />
 
-        <AreaCard v-for="area in  visibleAreas " :areaid="area.AreaID" :title="area.Title"
-            :type="area.Type" - />
+        <AreaCard v-for="area in  visibleAreas " :areaid="area.AreaID" :title="area.Title" :type="area.Type" />
     </main>
 </template>
 
@@ -72,11 +71,11 @@ export default {
 
                 // apply the filters
                 let typeFilter = types.length === 0 || types.includes(area.Type)
-                
+
                 // if all the filters are passed, add the area to the filtered areas
                 if (typeFilter) {
                     filteredAreas.push(area)
-                    
+
                     console.log("PUSHING AREA:")
                     console.log(area)
 
@@ -109,21 +108,21 @@ export default {
         },
     },
     computed: {
-    visibleAreas() {
-      return this.areas.filter(a => {
-        // return true if the area should be visible
+        visibleAreas() {
+            return this.areas.filter(a => {
+                // return true if the area should be visible
 
-        let indexList = [0];
-        for (let i = 0; i < a.Title.length; i++) {
-            const character = a.Title.charAt(i);
-            if (character== " ")
-                indexList.push(i+1);
+                let indexList = [0];
+                for (let i = 0; i < a.Title.length; i++) {
+                    const character = a.Title.charAt(i);
+                    if (character == " ")
+                        indexList.push(i + 1);
+                }
+                // check if the search string is a substring of the area title (case insensitive)
+                return indexList.includes(a.Title.toLowerCase().indexOf(this.search.toLowerCase()));
+            });
         }
-        // check if the search string is a substring of the area title (case insensitive)
-        return indexList.includes(a.Title.toLowerCase().indexOf(this.search.toLowerCase())) ;
-      });
     }
-  }
 };
 </script>
 

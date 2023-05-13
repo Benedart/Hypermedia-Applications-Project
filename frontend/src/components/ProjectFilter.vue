@@ -42,31 +42,6 @@ import { makeCall } from '@/utils/common'
                             </label>
                         </div>
                     </div>
-                    <div class="filter-col bg-light border">
-                        Supervisors
-                        <hr>
-                        <div v-for="supervisor in supervisors" class="form-check">
-                            <input class="form-check-input" name="supervisorSelector" type="checkbox"
-                                :value="supervisor.personid" :id="`s-${supervisor.personid}`">
-                            <label class="form-check-label" :for="`s-${supervisor.personid}`">
-                                {{ supervisor.name + " " + supervisor.surname }}
-                            </label>
-                        </div>
-                    </div>
-                    <!-- TODO: make this prettier and possibly manage the overlapping of the ranges -->
-                    <div class="filter-col bg-light border">
-                        Budget
-                        <hr>
-                        <label for="minBudget" class="form-label">Min</label>
-                        <input type="range" class="form-range" :min="budget.min" :max="budget.max" step="10000"
-                            id="minBudget" oninput="this.nextElementSibling.value = this.value">
-                        <output>{{ budget.min }}</output>
-                        <br>
-                        <label for="maxBudget" class="form-label">Max</label>
-                        <input type="range" class="form-range" :min="budget.min" :max="budget.max" step="10000"
-                            :value="budget.max" id="maxBudget" oninput="this.nextElementSibling.value = this.value">
-                        <output>{{ budget.max }}</output>
-                    </div>
                 </div>
                 <hr>
                 <button @click="applyFilters()" type="button" class="btn btn-primary">Apply</button>
@@ -83,11 +58,6 @@ export default {
             areas: [],
             years: [],
             stages: [],
-            supervisors: [],
-            budget: {
-                min: 0,
-                max: 5
-            }
         }
     },
 
@@ -100,14 +70,10 @@ export default {
             let areaSelector = document.getElementsByName("areaSelector")
             let yearSelector = document.getElementsByName("yearSelector")
             let stageSelector = document.getElementsByName("stageSelector")
-            let supervisorSelector = document.getElementsByName("supervisorSelector")
-            let minBudget = document.getElementById("minBudget")
-            let maxBudget = document.getElementById("maxBudget")
 
             let selectedAreas: number[] = []
             let selectedYears: number[] = []
             let selectedStages: string[] = []
-            let selectedSupervisors: number[] = []
 
             for (let i = 0; i < areaSelector.length; i++) {
                 if (areaSelector[i].checked) {
@@ -127,21 +93,10 @@ export default {
                 }
             }
 
-            for (let i = 0; i < supervisorSelector.length; i++) {
-                if (supervisorSelector[i].checked) {
-                    selectedSupervisors.push(parseInt(supervisorSelector[i].value))
-                }
-            }
-
             let filters = {
                 areas: selectedAreas,
                 years: selectedYears,
                 stages: selectedStages,
-                supervisors: selectedSupervisors,
-                budget: {
-                    min: minBudget.value,
-                    max: maxBudget.value
-                }
             }
 
             this.$emit("applyFilters", filters)
@@ -191,38 +146,6 @@ export default {
                             this.stages = data.map((stage: { stage: string; }) => stage.stage)
                         } else {
                             alert("Error, couldn't get the stages");
-                        }
-                    }
-                }
-            )
-
-            // get all the supervisors
-            makeCall("GET", import.meta.env.VITE_APP_URL + "/getSupervisors",
-                (req) => {
-                    if (req.readyState === 4) {
-                        let message = req.responseText;
-
-                        if (req.status === 200) {
-                            let data = JSON.parse(message);
-                            this.supervisors = data
-                        } else {
-                            alert("Error, couldn't get the supervisors");
-                        }
-                    }
-                }
-            )
-
-            // get budgete range
-            makeCall("GET", import.meta.env.VITE_APP_URL + "/getBudgetRange",
-                (req) => {
-                    if (req.readyState === 4) {
-                        let message = req.responseText;
-
-                        if (req.status === 200) {
-                            let data = JSON.parse(message);
-                            this.budget = data
-                        } else {
-                            alert("Error, couldn't get the budget range");
                         }
                     }
                 }
