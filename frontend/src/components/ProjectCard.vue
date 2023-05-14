@@ -1,6 +1,6 @@
 <template>
     <div class="card h-100" @click="getProjectData(projectid)" style="width: 18rem;" data-bs-toggle="modal"
-        :data-bs-target="`#modal${projectid}`">
+        :data-bs-target="`#modal${accordion}-${projectid}`">
         <img class="card-img-top" :src="`/images/projects/${title}.webp`" :alt="title">
         <div class="card-body">
             <h5 class="card-title">{{ title }}</h5>
@@ -13,8 +13,8 @@
     </div>
 
     <!-- Modal -->
-    <div class="modal fade modal-xl" :id="`modal${projectid}`" tabindex="-1" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
+    <div class="modal fade modal-xl" :id="`modal${accordion}-${projectid}`" tabindex="-1"
+        aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -62,7 +62,8 @@ export default {
         stage: String,
         areas: Array,
         year: Number,
-        featured: Number
+        featured: Number,
+        accordion: Number
     },
 
     methods: {

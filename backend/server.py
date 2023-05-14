@@ -44,7 +44,7 @@ def get_projects():
     cursor = mysql.connection.cursor()
 
     query = """
-        select projectid, title, preview, stage, budget, yearoffoundation as year
+        select projectid, title, preview, stage, yearoffoundation as year
         from projects
     """
     cursor.execute(query)
@@ -64,10 +64,6 @@ def get_projects():
 
     cursor.close()
 
-    # make the budget serializable for json
-    for project in projects:
-        project['budget'] = str(project['budget'])
-
     return json.dumps(projects)
 
 
@@ -77,7 +73,7 @@ def get_featured_projects():
     cursor = mysql.connection.cursor()
 
     query = """
-        select projectid, title, preview, stage, budget, yearoffoundation as year
+        select projectid, title, preview, stage, yearoffoundation as year
         from projects
         where featured = 1
     """
@@ -97,10 +93,6 @@ def get_featured_projects():
         project['areas'] = cursor.fetchall()
 
     cursor.close()
-
-    # make the budget serializable for json
-    for project in projects:
-        project['budget'] = str(project['budget'])
 
     return json.dumps(projects)
 
