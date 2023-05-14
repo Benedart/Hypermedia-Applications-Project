@@ -44,8 +44,42 @@ def get_projects():
     cursor = mysql.connection.cursor()
 
     query = """
-        select projectid, title, preview, stage, budget, yearoffoundation as year, supervisor
+        select projectid, title, preview, stage, budget, yearoffoundation as year
         from projects
+    """
+    cursor.execute(query)
+    projects = cursor.fetchall()
+
+    # get all areas for each project
+    for project in projects:
+        query = """
+            select areaid, title
+            from areas natural join refers
+            where projectid = %s
+        """
+        tuple = (project['projectid'],)
+
+        cursor.execute(query, tuple)
+        project['areas'] = cursor.fetchall()
+
+    cursor.close()
+
+    # make the budget serializable for json
+    for project in projects:
+        project['budget'] = str(project['budget'])
+
+    return json.dumps(projects)
+
+
+# get featured projects
+@app.route("/getFeaturedProjects", methods=['GET'])
+def get_featured_projects():
+    cursor = mysql.connection.cursor()
+
+    query = """
+        select projectid, title, preview, stage, budget, yearoffoundation as year
+        from projects
+        where featured = 1
     """
     cursor.execute(query)
     projects = cursor.fetchall()
@@ -77,7 +111,7 @@ def get_project(projectid):
     cursor = mysql.connection.cursor()
 
     query = """
-        select projectid, p.title, p.description, stage, budget, yearoffoundation, supervisor, name, surname
+        select projectid, p.title, p.description, stage, budget, yearoffoundation, featured, supervisor, name, surname
         from projects as p join people on personId = supervisor
         where ProjectID = %s
     """

@@ -5,21 +5,22 @@ import ProjectCard from '@/components/ProjectCard.vue'
 </script>
 
 <template>
-    <header>
-        <img src="@/assets/logo.png" width="50">
-    </header>
     <main>
         <h1>Projects</h1>
-
-        <div class="search-wrapper panel-heading col-sm-12">
-            <input type="text" v-model="search" placeholder="Search" /> <br />
-            <br />
+        <div class="container-fluid">
+            <div class="search-wrapper panel-heading col-sm-12">
+                <input type="text" v-model="search" placeholder="Search">
+            </div>
+            <br>
+            <ProjectFilter @applyFilters="filterProjects" />
+            <br>
+            <div class="row g-3">
+                <div v-for="project in  visibleProjects" class="col">
+                    <ProjectCard :projectid="project.projectid" :title="project.title" :preview="project.preview"
+                        :stage="project.stage" :areas="project.areas" :year="project.year" :featured="project.featured" />
+                </div>
+            </div>
         </div>
-
-        <ProjectFilter @applyFilters="filterProjects" />
-
-        <ProjectCard v-for="project in  visibleProjects " :projectid="project.projectid" :title="project.title"
-            :preview="project.preview" :stage="project.stage" :areas="project.areas" />
     </main>
 </template>
 

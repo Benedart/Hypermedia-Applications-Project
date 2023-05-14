@@ -1,0 +1,12 @@
+<script setup lang="ts">
+import { makeCall } from '@/utils/common'
+import Footer from '@/components/Footer.vue'
+</script>
+
+<template>
+    <main>
+        <h1>About us</h1>
+    </main>
+</template>
+
+<style></style>

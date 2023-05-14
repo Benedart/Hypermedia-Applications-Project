@@ -5,19 +5,23 @@ import AreaCard from '@/components/AreaCard.vue'
 </script>
 
 <template>
-    <header>
-        <img src="@/assets/logo.png" width="50">
-    </header>
     <main>
         <h1>Areas</h1>
 
-        <div class="search-wrapper panel-heading col-sm-12">
-            <input type="text" v-model="search" placeholder="Search" /> <br />
-            <br />
-        </div>
-        <AreaFilter @applyFilters="filterAreas" />
+        <div class="container-fluid">
+            <div class="search-wrapper panel-heading col-sm-12">
+                <input type="text" v-model="search" placeholder="Search" /> <br />
+                <br />
+            </div>
+            <AreaFilter @applyFilters="filterAreas" />
+            <br>
 
-        <AreaCard v-for="area in  visibleAreas " :areaid="area.AreaID" :title="area.Title" :type="area.Type" />
+            <div class="row g-3">
+                <div v-for="area in  visibleAreas" class="col">
+                    <AreaCard :areaid="area.AreaID" :title="area.Title" :type="area.Type" />
+                </div>
+            </div>
+        </div>
     </main>
 </template>
 

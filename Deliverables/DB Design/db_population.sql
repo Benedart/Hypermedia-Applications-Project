@@ -523,7 +523,7 @@ VALUES (
 /*----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
 -- Project #1: SmartMed Solutions
-INSERT INTO Projects (Title, Preview, Description, Budget, Stage, YearOfFoundation, Supervisor)
+INSERT INTO Projects (Title, Preview, Description, Budget, Stage, YearOfFoundation, Featured, Supervisor)
 VALUES (
     'SmartMed Solutions',
     'Healthtech start-up offering an innovative telemedicine platform',
@@ -531,6 +531,7 @@ VALUES (
     3000000.00,
     'Pre-Seed',
     2023,
+    1,
     (SELECT PersonID FROM People WHERE Email = 'KarenLee@HyperMeow.com')
 );
 
@@ -548,7 +549,7 @@ VALUES (
 );
 
 -- Project #3: AgriTech Pro
-INSERT INTO Projects (Title, Preview, Description, Budget, Stage, YearOfFoundation, Supervisor)
+INSERT INTO Projects (Title, Preview, Description, Budget, Stage, YearOfFoundation, Featured, Supervisor)
 VALUES (
     'AgriTech Pro',
     'Agricultural technology start-up focused on data-driven insights and resource optimization',
@@ -556,6 +557,7 @@ VALUES (
     5000000.00,
     'Seed',
     2023,
+    1,
     (SELECT PersonID FROM People WHERE Email = 'LauraAdams@HyperMeow.com')
 );
 
@@ -680,7 +682,7 @@ VALUES (
 );
 
 -- Project #14: UrbanGrow
-INSERT INTO Projects (Title, Preview, Description, Budget, Stage, YearOfFoundation, Supervisor)
+INSERT INTO Projects (Title, Preview, Description, Budget, Stage, YearOfFoundation, Featured, Supervisor)
 VALUES (
 'UrbanGrow',
 'Green technology start-up offering innovative vertical farming solutions for urban environments',
@@ -688,6 +690,7 @@ VALUES (
 2800000.00,
 'Series A',
 2023,
+1,
 (SELECT PersonID FROM People WHERE Email = 'DavidBrown@HyperMeow.com')
 );
 

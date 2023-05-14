@@ -1,12 +1,23 @@
 <script>
+import Navbar from './components/Navbar.vue'
+import Footer from './components/Footer.vue'
+
 import Home from './views/Home.vue'
 import Projects from './views/Projects.vue'
 import Areas from './views/Areas.vue'
+import People from './views/People.vue'
+import About from './views/About.vue'
+import Contact from './views/Contacts.vue'
+import Featured from './views/FeaturedProjects.vue'
 
 const routes = {
   '/': Home,
   '/projects': Projects,
-  '/areas': Areas
+  '/areas': Areas,
+  '/people': People,
+  '/about': About,
+  '/contact': Contact,
+  '/featured': Featured
 }
 
 export default {
@@ -24,14 +35,16 @@ export default {
     window.addEventListener('hashchange', () => {
       this.currentPath = window.location.hash
     })
+  },
+  components: {
+    Navbar,
+    Footer
   }
 }
 </script>
 
 <template>
-  <a href="#/">Home</a>
-  <a href="#/projects">Projects</a>
-  <a href="#/people">People</a>
-  <a href="#/areas">Areas</a>
+  <Navbar />
   <component :is="currentView" />
+  <Footer />
 </template>

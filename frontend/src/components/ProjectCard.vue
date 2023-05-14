@@ -1,11 +1,14 @@
 <template>
-    <div class="card" @click="getProjectData(projectid)" style="width: 18rem;" data-bs-toggle="modal"
+    <div class="card h-100" @click="getProjectData(projectid)" style="width: 18rem;" data-bs-toggle="modal"
         :data-bs-target="`#modal${projectid}`">
         <img class="card-img-top" :src="`/images/projects/${title}.webp`" :alt="title">
         <div class="card-body">
             <h5 class="card-title">{{ title }}</h5>
             <p class="card-text">{{ preview }}</p>
-            <i>{{ stage }}</i>
+        </div>
+        <div class="card-footer">
+            <i class="float-start">{{ stage }}</i>
+            <span class="float-end">{{ year }}</span>
         </div>
     </div>
 
@@ -15,7 +18,8 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">{{ title }}</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">{{ title }} <span v-if="projectDetails.featured"> -
+                            Featured</span></h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -45,7 +49,8 @@ export default {
                 surname: 'Surname',
                 budget: '1000',
                 people: ['Person1', 'Person2'],
-                stage: 'stage'
+                stage: 'stage',
+                year: 'year'
             },
         }
     },
@@ -55,7 +60,9 @@ export default {
         title: String,
         preview: String,
         stage: String,
-        areas: Array
+        areas: Array,
+        year: Number,
+        featured: Number
     },
 
     methods: {

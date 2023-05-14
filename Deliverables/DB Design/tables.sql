@@ -21,6 +21,7 @@ create table Projects(
 	Stage varchar(50) not null,
 	YearOfFoundation int unsigned not null check(YearOfFoundation >= 1000),
 	Supervisor int unsigned not null,
+	Featured boolean not null default false,
 
 	primary key(ProjectID),
 	foreign key(Supervisor) references People(PersonID)
