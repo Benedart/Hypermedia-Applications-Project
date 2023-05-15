@@ -9,7 +9,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        <router-link class="nav-link active" aria-current="page" to="/">Home</router-link>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
@@ -17,21 +17,21 @@
                             Projects
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#/featured">Featured</a></li>
-                            <li><a class="dropdown-item" href="#/projects">All projects</a></li>
+                            <li><router-link class="dropdown-item" to="/featured">Featured</router-link></li>
+                            <li><router-link class="dropdown-item" to="/projects">All projects</router-link></li>
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#/people">People</a>
+                        <router-link class="nav-link" to="/people">People</router-link>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#/areas">Areas</a>
+                        <router-link class="nav-link" to="/areas">Areas</router-link>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#/about">About us</a>
+                        <router-link class="nav-link" to="/about">About us</router-link>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#/contact">Contact us</a>
+                        <router-link class="nav-link" to="/contact">Contact us</router-link>
                     </li>
                 </ul>
             </div>

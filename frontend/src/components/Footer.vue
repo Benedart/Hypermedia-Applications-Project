@@ -4,18 +4,25 @@
             <div class="col-6 col-md-2 mb-3">
                 <h5>Resources</h5>
                 <ul class="nav flex-column">
-                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Home</a></li>
-                    <li class="nav-item mb-2"><a href="#/projects" class="nav-link p-0 text-muted">Projects</a></li>
-                    <li class="nav-item mb-2"><a href="#/people" class="nav-link p-0 text-muted">People</a></li>
-                    <li class="nav-item mb-2"><a href="#/areas" class="nav-link p-0 text-muted">Areas</a></li>
+                    <li class="nav-item mb-2"><router-link to="/" class="nav-link p-0 text-muted">Home</router-link></li>
+                    <li class="nav-item mb-2"><router-link to="/projects"
+                            class="nav-link p-0 text-muted">Projects</router-link></li>
+                    <li class="nav-item mb-2"><router-link to="/people" class="nav-link p-0 text-muted">People</router-link>
+                    </li>
+                    <li class="nav-item mb-2"><router-link to="/areas" class="nav-link p-0 text-muted">Areas</router-link>
+                    </li>
                 </ul>
             </div>
 
             <div class="col-6 col-md-2 mb-3">
                 <h5>About</h5>
                 <ul class="nav flex-column">
-                    <li class="nav-item mb-2"><a href="#/about" class="nav-link p-0 text-muted">About us</a></li>
-                    <li class="nav-item mb-2"><a href="#/contact" class="nav-link p-0 text-muted">Contact us</a></li>
+                    <li class="nav-item mb-2"><router-link to="/about" class="nav-link p-0 text-muted">About
+                            us</router-link>
+                    </li>
+                    <li class="nav-item mb-2"><router-link to="/contact" class="nav-link p-0 text-muted">Contact
+                            us</router-link>
+                    </li>
                 </ul>
             </div>
 

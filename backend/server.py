@@ -113,6 +113,17 @@ def get_project(projectid):
     project = cursor.fetchone()
     cursor.close()
 
+    # get all areas for the project
+    cursor = mysql.connection.cursor()
+    query = """
+        select areaid, title
+        from areas natural join refers
+        where projectid = %s
+    """
+    cursor.execute(query, tuple)
+    project['areas'] = cursor.fetchall()
+    cursor.close()
+
     # make the budget serializable for json
     # probably casting it to a string it's not the best solution, but for now it works
     project['budget'] = str(project['budget'])
@@ -270,7 +281,6 @@ def get_types():
     cursor.close()
 
     return json.dumps(types)
-
 
 
 

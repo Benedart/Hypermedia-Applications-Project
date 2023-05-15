@@ -28,9 +28,11 @@ import ProjectCard from '@/components/ProjectCard.vue'
                         <div class="accordion-body">
                             <div class="row g-3">
                                 <div v-for="project in projectsByArea(area.areaid)" class="col-12 col-md-6 col-lg-4">
-                                    <ProjectCard :projectid="project.projectid" :title="project.title"
-                                        :preview="project.preview" :stage="project.stage" :areas="project.areas"
-                                        :year="project.year" :featured="project.featured" :accordion="area.areaid" />
+                                    <router-link :to="`/project/${project.projectid}`">
+                                        <ProjectCard :projectid="project.projectid" :title="project.title"
+                                            :preview="project.preview" :stage="project.stage" :areas="project.areas"
+                                            :year="project.year" :featured="project.featured" />
+                                    </router-link>
                                 </div>
                             </div>
                         </div>
