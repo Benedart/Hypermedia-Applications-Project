@@ -249,7 +249,7 @@ def get_area(areaid):
     cursor = mysql.connection.cursor()
 
     query = """
-        select areaid, title, type, description
+        select areaid, title, description
         from areas         
         where areaid = %s
     """
@@ -260,16 +260,6 @@ def get_area(areaid):
     cursor.close()
 
     return json.dumps(project)
-
-@app.route("/getTypes", methods=['GET'])
-def get_types():
-    cursor = mysql.connection.cursor()
-
-    cursor.execute("select distinct type from areas order by type")
-    types = cursor.fetchall()
-    cursor.close()
-
-    return json.dumps(types)
 
 
 

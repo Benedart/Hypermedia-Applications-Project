@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { makeCall } from '@/utils/common'
-import AreaFilter from '@/components/AreaFilter.vue'
+//import AreaFilter from '@/components/AreaFilter.vue'
 import AreaCard from '@/components/AreaCard.vue'
 </script>
 
@@ -34,7 +34,6 @@ export default {
                 {
                     AreaID: -1,
                     Title: 'area',
-                    Type: 'type',
                     Description: 'descrizione simpatika'
 
                 },
@@ -45,7 +44,6 @@ export default {
                 {
                     AreaID: -1,
                     Title: 'area',
-                    Type: 'type',
                     Description: 'descrizione simpatika'
                 },
             ],
@@ -55,7 +53,6 @@ export default {
     },
 
     components: {
-        AreaFilter,
         AreaCard
     },
 
@@ -64,31 +61,6 @@ export default {
     },
 
     methods: {
-        filterAreas: function (filters: { types: string[] }) {
-            let types = filters.types
-
-            console.log("SELECTED FILTERS:")
-            console.log(types)
-
-            let filteredAreas = []
-            this.allAreas.forEach(area => {
-
-                // apply the filters
-                let typeFilter = types.length === 0 || types.includes(area.Type)
-
-                // if all the filters are passed, add the area to the filtered areas
-                if (typeFilter) {
-                    filteredAreas.push(area)
-
-                    console.log("PUSHING AREA:")
-                    console.log(area)
-
-                }
-            })
-
-            this.areas = filteredAreas;
-        },
-
         getData: function () {
             makeCall("GET", import.meta.env.VITE_APP_URL + "/getAreas",
                 (req) => {
