@@ -45,8 +45,7 @@ create table Partecipates(
 create table Areas(
 	AreaID int unsigned auto_increment,
 	Title varchar(50) not null unique,
-	Type varchar(50) not null,
-	Description varchar(1500) not null,
+	Description varchar(5000) not null,
 
 	primary key(AreaID)
 );

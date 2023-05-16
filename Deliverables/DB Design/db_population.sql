@@ -669,10 +669,9 @@ VALUES (
 /*----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
 -- Area #1
-INSERT INTO Areas (Title, Type, Description)
+INSERT INTO Areas (Title, Description)
 VALUES
 ('Vitality & Safety',
-'Sector',
 '"Vitality & Safety" is a domain that intertwines healthcare, public safety, and life sciences, reflecting a holistic approach to improving human well-being and ensuring societal safety. The central aim of this area is to leverage advanced technology and scientific knowledge to enhance health outcomes, simplify medical processes, and make healthcare accessible to diverse populations.
 
 Healthcare, being a primary aspect of Vitality & Safety, is dedicated to improving patient outcomes through the use of cutting-edge technology. This includes the development of AI-driven diagnostics, telehealth solutions, and personalized medicine, all aimed at delivering more accurate, timely, and tailored healthcare services. By integrating technology into healthcare, this domain strives to make medical processes more efficient, reducing waiting times, and enhancing the overall patient experience.
@@ -684,10 +683,9 @@ Life sciences is the third pillar of Vitality & Safety, emphasizing the use of t
 In conclusion, Vitality & Safety symbolizes a commitment to enhancing the quality of life and ensuring safety for all through the power of technology and scientific innovation. By integrating these diverse but related fields, this domain is contributing to a healthier, safer, and more vibrant society.');
 
 -- Area #2
-INSERT INTO Areas (Title, Type, Description)
+INSERT INTO Areas (Title, Description)
 VALUES
 ('EcoSustain',
-'Sector',
 '"EcoSustain" is a domain that stands at the intersection of technology, environment, and agriculture, epitomizing the commitment to sustainability and the well-being of our planet. This area is characterized by the development and implementation of innovative technologies that foster environmental sustainability, mitigate pollution, and enhance resource efficiency.
 
 At the heart of EcoSustain is the vision of a cleaner, greener, and more sustainable world. This vision is brought to life through the deployment of cutting-edge technologies designed to reduce environmental footprints and improve the way we utilize our planet precious resources. This includes advancements in renewable energy, waste management, and recycling technologies, as well as innovations that help mitigate pollution and promote cleaner air and water.
@@ -699,10 +697,9 @@ In addition, EcoSustain acknowledges the critical role of sustainable food consu
 In essence, EcoSustain embodies the aspiration for a sustainable future. It is a testament to our collective responsibility towards our planet and the potential of technology to make a significant positive impact. Through continuous innovation and a strong commitment to sustainability, EcoSustain is striving to make the world a better place for future generations.');
 
 -- Area #3
-INSERT INTO Areas (Title, Type, Description)
+INSERT INTO Areas (Title, Description)
 VALUES
 ('Technology & Innovation',
-'Sector',
 '"Technology & Innovation" is a broad domain encapsulating the dynamic technological developments across various industries. It stands as a testament to human ingenuity and the limitless potential of modern computing.
 
 The core of this area is the creation and refinement of algorithms and systems capable of learning from data. These systems can discern patterns, make informed decisions, and predict outcomes, effectively embodying the concept of machine intelligence.
@@ -722,10 +719,9 @@ Lastly, Medical Imaging represents the application of technology in healthcare, 
 In essence, the "Technology & Innovation" area reflects the relentless pursuit of progress, embodied in technological advancements that are constantly pushing the boundaries of what is possible and transforming services across sectors.');
 
 -- Area #4
-INSERT INTO Areas (Title, Type, Description)
+INSERT INTO Areas (Title, Description)
 VALUES
 ('Prosperity & Growth',
-'Sector',
 '"Prosperity & Growth" encompasses the sectors of finance, education, and travel. The primary objective of this domain is to foster both individual and collective growth through innovative technological solutions.
 
 In the realm of finance, our focus is to democratize the field by offering accessible and bespoke financial management tools. These are designed to cater to the needs of individuals and small enterprises, empowering them to make informed decisions and take control of their financial health.
