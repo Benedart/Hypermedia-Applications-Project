@@ -1,15 +1,17 @@
 <template>
-    <div class="card h-100" style="width: 18rem;">
-        <img class="card-img-top" :src="`/images/projects/${title}.webp`" :alt="title">
-        <div class="card-body">
-            <h5 class="card-title">{{ title }}</h5>
-            <p class="card-text">{{ preview }}</p>
+    <router-link :to="`/project/${projectid}`" style="display: contents;">
+        <div class="card h-100" style="width: 18rem;">
+            <img class="card-img-top" :src="`/images/projects/${title}.webp`" :alt="title">
+            <div class="card-body">
+                <h5 class="card-title">{{ title }}</h5>
+                <p class="card-text">{{ preview }}</p>
+            </div>
+            <div class="card-footer">
+                <i class="float-start">{{ stage }}</i>
+                <span class="float-end">{{ year }}</span>
+            </div>
         </div>
-        <div class="card-footer">
-            <i class="float-start">{{ stage }}</i>
-            <span class="float-end">{{ year }}</span>
-        </div>
-    </div>
+    </router-link>
 </template>
 
 <script lang="ts">

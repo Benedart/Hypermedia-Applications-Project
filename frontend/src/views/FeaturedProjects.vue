@@ -9,11 +9,8 @@ import ProjectCard from '@/components/ProjectCard.vue'
         <div class="container-fluid">
             <div class="row g-3">
                 <div v-for="project in projects" class="col">
-                    <router-link :to="`/project/${project.projectid}`">
-                        <ProjectCard :projectid="project.projectid" :title="project.title" :preview="project.preview"
-                            :stage="project.stage" :areas="project.areas" :year="project.year"
-                            :featured="project.featured" />
-                    </router-link>
+                    <ProjectCard :projectid="project.projectid" :title="project.title" :preview="project.preview"
+                        :stage="project.stage" :areas="project.areas" :year="project.year" :featured="project.featured" />
                 </div>
             </div>
         </div>
