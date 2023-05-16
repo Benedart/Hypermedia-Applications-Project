@@ -23,14 +23,20 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <i v-for="area in areas">{{ area }} - </i>
+                    <b>Areas: </b><span v-for="(area, index) in areas">{{ area.title }}<span
+                            v-if="index < areas.length - 1"> -
+                        </span></span>
                     <p><b>Supervisor:</b> {{ projectDetails.name + " " + projectDetails.surname }}</p>
                     <p><b>Budget:</b> {{ projectDetails.budget }}$</p>
                     <p><b>Stage:</b> {{ projectDetails.stage }}</p>
                     <hr>
                     <p>{{ projectDetails.description }}</p>
                     <hr>
-                    <b>People: </b><span v-for="person in projectDetails.people">{{ person }}, </span>
+                    <b>People: </b>
+                    <span v-for="(person, index) in people">{{ person.name }} {{ person.surname }}<span
+                            v-if="index < people.length - 1"> -
+                        </span>
+                    </span>
                 </div>
             </div>
         </div>
@@ -48,10 +54,11 @@ export default {
                 name: 'Name',
                 surname: 'Surname',
                 budget: '1000',
-                people: ['Person1', 'Person2'],
                 stage: 'stage',
                 year: 'year'
             },
+
+            people: ['Person1', 'Person2'],
         }
     },
 
@@ -94,7 +101,7 @@ export default {
 
                         if (req.status === 200) {
                             let data = JSON.parse(message);
-                            this.projectDetails.people = data
+                            this.people = data
                         } else {
                             alert("Error, couldn't retrieve people working on the project");
                         }

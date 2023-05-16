@@ -5,7 +5,6 @@ create table People(
 	Age int unsigned not null check(Age >= 18),
 	Email varchar(100) unique not NULL,
 	Linkedin varchar (150) not null,
-	Picture blob,
 	CV varchar(1500) not null,
 	Role varchar(50) not null,
 
@@ -58,17 +57,6 @@ create table Refers(
 	foreign key (AreaID) references Areas(AreaID)
 							on delete cascade
 							on update cascade,
-	foreign key(ProjectID) references Projects(ProjectID)
-							on delete cascade
-							on update cascade
-);
-
-create table ProjectImages(
-	ImageID int unsigned auto_increment,
-	ProjectID int unsigned not null,
-	Image blob not null,
-
-	primary key(ImageID, ProjectID),
 	foreign key(ProjectID) references Projects(ProjectID)
 							on delete cascade
 							on update cascade
