@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { makeCall } from '@/utils/common'
-//import AreaFilter from '@/components/AreaFilter.vue'
 import AreaCard from '@/components/AreaCard.vue'
 </script>
 

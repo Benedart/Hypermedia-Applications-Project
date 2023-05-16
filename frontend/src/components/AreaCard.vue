@@ -5,7 +5,6 @@
         <div class="card-body">
             <h5 class="card-title">{{ title }}</h5>
             <!--p class="card-text">{{ description }}</p-->
-            <!--i>{{ type }}</i></p-->
         </div>
     </div>
 
