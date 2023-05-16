@@ -1,520 +1,480 @@
 -- Supervisor #1
-INSERT INTO People (Name, Surname, Age, Email, Linkedin, Picture, CV, Role)
+INSERT INTO People (Name, Surname, Age, Email, Linkedin, CV, Role)
 VALUES (
     'James',
     'Thompson',
     42,
     'JamesThompson@HyperMeow.com',
     'https://www.linkedin.com/feed/',
-    '/Pictures/People/JamesThompson.webp',
     'Education: B.S. in Business Administration from Harvard University; M.B.A. from Stanford Graduate School of Business. Past Job Experience: Investment Banking Analyst at Goldman Sachs; Senior Associate at Bain & Company.',
     'CFO'
 );
 
 -- Supervisor #2
-INSERT INTO People (Name, Surname, Age, Email, Linkedin, Picture, CV, Role)
+INSERT INTO People (Name, Surname, Age, Email, Linkedin, CV, Role)
 VALUES (
     'Linda',
     'Martinez',
     37,
     'LindaMartinez@HyperMeow.com',
     'https://www.linkedin.com/feed/',
-    '/Pictures/People/LindaMartinez.webp',
     'Education: B.S. in Computer Science from MIT; Ph.D. in Artificial Intelligence from Carnegie Mellon University. Past Job Experience: Research Scientist at Google DeepMind; Co-founder and CTO at an AI startup.',
     'CTO'
 );
 
 -- Supervisor #3
-INSERT INTO People (Name, Surname, Age, Email, Linkedin, Picture, CV, Role)
+INSERT INTO People (Name, Surname, Age, Email, Linkedin, CV, Role)
 VALUES (
     'Emily',
     'Chen',
     35,
     'EmilyChen@HyperMeow.com',
     'https://www.linkedin.com/feed/',
-    '/Pictures/People/EmilyChen.webp',
     'Education: B.A. in Economics from Yale University; M.S. in Finance from London School of Economics. Past Job Experience: Equity Research Analyst at Morgan Stanley; Portfolio Manager at BlackRock.',
     'CEO'
 );
 
 -- Supervisor #4
-INSERT INTO People (Name, Surname, Age, Email, Linkedin, Picture, CV, Role)
+INSERT INTO People (Name, Surname, Age, Email, Linkedin, CV, Role)
 VALUES (
     'Mark',
     'Robinson',
     40,
     'MarkRobinson@HyperMeow.com',
     'https://www.linkedin.com/feed/',
-    '/Pictures/People/MarkRobinson.webp',
     'Education: B.S. in Mechanical Engineering from Caltech; M.S. in Energy Systems from UC Berkeley. Past Job Experience: Project Manager at Tesla; Renewable Energy Consultant at McKinsey & Company.',
     'Project Manager'
 );
 
 -- Supervisor #5
-INSERT INTO People (Name, Surname, Age, Email, Linkedin, Picture, CV, Role)
+INSERT INTO People (Name, Surname, Age, Email, Linkedin, CV, Role)
 VALUES (
     'Sarah',
     'Johnson',
     38,
     'SarahJohnson@HyperMeow.com',
     'https://www.linkedin.com/feed/',
-    '/Pictures/People/SarahJohnson.webp',
     'Education: B.A. in International Relations from Princeton University; M.P.P. from Harvard Kennedy School. Past Job Experience: Diplomat at the U.S. Department of State; Strategy Consultant at Boston Consulting Group.',
     'Project Manager'
 );
 
 -- Supervisor #6
-INSERT INTO People (Name, Surname, Age, Email, Linkedin, Picture, CV, Role)
+INSERT INTO People (Name, Surname, Age, Email, Linkedin, CV, Role)
 VALUES (
     'David',
     'Brown',
     45,
     'DavidBrown@HyperMeow.com',
     'https://www.linkedin.com/feed/',
-    '/Pictures/People/DavidBrown.webp',
     'Education: B.S. in Biology from UCLA; M.D. from Johns Hopkins University School of Medicine. Past Job Experience: Medical Director at a major hospital; Healthcare Entrepreneur.',
     'COO'
 );
 
 -- Supervisor #7
-INSERT INTO People (Name, Surname, Age, Email, Linkedin, Picture, CV, Role)
+INSERT INTO People (Name, Surname, Age, Email, Linkedin, CV, Role)
 VALUES (
     'Laura',
     'Adams',
     36,
     'LauraAdams@HyperMeow.com',
     'https://www.linkedin.com/feed/',
-    '/Pictures/People/LauraAdams.webp',
     'Education: B.S. in Industrial Engineering from Georgia Tech; M.B.A. from Wharton School, University of Pennsylvania. Past Job Experience: Operations Manager at Amazon; Product Manager at a major IoT startup.',
     'Director'
 );
 
 -- Supervisor #8
-INSERT INTO People (Name, Surname, Age, Email, Linkedin, Picture, CV, Role)
+INSERT INTO People (Name, Surname, Age, Email, Linkedin, CV, Role)
 VALUES (
     'Michael',
     'Williams',
     42,
     'MichaelWilliams@HyperMeow.com',
     'https://www.linkedin.com/feed/',
-    '/Pictures/People/MichaelWilliams.webp',
     'Education: B.A. in Communication from USC; M.S. in Marketing from Northwestern University. Past Job Experience: Brand Manager at Procter & Gamble; Marketing Director at a leading SaaS company.',
     'CMO'
 );
 
 -- Supervisor #9
-INSERT INTO People (Name, Surname, Age, Email, Linkedin, Picture, CV, Role)
+INSERT INTO People (Name, Surname, Age, Email, Linkedin, CV, Role)
 VALUES (
     'Karen',
     'Lee',
     39,
     'KarenLee@HyperMeow.com',
     'https://www.linkedin.com/feed/',
-    '/Pictures/People/KarenLee.webp',
     'Education: B.S. in Environmental Science from Stanford University; Ph.D. in Environmental Policy from Duke University. Past Job Experience: Environmental Scientist at the EPA; Sustainability Consultant at a global firm.',
     'HR Manager'
 );
 
 -- Supervisor #10
-INSERT INTO People (Name, Surname, Age, Email, Linkedin, Picture, CV, Role)
+INSERT INTO People (Name, Surname, Age, Email, Linkedin, CV, Role)
 VALUES (
     'Alex',
     'Martin',
     37,
     'AlexMartin@HyperMeow.com',
     'https://www.linkedin.com/feed/',
-    '/Pictures/People/AlexMartin.webp',
     'Education: B.S. in Electrical Engineering from the University of Texas at Austin; M.S. in Robotics from MIT. Past Job Experience: Robotics Engineer at a leading robotics company; Co-founder and CEO of an autonomous vehicle startup.',
     'HR'
 );
 
 -- Startupper #1
-INSERT INTO People (Name, Surname, Age, Email, Linkedin, Picture, CV, Role)
+INSERT INTO People (Name, Surname, Age, Email, Linkedin, CV, Role)
 VALUES (
     'Jane',
     'Smith',
     40,
     'JaneSmith@gmail.com',
     'https://www.linkedin.com/feed/',
-    '/Pictures/People/JaneSmithF.webp',
     'Education: B.A. in Business Administration from University of California, Berkeley; MHA in Healthcare Administration from Columbia University. Past Job Experience: Hospital Administrator at a major medical center; Healthcare Consultant at a leading management consulting firm.',
     'Founder in Residence'
 );
 
 -- Startupper #2
-INSERT INTO People (Name, Surname, Age, Email, Linkedin, Picture, CV, Role)
+INSERT INTO People (Name, Surname, Age, Email, Linkedin, CV, Role)
 VALUES (
     'John',
     'Doe',
     35,
     'JohnDoe@gmail.com',
     'https://www.linkedin.com/feed/',
-    '/Pictures/People/JohnDoeF.webp',
     'Education: B.S. in Computer Science from Stanford University; M.S. in Artificial Intelligence from Carnegie Mellon University. Past Job Experience: Software Engineer at a prominent tech company; Co-founder and CTO of a successful AI startup.',
     'Founder in Residence'
 );
 
 -- Startupper #3
-INSERT INTO People (Name, Surname, Age, Email, Linkedin, Picture, CV, Role)
+INSERT INTO People (Name, Surname, Age, Email, Linkedin, CV, Role)
 VALUES (
     'Emily',
     'Green',
     38,
     'EmilyGreen@gmail.com',
     'https://www.linkedin.com/feed/',
-    '/Pictures/People/EmilyGreenF.webp',
     'Education: B.S. in Electrical Engineering from Massachusetts Institute of Technology; MBA in Energy Management from Stanford University. Past Job Experience: Energy Industry Executive at a leading energy company; Project Manager at a renewable energy firm.',
     'Founder in Residence'
 );
 
 -- Startupper #4
-INSERT INTO People (Name, Surname, Age, Email, Linkedin, Picture, CV, Role)
+INSERT INTO People (Name, Surname, Age, Email, Linkedin, CV, Role)
 VALUES (
     'Michael',
     'Brown',
     34,
     'MichaelBrown@gmail.com',
     'https://www.linkedin.com/feed/',
-    '/Pictures/People/MichaelBrownF.webp',
     'Education: B.S. in Electrical Engineering from California Institute of Technology; M.S. in Materials Science from University of California, Los Angeles. Past Job Experience: Electrical Engineer at a major battery manufacturer; Senior Researcher in energy storage solutions.',
     'Founder in Residence'
 );
 
 -- Startupper #5
-INSERT INTO People (Name, Surname, Age, Email, Linkedin, Picture, CV, Role)
+INSERT INTO People (Name, Surname, Age, Email, Linkedin, CV, Role)
 VALUES (
     'Sarah',
     'Thompson',
     37,
     'SarahThompson@gmail.com',
     'https://www.linkedin.com/feed/',
-    '/Pictures/People/SarahThompsonF.webp',
     'Education: B.S. in Agronomy from University of California, Davis; M.S. in Sustainable Agriculture from Cornell University. Past Job Experience: Agronomist at a leading agricultural research institute; Sustainability Consultant for agribusinesses.',
     'Founder in Residence'
 );
 
 -- Startupper #6
-INSERT INTO People (Name, Surname, Age, Email, Linkedin, Picture, CV, Role)
+INSERT INTO People (Name, Surname, Age, Email, Linkedin, CV, Role)
 VALUES (
     'James',
     'White',
     33,
     'JamesWhite@gmail.com',
     'https://www.linkedin.com/feed/',
-    '/Pictures/People/JamesWhiteF.webp',
     'Education: B.S. in Computer Science from University of Illinois Urbana-Champaign; M.S. in Data Science from New York University. Past Job Experience: Data Scientist at a leading agricultural technology firm; Software Engineer focused on IoT and analytics in agriculture.',
     'Founder in Residence'
 );
 
--- Startupper #7
-INSERT INTO People (Name, Surname, Age, Email, Linkedin, Picture, CV, Role)
+-- Startupper #
+INSERT INTO People (Name, Surname, Age, Email, Linkedin, CV, Role)
 VALUES (
     'Laura',
     'Martinez',
     36,
     'LauraMartinez@gmail.com',
     'https://www.linkedin.com/feed/',
-    '/Pictures/People/LauraMartinezF.webp',
     'Education: B.A. in Education from University of Washington; M.Ed. in Educational Technology from Harvard University. Past Job Experience: Educator at a leading school district; Curriculum Developer at a top edtech company.',
     'Founder in Residence'
 );
 
 -- Startupper #8
-INSERT INTO People (Name, Surname, Age, Email, Linkedin, Picture, CV, Role)
+INSERT INTO People (Name, Surname, Age, Email, Linkedin, CV, Role)
 VALUES (
     'Daniel',
     'Lee',
     34,
     'DanielLee@gmail.com',
     'https://www.linkedin.com/feed/',
-    '/Pictures/People/DanielLeeF.webp',
     'Education: B.S. in Computer Science from University of Southern California; M.S. in Virtual Reality from Georgia Institute of Technology. Past Job Experience: VR Software Engineer at a major tech company; VR Content Developer at an immersive learning start-up.',
     'Founder in Residence'
 );
 
 -- Startupper #9
-INSERT INTO People (Name, Surname, Age, Email, Linkedin, Picture, CV, Role)
+INSERT INTO People (Name, Surname, Age, Email, Linkedin, CV, Role)
 VALUES (
     'Peter',
     'Johnson',
     39,
     'PeterJohnson@gmail.com',
     'https://www.linkedin.com/feed/',
-    '/Pictures/People/PeterJohnsonF.webp',
     'Education: B.S. in Computer Engineering from University of Michigan; MBA in Technology Management from Northwestern University. Past Job Experience: Product Manager at a leading home security company; IoT Solutions Architect at a smart home start-up.',
     'Founder in Residence'
 );
 
 -- Startupper #10
-INSERT INTO People (Name, Surname, Age, Email, Linkedin, Picture, CV, Role)
+INSERT INTO People (Name, Surname, Age, Email, Linkedin, CV, Role)
 VALUES (
     'Lisa',
     'Williams',
     32,
     'LisaWilliams@gmail.com',
     'https://www.linkedin.com/feed/',
-    '/Pictures/People/LisaWilliamsF.webp',
     'Education: B.S. in Software Engineering from Carnegie Mellon University; M.S. in Artificial Intelligence from Massachusetts Institute of Technology. Past Job Experience: Software Engineer at a prominent home security firm; AI Researcher focusing on machine learning for security applications.',
     'Founder in Residence'
 );
 
 -- Startupper #11
-INSERT INTO People (Name, Surname, Age, Email, Linkedin, Picture, CV, Role)
+INSERT INTO People (Name, Surname, Age, Email, Linkedin, CV, Role)
 VALUES (
     'Thomas',
     'Johnson',
     45,
     'ThomasJohnson@gmail.com',
     'https://www.linkedin.com/feed/',
-    '/Pictures/People/ThomasJohnsonF.webp',
     'Education: B.A. in Public Administration from University of Virginia; M.S. in Computer Science from University of California, San Diego. Past Job Experience: Public Safety Manager at a major city; AI Solutions Architect at a leading security technology firm.',
     'Founder in Residence'
 );
 
 -- Startupper #12
-INSERT INTO People (Name, Surname, Age, Email, Linkedin, Picture, CV, Role)
+INSERT INTO People (Name, Surname, Age, Email, Linkedin, CV, Role)
 VALUES (
     'Maria',
     'Williams',
     33,
     'MariaWilliams@gmail.com',
     'https://www.linkedin.com/feed/',
-    '/Pictures/People/MariaWilliamsF.webp',
     'Education: B.S. in Computer Engineering from University of Texas at Austin; M.S. in Artificial Intelligence from Stanford University. Past Job Experience: AI Researcher focusing on computer vision at a prominent tech company; Software Engineer at a security technology  startup.',
     'Founder in Residence'
 );
 
 -- Startupper #13
-INSERT INTO People (Name, Surname, Age, Email, Linkedin, Picture, CV, Role)
+INSERT INTO People (Name, Surname, Age, Email, Linkedin, CV, Role)
 VALUES (
     'Jasmine',
     'Turner',
     29,
     'JasmineTurner@gmail.com',
     'https://www.linkedin.com/feed/',
-    '/Pictures/People/JasmineTurnerF.webp',
     'Education: B.S. in Kinesiology from University of Oregon; M.S. in Exercise Science from University of Florida. Past Job Experience: Fitness Trainer at a leading fitness center; Nutrition Consultant for a wellness start-up.',
     'Founder in Residence'
 );
 
 -- Startupper #14
-INSERT INTO People (Name, Surname, Age, Email, Linkedin, Picture, CV, Role)
+INSERT INTO People (Name, Surname, Age, Email, Linkedin, CV, Role)
 VALUES (
     'Kevin',
     'Chen',
     31,
     'KevinChen@gmail.com',
     'https://www.linkedin.com/feed/',
-    '/Pictures/People/KevinChenF.webp',
     'Education: B.S. in Computer Science from University of California, Berkeley; M.S. in Software Engineering from University of Washington. Past Job Experience: Software Engineer at a prominent fitness technology company; Co-founder and CTO of a health and wellness app start-up.',
     'Founder in Residence'
 );
 
 -- Startupper #15
-INSERT INTO People (Name, Surname, Age, Email, Linkedin, Picture, CV, Role)
+INSERT INTO People (Name, Surname, Age, Email, Linkedin, CV, Role)
 VALUES (
     'Ashley',
     'Martin',
     35,
     'AshleyMartin@gmail.com',
     'https://www.linkedin.com/feed/',
-    '/Pictures/People/AshleyMartinF.webp',
     'Education: B.A. in International Business from University of Pennsylvania; MBA in Travel and Hospitality Management from Cornell University. Past Job Experience: Operations Manager at a leading travel agency; Business Development Manager at a travel technology firm.',
     'Founder in Residence'
 );
 
 -- Startupper #16
-INSERT INTO People (Name, Surname, Age, Email, Linkedin, Picture, CV, Role)
+INSERT INTO People (Name, Surname, Age, Email, Linkedin, CV, Role)
 VALUES (
     'Alex',
     'Smith',
     28,
     'AlexSmith@gmail.com',
     'https://www.linkedin.com/feed/',
-    '/Pictures/People/AlexSmithF.webp',
     'Education: B.S. in Computer Science from California Institute of Technology; M.S. in Artificial Intelligence from University of California, Los Angeles. Past Job Experience: Software Engineer at a major travel technology company; AI Researcher focusing on personalized recommendations in the travel industry.',
     'Founder in Residence'
 );
 
 -- Startupper #17
-INSERT INTO People (Name, Surname, Age, Email, Linkedin, Picture, CV, Role)
+INSERT INTO People (Name, Surname, Age, Email, Linkedin, CV, Role)
 VALUES (
     'Rachel',
     'Adams',
     33,
     'RachelAdams@gmail.com',
     'https://www.linkedin.com/feed/',
-    '/Pictures/People/RachelAdamsF.webp',
     'Education: B.S. in Marine Biology from University of Miami; M.S. in Environmental Science from Yale University. Past Job Experience: Marine Biologist at a leading oceanographic research institute; Project Manager at an environmental conservation organization.',
     'Founder in Residence'
 );
 
 -- Startupper #18
-INSERT INTO People (Name, Surname, Age, Email, Linkedin, Picture, CV, Role)
+INSERT INTO People (Name, Surname, Age, Email, Linkedin, CV, Role)
 VALUES (
     'Noah',
     'Evans',
     32,
     'NoahEvans@gmail.com',
     'https://www.linkedin.com/feed/',
-    '/Pictures/People/NoahEvansF.webp',
     'Education: B.S. in Environmental Engineering from University of Michigan; M.S. in Material Science and Engineeringfrom University of California. Past Job Experience: Environmental Engineer at a major waste management company; Researcher in plastic recycling technologies.',
     'Founder in Residence'
 );
 
 
 -- Startupper #19
-INSERT INTO People (Name, Surname, Age, Email, Linkedin, Picture, CV, Role)
+INSERT INTO People (Name, Surname, Age, Email, Linkedin, CV, Role)
 VALUES (
     'Michelle',
     'Clark',
     34,
     'MichelleClark@gmail.com',
     'https://www.linkedin.com/feed/',
-    '/Pictures/People/MichelleClarkF.webp',
     'Education: B.A. in Economics from New York University; MBA in Finance from Harvard Business School. Past Job Experience: Financial Analyst at a leading investment bank; Finance Manager at a fintech start-up.',
     'Founder in Residence'
 );
 
 -- Startupper #20
-INSERT INTO People (Name, Surname, Age, Email, Linkedin, Picture, CV, Role)
+INSERT INTO People (Name, Surname, Age, Email, Linkedin, CV, Role)
 VALUES (
     'Lucas',
     'Morgan',
     30,
     'LucasMorgan@gmail.com',
     'https://www.linkedin.com/feed/',
-    '/Pictures/People/LucasMorganF.webp',
     'Education: B.S. in Computer Science from University of Illinois Urbana-Champaign; M.S. in Data Science from Massachusetts Institute of Technology. Past Job Experience: Data Analyst at a major financial institution; Software Engineer at a fintech start-up focusing on personal finance tools.',
     'Founder in Residence'
 );
 
 -- Startupper #21
-INSERT INTO People (Name, Surname, Age, Email, Linkedin, Picture, CV, Role)
+INSERT INTO People (Name, Surname, Age, Email, Linkedin, CV, Role)
 VALUES (
     'Katherine',
     'Ross',
     33,
     'KatherineRoss@gmail.com',
     'https://www.linkedin.com/feed/',
-    '/Pictures/People/KatherineRossF.webp',
     'Education: B.S. in Aerospace Engineering from Georgia Institute of Technology; M.S. in Satellite Communications from University of Colorado Boulder. Past Job Experience: Satellite Systems Engineer at a leading aerospace company; Project Manager at a satellite communications start-up.',
     'Founder in Residence'
 );
 
 -- Startupper #22
-INSERT INTO People (Name, Surname, Age, Email, Linkedin, Picture, CV, Role)
+INSERT INTO People (Name, Surname, Age, Email, Linkedin, CV, Role)
 VALUES (
     'Benjamin',
     'Johnson',
     36,
     'BenjaminJohnson@gmail.com',
     'https://www.linkedin.com/feed/',
-    '/Pictures/People/BenjaminJohnsonF.webp',
     'Education: B.S. in Electrical Engineering from University of California, Los Angeles; M.S. in Telecommunications Engineering from University of Southern California. Past Job Experience: Telecommunications Engineer at a major satellite communications company; Co-founder and CTO of a satellite-based IoT start-up.',
     'Founder in Residence'
 );
 
 -- Startupper #23
-INSERT INTO People (Name, Surname, Age, Email, Linkedin, Picture, CV, Role)
+INSERT INTO People (Name, Surname, Age, Email, Linkedin, CV, Role)
 VALUES (
     'Olivia',
     'Miller',
     32,
     'OliviaMiller@gmail.com',
     'https://www.linkedin.com/feed/',
-    '/Pictures/People/OliviaMillerF.webp',
     'Education: B.S. in Food Science from University of California, Davis; M.S. in Food Technology and Innovation from Wageningen University & Research. Past Job Experience: Food Scientist at a major food processing company; Researcher in food preservation technologies.',
     'Founder in Residence'
 );
 
 -- Startupper #24
-INSERT INTO People (Name, Surname, Age, Email, Linkedin, Picture, CV, Role)
+INSERT INTO People (Name, Surname, Age, Email, Linkedin, CV, Role)
 VALUES (
     'Ethan',
     'Wilson',
     28,
     'EthanWilson@gmail.com',
     'https://www.linkedin.com/feed/',
-    '/Pictures/People/EthanWilsonF.webp',
     'Education: B.S. in Supply Chain Management from Arizona State University; M.S. in Data Science from Northwestern University. Past Job Experience: Supply Chain Analyst at a global food distribution company; Software Engineer at a food technology start-up focusing on supply chain optimization.',
     'Founder in Residence'
 );
 
 -- Startupper #25
-INSERT INTO People (Name, Surname, Age, Email, Linkedin, Picture, CV, Role)
+INSERT INTO People (Name, Surname, Age, Email, Linkedin, CV, Role)
 VALUES (
     'Rebecca',
     'Turner',
     40,
     'RebeccaTurner@gmail.com',
     'https://www.linkedin.com/feed/',
-    '/Pictures/People/RebeccaTurnerF.webp',
     'Education: B.A. in Gerontology from University of Southern California; M.S. in Healthcare Administration from Columbia University. Past Job Experience: Geriatric Care Manager at a senior care facility; Director of Operations at a home healthcare agency.',
     'Founder in Residence'
 );
 
 -- Startupper #26
-INSERT INTO People (Name, Surname, Age, Email, Linkedin, Picture, CV, Role)
+INSERT INTO People (Name, Surname, Age, Email, Linkedin, CV, Role)
 VALUES (
     'Martin',
     'Lee',
     35,
     'MartinLee@gmail.com',
     'https://www.linkedin.com/feed/',
-    '/Pictures/People/MartinLeeF.webp',
     'Education: B.S. in Computer Science from University of Toronto; M.S. in Health Informatics from Johns Hopkins University. Past Job Experience: Software Engineer at a leading health technology company; Co-founder and CTO of a start-up focused on AI-driven health monitoring solutions.',
     'Founder in Residence'
 );
 
 -- Startupper #27
-INSERT INTO People (Name, Surname, Age, Email, Linkedin, Picture, CV, Role)
+INSERT INTO People (Name, Surname, Age, Email, Linkedin, CV, Role)
 VALUES (
     'Daniel',
     'Jackson',
     38,
     'DanielJackson@gmail.com',
     'https://www.linkedin.com/feed/',
-    '/Pictures/People/DanielJacksonF.webp',
     'Education: B.S. in Environmental Science from University of California, Berkeley; M.S. in Urban Planning and Sustainability from Massachusetts Institute of Technology. Past Job Experience: Urban Sustainability Consultant at a leading environmental consulting firm; Co-founder of a start-up focused on green urban design.',
     'Founder in Residence'
 );
 
 -- Startupper #28
-INSERT INTO People (Name, Surname, Age, Email, Linkedin, Picture, CV, Role)
+INSERT INTO People (Name, Surname, Age, Email, Linkedin, CV, Role)
 VALUES (
     'Samantha',
     'Lee',
     31,
     'SamanthaLee@gmail.com',
     'https://www.linkedin.com/feed/',
-    '/Pictures/People/SamanthaLeeF.webp',
     'Education: B.S. in Architectural Engineering from University of Colorado Boulder; M.S. in Environmental Engineering from Stanford University. Past Job Experience: Architectural Engineer at a green building design firm; Researcher in sustainable urban development and vertical farming technologies.',
     'Founder in Residence'
 );
 
 -- Startupper #29
-INSERT INTO People (Name, Surname, Age, Email, Linkedin, Picture, CV, Role)
+INSERT INTO People (Name, Surname, Age, Email, Linkedin, CV, Role)
 VALUES (
     'Allison',
     'Grant',
     37,
     'AllisonGrant@gmail.com',
     'https://www.linkedin.com/feed/',
-    '/Pictures/People/AllisonGrantF.webp',
     'Education: M.D. from Harvard Medical School; Ph.D. in Biomedical Informatics from Stanford University. Past Job Experience: Physician specializing in internal medicine; Researcher in AI-driven medical diagnostics.',
     'Founder in Residence'
 );
 
 -- Startupper #30
-INSERT INTO People (Name, Surname, Age, Email, Linkedin, Picture, CV, Role)
+INSERT INTO People (Name, Surname, Age, Email, Linkedin, CV, Role)
 VALUES (
     'Charles',
     'Kim',
     34,
     'CharlesKim@gmail.com',
     'https://www.linkedin.com/feed/',
-    '/Pictures/People/CharlesKimF.webp',
     'Education: B.S. in Computer Science from University of California, Berkeley; Ph.D. in Artificial Intelligence from Carnegie Mellon University. Past Job Experience: AI Research Scientist at a leading technology company; Co-founder and CTO of a healthcare AI start-up focusing on predictive analytics.',
     'Founder in Residence'
 );
@@ -707,203 +667,79 @@ VALUES (
 );
 
 /*----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
 -- Area #1
-INSERT INTO Areas (Title, Type, Description)
+INSERT INTO Areas (Title, Description)
 VALUES
-('Health',
-'Sector',
-'The health sector focuses on improving patient outcomes, streamlining medical processes, and providing accessible care for various populations, including the elderly. This area involves the use of technology to enhance healthcare delivery and promote overall well-being.');
+('Vitality & Safety',
+'"Vitality & Safety" is a domain that intertwines healthcare, public safety, and life sciences, reflecting a holistic approach to improving human well-being and ensuring societal safety. The central aim of this area is to leverage advanced technology and scientific knowledge to enhance health outcomes, simplify medical processes, and make healthcare accessible to diverse populations.
+
+Healthcare, being a primary aspect of Vitality & Safety, is dedicated to improving patient outcomes through the use of cutting-edge technology. This includes the development of AI-driven diagnostics, telehealth solutions, and personalized medicine, all aimed at delivering more accurate, timely, and tailored healthcare services. By integrating technology into healthcare, this domain strives to make medical processes more efficient, reducing waiting times, and enhancing the overall patient experience.
+
+Public safety is another cornerstone of Vitality & Safety, with a focus on developing robust and responsive solutions for public security and emergency response. Innovative technologies such as AI, computer vision, and IoT are leveraged to build systems that can predict, prevent, and respond swiftly to public safety incidents. This encompasses everything from traffic management and crime prevention to disaster response and safety in public spaces.
+
+Life sciences is the third pillar of Vitality & Safety, emphasizing the use of technology to improve overall well-being. This includes the integration of technology in areas such as biomedical research, pharmaceutical development, genomics, and personalized nutrition. The ultimate goal here is to foster a better understanding of human health and disease, and to use these insights to develop solutions that enhance overall quality of life.
+
+In conclusion, Vitality & Safety symbolizes a commitment to enhancing the quality of life and ensuring safety for all through the power of technology and scientific innovation. By integrating these diverse but related fields, this domain is contributing to a healthier, safer, and more vibrant society.');
 
 -- Area #2
-INSERT INTO Areas (Title, Type, Description)
+INSERT INTO Areas (Title, Description)
 VALUES
-('Green/Cleantech',
-'Sector',
-'This area is dedicated to developing innovative technologies and solutions that promote environmental sustainability, reduce pollution, and improve resource efficiency. It covers a range of topics, including renewable energy, waste management, and sustainable urban development.');
+('EcoSustain',
+'"EcoSustain" is a domain that stands at the intersection of technology, environment, and agriculture, epitomizing the commitment to sustainability and the well-being of our planet. This area is characterized by the development and implementation of innovative technologies that foster environmental sustainability, mitigate pollution, and enhance resource efficiency.
+
+At the heart of EcoSustain is the vision of a cleaner, greener, and more sustainable world. This vision is brought to life through the deployment of cutting-edge technologies designed to reduce environmental footprints and improve the way we utilize our planet precious resources. This includes advancements in renewable energy, waste management, and recycling technologies, as well as innovations that help mitigate pollution and promote cleaner air and water.
+
+Agriculture is another pivotal facet of EcoSustain, where the focus is on optimizing farming practices and managing resources more efficiently. This is achieved through the integration of data-driven insights and state-of-the-art technologies like precision farming, automated irrigation systems, and satellite imaging. These tools not only help maximize crop yields and improve livestock management but also ensure these processes are carried out sustainably, minimizing the impact on the environment.
+
+In addition, EcoSustain acknowledges the critical role of sustainable food consumption in environmental conservation. This involves promoting sustainable diets, reducing food waste, and facilitating the shift towards more sustainable food production practices.
+
+In essence, EcoSustain embodies the aspiration for a sustainable future. It is a testament to our collective responsibility towards our planet and the potential of technology to make a significant positive impact. Through continuous innovation and a strong commitment to sustainability, EcoSustain is striving to make the world a better place for future generations.');
 
 -- Area #3
-INSERT INTO Areas (Title, Type, Description)
+INSERT INTO Areas (Title, Description)
 VALUES
-('Agriculture',
-'Sector',
-'The agriculture sector deals with the optimization of farming practices, resource management, and food production using data-driven insights and cutting-edge technologies. It aims to improve crop yields, reduce waste, and promote sustainable food consumption.');
+('Technology & Innovation',
+'"Technology & Innovation" is a broad domain encapsulating the dynamic technological developments across various industries. It stands as a testament to human ingenuity and the limitless potential of modern computing.
+
+The core of this area is the creation and refinement of algorithms and systems capable of learning from data. These systems can discern patterns, make informed decisions, and predict outcomes, effectively embodying the concept of machine intelligence.
+
+One of the key constituents of this area is the Internet of Things (IoT). IoT represents the network of physical objects or "things" embedded with sensors, software, and other technologies for the purpose of connecting and exchanging data with other devices and systems over the internet. It has applications in various industries, ranging from home automation to healthcare, manufacturing, and more.
+
+Virtual Reality (VR) is another exciting aspect, providing immersive experiences that blur the line between the physical and digital worlds. It has profound implications for sectors like gaming, education, and even real estate.
+
+Home Automation embodies the application of IoT in personal spaces, enhancing comfort, efficiency, and security. This includes everything from smart lighting and temperature control to advanced security systems.
+
+Robotics and Computer Vision represent the blend of physical systems with intelligent software. These technologies enable machines to interact with their surroundings, recognize objects or faces, and perform complex tasks, revolutionizing sectors like manufacturing, healthcare, and transportation.
+
+Satellite Communications is a critical area, supporting global connectivity and data exchange. This technology has profound implications for navigation, weather forecasting, and global communications.
+
+Lastly, Medical Imaging represents the application of technology in healthcare, enabling better diagnostic and treatment capabilities. Innovations in this field have the potential to detect diseases earlier and with more precision, significantly improving patient outcomes.
+
+In essence, the "Technology & Innovation" area reflects the relentless pursuit of progress, embodied in technological advancements that are constantly pushing the boundaries of what is possible and transforming services across sectors.');
 
 -- Area #4
-INSERT INTO Areas (Title, Type, Description)
+INSERT INTO Areas (Title, Description)
 VALUES
-('Education',
-'Sector',
-'The education sector focuses on using advanced technology to create immersive, interactive, and engaging learning experiences for students of all ages, including the use of virtual reality in teaching and learning.');
+('Prosperity & Growth',
+'"Prosperity & Growth" encompasses the sectors of finance, education, and travel. The primary objective of this domain is to foster both individual and collective growth through innovative technological solutions.
 
--- Area #5
-INSERT INTO Areas (Title, Type, Description)
-VALUES
-('Home Security/IoT',
-'Sector',
-'The home security and IoT (Internet of Things) area involves the integration of advanced technology and user-friendly systems to create smarter, safer homes. This sector also includes the development of personalized home fitness experiences.');
+In the realm of finance, our focus is to democratize the field by offering accessible and bespoke financial management tools. These are designed to cater to the needs of individuals and small enterprises, empowering them to make informed decisions and take control of their financial health.
 
--- Area #6
-INSERT INTO Areas (Title, Type, Description)
-VALUES
-('Public Safety',
-'Sector',
-'Public safety is concerned with developing solutions to improve safety and emergency response using advanced technology, such as AI-driven surveillance systems and analytics.');
+Education, another key component of this area, is reimagined through the lens of advanced technology. Our aim is to create immersive learning experiences that inspire and engage. By harnessing the potential of modern tech, we strive to revolutionize the traditional learning paradigm, making education more interactive, effective, and enjoyable.
 
--- Area #7
-INSERT INTO Areas (Title, Type, Description)
-VALUES
-('Travel',
-'Sector',
-'The travel sector aims to simplify the travel experience by leveraging technology to create comprehensive platforms for planning, booking, and managing trips, utilizing AI-driven algorithms for personalization and efficiency.');
+The travel sector is targeted towards simplifying the overall travel experience. Leveraging technology, we aspire to streamline travel logistics, making journeys more seamless and enjoyable. Our solutions aim to mitigate common travel inconveniences, offering a smoother, more enjoyable, and personalized experience.
 
--- Area #8
-INSERT INTO Areas (Title, Type, Description)
-VALUES
-('Environment',
-'Sector',
-'The environmental sector addresses issues like plastic pollution, marine ecosystem preservation, and sustainable urban development. It explores innovative solutions such as vertical farming and plastic waste removal in oceans and waterways.');
-
--- Area #9
-INSERT INTO Areas (Title, Type, Description)
-VALUES
-('Finance',
-'Sector',
-'The finance sector focuses on providing accessible and personalized financial management tools for individuals and small businesses. This includes the development of comprehensive platforms for managing personal finances and supporting business operations.');
-
--- Area #10
-INSERT INTO Areas (Title, Type, Description)
-VALUES
-('Aerospace',
-'Sector',
-'The aerospace sector seeks to revolutionize satellite communications and connectivity solutions by offering high-speed, reliable, and affordable services for remote and underserved areas, utilizing advanced technologies and innovative approaches.');
-
--- Area #11
-INSERT INTO Areas (Title, Type, Description)
-VALUES
-('Food Technology',
-'Sector',
-'Food technology is concerned with reducing food waste and promoting sustainable food consumption through the development of innovative food preservation techniques and supply chain optimization solutions.');
-
--- Area #12
-INSERT INTO Areas (Title, Type, Description)
-VALUES
-('Elderly Care',
-'Sector',
-'Elderly care focuses on providing innovative, personalized, and accessible care solutions for the elderly population. This may involve the use of telehealth platforms to deliver remote healthcare and support services.');
-
--- Area #13
-INSERT INTO Areas (Title, Type, Description)
-VALUES
-('Urban Agriculture',
-'Sector',
-'Urban agriculture promotes sustainable urban development by offering innovative vertical farming solutions for urban environments, enabling local food production and resource-efficient cultivation methods.');
-
--- Area #14
-INSERT INTO Areas (Title, Type, Description)
-VALUES
-('Medical AI',
-'Sector',
-'Medical AI is centered around the use of artificial intelligence and machine learning to improve the diagnosis, treatment, and management of various medical conditions, supporting healthcare professionals in delivering more accurate and timely care.');
-
--- Area #15
-INSERT INTO Areas (Title, Type, Description)
-VALUES
-('AI',
-'Technology',
-'Artificial Intelligence involves the development of algorithms and systems that can learn from data, recognize patterns, and make decisions, improving various services across different sectors.');
-
--- Area #16
-INSERT INTO Areas (Title, Type, Description)
-VALUES
-('IoT',
-'Technology',
-'Internet of Things refers to the network of interconnected physical devices, sensors, and software that communicate and exchange data, providing real-time insights and personalized services across different industries.');
-
--- Area #17
-INSERT INTO Areas (Title, Type, Description)
-VALUES
-('Virtual Reality (VR)',
-'Technology',
-'VR is a technology that creates immersive and interactive simulated environments, enabling users to experience lifelike scenarios, often used in education, gaming, and training.');
-
--- Area #18
-INSERT INTO Areas (Title, Type, Description)
-VALUES
-('Home Automation',
-'Technology',
-'Home automation involves integrating advanced technology with home security and other systems to create smart homes, improving efficiency, security, and convenience for homeowners.');
-
--- Area #19
-INSERT INTO Areas (Title, Type, Description)
-VALUES
-('Robotics and Computer Vision',
-'Technology',
-'Robotics and computer vision technologies involve the development of advanced robots and AI algorithms to perform tasks such as identifying objects, recognizing patterns, and making decisions, with applications in public safety, environmental protection, and more.');
-
--- Area #20
-INSERT INTO Areas (Title, Type, Description)
-VALUES
-('Satellite Communications',
-'Technology',
-'Satellite communication technology uses advanced antenna systems and efficient spectrum allocation to provide high-speed internet and communication services, particularly for remote and underserved areas.');
-
--- Area #21
-INSERT INTO Areas (Title, Type, Description)
-VALUES
-('Food Preservation',
-'Technology',
-'This area focuses on developing innovative solutions to reduce food waste and promote sustainable food consumption through food preservation techniques and optimization of supply chains.');
-
--- Area #22
-INSERT INTO Areas (Title, Type, Description)
-VALUES
-('Telehealth',
-'Technology',
-'Telehealth and elderly care involve the use of technology, such as telehealth platforms, to provide innovative, personalized, and accessible care solutions for the elderly population, often including remote medical consultations and monitoring.');
-
--- Area #23
-INSERT INTO Areas (Title, Type, Description)
-VALUES
-('Vertical Farming',
-'Technology',
-'Urban agriculture focus on sustainable urban development by offering innovative vertical farming solutions for urban environments. These solutions often use advanced hydroponic technology, energy-efficient lighting, and IoT-enabled climate control systems.');
-
--- Area #24
-INSERT INTO Areas (Title, Type, Description)
-VALUES
-('Medical Imaging',
-'Technology',
-'This area combines artificial intelligence and machine learning with medical imaging to improve the diagnosis, treatment, and management of various medical conditions. This technology often includes AI-driven diagnostic platforms and personalized treatment planning tools.');
-
+In essence, the "Prosperity & Growth" area is dedicated to harnessing technology potential to fuel personal and economic growth. We firmly believe in the transformative power of innovation to elevate experiences and drive progress in these crucial sectors of our lives.');
 /*----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
 -- Areas Refers Projects
 INSERT INTO Refers (AreaID, ProjectID)
 VALUES
-(1, 1), (1, 13),
-(2, 2), (2, 9), (2, 14),
-(3, 3), (3, 12),
-(4, 4),
-(5, 5), (5, 7),
-(6, 6),
-(7, 8),
-(8, 9), (8, 14),
-(9, 10),
-(10, 11),
-(11, 12),
-(12, 13),
-(13, 14),
-(14, 15),
-(15, 1), (15, 2), (15, 6), (15, 7), (15, 8), (15, 10), (15, 13), (15, 15),
-(16, 3), (16, 5), (16, 7),
-(17, 4),
-(18, 5),
-(19, 6), (19, 9),
-(20, 11),
-(21, 12),
-(22, 13),
-(23, 14),
-(24, 15);
+(1, 1), (1, 5), (1, 6), (1, 7), (1, 12), (1, 13), (1, 15),
+(2, 2), (2, 3), (2, 9), (2, 12), (2, 14),
+(3, 1), (3, 4), (3, 11), (3, 13), (3, 15),
+(4, 4), (4, 8), (4, 10);
 
 /*----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 

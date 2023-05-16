@@ -21,10 +21,11 @@ export default {
                 name: 'Name',
                 surname: 'Surname',
                 budget: '1000',
-                people: ['Person1', 'Person2'],
                 stage: 'stage',
                 year: 'year'
             },
+
+            people: ['Person1', 'Person2'],
         }
     },
 
@@ -39,5 +40,4 @@ export default {
         accordion: Number
     },
 }
-
 </script>
