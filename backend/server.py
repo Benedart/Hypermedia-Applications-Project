@@ -111,10 +111,8 @@ def get_project(projectid):
 
     cursor.execute(query, tuple)
     project = cursor.fetchone()
-    cursor.close()
 
     # get all areas for the project
-    cursor = mysql.connection.cursor()
     query = """
         select areaid, title
         from areas natural join refers
@@ -253,6 +251,37 @@ def get_areas():
 
     return json.dumps(areas)
 
+
+# get all areas with associated projects
+@app.route("/getAreaCards", methods=['GET'])
+def get_areas_with_projects():
+    cursor = mysql.connection.cursor()
+
+    query = """
+        select AreaID, Title
+        from areas
+        order by title
+    """
+    cursor.execute(query)
+    areas = cursor.fetchall()
+
+    # get all projects for each area
+    for area in areas:
+        query = """
+            select ProjectID, Title
+            from projects natural join refers
+            where areaid = %s
+        """
+        tuple = (area['AreaID'],)
+
+        cursor.execute(query, tuple)
+        area['projects'] = cursor.fetchall()
+        
+    cursor.close()
+
+    return json.dumps(areas)
+
+
 # get area details
 # TO DO: aggiungi link ai progetti
 @app.route("/getArea/<areaid>", methods=['GET'])
@@ -260,9 +289,9 @@ def get_area(areaid):
     cursor = mysql.connection.cursor()
 
     query = """
-        select areaid, title, description
+        select AreaID, Title, Description
         from areas         
-        where areaid = %s
+        where AreaID = %s
     """
     tuple = (areaid,)
 

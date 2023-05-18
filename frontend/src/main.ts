@@ -18,6 +18,7 @@ import People from './views/People.vue'
 import About from './views/About.vue'
 import Contact from './views/Contacts.vue'
 import Featured from './views/FeaturedProjects.vue'
+import AreaDetails from './views/AreaDetails.vue'
 
 const routes = [
     { path: '/', component: Home },
@@ -26,6 +27,7 @@ const routes = [
     { path: '/projects', component: Projects },
     { path: '/project/:projectid', component: ProjectDetails },
     { path: '/areas', component: Areas },
+    { path: '/area/:areaid', component: AreaDetails },
     { path: '/people', component: People },
     { path: '/featured', component: Featured },
     { path: '/:pathMatch(.*)*', name: 'not-found', component: Home },
