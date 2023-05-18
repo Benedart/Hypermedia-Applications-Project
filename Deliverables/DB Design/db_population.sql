@@ -671,16 +671,16 @@ VALUES (
 -- Area #1
 INSERT INTO Areas (Title, Description)
 VALUES
-('Vitality & Safety',
-'"Vitality & Safety" is a domain that intertwines healthcare, public safety, and life sciences, reflecting a holistic approach to improving human well-being and ensuring societal safety. The central aim of this area is to leverage advanced technology and scientific knowledge to enhance health outcomes, simplify medical processes, and make healthcare accessible to diverse populations.
+('Healthcare',
+'Healthcare is a domain that intertwines healthcare, public safety, and life sciences, reflecting a holistic approach to improving human well-being and ensuring societal safety. The central aim of this area is to leverage advanced technology and scientific knowledge to enhance health outcomes, simplify medical processes, and make healthcare accessible to diverse populations. 
 
-Healthcare, being a primary aspect of Vitality & Safety, is dedicated to improving patient outcomes through the use of cutting-edge technology. This includes the development of AI-driven diagnostics, telehealth solutions, and personalized medicine, all aimed at delivering more accurate, timely, and tailored healthcare services. By integrating technology into healthcare, this domain strives to make medical processes more efficient, reducing waiting times, and enhancing the overall patient experience.
+Healthcare is dedicated to improving patient outcomes through the use of cutting-edge technology. This includes the development of AI-driven diagnostics, telehealth solutions, and personalized medicine, all aimed at delivering more accurate, timely, and tailored healthcare services. By integrating technology into healthcare, this domain strives to make medical processes more efficient, reducing waiting times, and enhancing the overall patient experience.
 
-Public safety is another cornerstone of Vitality & Safety, with a focus on developing robust and responsive solutions for public security and emergency response. Innovative technologies such as AI, computer vision, and IoT are leveraged to build systems that can predict, prevent, and respond swiftly to public safety incidents. This encompasses everything from traffic management and crime prevention to disaster response and safety in public spaces.
+Public safety is another cornerstone of the area, with a focus on developing robust and responsive solutions for public security and emergency response. Innovative technologies such as AI, computer vision, and IoT are leveraged to build systems that can predict, prevent, and respond swiftly to public safety incidents. This encompasses everything from traffic management and crime prevention to disaster response and safety in public spaces.
 
-Life sciences is the third pillar of Vitality & Safety, emphasizing the use of technology to improve overall well-being. This includes the integration of technology in areas such as biomedical research, pharmaceutical development, genomics, and personalized nutrition. The ultimate goal here is to foster a better understanding of human health and disease, and to use these insights to develop solutions that enhance overall quality of life.
+Life sciences is the third pillar of Healthcare, emphasizing the use of technology to improve overall well-being. This includes the integration of technology in areas such as biomedical research, pharmaceutical development, genomics, and personalized nutrition. The ultimate goal here is to foster a better understanding of human health and disease, and to use these insights to develop solutions that enhance overall quality of life.
 
-In conclusion, Vitality & Safety symbolizes a commitment to enhancing the quality of life and ensuring safety for all through the power of technology and scientific innovation. By integrating these diverse but related fields, this domain is contributing to a healthier, safer, and more vibrant society.');
+In conclusion, Healthcare symbolizes a commitment to enhancing the quality of life and ensuring safety for all through the power of technology and scientific innovation. By integrating these diverse but related fields, this domain is contributing to a healthier, safer, and more vibrant society.');
 
 -- Area #2
 INSERT INTO Areas (Title, Description)
@@ -699,8 +699,8 @@ In essence, EcoSustain embodies the aspiration for a sustainable future. It is a
 -- Area #3
 INSERT INTO Areas (Title, Description)
 VALUES
-('Technology & Innovation',
-'"Technology & Innovation" is a broad domain encapsulating the dynamic technological developments across various industries. It stands as a testament to human ingenuity and the limitless potential of modern computing.
+('Technology',
+'"Technology" is a broad domain encapsulating the dynamic technological developments across various industries. It stands as a testament to human ingenuity and the limitless potential of modern computing.
 
 The core of this area is the creation and refinement of algorithms and systems capable of learning from data. These systems can discern patterns, make informed decisions, and predict outcomes, effectively embodying the concept of machine intelligence.
 
@@ -716,13 +716,13 @@ Satellite Communications is a critical area, supporting global connectivity and 
 
 Lastly, Medical Imaging represents the application of technology in healthcare, enabling better diagnostic and treatment capabilities. Innovations in this field have the potential to detect diseases earlier and with more precision, significantly improving patient outcomes.
 
-In essence, the "Technology & Innovation" area reflects the relentless pursuit of progress, embodied in technological advancements that are constantly pushing the boundaries of what is possible and transforming services across sectors.');
+In essence, the "Technology" area reflects the relentless pursuit of progress, embodied in technological advancements that are constantly pushing the boundaries of what is possible and transforming services across sectors.');
 
 -- Area #4
 INSERT INTO Areas (Title, Description)
 VALUES
-('Prosperity & Growth',
-'"Prosperity & Growth" encompasses the sectors of finance, education, and travel. The primary objective of this domain is to foster both individual and collective growth through innovative technological solutions.
+('Growth',
+'"Growth" encompasses the sectors of finance, education, and travel. The primary objective of this domain is to foster both individual and collective growth through innovative technological solutions.
 
 In the realm of finance, our focus is to democratize the field by offering accessible and bespoke financial management tools. These are designed to cater to the needs of individuals and small enterprises, empowering them to make informed decisions and take control of their financial health.
 
@@ -730,7 +730,7 @@ Education, another key component of this area, is reimagined through the lens of
 
 The travel sector is targeted towards simplifying the overall travel experience. Leveraging technology, we aspire to streamline travel logistics, making journeys more seamless and enjoyable. Our solutions aim to mitigate common travel inconveniences, offering a smoother, more enjoyable, and personalized experience.
 
-In essence, the "Prosperity & Growth" area is dedicated to harnessing technology potential to fuel personal and economic growth. We firmly believe in the transformative power of innovation to elevate experiences and drive progress in these crucial sectors of our lives.');
+In essence, the "Growth" area is dedicated to harnessing technology potential to fuel personal and economic growth. We firmly believe in the transformative power of innovation to elevate experiences and drive progress in these crucial sectors of our lives.');
 /*----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
 -- Areas Refers Projects
