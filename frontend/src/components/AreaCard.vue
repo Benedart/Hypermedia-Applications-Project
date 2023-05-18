@@ -10,7 +10,8 @@
             <!-- put the list of projects associated with the area as small ciruclar icons that link to the project page -->
             <div class="row g-2">
                 <div class="col" v-for="project in projects">
-                    <router-link :to="`/project/${project.ProjectID}`">
+                    <router-link :to="`/project/${project.ProjectID}`" class="mytooltip">
+                        <span class="tooltiptext">{{ project.Title }}</span>
                         <img :src="`/images/projects/${project.Title}.webp`" alt="project1" class="rounded-circle"
                             style="width: 2rem; height: 2rem; object-fit: cover;">
                     </router-link>
