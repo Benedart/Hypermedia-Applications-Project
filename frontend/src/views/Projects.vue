@@ -238,14 +238,3 @@ export default {
     },
 }
 </script>
-
-<style>
-.card {
-    cursor: pointer;
-}
-
-.card:hover {
-    filter: brightness(80%);
-    transition: 0.5s;
-}
-</style>

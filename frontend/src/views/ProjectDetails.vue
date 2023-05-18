@@ -1,25 +1,29 @@
 <template>
-    <div class="modal-header">
-        <h1 class="modal-title" id="exampleModalLabel">{{ projectDetails.title }} <span v-if="projectDetails.featured">
-                -
-                Featured</span></h1>
-    </div>
-    <div class="modal-body">
-        <i v-for="(area, index) in projectDetails.areas">
-            <router-link :to="`/area/${area.title}`">{{ area.title }}</router-link>
-            <span v-if="index < projectDetails.areas.length - 1"> - </span>
-        </i>
-        <p><b>Supervisor:</b> {{ projectDetails.name + " " + projectDetails.surname }}</p>
-        <p><b>Budget:</b> {{ projectDetails.budget }}$</p>
-        <p><b>Stage:</b> {{ projectDetails.stage }}</p>
-        <hr>
-        <p>{{ projectDetails.description }}</p>
-        <hr>
-        <b>People: </b>
-        <span v-for="(person, index) in people">
-            <router-link :to="`/person/${person.personid}`">{{ person.name }} {{ person.surname }}</router-link><span
-                v-if="index < people.length - 1">, </span>
-        </span>
+    <div class="container">
+        <div>
+            <h1>{{ projectDetails.title }}
+                <span v-if="projectDetails.featured">
+                    - Featured
+                </span>
+            </h1>
+        </div>
+        <div>
+            <i v-for="(area, index) in projectDetails.areas">
+                <router-link :to="`/area/${area.areaid}`">{{ area.title }}</router-link>
+                <span v-if="index < projectDetails.areas.length - 1"> - </span>
+            </i>
+            <p><b>Supervisor:</b> {{ projectDetails.name + " " + projectDetails.surname }}</p>
+            <p><b>Budget:</b> {{ projectDetails.budget }}$</p>
+            <p><b>Stage:</b> {{ projectDetails.stage }}</p>
+            <hr>
+            <p>{{ projectDetails.description }}</p>
+            <hr>
+            <b>People: </b>
+            <span v-for="(person, index) in people">
+                <router-link :to="`/person/${person.personid}`">{{ person.name }} {{ person.surname }}</router-link><span
+                    v-if="index < people.length - 1">, </span>
+            </span>
+        </div>
     </div>
 </template>
 

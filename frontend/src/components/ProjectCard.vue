@@ -16,21 +16,6 @@
 
 <script lang="ts">
 export default {
-    data() {
-        return {
-            projectDetails: {
-                description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-                name: 'Name',
-                surname: 'Surname',
-                budget: '1000',
-                stage: 'stage',
-                year: 'year'
-            },
-
-            people: ['Person1', 'Person2'],
-        }
-    },
-
     props: {
         projectid: Number,
         title: String,
@@ -43,3 +28,14 @@ export default {
     },
 }
 </script>
+
+<style scoped>
+.card {
+    cursor: pointer;
+}
+
+.card:hover {
+    filter: brightness(80%);
+    transition: 0.5s;
+}
+</style>
