@@ -15,7 +15,9 @@ create table Projects(
 	ProjectID int unsigned auto_increment,
 	Title varchar(60) not null unique,
 	Preview varchar(250) not null,
-	Description varchar(1500) not null,
+	Section1 varchar(1500) not null,
+	Section2 varchar(1500) not null,
+	Section3 varchar(1500) not null,
 	Budget decimal(10,2) not null check(Budget >= 0),
 	Stage varchar(50) not null,
 	YearOfFoundation int unsigned not null check(YearOfFoundation >= 1000),
@@ -44,7 +46,8 @@ create table Partecipates(
 create table Areas(
 	AreaID int unsigned auto_increment,
 	Title varchar(50) not null unique,
-	Description varchar(5000) not null,
+	Section1 varchar(5000) not null,
+	Section2 varchar(5000) not null,
 
 	primary key(AreaID)
 );

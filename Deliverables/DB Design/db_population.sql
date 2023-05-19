@@ -483,11 +483,13 @@ VALUES (
 /*----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
 -- Project #1: SmartMed Solutions
-INSERT INTO Projects (Title, Preview, Description, Budget, Stage, YearOfFoundation, Featured, Supervisor)
+INSERT INTO Projects (Title, Preview, Section1, Section2, Section3, Budget, Stage, YearOfFoundation, Featured, Supervisor)
 VALUES (
     'SmartMed Solutions',
     'Healthtech start-up offering an innovative telemedicine platform',
-    'SmartMed Solutions is a healthtech start-up founded by a team of experienced medical professionals and software engineers. Their mission is to revolutionize the healthcare industry by leveraging cutting-edge technology to improve patient outcomes and streamline medical processes. The platform allows patients to consult with medical professionals remotely through video conferencing, secure messaging, and file-sharing, and integrates with electronic health records (EHR) systems. The SmartMed Solutions team is led by CEO Jane Smith, a former hospital administrator with over 15 years of experience in healthcare management, and CTO John Doe, a seasoned software engineer with a strong background in artificial intelligence and machine learning. The team also includes medical experts, developers, and designers with a passion for transforming healthcare. SmartMed Solutions has received a total investment of $3 million from our venture capital firm. The funding has been allocated in three phases, with an initial investment of $1 million, followed by two subsequent investments of $1 million each, based on the achievement of predetermined milestones.',
+    'SmartMed Solutions is a healthtech start-up founded by a team of experienced medical professionals and software engineers. Their mission is to revolutionize the healthcare industry by leveraging cutting-edge technology to improve patient outcomes and streamline medical processes. The platform allows patients to consult with medical professionals remotely through video conferencing, secure messaging, and file-sharing, and integrates with electronic health records (EHR) systems.',
+    'The SmartMed Solutions team is led by CEO Jane Smith, a former hospital administrator with over 15 years of experience in healthcare management, and CTO John Doe, a seasoned software engineer with a strong background in artificial intelligence and machine learning. The team also includes medical experts, developers, and designers with a passion for transforming healthcare.',
+    'SmartMed Solutions has received a total investment of $3 million from our venture capital firm. The funding has been allocated in three phases, with an initial investment of $1 million, followed by two subsequent investments of $1 million each, based on the achievement of predetermined milestones.',
     3000000.00,
     'Pre-Seed',
     2023,
@@ -497,11 +499,13 @@ VALUES (
 
 
 -- Project #2: EcoCharge Solutions
-INSERT INTO Projects (Title, Preview, Description, Budget, Stage, YearOfFoundation, Supervisor)
+INSERT INTO Projects (Title, Preview, Section1, Section2, Section3, Budget, Stage, YearOfFoundation, Supervisor)
 VALUES (
     'EcoCharge Solutions',
     'Cleantech start-up developing energy storage and charging solutions for electric vehicles',
-    'EcoCharge Solutions is a cleantech start-up focused on developing innovative energy storage and charging solutions for electric vehicles (EVs). Their goal is to accelerate the adoption of EVs by addressing key challenges related to charging infrastructure and battery technology. The team is led by CEO Emily Green and CTO Michael Brown, with experts in energy storage, materials science, and software development. They offer a smart charging station network that uses AI and machine learning algorithms to optimize charging times and power distribution, reducing energy costs and ensuring efficient use of the grid. Their proprietary battery technology also extends the range of electric vehicles.',
+    'EcoCharge Solutions is a cleantech start-up focused on developing innovative energy storage and charging solutions for electric vehicles (EVs). Their goal is to accelerate the adoption of EVs by addressing key challenges related to charging infrastructure and battery technology.',
+    'CEO Emily Green, a veteran in sustainable energy management, and CTO Michael Brown, an experienced software developer with extensive knowledge in AI and machine learning, spearhead the EcoCharge Solutions team. Their team is composed of experts in energy storage, materials science, and software development, all sharing the zeal to transform the EV sector',
+    'Our venture capital firm has made a total investment of $4 million in EcoCharge Solutions. This funding is partitioned into three phases, starting with an initial investment of $1 million, followed by three subsequent investments of $1 million each, contingent on the achievement of predetermined milestones.',
     4000000.00,
     'Series A',
     2020,
@@ -509,11 +513,13 @@ VALUES (
 );
 
 -- Project #3: AgriTech Pro
-INSERT INTO Projects (Title, Preview, Description, Budget, Stage, YearOfFoundation, Featured, Supervisor)
+INSERT INTO Projects (Title, Preview, Section1, Section2, Section3, Budget, Stage, YearOfFoundation, Featured, Supervisor)
 VALUES (
     'AgriTech Pro',
     'Agricultural technology start-up focused on data-driven insights and resource optimization',
-    'AgriTech Pro is an agricultural technology start-up dedicated to revolutionizing the farming industry by harnessing the power of data-driven insights and cutting-edge technology to increase crop yields and optimize resource usage. The team is led by CEO Sarah Thompson and CTO James White, with experienced agronomists, data scientists, and engineers. They offer a comprehensive precision agriculture platform that combines satellite imagery, IoT devices, and advanced analytics to provide real-time insights on crop health, soil conditions, and weather patterns.',
+    'AgriTech Pro is an agricultural technology start-up that is dedicated to transforming the farming industry. Their focus lies in utilizing data-driven insights and advanced technology to maximize crop yields and optimize the use of resources. By implementing an innovative precision agriculture platform, AgriTech Pro provides real-time insights into crop health, soil conditions, and weather patterns. These insights are derived from a combination of satellite imagery, Internet of Things (IoT) devices, and advanced analytics.',
+    'The team at AgriTech Pro is led by CEO Sarah Thompson and CTO James White, who guide a team of experienced agronomists, data scientists, and engineers. Their collective expertise is instrumental in advancing the company mission to revolutionize farming practices through technology.',
+    'AgriTech Pro has also secured significant funding, with a total investment of $5 million. This investment underscores the potential of their unique approach to modernize agriculture and make farming more sustainable, efficient, and productive.',
     5000000.00,
     'Seed',
     2023,
@@ -522,11 +528,13 @@ VALUES (
 );
 
 -- Project #4: VirtualEdu
-INSERT INTO Projects (Title, Preview, Description, Budget, Stage, YearOfFoundation, Supervisor)
+INSERT INTO Projects (Title, Preview, Section1, Section2, Section3, Budget, Stage, YearOfFoundation, Supervisor)
 VALUES (
     'VirtualEdu',
     'Edtech start-up offering immersive and interactive virtual reality learning experiences',
-    'VirtualEdu is an edtech start-up focused on transforming the educational landscape by providing immersive and interactive virtual reality (VR) learning experiences for students of all ages. The team is led by CEO Laura Martinez and CTO Daniel Lee, with experienced educators, curriculum developers, and VR technology experts. They offer a comprehensive VR learning platform that covers a wide range of subjects, from history and science to language and art, enabling students to engage in interactive learning experiences that foster creativity, critical thinking, and problem-solving skills.',
+    'VirtualEdu is an edtech start-up that aims to revolutionize the educational sector by offering immersive and interactive virtual reality (VR) learning experiences. These experiences cater to students across all age groups and cover a wide range of subjects, from history and science to languages and arts.',
+    'The team, led by CEO Laura Martinez and CTO Daniel Lee, comprises of experienced educators, curriculum developers, and VR technology experts. Their goal is to make learning more engaging and effective, fostering critical thinking, creativity, and problem-solving skills in students through their VR platform.',
+    'VirtualEdu has garnered significant investment, receiving a total of $3.5 million in funding. This investment demonstrates the belief in VirtualEdu vision to redefine education through innovative technology and immersive learning experiences.',
     3500000.00,
     'Series B',
     2021,
@@ -534,11 +542,13 @@ VALUES (
 );
 
 -- Project #5: SafeHome Technologies
-INSERT INTO Projects (Title, Preview, Description, Budget, Stage, YearOfFoundation, Supervisor)
+INSERT INTO Projects (Title, Preview, Section1, Section2, Section3, Budget, Stage, YearOfFoundation, Supervisor)
 VALUES (
     'SafeHome Technologies',
     'Home security start-up offering smart home security systems with advanced technology',
-    'SafeHome Technologies is a home security start-up dedicated to making homes smarter and safer through the integration of advanced technology and user-friendly systems. The team is led by CEO Peter Johnson and CTO Lisa Williams, with experts in software engineering, IoT, and home security systems. They offer a comprehensive smart home security system that includes video surveillance, intrusion detection, and remote monitoring through a user-friendly mobile app, using machine learning algorithms to analyze data and provide real-time alerts in case of suspicious activity.',
+    'SafeHome Technologies is a home security start-up that leverages advanced technology to create safer and smarter homes. Their comprehensive smart home security system includes features such as video surveillance, intrusion detection, and remote monitoring through a user-friendly mobile app.',
+    'The team at SafeHome, led by CEO Peter Johnson and CTO Lisa Williams, comprises experts in software engineering, Internet of Things (IoT), and home security systems. They utilize machine learning algorithms to analyze data from the security system and provide real-time alerts in case of any suspicious activity, enhancing the overall security of the home.',
+    'SafeHome Technologies has received a total investment of $3 million, which underscores the potential and effectiveness of their innovative approach towards home security. Through continuous innovation and a focus on user experience, SafeHome is contributing to a safer and more secure living environment.',
     3000000.00,
     'Pre-Seed',
     2022,
@@ -546,11 +556,13 @@ VALUES (
 );
 
 -- Project #6: SafeGuard AI
-INSERT INTO Projects (Title, Preview, Description, Budget, Stage, YearOfFoundation, Supervisor)
+INSERT INTO Projects (Title, Preview, Section1, Section2, Section3, Budget, Stage, YearOfFoundation, Supervisor)
 VALUES (
     'SafeGuard AI',
     'Security technology start-up developing AI-driven solutions for public safety and emergency response',
-    'SafeGuard AI is a security technology start-up focused on developing advanced artificial intelligence-driven solutions to improve public safety and emergency response. The team is led by CEO Thomas Johnson and CTO Maria Williams, with experts in AI, computer vision, and public safety management. They offer a suite of smart surveillance and analytics solutions that utilize advanced computer vision and AI algorithms to monitor public spaces, detect potential threats, and provide real-time alerts to law enforcement and emergency response teams.',
+    'SafeGuard AI is a security technology start-up committed to enhancing public safety and emergency response through advanced AI-driven solutions. They offer a suite of smart surveillance and analytics tools that utilize cutting-edge computer vision and AI algorithms.',
+    'The team, led by CEO Thomas Johnson and CTO Maria Williams, boasts experts in AI, computer vision, and public safety management. Their innovative solutions are designed to constantly monitor public spaces, identify potential threats, and provide real-time alerts to law enforcement and emergency response teams.',
+    'SafeGuard AI has attracted a significant investment of $4.5 million, highlighting the confidence in their novel approach to public safety and the effectiveness of their solutions. Through constant innovation and a dedication to societal safety, SafeGuard AI is redefining public security for the modern world.',
     4500000.00,
     'Series C',
     2023,
@@ -558,11 +570,13 @@ VALUES (
 );
 
 -- Project #7: HomeFit
-INSERT INTO Projects (Title, Preview, Description, Budget, Stage, YearOfFoundation, Supervisor)
+INSERT INTO Projects (Title, Preview, Section1, Section2, Section3, Budget, Stage, YearOfFoundation, Supervisor)
 VALUES (
     'HomeFit',
     'Fitness technology start-up offering personalized, data-driven home workout experiences',
-    'HomeFit is a fitness technology start-up aiming to revolutionize the way people exercise at home by providing a personalized, data-driven workout experience. The team is led by CEO Jasmine Turner and CTO Kevin Chen, with experienced fitness trainers, nutritionists, and software engineers. They offer a smart home fitness system that combines IoT devices, machine learning algorithms, and an extensive library of workout content, tracking users progress, analyzing performance data, and providing personalized workout recommendations.',
+    'HomeFit is a fitness technology start-up focused on transforming home workout experiences through personalization and data-driven insights. Their innovative system combines IoT devices, machine learning algorithms, and a vast library of workout content to offer tailored fitness experiences at home.',
+    'CEO Jasmine Turner and CTO Kevin Chen lead the HomeFit team, which includes experienced fitness trainers, nutritionists, and software engineers. The team commitment to improving health and fitness has led to the development of a smart home fitness system that goes beyond traditional workout routines.',
+    'HomeFit has attracted a significant investment of $3 million, emphasizing the value and potential of their technology in the fitness industry. Despite the start-up relative youth, having launched in 2019, they have already seen a successful exit, indicating the promising future of their unique approach to home fitness.',
     3000000.00,
     'Exit',
     2019,
@@ -570,11 +584,13 @@ VALUES (
 );
 
 -- Project #8: TravelEase
-INSERT INTO Projects (Title, Preview, Description, Budget, Stage, YearOfFoundation, Supervisor)
+INSERT INTO Projects (Title, Preview, Section1, Section2, Section3, Budget, Stage, YearOfFoundation, Supervisor)
 VALUES (
     'TravelEase',
     'Travel technology start-up offering a one-stop platform for planning, booking, and managing trips',
-    'TravelEase is a travel technology start-up dedicated to simplifying the travel experience by providing a one-stop platform for planning, booking, and managing trips. The team is led by CEO Ashley Martin and CTO Alex Smith, with experienced travel industry professionals and software developers. They offer a comprehensive travel planning and booking platform that integrates with various travel service providers and uses AI-driven algorithms to provide personalized trip recommendations and optimize travel itineraries, also featuring a robust travel management system.',
+    'TravelEase is a travel technology start-up striving to streamline the often complicated process of travel planning, booking, and management. This innovative firm has developed a one-stop platform that connects users to a comprehensive suite of travel services, all aimed at simplifying their travel experience.',
+    'The TravelEase team is spearheaded by CEO Ashley Martin and CTO Alex Smith. Combining their diverse expertise in the travel industry and software development, they have created a platform that integrates with various travel service providers, effectively collating a broad array of options for users.',
+    'TravelEase has garnered an investment of $2.5 million, reflecting the high potential of their technology in revolutionizing the travel industry. Their focus is on leveraging technology to make travel planning and management as seamless and enjoyable as the journey itself.',
     2500000.00,
     'Series D',
     2020,
@@ -582,11 +598,13 @@ VALUES (
 );
 
 -- Project #9: Clean Ocean Initiative
-INSERT INTO Projects (Title, Preview, Description, Budget, Stage, YearOfFoundation, Supervisor)
+INSERT INTO Projects (Title, Preview, Section1, Section2, Section3, Budget, Stage, YearOfFoundation, Supervisor)
 VALUES (
     'Clean Ocean Initiative',
     'Environmental technology start-up developing solutions to combat plastic pollution and preserve marine ecosystems',
-    'Clean Ocean Initiative is an environmental technology start-up dedicated to developing innovative solutions for combating plastic pollution and preserving marine ecosystems. The team is led by CEO Rachel Adams and CTO Noah Evans, with experienced marine biologists, environmental engineers, and material scientists. They offer a cutting-edge plastic collection and recycling system that uses advanced robotics and AI algorithms to identify and remove plastic waste from oceans and waterways, processing the collected plastic into valuable raw materials.',
+    'Clean Ocean Initiative is an environmental technology start-up committed to battling the pressing issue of plastic pollution and safeguarding the health of marine ecosystems. Their solutions combine innovative technology with a deep understanding of the environment, reflecting a dedicated effort to promote sustainable practices and protect our planet natural resources.',
+    'The Clean Ocean Initiative team is led by CEO Rachel Adams and CTO Noah Evans. Their collective experience in marine biology, environmental engineering, and material science forms the foundation of their work, enabling them to approach the issue of marine pollution from multiple perspectives.',
+    'Clean Ocean Initiative has secured an investment of $4 million, a testament to the growing importance of environmental preservation and the perceived potential of their technology in this critical task. Their ongoing mission is to mitigate plastic pollution effectively, facilitating the preservation of marine life and contributing to overall environmental health.',
     4000000.00,
     'Pre-Seed',
     2022,
@@ -594,11 +612,13 @@ VALUES (
 );
 
 -- Project #10: FinBuddy
-INSERT INTO Projects (Title, Preview, Description, Budget, Stage, YearOfFoundation, Supervisor)
+INSERT INTO Projects (Title, Preview, Section1, Section2, Section3, Budget, Stage, YearOfFoundation, Supervisor)
 VALUES (
 'FinBuddy',
 'Fintech start-up providing accessible and personalized financial management tools',
-'FinBuddy is a fintech start-up focused on providing accessible and personalized financial management tools for individuals and small businesses. The team is led by CEO Michelle Clark and CTO Lucas Morgan, with experienced finance professionals, data analysts, and software developers. They offer a comprehensive financial management platform that integrates with bank accounts, credit cards, and investment portfolios, leveraging AI and machine learning algorithms to offer personalized financial advice and automate savings strategies, helping users achieve their financial goals.',
+'FinBuddy is a fintech start-up that aims to democratize financial management by offering accessible and personalized tools designed to empower individuals and small businesses. Their vision is to provide a comprehensive solution that integrates all aspects of personal finance, allowing users to take control of their financial future.',
+'The team behind FinBuddy includes CEO Michelle Clark and CTO Lucas Morgan. The team combines finance professionals with seasoned data analysts and software developers to create a platform that blends expertise in financial management with cutting-edge technological solutions.',
+'FinBuddy has successfully secured an investment of $3.5 million, underlining the market confidence in their approach to financial management. This funding will support the continuous development of their platform and the expansion of their financial toolset, ensuring their users have access to the most innovative financial management solutions',
 3500000.00,
 'Series B',
 2021,
@@ -606,11 +626,13 @@ VALUES (
 );
 
 -- Project #11: SpaceNet
-INSERT INTO Projects (Title, Preview, Description, Budget, Stage, YearOfFoundation, Supervisor)
+INSERT INTO Projects (Title, Preview, Section1, Section2, Section3, Budget, Stage, YearOfFoundation, Supervisor)
 VALUES (
 'SpaceNet',
 'Aerospace technology start-up offering high-speed, reliable, and affordable satellite connectivity solutions',
-'SpaceNet is an aerospace technology start-up aiming to revolutionize the satellite communications industry by providing high-speed, reliable, and affordable connectivity solutions for remote and underserved areas. The team is led by CEO Katherine Ross and CTO Benjamin Johnson, with experienced satellite engineers, telecommunications experts, and software developers. They offer a next-generation satellite network that leverages advanced antenna technology and efficient spectrum allocation to provide high-speed internet and communication services worldwide, bridging the digital divide and unlocking new opportunities.',
+'SpaceNet is an aerospace technology start-up, dedicated to transforming the field of satellite communications. Their mission is to provide high-speed, reliable, and affordable satellite connectivity solutions, with a particular focus on serving remote and underserved areas. This dedication stems from the recognition that in our increasingly interconnected world, access to reliable internet and communication services is a necessity, not a luxury.',
+'The team driving SpaceNet is a fusion of talent and expertise. CEO Katherine Ross and CTO Benjamin Johnson lead a group of experienced satellite engineers, telecommunications experts, and software developers. This mix of skills enables them to tackle the multifaceted challenges inherent in the field of satellite communications.',
+'To propel their vision forward, SpaceNet has secured a substantial investment of $5 million. This funding will support their ongoing efforts to refine their satellite network and expand their coverage, ensuring that they continue to provide high-speed, reliable, and affordable connectivity solutions.',
 5000000.00,
 'Exit',
 2022,
@@ -618,11 +640,13 @@ VALUES (
 );
 
 -- Project #12: FoodSustain
-INSERT INTO Projects (Title, Preview, Description, Budget, Stage, YearOfFoundation, Supervisor)
+INSERT INTO Projects (Title, Preview, Section1, Section2, Section3, Budget, Stage, YearOfFoundation, Supervisor)
 VALUES (
 'FoodSustain',
 'Food technology start-up focused on reducing food waste and promoting sustainable food consumption',
-'FoodSustain is a food technology start-up committed to reducing food waste and promoting sustainable food consumption by developing innovative solutions for food preservation and supply chain optimization. The team is led by CEO Olivia Miller and CTO Ethan Wilson, with experienced food scientists, supply chain experts, and software engineers. They offer a proprietary food packaging technology and a supply chain management platform that uses AI-driven algorithms to optimize inventory management, logistics, and demand forecasting, minimizing food waste and improving resource efficiency.',
+'FoodSustain is a food technology start-up that is dedicated to combating food waste and promoting sustainable consumption habits. The start-up achieves this mission through the development and deployment of innovative solutions that focus on enhancing food preservation and optimizing the supply chain.',
+'The team behind FoodSustain, led by CEO Olivia Miller and CTO Ethan Wilson, consists of a diverse group of professionals with expertise in areas such as food science, supply chain management, and software engineering. Their combined knowledge and experience allow FoodSustain to tackle the multifaceted issue of food waste from multiple angles.',
+'To support their operations and future research and development, FoodSustain has secured an investment of $4 million. This funding will fuel their efforts to continually enhance their technology and broaden their impact, as they strive towards a future where food waste is significantly reduced and sustainable food consumption is the norm.',
 4000000.00,
 'Pre-Seed',
 2023,
@@ -630,11 +654,13 @@ VALUES (
 );
 
 -- Project #13: SeniorCare+
-INSERT INTO Projects (Title, Preview, Description, Budget, Stage, YearOfFoundation, Supervisor)
+INSERT INTO Projects (Title, Preview, Section1, Section2, Section3, Budget, Stage, YearOfFoundation, Supervisor)
 VALUES (
 'SeniorCare+',
 'Healthcare technology start-up providing innovative care solutions for the elderly population',
-'SeniorCare+ is a healthcare technology start-up focused on providing innovative, personalized, and accessible care solutions for the elderly population. The team is led by CEO Rebecca Turner and CTO Martin Lee, with experienced geriatric care professionals, medical researchers, and software developers. They offer a comprehensive telehealth platform specifically designed for seniors, featuring AI-driven tools for fall detection, medication reminders, and health data analysis, ensuring timely interventions and personalized care plans for each user.',
+'SeniorCare+ is a healthcare technology start-up that specializes in developing innovative and personalized care solutions tailored for the elderly population. The start-up central focus is to improve the quality of life for seniors by providing accessible care solutions that cater to their unique needs.',
+'The SeniorCare+ team, helmed by CEO Rebecca Turner and CTO Martin Lee, is a diverse blend of professionals from various disciplines. The team includes experienced geriatric care professionals, medical researchers, and software developers, all of whom contribute to the company mission to improve elderly care through technology.',
+'To date, SeniorCare+ has secured a total investment of $3.2 million. This funding will be instrumental in further enhancing their platform and extending their services to more seniors, thereby contributing significantly to improved healthcare delivery for the elderly.',
 3200000.00,
 'Series C',
 2019,
@@ -642,11 +668,13 @@ VALUES (
 );
 
 -- Project #14: UrbanGrow
-INSERT INTO Projects (Title, Preview, Description, Budget, Stage, YearOfFoundation, Featured, Supervisor)
+INSERT INTO Projects (Title, Preview, Section1, Section2, Section3, Budget, Stage, YearOfFoundation, Featured, Supervisor)
 VALUES (
 'UrbanGrow',
 'Green technology start-up offering innovative vertical farming solutions for urban environments',
-'UrbanGrow is a green technology start-up dedicated to promoting sustainable urban development by offering innovative vertical farming solutions for urban environments. The team is led by CEO Daniel Jackson and CTO Samantha Lee, with experienced horticulturists, architects, and environmental engineers. They provide modular vertical farming systems that utilize advanced hydroponic technology, energy-efficient LED lighting, and IoT-enabled climate control to optimize plant growth and resource usage, aiming to reduce transportation emissions, promote local food production, and enhance food security in urban communities.',
+'UrbanGrow is a green technology start-up that is paving the way for sustainable urban development by introducing innovative vertical farming solutions suitable for urban environments. This initiative is driven by a mission to transform urban landscapes and enhance local food security.',
+'The team behind UrbanGrow, led by CEO Daniel Jackson and CTO Samantha Lee, comprises a dynamic mix of professionals, including experienced horticulturists, architects, and environmental engineers. Together, they strive to redefine urban farming practices and contribute to greener, more sustainable cities.',
+'To date, UrbanGrow has received a total investment of $2.8 million, which is set to fuel further innovation and expansion as the company continues to revolutionize urban farming practices.',
 2800000.00,
 'Series A',
 2023,
@@ -655,11 +683,13 @@ VALUES (
 );
 
 -- Project #15: MedAssist AI
-INSERT INTO Projects (Title, Preview, Description, Budget, Stage, YearOfFoundation, Supervisor)
+INSERT INTO Projects (Title, Preview, Section1, Section2, Section3, Budget, Stage, YearOfFoundation, Supervisor)
 VALUES (
 'MedAssist AI',
 'Healthcare technology start-up leveraging AI and machine learning to improve medical diagnosis, treatment, and management',
-'MedAssist AI is a healthcare technology start-up focused on leveraging artificial intelligence and machine learning to improve the diagnosis, treatment, and management of various medical conditions. The team is led by CEO Dr. Allison Grant and CTO Dr. Charles Kim, with experienced medical professionals, AI researchers, and software engineers. They offer a cutting-edge AI-driven diagnostic platform that analyzes medical images, laboratory test results, and patient history data to assist healthcare professionals in making more accurate and timely diagnoses. The platform also includes a suite rof AI-powered tools for personalized treatment planning and remote patient monitoring, enabling better patient outcomes and more efficient healthcare delivery.',
+'MedAssist AI is a healthcare technology start-up that harnesses the power of artificial intelligence (AI) and machine learning to advance medical diagnosis, treatment, and management. Their goal is to enhance healthcare outcomes and optimize the delivery of medical services through innovative technological solutions.',
+'CEO Dr. Allison Grant and CTO Dr. Charles Kim lead the MedAssist AI team, which consists of experienced medical professionals, AI researchers, and software engineers. This diverse expertise enables the development of cutting-edge AI-driven tools that benefit both healthcare professionals and patients.',
+'To support their mission, MedAssist AI has secured a significant investment of $4.2 million. This funding will drive further research and development, allowing MedAssist AI to continuously refine their AI algorithms, expand their diagnostic capabilities, and contribute to the advancement of medical care.',
 4200000.00,
 'Series B',
 2021,
@@ -669,68 +699,86 @@ VALUES (
 /*----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
 -- Area #1
-INSERT INTO Areas (Title, Description)
+INSERT INTO Areas (Title, Section1, Section2)
 VALUES
 ('Healthcare',
-'Healthcare is a domain that intertwines healthcare, public safety, and life sciences, reflecting a holistic approach to improving human well-being and ensuring societal safety. The central aim of this area is to leverage advanced technology and scientific knowledge to enhance health outcomes, simplify medical processes, and make healthcare accessible to diverse populations. 
+'Healthcare, as an interdisciplinary domain, is situated at the intersection of life sciences, public safety, and healthcare services. This multifaceted domain embraces a holistic strategy aimed at augmenting human wellness and guaranteeing societal safety. At its core, it seeks to utilize state-of-the-art technology and scientific expertise to improve health outcomes, streamline medical procedures, and democratize access to healthcare services for all individuals.',
+'Healthcare Services
 
-Healthcare is dedicated to improving patient outcomes through the use of cutting-edge technology. This includes the development of AI-driven diagnostics, telehealth solutions, and personalized medicine, all aimed at delivering more accurate, timely, and tailored healthcare services. By integrating technology into healthcare, this domain strives to make medical processes more efficient, reducing waiting times, and enhancing the overall patient experience.
+Healthcare services is primarily devoted to elevating patient outcomes through the employment of cutting-edge technology. Ground-breaking advancements such as AI-driven diagnostics, telehealth solutions, and personalized medicine are being harnessed to provide more accurate, swift, and custom healthcare services. By incorporating technology into healthcare, the aim is to enhance the efficiency of medical processes, curtail waiting periods, and amplify the overall patient experience.
 
-Public safety is another cornerstone of the area, with a focus on developing robust and responsive solutions for public security and emergency response. Innovative technologies such as AI, computer vision, and IoT are leveraged to build systems that can predict, prevent, and respond swiftly to public safety incidents. This encompasses everything from traffic management and crime prevention to disaster response and safety in public spaces.
+Public Safety
 
-Life sciences is the third pillar of Healthcare, emphasizing the use of technology to improve overall well-being. This includes the integration of technology in areas such as biomedical research, pharmaceutical development, genomics, and personalized nutrition. The ultimate goal here is to foster a better understanding of human health and disease, and to use these insights to develop solutions that enhance overall quality of life.
+Public safety constitutes another fundamental pillar of this domain, focusing on formulating strong and efficient solutions for public security and emergency response. Emerging technologies like artificial intelligence (AI), computer vision, and the Internet of Things (IoT) are being exploited to create systems capable of predicting, preventing, and responding promptly to public safety incidents. This broad scope includes facets like traffic management, crime prevention, disaster response, and ensuring safety in public areas.
 
-In conclusion, Healthcare symbolizes a commitment to enhancing the quality of life and ensuring safety for all through the power of technology and scientific innovation. By integrating these diverse but related fields, this domain is contributing to a healthier, safer, and more vibrant society.');
+Life Sciences
+
+Life sciences represent the third aspect of the healthcare domain, emphasizing the integration of technology to foster overall well-being. It spans the utilization of technology in sectors like biomedical research, pharmaceutical development, genomics, and personalized nutrition. The overarching goal here is to cultivate a deeper comprehension of human health and disease, subsequently using these insights to craft solutions that uplift the overall quality of life.');
 
 -- Area #2
-INSERT INTO Areas (Title, Description)
+INSERT INTO Areas (Title, Section1, Section2)
 VALUES
 ('EcoSustain',
-'"EcoSustain" is a domain that stands at the intersection of technology, environment, and agriculture, epitomizing the commitment to sustainability and the well-being of our planet. This area is characterized by the development and implementation of innovative technologies that foster environmental sustainability, mitigate pollution, and enhance resource efficiency.
+'EcoSustain is an intersectional domain that lies at the crossroads of technology, environment, and agriculture, symbolizing a deep-rooted commitment to sustainability and the welfare of our planet. The area is marked by the development and execution of forward-thinking technologies, with a clear aim to endorse environmental sustainability, alleviate pollution, and amplify resource efficiency.',
 
-At the heart of EcoSustain is the vision of a cleaner, greener, and more sustainable world. This vision is brought to life through the deployment of cutting-edge technologies designed to reduce environmental footprints and improve the way we utilize our planet precious resources. This includes advancements in renewable energy, waste management, and recycling technologies, as well as innovations that help mitigate pollution and promote cleaner air and water.
+'Environmental Sustainability & Resource Management
+Central to EcoSustain is a vision of a purer, greener, and more sustainable planet. This is actualized through the implementation of avant-garde technologies tailored to reduce environmental footprints and refine how we exploit Earth precious resources. This involves progress in renewable energy, waste management, and recycling technologies, as well as inventive solutions that aim to curb pollution and endorse cleaner air and water.
 
-Agriculture is another pivotal facet of EcoSustain, where the focus is on optimizing farming practices and managing resources more efficiently. This is achieved through the integration of data-driven insights and state-of-the-art technologies like precision farming, automated irrigation systems, and satellite imaging. These tools not only help maximize crop yields and improve livestock management but also ensure these processes are carried out sustainably, minimizing the impact on the environment.
+Agriculture & Sustainable Farming Practices
 
-In addition, EcoSustain acknowledges the critical role of sustainable food consumption in environmental conservation. This involves promoting sustainable diets, reducing food waste, and facilitating the shift towards more sustainable food production practices.
+Agriculture forms another crucial aspect of EcoSustain, with an emphasis on optimizing farming methods and managing resources more effectively. Achieving this involves the integration of data-driven insights and state-of-the-art technologies like precision farming, automated irrigation systems, and satellite imaging. These instruments not only aid in maximizing crop yields and enhancing livestock management but also ensure these procedures are conducted sustainably, with minimal impact on the environment.
 
-In essence, EcoSustain embodies the aspiration for a sustainable future. It is a testament to our collective responsibility towards our planet and the potential of technology to make a significant positive impact. Through continuous innovation and a strong commitment to sustainability, EcoSustain is striving to make the world a better place for future generations.');
+Sustainable Food Consumption
+
+In addition, EcoSustain recognizes the vital role sustainable food consumption plays in environmental preservation. This encompasses endorsing sustainable diets, reducing food waste, and facilitating a transition towards more sustainable food production practices.');
 
 -- Area #3
-INSERT INTO Areas (Title, Description)
+INSERT INTO Areas (Title, Section1, Section2)
 VALUES
 ('Technology',
-'"Technology" is a broad domain encapsulating the dynamic technological developments across various industries. It stands as a testament to human ingenuity and the limitless potential of modern computing.
+'"Technology" is an expansive domain that encompasses the ever-evolving technological advancements across a diverse range of industries. It stands as a shining testament to human ingenuity and the boundless potential of contemporary computing. At the heart of this domain lies the development and improvement of algorithms and systems capable of learning from data, representing the tangible embodiment of machine intelligence.',
+'Internet of Things (IoT)
 
-The core of this area is the creation and refinement of algorithms and systems capable of learning from data. These systems can discern patterns, make informed decisions, and predict outcomes, effectively embodying the concept of machine intelligence.
+A vital component of this domain is the Internet of Things (IoT), a network of physical objects—often called "things"—embedded with sensors, software, and other technologies to facilitate data exchange with other devices and systems over the internet. IoT has extensive applications in myriad industries, spanning from home automation and healthcare to manufacturing and beyond.
 
-One of the key constituents of this area is the Internet of Things (IoT). IoT represents the network of physical objects or "things" embedded with sensors, software, and other technologies for the purpose of connecting and exchanging data with other devices and systems over the internet. It has applications in various industries, ranging from home automation to healthcare, manufacturing, and more.
+Virtual Reality (VR)
 
-Virtual Reality (VR) is another exciting aspect, providing immersive experiences that blur the line between the physical and digital worlds. It has profound implications for sectors like gaming, education, and even real estate.
+Virtual Reality (VR) represents another exhilarating aspect of technology, delivering immersive experiences that blur the boundaries between the physical and digital worlds. Its implications extend across sectors like gaming, education, and even real estate.
 
-Home Automation embodies the application of IoT in personal spaces, enhancing comfort, efficiency, and security. This includes everything from smart lighting and temperature control to advanced security systems.
+Home Automation
 
-Robotics and Computer Vision represent the blend of physical systems with intelligent software. These technologies enable machines to interact with their surroundings, recognize objects or faces, and perform complex tasks, revolutionizing sectors like manufacturing, healthcare, and transportation.
+Home Automation is an embodiment of IoT applications in personal spaces, aimed at improving comfort, efficiency, and security. It involves a wide array of features, including smart lighting, temperature control, and advanced security systems.
 
-Satellite Communications is a critical area, supporting global connectivity and data exchange. This technology has profound implications for navigation, weather forecasting, and global communications.
+Robotics and Computer Vision
 
-Lastly, Medical Imaging represents the application of technology in healthcare, enabling better diagnostic and treatment capabilities. Innovations in this field have the potential to detect diseases earlier and with more precision, significantly improving patient outcomes.
+The merger of physical systems with intelligent software is manifested in the fields of Robotics and Computer Vision. These technologies enable machines to interact with their environments, recognize objects or faces, and carry out complex tasks, revolutionizing industries like manufacturing, healthcare, and transportation.
 
-In essence, the "Technology" area reflects the relentless pursuit of progress, embodied in technological advancements that are constantly pushing the boundaries of what is possible and transforming services across sectors.');
+Satellite Communications
+
+Satellite Communications is a crucial sector, underpinning global connectivity and data exchange. This technology has significant impacts on navigation, weather forecasting, and global communication networks.
+
+Medical Imaging
+
+Lastly, Medical Imaging illustrates the application of technology within healthcare, enhancing diagnostic and treatment capabilities. Innovations in this field hold the potential to detect diseases earlier and with greater accuracy, dramatically improving patient outcomes.');
 
 -- Area #4
-INSERT INTO Areas (Title, Description)
+INSERT INTO Areas (Title, Section1, Section2)
 VALUES
 ('Growth',
-'"Growth" encompasses the sectors of finance, education, and travel. The primary objective of this domain is to foster both individual and collective growth through innovative technological solutions.
+'"Growth" is a multifaceted domain encompassing the sectors of finance, education, and travel. Its central objective is to promote individual and collective development through the application of innovative technological solutions.',
+'Finance
 
-In the realm of finance, our focus is to democratize the field by offering accessible and bespoke financial management tools. These are designed to cater to the needs of individuals and small enterprises, empowering them to make informed decisions and take control of their financial health.
+In the sphere of finance, our concentration is on democratizing access to this field by providing user-friendly and personalized financial management tools. These tools are specifically designed to cater to the requirements of individuals and small enterprises, empowering them to make informed decisions and take proactive control of their financial well-being.
 
-Education, another key component of this area, is reimagined through the lens of advanced technology. Our aim is to create immersive learning experiences that inspire and engage. By harnessing the potential of modern tech, we strive to revolutionize the traditional learning paradigm, making education more interactive, effective, and enjoyable.
+Education
 
-The travel sector is targeted towards simplifying the overall travel experience. Leveraging technology, we aspire to streamline travel logistics, making journeys more seamless and enjoyable. Our solutions aim to mitigate common travel inconveniences, offering a smoother, more enjoyable, and personalized experience.
+Education, another pivotal component of this domain, is reconceptualized through the prism of advanced technology. Our goal is to curate immersive learning experiences that inspire and engage learners. By capitalizing on the possibilities of contemporary tech, we aim to revolutionize traditional learning paradigms, making education more interactive, effective, and enjoyable.
 
-In essence, the "Growth" area is dedicated to harnessing technology potential to fuel personal and economic growth. We firmly believe in the transformative power of innovation to elevate experiences and drive progress in these crucial sectors of our lives.');
+Travel
+
+The travel sector is geared towards simplifying the overarching travel experience. With the help of technology, we aspire to smooth out travel logistics, rendering journeys more seamless and enjoyable. Our solutions target common travel inconveniences, aiming to offer a more streamlined, pleasurable, and personalized experience for all travelers.
+
+To encapsulate, the "Growth" domain is devoted to leveraging the potential of technology to fuel personal and economic development. We strongly endorse the transformative power of innovation to enhance experiences and drive progress within these crucial sectors of our lives.');
 /*----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
 -- Areas Refers Projects
