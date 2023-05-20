@@ -1,5 +1,5 @@
 <template>
-    <div class="card" style="width: 18rem;">
+    <div class="card mx-auto" style="width: 18rem;">
         <router-link :to="`/area/${AreaID}`" style="display: contents;">
             <img class="card-img-top" :src="`/images/areas/${Title}.webp`" :alt="Title">
             <div class="card-body">

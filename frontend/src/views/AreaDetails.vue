@@ -1,12 +1,22 @@
+<script lang="ts" setup>
+import ProjectCard from '@/components/ProjectCard.vue'
+</script>
+
 <template>
     <div class="container">
         <div>
-            <h1>{{ areaDetails.Title }}</h1>
+            <h1 class="h1">{{ areaDetails.Title }}</h1>
         </div>
         <div>
             <p>{{ areaDetails.Description }}</p>
             <hr>
-            <b>Projects: </b><span v-for="project in projects">{{ project }}, </span>
+            <h3 class="h3">Projects:</h3>
+            <div class="row g-3">
+                <div v-for="project in projects" class="col-12 col-md-6 col-lg-4">
+                    <ProjectCard :projectid="project.projectid" :title="project.title" :preview="project.preview"
+                        :stage="project.stage" :year="project.year" :featured="project.featured" />
+                </div>
+            </div>
         </div>
     </div>
 </template>
@@ -35,11 +45,14 @@ export default {
         }
     },
 
+    components: {
+        ProjectCard
+    },
+
     created() {
         this.areaDetails.AreaID = this.$route.params.areaid
         this.getAreaData(this.areaDetails.AreaID)
     },
-
 
     methods: {
         getAreaData: function (areaid: number) {
@@ -79,5 +92,4 @@ export default {
         }
     }
 }
-
 </script>

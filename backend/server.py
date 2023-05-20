@@ -177,7 +177,7 @@ def get_project_from_area(areaid):
     cursor = mysql.connection.cursor()
 
     query = """
-        select projectid, title
+        select projectid, title, stage, yearoffoundation as year, featured
         from projects natural join refers
         where areaid = %s
     """

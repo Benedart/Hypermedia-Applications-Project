@@ -12,17 +12,30 @@
                 <router-link :to="`/area/${area.areaid}`">{{ area.title }}</router-link>
                 <span v-if="index < projectDetails.areas.length - 1"> - </span>
             </i>
-            <p><b>Supervisor:</b> {{ projectDetails.name + " " + projectDetails.surname }}</p>
             <p><b>Budget:</b> {{ projectDetails.budget }}$</p>
             <p><b>Stage:</b> {{ projectDetails.stage }}</p>
             <hr>
             <p>{{ projectDetails.description }}</p>
             <hr>
+            <p>
+                <b>Supervisor: </b>
+                <router-link :to="`/person/${projectDetails.supervisor}`">
+                    {{ projectDetails.name + " " + projectDetails.surname }}
+                </router-link>
+            </p>
             <b>People: </b>
             <span v-for="(person, index) in people">
-                <router-link :to="`/person/${person.personid}`">{{ person.name }} {{ person.surname }}</router-link><span
-                    v-if="index < people.length - 1">, </span>
+                <router-link :to="`/person/${person.personid}`">
+                    {{ person.name }} {{ person.surname }}
+                </router-link>
+                <span v-if="index < people.length - 1">, </span>
             </span>
+        </div>
+        <!-- add the possibility to navigate to the next project -->
+        <div>
+            <router-link :to="`/project/${projectDetails.projectid + 1}`">
+                Next project
+            </router-link>
         </div>
     </div>
 </template>
@@ -36,6 +49,7 @@ export default {
             projectDetails: {
                 projectid: -1,
                 description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+                supervisor: -1,
                 name: 'Name',
                 surname: 'Surname',
                 budget: '1000',

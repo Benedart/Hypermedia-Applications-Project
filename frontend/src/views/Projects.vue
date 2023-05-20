@@ -29,8 +29,8 @@ import ProjectCard from '@/components/ProjectCard.vue'
                             <div class="row g-3">
                                 <div v-for="project in projectsByArea(area.areaid)" class="col-12 col-md-6 col-lg-4">
                                     <ProjectCard :projectid="project.projectid" :title="project.title"
-                                        :preview="project.preview" :stage="project.stage" :areas="project.areas"
-                                        :year="project.year" :featured="project.featured" />
+                                        :preview="project.preview" :stage="project.stage" :year="project.year"
+                                        :featured="project.featured" />
                                 </div>
                             </div>
                         </div>

@@ -1,5 +1,5 @@
 <template>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top">
         <div class="container-fluid">
             <a class="navbar-brand" href="#"><img src="@/assets/logo.png" width="50"> <b>HyperMeow</b></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -7,7 +7,7 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
+                <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
                         <router-link class="nav-link active" aria-current="page" to="/">Home</router-link>
                     </li>
@@ -38,3 +38,56 @@
         </div>
     </nav>
 </template>
+
+<style scoped>
+.navbar {
+    background-color: #ffffff;
+}
+
+/* the router-links should be animated and highlighted when active */
+.router-link-active {
+    color: #ffffff;
+    background-color: #00ce6e;
+}
+
+.router-link-active:hover {
+    color: #ffffff;
+    background-color: #00ce6e;
+}
+
+.router-link-active:active {
+    color: #ffffff;
+    background-color: #00ce6e;
+}
+
+.router-link-active:focus {
+    color: #ffffff;
+    background-color: #00ce6e;
+}
+
+.router-link-active:visited {
+    color: #ffffff;
+    background-color: #00ce6e;
+}
+
+/* the dropdown menu should be animated and highlighted when active */
+
+.dropdown-item:hover {
+    color: #ffffff;
+    background-color: #00ce6e;
+}
+
+.dropdown-item:active {
+    color: #ffffff;
+    background-color: #00ce6e;
+}
+
+.dropdown-item:focus {
+    color: #ffffff;
+    background-color: #00ce6e;
+}
+
+.dropdown-item:visited {
+    background-color: #00ce6e;
+}
+</style>

@@ -5,6 +5,8 @@
                 <h5>Resources</h5>
                 <ul class="nav flex-column">
                     <li class="nav-item mb-2"><router-link to="/" class="nav-link p-0 text-muted">Home</router-link></li>
+                    <li class="nav-item mb-2"><router-link to="/featured" class="nav-link p-0 text-muted">Featured
+                            projects</router-link></li>
                     <li class="nav-item mb-2"><router-link to="/projects"
                             class="nav-link p-0 text-muted">Projects</router-link></li>
                     <li class="nav-item mb-2"><router-link to="/people" class="nav-link p-0 text-muted">People</router-link>
