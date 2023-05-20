@@ -10,12 +10,4 @@ export default defineNuxtConfig({
     css: [
         '@/assets/main.css',
     ],
-
-    env: {
-        SERVER_URL: process.env.SERVER_URL || 'http://127.0.0.1:5000'
-    },
-
-    buildModules: [
-        '@nuxtjs/dotenv',
-    ],
 })
