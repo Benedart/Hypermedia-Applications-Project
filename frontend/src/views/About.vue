@@ -45,10 +45,15 @@ import ProjectCard from '@/components/ProjectCard.vue'
             <hr>
             <br>
             <div class="row mx-3">
+<<<<<<< Updated upstream
                 <div class="col-md-6 bg-primary text-white rounded">
+=======
+                <div class = "col-md-5 bg-primary text-white rounded">
+>>>>>>> Stashed changes
                     <h1> BIG NUMBER 1</h1>
                 </div>
-                <div class="col-md-6 bg-primary text-white rounded">
+                <div class="col-md-2"></div>
+                <div class="col-md-5 bg-primary text-white rounded">
                     <h1> ANOTHER ONE</h1>
                 </div>
             </div>
@@ -103,7 +108,7 @@ import ProjectCard from '@/components/ProjectCard.vue'
             <br>
             <div class="row mx-3">
                 <div class="row mx-3">
-                    <div v-for="project in projects" class="col">
+                    <div v-for="project in projects" class="col mb-3">
                         <ProjectCard :projectid="project.projectid" :title="project.title" :preview="project.preview"
                             :stage="project.stage" :areas="project.areas" :year="project.year"
                             :featured="project.featured" />
