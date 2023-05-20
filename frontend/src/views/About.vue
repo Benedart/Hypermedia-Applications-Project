@@ -31,12 +31,22 @@ import ProjectCard from '@/components/ProjectCard.vue'
             <hr>
             <br>
             <div class="row mx-3">
-                <div class = "col-md-5 bg-primary text-white rounded mb-3">
-                    <h1> BIG NUMBER 1</h1>
+                <div class = "col-md-5 rounded mb-3">
+                    <div class="row">
+                        <h1> BIG NUMBER 1</h1>
+                    </div>
+                    <div class="row">
+                        <b> What's that number?</b>
+                    </div>
                 </div>
                 <div class="col-md-2"></div>
-                <div class="col-md-5 bg-primary text-white rounded mb-3">
-                    <h1> ANOTHER ONE</h1>
+                <div class="col-md-5 rounded mb-3">
+                    <div class="row">
+                        <h1> ANOTHER ONE</h1>
+                    </div>
+                    <div class="row">
+                        <b> That’s very crazy, didn’t expect it</b>
+                    </div>
                 </div>
             </div>
             <br>
@@ -80,6 +90,10 @@ import ProjectCard from '@/components/ProjectCard.vue'
                         :stage="project.stage" :areas="project.areas" :year="project.year" :featured="project.featured" />
                     </div>
                 </div>
+            </div>
+            <br>
+            <div class = "row mx-3">
+                <router-link to="/projects" tag="button" class="btn btn-secondary">All projects</router-link>
             </div>
             <br>
             <hr>
