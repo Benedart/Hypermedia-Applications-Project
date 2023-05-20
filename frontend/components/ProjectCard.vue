@@ -1,5 +1,5 @@
 <template>
-    <router-link :to="`/project/${projectid}`" style="display: contents;">
+    <NuxtLink :to="`/projects/${projectid}`" style="display: contents;">
         <div class="card h-100 mx-auto" style="width: 18rem;">
             <img class="card-img-top" :src="`/images/projects/${title}.webp`" :alt="title">
             <div class="card-body">
@@ -11,7 +11,7 @@
                 <span class="float-end">{{ year }}</span>
             </div>
         </div>
-    </router-link>
+    </NuxtLink>
 </template>
 
 <script lang="ts">

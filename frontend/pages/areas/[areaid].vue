@@ -39,7 +39,7 @@ export default {
                     title: 'project',
                     preview: 'preview',
                     stage: 'stage',
-                    year: 'year',
+                    year: 1024,
                 }
             ],
         }
@@ -55,40 +55,26 @@ export default {
     },
 
     methods: {
-        getAreaData: function (areaid: number) {
+        getAreaData: async function (areaid: number) {
             // get area details
-            makeCall("GET", import.meta.env.VITE_APP_URL + "/getArea/" + areaid,
-                (req) => {
-                    if (req.readyState === 4) {
-                        let message = req.responseText;
-                        console.log(message)
-
-                        if (req.status === 200) {
-                            let data = JSON.parse(message);
-                            this.areaDetails = data
-                        } else {
-                            alert("Error, couldn't retrieve area details");
-                        }
-                    }
-                }
-            )
+            try {
+                const data = await makeCall(this.$config.public.SERVER_URL + "/getArea/" + areaid, 'GET');
+                console.log(data);
+                this.areaDetails = data
+            } catch (error) {
+                alert("Error, couldn't retrieve area details");
+                console.error(error);
+            }
 
             // get all projects which refer an area
-            makeCall("GET", import.meta.env.VITE_APP_URL + "/getProjectsFromArea/" + areaid,
-                (req) => {
-                    if (req.readyState === 4) {
-                        let message = req.responseText;
-                        console.log(message)
-
-                        if (req.status === 200) {
-                            let data = JSON.parse(message);
-                            this.projects = data
-                        } else {
-                            alert("Error, couldn't retrieve projects of this area");
-                        }
-                    }
-                }
-            )
+            try {
+                const data = await makeCall(this.$config.public.SERVER_URL + "/getProjectsFromArea/" + areaid, 'GET');
+                console.log(data);
+                this.projects = data
+            } catch (error) {
+                alert("Error, couldn't retrieve projects");
+                console.error(error);
+            }
         }
     }
 }

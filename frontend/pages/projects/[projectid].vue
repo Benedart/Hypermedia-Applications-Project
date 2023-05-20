@@ -9,7 +9,7 @@
         </div>
         <div>
             <i v-for="(area, index) in projectDetails.areas">
-                <router-link :to="`/area/${area.areaid}`">{{ area.title }}</router-link>
+                <NuxtLink :to="`/areas/${area.areaid}`">{{ area.title }}</NuxtLink>
                 <span v-if="index < projectDetails.areas.length - 1"> - </span>
             </i>
             <p><b>Budget:</b> {{ projectDetails.budget }}$</p>
@@ -19,23 +19,23 @@
             <hr>
             <p>
                 <b>Supervisor: </b>
-                <router-link :to="`/person/${projectDetails.supervisor}`">
+                <NuxtLink :to="`/people/${projectDetails.supervisor}`">
                     {{ projectDetails.name + " " + projectDetails.surname }}
-                </router-link>
+                </NuxtLink>
             </p>
             <b>People: </b>
             <span v-for="(person, index) in people">
-                <router-link :to="`/person/${person.personid}`">
+                <NuxtLink :to="`/people/${person.personid}`">
                     {{ person.name }} {{ person.surname }}
-                </router-link>
+                </NuxtLink>
                 <span v-if="index < people.length - 1">, </span>
             </span>
         </div>
         <!-- add the possibility to navigate to the next project -->
         <div>
-            <router-link :to="`/project/${projectDetails.projectid + 1}`">
+            <NuxtLink :to="`/projects/${projectDetails.projectid + 1}`">
                 Next project
-            </router-link>
+            </NuxtLink>
         </div>
     </div>
 </template>
@@ -70,42 +70,28 @@ export default {
     },
 
     methods: {
-        getProjectData: function (projectid: number) {
+        getProjectData: async function (projectid: number) {
             console.log(this.$route.params)
 
             // get project details
-            makeCall("GET", import.meta.env.VITE_APP_URL + "/getProject/" + projectid,
-                (req) => {
-                    if (req.readyState === 4) {
-                        let message = req.responseText;
-                        console.log(message)
-
-                        if (req.status === 200) {
-                            let data = JSON.parse(message);
-                            this.projectDetails = data
-                        } else {
-                            alert("Error, couldn't retrieve project details");
-                        }
-                    }
-                }
-            )
+            try {
+                const data = await makeCall(this.$config.public.SERVER_URL + "/getProject/" + projectid, 'GET');
+                console.log(data);
+                this.projectDetails = data
+            } catch (error) {
+                alert("Error, couldn't retrieve project details");
+                console.error(error);
+            }
 
             // get people working on the project
-            makeCall("GET", import.meta.env.VITE_APP_URL + "/getPeopleFromProject/" + projectid,
-                (req) => {
-                    if (req.readyState === 4) {
-                        let message = req.responseText;
-                        console.log(message)
-
-                        if (req.status === 200) {
-                            let data = JSON.parse(message);
-                            this.people = data
-                        } else {
-                            alert("Error, couldn't retrieve people working on the project");
-                        }
-                    }
-                }
-            )
+            try {
+                const data = await makeCall(this.$config.public.SERVER_URL + "/getPeopleFromProject/" + projectid, 'GET');
+                console.log(data);
+                this.people = data
+            } catch (error) {
+                alert("Error, couldn't retrieve people working on the project");
+                console.error(error);
+            }
         },
     }
 }

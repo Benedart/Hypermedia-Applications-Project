@@ -102,54 +102,33 @@ export default {
             this.$emit("applyFilters", filters)
         },
 
-        getFilters: function () {
+        getFilters: async function () {
             // get all the areas
-            makeCall("GET", import.meta.env.VITE_APP_URL + "/getAreas",
-                (req) => {
-                    if (req.readyState === 4) {
-                        let message = req.responseText;
-
-                        if (req.status === 200) {
-                            let data = JSON.parse(message);
-                            this.areas = data
-                        } else {
-                            alert("Error, couldn't get the areas");
-                        }
-                    }
-                }
-            )
+            try {
+                const data = await makeCall(this.$config.public.SERVER_URL + "/getAreas", 'GET');
+                console.log(data);
+                this.areas = data;
+            } catch (error) {
+                console.error(error);
+            }
 
             // get all the years
-            makeCall("GET", import.meta.env.VITE_APP_URL + "/getYears",
-                (req) => {
-                    if (req.readyState === 4) {
-                        let message = req.responseText;
-
-                        if (req.status === 200) {
-                            let data = JSON.parse(message);
-                            this.years = data.map((year: { yearoffoundation: number; }) => year.yearoffoundation)
-                        } else {
-                            alert("Error, couldn't get the years");
-                        }
-                    }
-                }
-            )
+            try {
+                const data = await makeCall(this.$config.public.SERVER_URL + "/getYears", 'GET');
+                console.log(data);
+                this.years = data.map((year: { yearoffoundation: number; }) => year.yearoffoundation)
+            } catch (error) {
+                console.error(error);
+            }
 
             // get all the stages
-            makeCall("GET", import.meta.env.VITE_APP_URL + "/getStages",
-                (req) => {
-                    if (req.readyState === 4) {
-                        let message = req.responseText;
-
-                        if (req.status === 200) {
-                            let data = JSON.parse(message);
-                            this.stages = data.map((stage: { stage: string; }) => stage.stage)
-                        } else {
-                            alert("Error, couldn't get the stages");
-                        }
-                    }
-                }
-            )
+            try {
+                const data = await makeCall(this.$config.public.SERVER_URL + "/getStages", 'GET');
+                console.log(data);
+                this.stages = data.map((stage: { stage: string; }) => stage.stage)
+            } catch (error) {
+                console.error(error);
+            }
         }
     }
 }

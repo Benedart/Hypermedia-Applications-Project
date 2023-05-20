@@ -42,24 +42,15 @@ export default {
     },
 
     methods: {
-        getData: function () {
-            makeCall("GET", import.meta.env.VITE_APP_URL + "/getFeaturedProjects",
-                (req) => {
-                    if (req.readyState === 4) {
-                        let message = req.responseText;
-
-                        if (req.status === 200) {
-                            let data = JSON.parse(message);
-
-                            console.log(data)
-
-                            this.projects = data
-                        } else {
-                            alert("Error, couldn't retrieve data");
-                        }
-                    }
-                }
-            )
+        getData: async function () {
+            try {
+                const data = await makeCall(this.$config.public.SERVER_URL + "/getFeaturedProjects", 'GET');
+                console.log(data);
+                this.projects = data
+            } catch (error) {
+                alert("Error, couldn't retrieve project details");
+                console.error(error);
+            }
         },
     },
 }

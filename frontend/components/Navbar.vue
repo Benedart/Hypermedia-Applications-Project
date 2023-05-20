@@ -1,7 +1,7 @@
 <template>
     <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#"><img src="@/assets/logo.png" width="50"> <b>HyperMeow</b></a>
+            <a class="navbar-brand" href="#"><img src="@/images/logo.png" width="50"> <b>HyperMeow</b></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -9,7 +9,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <router-link class="nav-link active" aria-current="page" to="/">Home</router-link>
+                        <NuxtLink class="nav-link active" aria-current="page" to="/">Home</NuxtLink>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
@@ -17,21 +17,25 @@
                             Projects
                         </a>
                         <ul class="dropdown-menu">
-                            <li><router-link class="dropdown-item" to="/featured">Featured</router-link></li>
-                            <li><router-link class="dropdown-item" to="/projects">All projects</router-link></li>
+                            <li>
+                                <NuxtLink class="dropdown-item" to="/featuredprojects">Featured</NuxtLink>
+                            </li>
+                            <li>
+                                <NuxtLink class="dropdown-item" to="/projects">All projects</NuxtLink>
+                            </li>
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <router-link class="nav-link" to="/people">People</router-link>
+                        <NuxtLink class="nav-link" to="/people">People</NuxtLink>
                     </li>
                     <li class="nav-item">
-                        <router-link class="nav-link" to="/areas">Areas</router-link>
+                        <NuxtLink class="nav-link" to="/areas">Areas</NuxtLink>
                     </li>
                     <li class="nav-item">
-                        <router-link class="nav-link" to="/about">About us</router-link>
+                        <NuxtLink class="nav-link" to="/about">About us</NuxtLink>
                     </li>
                     <li class="nav-item">
-                        <router-link class="nav-link" to="/contact">Contact us</router-link>
+                        <NuxtLink class="nav-link" to="/contacts">Contact us</NuxtLink>
                     </li>
                 </ul>
             </div>
@@ -44,7 +48,7 @@
     background-color: #ffffff;
 }
 
-/* the router-links should be animated and highlighted when active */
+/* the NuxtLinks should be animated and highlighted when active */
 .router-link-active {
     color: #ffffff;
     background-color: #00ce6e;

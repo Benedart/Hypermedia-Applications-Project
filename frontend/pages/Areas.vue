@@ -45,23 +45,15 @@ export default {
     },
 
     methods: {
-        getData: function () {
-            makeCall("GET", import.meta.env.VITE_APP_URL + "/getAreaCards",
-                (req) => {
-                    if (req.readyState === 4) {
-                        let message = req.responseText;
-
-                        if (req.status === 200) {
-                            let data = JSON.parse(message);
-
-                            console.log(data)
-                            this.areas = data
-                        } else {
-                            alert("Error, couldn't retrieve data");
-                        }
-                    }
-                }
-            )
+        getData: async function () {
+            try {
+                const data = await makeCall(this.$config.public.SERVER_URL + "/getAreaCards", 'GET');
+                console.log(data);
+                this.areas = data
+            } catch (error) {
+                alert("Error, couldn't retrieve area cards");
+                console.error(error);
+            }
         },
     },
 };

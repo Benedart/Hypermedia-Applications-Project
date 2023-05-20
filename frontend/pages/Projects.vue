@@ -193,7 +193,7 @@ export default {
         },
 
         // returns the list of distinct areas of the visible projects
-        getAreas(projects: any[]) {
+        getAreas: function (projects: any[]) {
             let areas = []
 
             // for each project, add the areas that are not already in the list
@@ -213,27 +213,19 @@ export default {
         },
 
         // get the data from the server
-        getData: function () {
-            makeCall("GET", import.meta.env.VITE_APP_URL + "/getProjects",
-                (req) => {
-                    if (req.readyState === 4) {
-                        let message = req.responseText;
+        getData: async function () {
+            try {
+                const data = await makeCall(this.$config.public.SERVER_URL + "/getProjects", 'GET');
+                console.log(data);
 
-                        if (req.status === 200) {
-                            let data = JSON.parse(message);
-
-                            console.log(data)
-
-                            // itintially all the projects are shown, so we save them in both arrays
-                            this.allProjects = data
-                            this.projects = data
-                            this.getAreas(this.allProjects)
-                        } else {
-                            alert("Error, couldn't retrieve data");
-                        }
-                    }
-                }
-            )
+                // itintially all the projects are shown, so we save them in both arrays
+                this.allProjects = data
+                this.projects = data
+                this.getAreas(this.allProjects)
+            } catch (error) {
+                alert("Error, couldn't retrieve project details");
+                console.error(error);
+            }
         },
     },
 }
