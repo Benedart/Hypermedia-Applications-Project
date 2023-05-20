@@ -59,7 +59,7 @@ import ProjectCard from '@/components/ProjectCard.vue'
                 <div class="col-md-12">
                     <h2>“We love inspirational quotes, they are very big and seem very meaningful. I really don’t know what the world would be without them. This has been very helpful. Yes.”</h2>
                 </div>
-                <hr>
+                <br>
                 <div class="col-md-12">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Urna molestie at elementum eu. Suspendisse in est ante in nibh mauris cursus mattis. Tortor pretium viverra suspendisse potenti nullam ac tortor. Ultricies tristique nulla aliquet enim tortor at auctor urna. 
                     Aenean vel elit scelerisque mauris pellentesque pulvinar pellentesque habitant morbi. Vitae nunc sed velit dignissim sodales ut eu sem integer. Enim eu turpis egestas pretium aenean. Diam quam nulla porttitor massa id. Ut tellus elementum sagittis vitae et leo. Fermentum odio eu feugiat pretium nibh ipsum consequat nisl.
