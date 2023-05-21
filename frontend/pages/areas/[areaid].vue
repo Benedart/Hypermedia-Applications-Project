@@ -17,6 +17,15 @@ import ProjectCard from '@/components/ProjectCard.vue'
                         :stage="project.stage" :year="project.year" :featured="project.featured" />
                 </div>
             </div>
+            <!-- add the possibility to navigate to the next and previous area -->
+            <div>
+                <NuxtLink :to="`/areas/${previousAreaId}`">
+                    Previous area
+                </NuxtLink>
+                <NuxtLink :to="`/areas/${nextAreaId}`">
+                    Next area
+                </NuxtLink>
+            </div>
         </div>
     </div>
 </template>
@@ -52,6 +61,21 @@ export default {
     created() {
         this.areaDetails.AreaID = this.$route.params.areaid
         this.getAreaData(this.areaDetails.AreaID)
+    },
+
+    computed: {
+        // compute next and previous area id (range 1 to 4)
+        nextAreaId(): number {
+            return (this.areaDetails.AreaID % 4) + 1
+        },
+
+        previousAreaId(): number {
+            // if area id is 1, previous area is 4
+            if (this.areaDetails.AreaID == 1) {
+                return 4
+            }
+            return this.areaDetails.AreaID - 1
+        }
     },
 
     methods: {

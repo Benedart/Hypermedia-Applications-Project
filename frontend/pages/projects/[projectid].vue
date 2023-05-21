@@ -1,4 +1,9 @@
 <template>
+    <!-- 
+        TODO: this is also used for featured projects, this means that next and previous button 
+        will iterate through all projects based on their ids 
+        (in case of featured projects, the "next" project can also be a non featured one) 
+    -->
     <div class="container">
         <div>
             <h1>{{ projectDetails.title }}
@@ -31,9 +36,12 @@
                 <span v-if="index < people.length - 1">, </span>
             </span>
         </div>
-        <!-- add the possibility to navigate to the next project -->
+        <!-- add the possibility to navigate to the next and previous project -->
         <div>
-            <NuxtLink :to="`/projects/${projectDetails.projectid + 1}`">
+            <NuxtLink :to="`/projects/${previousProject}`">
+                Previous project
+            </NuxtLink>
+            <NuxtLink :to="`/projects/${nextProject}`">
                 Next project
             </NuxtLink>
         </div>
@@ -67,6 +75,20 @@ export default {
     created() {
         this.projectDetails.projectid = this.$route.params.projectid
         this.getProjectData(this.projectDetails.projectid)
+    },
+
+    computed: {
+        // compute next and previous project id (range 1 to )
+        nextProject() {
+            return (this.projectDetails.projectid % 15) + 1
+        },
+
+        previousProject() {
+            if (this.projectDetails.projectid == 1) {
+                return 15
+            }
+            return (this.projectDetails.projectid - 1)
+        },
     },
 
     methods: {

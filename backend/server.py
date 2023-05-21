@@ -260,7 +260,7 @@ def get_areas_with_projects():
     query = """
         select AreaID, Title
         from areas
-        order by title
+        order by AreaID
     """
     cursor.execute(query)
     areas = cursor.fetchall()

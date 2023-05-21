@@ -1,7 +1,10 @@
 <template>
+    <!--
+        TODO: find a way to not make the logo light up when in the home page
+    -->
     <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#"><img src="@/images/logo.png" width="50"> <b>HyperMeow</b></a>
+            <NuxtLink class="navbar-brand" to="/"><img src="@/images/logo.png" width="50"> <b>HyperMeow</b></NuxtLink>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
