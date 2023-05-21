@@ -7,20 +7,26 @@
     <h2>Get in touch</h2>
     <form @submit="handleSubmit" class="form-content">
       <div class="form-group">
-        <label for="name">Full Name</label>
-        <input type="text" id="name" name="name" placeholder="Enter your full name" class="form-control">
+        <label for="name">Full Name*</label>
+        <input type="text" id="name" name="name" v-model="name" placeholder="Enter your full name" class="form-control">
+        <p class="error-text" v-if="errors.name === 'required'">Uh! Oh! It appears that you are missing Full Name. Please fill it in before submitting again.</p>
       </div>
       <div class="form-group">
-        <label for="email">Email Address</label>
-        <input type="email" id="email" name="email" placeholder="Enter your email address" class="form-control">
+        <label for="email">Email Address*</label>
+        <input type="email" id="email" name="email" v-model="email" placeholder="Enter your email address" class="form-control">
+        <p class="error-text" v-if="errors.email === 'required'">Uh! Oh! It appears that you are missing Email Address. Please fill it in before submitting again.</p>
+        <p class="error-text" v-if="errors.email === 'invalid'">Uh! Oh! It appears that you have entered an invalid email address. Please correct it before submitting again.</p>
       </div>
       <div class="form-group">
-        <label for="phone">Phone Number</label>
-        <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" class="form-control">
+        <label for="phone">Phone Number*</label>
+        <input type="tel" id="phone" name="phone" v-model="phone" placeholder="Enter your phone number" class="form-control">
+        <p class="error-text" v-if="errors.phone === 'required'">Uh! Oh! It appears that you have not entered a phone number. Please fill it in before submitting again.</p>
+        <p class="error-text" v-if="errors.phone === 'invalid'">Uh! Oh! It appears that you have entered an invalid phone number. Please correct it before submitting again.</p>
       </div>
       <div class="form-group">
-        <label for="message">Have anything to say?</label>
-        <textarea id="message" name="message" placeholder="Your message here" class="form-control"></textarea>
+        <label for="message">Have anything to say?*</label>
+        <textarea id="message" name="message" v-model="message" placeholder="Your message here" class="form-control"></textarea>
+        <p class="error-text" v-if="errors.message === 'required'">Uh! Oh! It appears that you are missing the message. Please fill it in before submitting again.</p>
       </div>
       <button type="submit" class="btn btn-primary">Send</button>
     </form>
@@ -34,14 +40,66 @@
 export default {
   data() {
     return {
-      isSubmitted: false
+      name: '',
+      email: '',
+      phone: '',
+      message: '',
+      isSubmitted: false,
+      errors: {
+        name: null,
+        email: null,
+        phone: null,
+        message: null
+      }
     }
   },
   methods: {
     handleSubmit(event) {
       event.preventDefault();
-      this.isSubmitted = true;
+
+      // Reset errors
+      this.errors = {
+        name: null,
+        email: null,
+        phone: null,
+        message: null
+      };
+
+      // Perform form validation
+      if (!this.name) {
+        this.errors.name = 'required';
+      }
+      if (!this.email) {
+        this.errors.email = 'required';
+      } else if (!this.isValidEmail(this.email)) {
+        this.errors.email = 'invalid';
+      }
+      if (!this.phone) {
+        this.errors.phone = 'required';
+      } else if (!this.isValidPhone(this.phone)) {
+        this.errors.phone = 'invalid';
+      }
+      if (!this.message) {
+        this.errors.message = 'required';
+      }
+
+      // Submit form if there are no errors
+      if (Object.values(this.errors).every(error => !error)) {
+        this.isSubmitted = true;
+      }
+    },
+    isValidEmail(email) {
+      // Perform email validation logic
+      // Return true if valid, false otherwise
+      // E.g., using a regular expression:
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return emailRegex.test(email);
+    },
+    isValidPhone(phone) {
+      const phoneRegex = /^\d{10}$/;
+      return phoneRegex.test(phone);
     }
+
   }
 }
 </script>
@@ -134,6 +192,12 @@ h2 {
   color: #008000;  /* green color */
 }
 
+.error-text {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
 @media (max-width: 768px) {
   .form-content {
     width: 90%;
@@ -170,5 +234,3 @@ h2 {
   }
 }
 </style>
-
-
