@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { makeCall } from '@/utils/common'
-import Footer from '@/components/Footer.vue'
 import ProjectCard from '@/components/ProjectCard.vue'
 </script>
 
@@ -24,7 +23,7 @@ import ProjectCard from '@/components/ProjectCard.vue'
                     Pellentesque elit ullamcorper dignissim cras tincidunt lobortis feugiat vivamus at. Mollis nunc sed id semper risus. Faucibus et molestie ac feugiat sed lectus. Turpis tincidunt id aliquet risus feugiat in ante metus. Praesent tristique magna sit amet purus gravida quis blandit. Mauris pharetra et ultrices neque ornare aenean euismod. Semper eget duis at tellus at. Nam at lectus urna duis convallis convallis tellus id interdum. Ut porttitor leo a diam sollicitudin tempor id eu nisl. Quisque sagittis purus sit amet volutpat. Quam id leo in vitae turpis. Lacinia quis vel eros donec ac odio tempor orci dapibus. Amet massa vitae tortor condimentum lacinia quis vel. Et malesuada fames ac turpis egestas integer.
                 </div>
                 <div class=col-md-6>
-                    <img class="card-img-top" :src="`/images/about/usCats.webp`" alt="Poker Cats">
+                    <img class="card-img-top" src="/images/about/usCats.webp" alt="Poker Cats">
                 </div>
             </div>
             <br>
@@ -54,7 +53,7 @@ import ProjectCard from '@/components/ProjectCard.vue'
             <br>
             <div class="row mx-3">
                 <div class = "col-md-6">
-                    <img class="card-img-top" :src="`/images/about/entrepreneurCat.webp`" alt="Entrepreneur Cat">
+                    <img class="card-img-top" src="/images/about/entrepreneurCat.webp" alt="Entrepreneur Cat">
                 </div>
                 <div class="col-md-6">
                     <h3> Something</h3>
