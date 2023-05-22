@@ -1,5 +1,7 @@
 <template>
     <footer class="py-5">
+        <hr>
+        <br>
         <div class="row">
             <div class="col-6 col-md-2 mb-3">
                 <h5>Resources</h5>

@@ -30,9 +30,11 @@
       </div>
       <button type="submit" class="btn btn-primary">Send</button>
     </form>
-    <div class="confirmation" v-if="isSubmitted">
-      Your message has been sent successfully!
-    </div>
+    <transition name="fade">
+      <div class="confirmation" v-if="isSubmitted">
+        Your message has been sent successfully!
+      </div>
+    </transition>
   </div>
 </template>
 
@@ -86,6 +88,9 @@ export default {
       // Submit form if there are no errors
       if (Object.values(this.errors).every(error => !error)) {
         this.isSubmitted = true;
+        setTimeout(() => {
+          this.isSubmitted = false;
+        }, 5000);
       }
     },
     isValidEmail(email) {
@@ -109,7 +114,7 @@ export default {
   position: relative;
   padding: 25px;
   border: 1px solid #ccc;
-  border-radius: 5px;
+  border-radius: 15px;
   box-shadow: 2px 2px 6px 0px #c0c0c0;
   background-color: #EBEBEB;
   display: flex;
@@ -189,13 +194,24 @@ h2 {
 
 .confirmation {
   align-self: center;
-  color: #008000;  /* green color */
+  color: white;
+  background-color: rgba(0, 128, 0, 0.5);
+  padding: 10px;
+  border-radius: 3px;
 }
 
 .error-text {
-  color: red;
-  font-size: 12px;
-  margin-top: 5px;
+  color: white;
+  background-color: rgba(255, 0, 0, 0.5);
+  padding: 5px;
+  border-radius: 3px;
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 1s;
+}
+.fade-enter, .fade-leave-to {
+  opacity: 0;
 }
 
 @media (max-width: 768px) {
