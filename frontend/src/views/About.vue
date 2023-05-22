@@ -62,7 +62,7 @@ import ProjectCard from '@/components/ProjectCard.vue'
                     Aenean vel elit scelerisque mauris pellentesque pulvinar pellentesque habitant morbi. Vitae nunc sed velit dignissim sodales ut eu sem integer. Enim eu turpis egestas pretium aenean. Diam quam nulla porttitor massa id. Ut tellus elementum sagittis vitae et leo. Fermentum odio eu feugiat pretium nibh ipsum consequat nisl.
                 </div>
             </div>
-            <div class = "row my-"></div> <!---- added for spacing --->
+            <div class = "row my-4"></div> <!---- added for spacing --->
             <div class="row mx-3 justify-content-center">
                 <div class="col-md-8" style = "text-align: center;">
                     <h3><b>“We love inspirational quotes, they are very big and seem very meaningful. I really don’t know what the world would be without them. This has been very helpful. Yes.”</b></h3>
