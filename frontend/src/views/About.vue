@@ -13,7 +13,7 @@ import ProjectCard from '@/components/ProjectCard.vue'
             <br>
             <div class="row mx-3 justify-content-center">
                 <div class="col-md-6 d-flex align-items-center justify-content-center">
-                    <h3 style="text-align:center;"> <b>“Very inspirational quote here, something moving, not like what im currently writing. This is just a beautiful placeholder. I don’t know what else to write. I like cats.”</b></h3>
+                    <h3 style="text-align:center;"> <b>“Embracing novel ideas, fueling unprecedented innovations, and committing to the creation of a future where sustainability is not just a concept, but an established practice.”</b></h3>
                 </div>
             </div>
             <br>
@@ -22,60 +22,70 @@ import ProjectCard from '@/components/ProjectCard.vue'
             <br>
             <div class="row mx-3">
                 <div class="col-md-6 my-3">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Urna molestie at elementum eu. Suspendisse in est ante in nibh mauris cursus mattis. Tortor pretium viverra suspendisse potenti nullam ac tortor. Ultricies tristique nulla aliquet enim tortor at auctor urna. 
-                    Aenean vel elit scelerisque mauris pellentesque pulvinar pellentesque habitant morbi. Vitae nunc sed velit dignissim sodales ut eu sem integer. Enim eu turpis egestas pretium aenean. Diam quam nulla porttitor massa id. Ut tellus elementum sagittis vitae et leo. Fermentum odio eu feugiat pretium nibh ipsum consequat nisl.
-                    Pellentesque elit ullamcorper dignissim cras tincidunt lobortis feugiat vivamus at. Mollis nunc sed id semper risus. Faucibus et molestie ac feugiat sed lectus. Turpis tincidunt id aliquet risus feugiat in ante metus. Praesent tristique magna sit amet purus gravida quis blandit. Mauris pharetra et ultrices neque ornare aenean euismod. Semper eget duis at tellus at. Nam at lectus urna duis convallis convallis tellus id interdum. Ut porttitor leo a diam sollicitudin tempor id eu nisl. Quisque sagittis purus sit amet volutpat. Quam id leo in vitae turpis. Lacinia quis vel eros donec ac odio tempor orci dapibus. Amet massa vitae tortor condimentum lacinia quis vel. Et malesuada fames ac turpis egestas integer.
+                <div class="my-auto">
+                    We are a <strong>leading venture capital firm</strong> with a clear focus: to <strong>support and foster groundbreaking ideas</strong> that have the potential to <strong>disrupt the market</strong> and contribute to a <strong>sustainable future</strong>. Since our establishment, we have guided <strong>countless startups</strong> to <strong>scale, innovate, and thrive</strong>.
                 </div>
-                <div class= "col-md-6 my-3">
-                    <img class="card-img-top rounded" src="/images/about/usCats.webp" alt="Poker Cats">
+                <br>
+                <div class="my-auto">
+                    Our belief is firm: <strong>innovation disrupts</strong> and sparks growth. In startups, it's not just about capital, but also <strong>guidance, mentorship, and valuable connections</strong>. We offer a rich support ecosystem that empowers these budding enterprises, providing resources like <strong>strategic advisory</strong> and <strong>infrastructural assistance</strong>. These tools help them traverse their challenging entrepreneurial journey with <strong>confidence and skill</strong>.
+                </div>
+                <br>
+                <div class="my-auto">
+                    Our success stories mirror our expertise and dedication in nurturing the market disruptors of tomorrow. In this fluctuating landscape, we stand firm in our mission: <strong>fostering a sustainable future through innovation and growth</strong>.
                 </div>
             </div>
-            <div class = "row my-5"></div> <!---- added for spacing --->
+                <div class= "col-md-6 my-3">
+                    <img class="card-img-top rounded" src="/images/about/usCats.webp" alt="Our Team">
+                </div>
+            </div>
+            <div class = "row my-5"></div> 
             <div class="row mx-3">
                 <div class = "col-md-5 rounded mb-3">
                     <div class="row" style = "font-size: 3.5em;">
-                        <b> BIG NUMBER 1</b>
+                        <b style = "text-align: center;"> 100+ </b>
                     </div>
                     <div class="row">
-                        <b> What's that number?</b>
+                        <b style = "text-align: center;"> Startups Funded </b>
                     </div>
                 </div>
                 <div class="col-md-2"></div>
                 <div class="col-md-5 rounded mb-3">
                     <div class="row" style = "font-size: 3.5em;">
-                        <b> ANOTHER ONE</b>
+                        <b style = "text-align: center;"> $500M+ </b>
                     </div>
                     <div class="row">
-                        <b> That’s very crazy, didn’t expect it</b>
+                        <b style = "text-align: center;"> Total Capital Deployed </b>
                     </div>
                 </div>
             </div>
-            <div class = "row my-5"></div> <!---- added for spacing --->
+            <div class = "row my-5"></div>
             <div class="row mx-3">
                 <div class = "col-md-6 my-3">
-                    <img class="card-img-top rounded" src="/images/about/entrepreneurCat.webp" alt="Entrepreneur Cat">
+                    <img class="card-img-top rounded" src="/images/about/invest.webp" alt="Investment Approach">
                 </div>
                 <div class="col-md-6 text-right my-3">
-                    <h3> <b> Something </b></h3>
+                    <div> <h3> <b> Our Investment Approach </b></h3></div>
                     <br>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Urna molestie at elementum eu. Suspendisse in est ante in nibh mauris cursus mattis. Tortor pretium viverra suspendisse potenti nullam ac tortor. Ultricies tristique nulla aliquet enim tortor at auctor urna. 
-                    Aenean vel elit scelerisque mauris pellentesque pulvinar pellentesque habitant morbi. Vitae nunc sed velit dignissim sodales ut eu sem integer. Enim eu turpis egestas pretium aenean. Diam quam nulla porttitor massa id. Ut tellus elementum sagittis vitae et leo. Fermentum odio eu feugiat pretium nibh ipsum consequat nisl.
+                    <div> Our investment strategy is centered around the <strong>discovery and support of startups</strong> that are not only viable but <strong>transformative</strong>. We provide our portfolio companies with the <strong>capital, resources, and strategic guidance</strong> they need to achieve their full potential.</div>
+                    <br>
+                    <div> Our perspective is global, our approach, personalized. We are firm believers in the <strong>power of diversity</strong>, both in sectors and geography. Our portfolio reflects this. We invest in a broad range of industries, from technology to healthcare, energy to education. It's not just about numbers for us; it's about the <strong>impact</strong>, the <strong>transformation</strong>. Our partnership with these startups is a journey, a <strong>shared vision for a future</strong> where technology and innovation bring about widespread, positive change.</div>
                 </div>
             </div>
-            <div class = "row my-4"></div> <!---- added for spacing --->
+            <div class = "row my-4"></div>
             <div class="row mx-3 justify-content-center">
                 <div class="col-md-8" style = "text-align: center;">
-                    <h3><b>“We love inspirational quotes, they are very big and seem very meaningful. I really don’t know what the world would be without them. This has been very helpful. Yes.”</b></h3>
+                    <h3><b>“Investing in the future does not only mean foreseeing the future, but creating it”</b></h3>
                 </div>
-                <div class = "row my-3"></div> <!---- added for spacing --->
+                <div class = "row my-3"></div>
                 <div class="col-md-8 justify-content-center" style = "text-align: justify;">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Urna molestie at elementum eu. Suspendisse in est ante in nibh mauris cursus mattis. Tortor pretium viverra suspendisse potenti nullam ac tortor. Ultricies tristique nulla aliquet enim tortor at auctor urna. 
-                    Aenean vel elit scelerisque mauris pellentesque pulvinar pellentesque habitant morbi. Vitae nunc sed velit dignissim sodales ut eu sem integer. Enim eu turpis egestas pretium aenean. Diam quam nulla porttitor massa id. Ut tellus elementum sagittis vitae et leo. Fermentum odio eu feugiat pretium nibh ipsum consequat nisl.
+                    <div> We believe that <strong>venture capital is not just about money</strong>. It's about <strong>building relationships</strong>, providing guidance, and supporting our portfolio companies every step of the way. We are committed to this philosophy and strive to make a difference in the startup ecosystem.</div>
+                    <br>
+                    <div> We view venture capital as a <strong>catalyst for transformation and growth</strong>. It's about <strong>empowering startups</strong>, fostering creativity, and promoting sustainable practices. This commitment shapes our actions and initiatives, reinforcing our aim to become a <strong>positive force in the entrepreneurial landscape</strong>.</div>
                 </div>
             </div>
-            <div class = "row my-5"></div> <!---- added for spacing --->
+            <div class = "row my-5"></div>
             <div class="row mx-3 justify-content-center">
-                <h1 style="text-align: center;"> What about featured projects here? </h1>
+                <h1 style="text-align: center;"> Featured Portfolio </h1>
             </div>
             <br>
             <div class = "row mx-3 d-flex justify-content-center">
@@ -88,50 +98,50 @@ import ProjectCard from '@/components/ProjectCard.vue'
             </div>
             <br>
             <div class = "row mx-3 d-flex justify-content-center">
-                <router-link to="/projects" tag="button" class="btn btn-secondary d-flex justify-content-center">All projects</router-link>
+                <router-link to="/projects" tag="button" class="btn btn-secondary d-flex justify-content-center">Explore all projects</router-link>
             </div>
-            <div class = "row my-5"></div> <!---- added for spacing --->
+            <div class = "row my-5"></div>
             <div class = "row mx-3 justify-content-center">
-                <h1 style="text-align: center;"> And like some of the leading people here?? </h1>
+                <h1 style="text-align: center;"> Meet Our Team </h1>
             </div>
             <br>
             <div class = "row mx-3 d-flex justify-content-center">
                 <div class="row mx-3 justify-content-center">
-                    QUI CI VANNO LE PERSONE
+                    TEAM MEMBERS GO HERE
                 </div>
             </div>
             <br>
             <div class = "row mx-3 d-flex justify-content-center">
-                <router-link to="/people" tag="button" class="btn btn-secondary d-flex justify-content-center">All people</router-link>
+                <router-link to="/people" tag="button" class="btn btn-secondary d-flex justify-content-center">Meet the whole team</router-link>
             </div>
-            <div class = "row my-5"></div> <!---- added for spacing --->
+            <div class = "row my-5"></div>
             <div class = "row mx-3">
-                <h2 style="text-align: center;"> What they say about us</h2>
+                <h2 style="text-align: center;"> Testimonials </h2>
             </div>
             <br>
             <div class = "row mx-3 justify-content-center">
-                <div class = "col-md-3 mx-auto my-3" style="text-align: center;">
-                    <div class = "row" >
-                        “This is a very important opinion of someone about us, usually nobody reads these, but oh well here we go”
+                <div class = "col-md-3 mx-auto my-3 d-flex flex-column" style="text-align: center;">
+                    <div class = "quote" >
+                        “The guidance and resources we received from the team were invaluable to our success”
                     </div>
-                    <div class = "row">
-                        <b> - Someone</b>
-                    </div>
-                </div>
-                <div class = "col-md-3 mx-auto my-3" style="text-align: center;">
-                    <div class = "row">
-                        “This is someone saying something like “X really changed my way of seeing things” wow!!!!”
-                    </div>
-                    <div class = "row">
-                        <b> - Usually someone else</b>
+                    <div class = "author mt-auto">
+                        <b> - Portfolio Company CEO</b>
                     </div>
                 </div>
-                <div class = "col-md-3 mx-auto my-3" style="text-align: center;">
-                    <div class = "row">
-                        “Meow! Mrreow. Zooom, boom crash, patapatapatapata sssssk tompf. Mraow”
+                <div class = "col-md-3 mx-auto my-3 d-flex flex-column" style="text-align: center;">
+                    <div class = "quote">
+                        “They've provided more than capital, they've been a true partner in our journey”
                     </div>
-                    <div class = "row">
-                        <b> - My cat</b>
+                    <div class = "author mt-auto">
+                        <b> - Startup Founder</b>
+                    </div>
+                </div>
+                <div class = "col-md-3 mx-auto my-3 d-flex flex-column" style="text-align: center;">
+                    <div class = "quote">
+                        “Their strategic insights and industry connections have been instrumental”
+                    </div>
+                    <div class = "author mt-auto">
+                        <b> - Portfolio Company COO</b>
                     </div>
                 </div>
             </div>
@@ -140,6 +150,7 @@ import ProjectCard from '@/components/ProjectCard.vue'
         </div>
     </main>
 </template>
+
 
 <style scoped>
 .custom-heading {
