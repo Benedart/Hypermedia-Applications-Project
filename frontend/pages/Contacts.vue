@@ -70,6 +70,8 @@ import ContactForm from '@/components/ContactForm.vue'
 
 .centered-image {
     max-width: 100%;
+    max-height: 100%;
+    width: auto;
     height: auto;
     display: block; 
     margin: 0; 
