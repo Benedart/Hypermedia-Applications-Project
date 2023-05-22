@@ -39,22 +39,22 @@ import ProjectCard from '@/components/ProjectCard.vue'
                 </div>
             </div>
             <div class = "row my-5"></div> 
-            <div class="row mx-3">
-                <div class = "col-md-5 rounded mb-3">
-                    <div class="row" style = "font-size: 3.5em;">
-                        <b style = "text-align: center;"> 100+ </b>
+            <div class="row mx-3 justify-content-center">
+                <div class="col-md-5 rounded mb-3 text-center">
+                    <div class="row" style="font-size: 3.5em;">
+                        <b>100+</b>
                     </div>
                     <div class="row">
-                        <b style = "text-align: center;"> Startups Funded </b>
+                        <b>Startups Funded</b>
                     </div>
                 </div>
                 <div class="col-md-2"></div>
-                <div class="col-md-5 rounded mb-3">
-                    <div class="row" style = "font-size: 3.5em;">
-                        <b style = "text-align: center;"> $500M+ </b>
+                <div class="col-md-5 rounded mb-3 text-center">
+                    <div class="row" style="font-size: 3.5em;">
+                        <b>$500M+</b>
                     </div>
                     <div class="row">
-                        <b style = "text-align: center;"> Total Capital Deployed </b>
+                        <b>Total Capital Deployed</b>
                     </div>
                 </div>
             </div>
