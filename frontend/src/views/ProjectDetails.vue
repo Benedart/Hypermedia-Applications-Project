@@ -1,3 +1,4 @@
+
 <template>
     <div class="container">
         <div>
@@ -26,7 +27,7 @@
             <b>People: </b>
             <span v-for="(person, index) in people">
                 <router-link :to="`/person/${person.personid}`">
-                    {{ person.name }} {{ person.surname }}
+                    {{ person.name + " " + person.surname }}
                 </router-link>
                 <span v-if="index < people.length - 1">, </span>
             </span>

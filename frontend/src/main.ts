@@ -13,6 +13,7 @@ import "bootstrap"
 import Home from './views/Home.vue'
 import Projects from './views/Projects.vue'
 import ProjectDetails from './views/ProjectDetails.vue'
+import PeopleDetails from './views/PeopleDetails.vue'
 import Areas from './views/Areas.vue'
 import People from './views/People.vue'
 import About from './views/About.vue'
@@ -26,6 +27,7 @@ const routes = [
     { path: '/contact', component: Contact },
     { path: '/projects', component: Projects },
     { path: '/project/:projectid', component: ProjectDetails },
+    { path: '/person/:personid', component: PeopleDetails },
     { path: '/areas', component: Areas },
     { path: '/area/:areaid', component: AreaDetails },
     { path: '/people', component: People },
