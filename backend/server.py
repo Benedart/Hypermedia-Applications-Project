@@ -193,6 +193,8 @@ def get_project_from_area(areaid):
 
 # ------------------- PEOPLE ------------------- #
 
+
+'''
 # get all people
 @app.route("/getPeople", methods=['GET'])
 def get_people():
@@ -203,40 +205,87 @@ def get_people():
     cursor.close()
 
     return json.dumps(people)
+'''
 
-# get all supervisors
-@app.route("/getSupervisors", methods=['GET'])
-def get_supervisors():
+# get all people
+@app.route("/getPeople", methods=['GET'])
+def get_people():
     cursor = mysql.connection.cursor()
 
     query = """
-        select distinct personid, name, surname
-        from people join projects on personid = supervisor
-        order by name, surname
+        select personid, name, surname, age, email, linkedin, role
+        from people
     """
     cursor.execute(query)
-    supervisors = cursor.fetchall()
-    cursor.close()
-
-    return json.dumps(supervisors)
-
-# get all people working on a project
-@app.route("/getPeopleFromProject/<projectid>", methods=['GET'])
-def get_people_from_project(projectid):
-    cursor = mysql.connection.cursor()
-
-    query = """
-        select personid, name, surname, role
-        from people natural join partecipates
-        where projectid = %s
-    """
-    tuple = (projectid,)
-
-    cursor.execute(query, tuple)
     people = cursor.fetchall()
     cursor.close()
 
     return json.dumps(people)
+    
+
+
+
+# get all projects that each person supervises
+@app.route("/getProjectsSupervisedFromPerson/<personid>", methods=['GET'])
+def get_projects_supervied_from_person(personid):
+    cursor = mysql.connection.cursor()
+
+    query = """
+        select projectid, title, stage, yearoffoundation as year, featured
+        from projects join people on personid = supervisor
+        where personid = %s
+    """
+    tuple = (personid,)
+
+    cursor.execute(query, tuple)
+    projects = cursor.fetchall()
+    cursor.close()
+
+    return json.dumps(projects)
+
+
+    
+
+# get all projects to which each person partecipates
+@app.route("/getProjectsJoinedFromPerson/<personid>", methods=['GET'])
+def get_projects_joined_from_person(personid):
+    cursor = mysql.connection.cursor()
+
+    query = """
+        select projectid, title, stage, yearoffoundation as year, featured
+        from projects natural join partecipates 
+        where personid = %s
+    """
+    tuple = (personid,)
+
+    cursor.execute(query, tuple)
+    projects = cursor.fetchall()
+
+    cursor.close()
+
+    return json.dumps(projects)
+
+
+
+#get person details 
+@app.route("/getPerson/<personid>", methods=['GET'])
+def get_person(personid):
+    cursor = mysql.connection.cursor()
+
+    query = """
+        select personid, name, surname, age, email, linkedin, CV, role
+        from people 
+        where PersonID = %s
+    """
+    tuple = (personid,)
+
+    cursor.execute(query, tuple)
+    person = cursor.fetchone()
+    cursor.close()
+    return json.dumps(person)
+
+
+    
 
 # ------------------- AREAS ------------------- #
 

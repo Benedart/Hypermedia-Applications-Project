@@ -1,3 +1,4 @@
+
 <template>
     <!-- 
         TODO: this is also used for featured projects, this means that next and previous button 
