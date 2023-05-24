@@ -21,7 +21,9 @@
             <p><b>Budget:</b> {{ projectDetails.budget }}$</p>
             <p><b>Stage:</b> {{ projectDetails.stage }}</p>
             <hr>
-            <p>{{ projectDetails.description }}</p>
+            <p>{{ projectDetails.section1 }}</p>
+            <p>{{ projectDetails.section2 }}</p>
+            <p>{{ projectDetails.section3 }}</p>
             <hr>
             <p>
                 <b>Supervisor: </b>

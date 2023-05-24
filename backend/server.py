@@ -103,7 +103,7 @@ def get_project(projectid):
     cursor = mysql.connection.cursor()
 
     query = """
-        select projectid, p.title, p.description, stage, budget, yearoffoundation, featured, supervisor, name, surname
+        select projectid, p.title, section1, section2, section3, stage, budget, yearoffoundation, featured, supervisor, name, surname
         from projects as p join people on personId = supervisor
         where ProjectID = %s
     """
@@ -140,6 +140,7 @@ def get_years():
 
     return json.dumps(years)
 
+
 # get all stages in which there are projects
 @app.route("/getStages", methods=['GET'])
 def get_stages():
@@ -150,6 +151,7 @@ def get_stages():
     cursor.close()
 
     return json.dumps(stages)
+
 
 # get project min and max budget
 @app.route("/getBudgetRange", methods=['GET'])
@@ -190,6 +192,45 @@ def get_project_from_area(areaid):
     return json.dumps(projects)
 
 
+# get all projects to which each person partecipates
+@app.route("/getProjectsJoinedFromPerson/<personid>", methods=['GET'])
+def get_projects_joined_from_person(personid):
+    cursor = mysql.connection.cursor()
+
+    query = """
+        select projectid, title, stage, yearoffoundation as year, featured
+        from projects natural join partecipates 
+        where personid = %s
+    """
+    tuple = (personid,)
+
+    cursor.execute(query, tuple)
+    projects = cursor.fetchall()
+
+    cursor.close()
+
+    return json.dumps(projects)
+
+
+# get all projects that each person supervises
+@app.route("/getProjectsSupervisedFromPerson/<personid>", methods=['GET'])
+def get_projects_supervied_from_person(personid):
+    cursor = mysql.connection.cursor()
+
+    query = """
+        select projectid, title, stage, yearoffoundation as year, featured
+        from projects join people on personid = supervisor
+        where personid = %s
+    """
+    tuple = (personid,)
+
+    cursor.execute(query, tuple)
+    projects = cursor.fetchall()
+    cursor.close()
+
+    return json.dumps(projects)
+
+
 
 # ------------------- PEOPLE ------------------- #
 
@@ -221,50 +262,6 @@ def get_people():
     cursor.close()
 
     return json.dumps(people)
-    
-
-
-
-# get all projects that each person supervises
-@app.route("/getProjectsSupervisedFromPerson/<personid>", methods=['GET'])
-def get_projects_supervied_from_person(personid):
-    cursor = mysql.connection.cursor()
-
-    query = """
-        select projectid, title, stage, yearoffoundation as year, featured
-        from projects join people on personid = supervisor
-        where personid = %s
-    """
-    tuple = (personid,)
-
-    cursor.execute(query, tuple)
-    projects = cursor.fetchall()
-    cursor.close()
-
-    return json.dumps(projects)
-
-
-    
-
-# get all projects to which each person partecipates
-@app.route("/getProjectsJoinedFromPerson/<personid>", methods=['GET'])
-def get_projects_joined_from_person(personid):
-    cursor = mysql.connection.cursor()
-
-    query = """
-        select projectid, title, stage, yearoffoundation as year, featured
-        from projects natural join partecipates 
-        where personid = %s
-    """
-    tuple = (personid,)
-
-    cursor.execute(query, tuple)
-    projects = cursor.fetchall()
-
-    cursor.close()
-
-    return json.dumps(projects)
-
 
 
 #get person details 
@@ -284,8 +281,26 @@ def get_person(personid):
     cursor.close()
     return json.dumps(person)
 
-
     
+# get all people working on a project
+@app.route("/getPeopleFromProject/<projectid>", methods=['GET'])
+def get_people_from_project(projectid):
+    cursor = mysql.connection.cursor()
+
+    query = """
+        select personid, name, surname, age, email, linkedin, role
+        from people natural join partecipates
+        where projectid = %s
+    """
+    tuple = (projectid,)
+
+    cursor.execute(query, tuple)
+    people = cursor.fetchall()
+    cursor.close()
+
+    return json.dumps(people)
+
+
 
 # ------------------- AREAS ------------------- #
 
@@ -338,7 +353,7 @@ def get_area(areaid):
     cursor = mysql.connection.cursor()
 
     query = """
-        select AreaID, Title, Description
+        select AreaID, Title, Section1, Section2
         from areas         
         where AreaID = %s
     """

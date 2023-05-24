@@ -8,7 +8,8 @@ import ProjectCard from '@/components/ProjectCard.vue'
             <h1 class="h1">{{ areaDetails.Title }}</h1>
         </div>
         <div>
-            <p>{{ areaDetails.Description }}</p>
+            <p>{{ areaDetails.Section1 }}</p>
+            <p>{{ areaDetails.Section2 }}</p>
             <hr>
             <h3 class="h3">Projects:</h3>
             <div class="row g-3">
