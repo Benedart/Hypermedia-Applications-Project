@@ -1,43 +1,156 @@
 <template>
-    <div class="card mx-auto" style="width: 18rem;">
-        <router-link :to="`/area/${AreaID}`" style="display: contents;">
-            <img class="card-img-top" :src="`/images/areas/${Title}.webp`" :alt="Title">
-            <div class="card-body">
-                <h5 class="card-title">{{ Title }}</h5>
-            </div>
-        </router-link>
-        <div class="card-footer">
-            <!-- put the list of projects associated with the area as small ciruclar icons that link to the project page -->
-            <div class="row g-2">
-                <div class="col" v-for="project in projects">
+
+
+    <div class="card">
+        <img class="card-img" :src="`/images/areas/${title}.webp`" >
+        <div class="card-content">
+            <h1 class="card-header">{{ title }}</h1>
+            <p style="font-size: 2rem;" >Projects</p>
+
+            <div class="row row-cols-1 row-cols-lg-3" >
+                <div v-for="project in projects" class="col mb-4">
                     <router-link :to="`/project/${project.ProjectID}`" class="mytooltip">
-                        <span class="tooltiptext">{{ project.Title }}</span>
-                        <img :src="`/images/projects/${project.Title}.webp`" alt="project1" class="rounded-circle"
-                            style="width: 2rem; height: 2rem; object-fit: cover;">
+                        <span class="tooltiptext"> {{project.Title}} </span>
+                        <img :src="`/images/projects/${project.Title}.webp`" class="projectIcon"/>
                     </router-link>
                 </div>
             </div>
+            
+
+
+            <button class="card-btn">Learn more</button>
         </div>
     </div>
+    
+
 </template>
 
 <script lang="ts">
+import { makeCall } from '@/utils/common'
+
 export default {
+
     props: {
-        AreaID: Number,
-        Title: String,
+        areaid: Number,
+        title: String,
+        areas: Array,
+        description: String,
         projects: Array
     },
+    
+    
 }
+
+
 </script>
 
-<style scoped>
-.card-body {
-    cursor: pointer;
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
 }
 
-.card-body:hover {
-    filter: brightness(80%);
-    transition: 0.5s;
+.grid{
+    display: grid;
+    gap: 6rem;
+    grid-template-rows: repeat(auto-fit, minmax(250px , 1fr));
+    align-items: start;
 }
+
+
+.grid-item{
+    display: flex;
+    justify-content: center;
+}
+
+.card-img{
+    display: block;
+    width: 100%;
+    height: 20rem;
+    object-fit: cover;
+}
+ .card-content{
+    padding: 3rem;
+ }
+
+.card-header{
+    font-size: 3rem;
+    font-weight: 500;
+    color: #0d0d0d;
+    margin-bottom: 1.5rem;
+}
+
+.card-btn{
+    display: block;
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 1.5rem;
+    text-align: center;
+    color:#3363ff;
+    background-color: #d8e0fd;
+    border:none;
+    border-radius: 0.4rem;
+    transition: 0.2s;
+    cursor: pointer;
+    letter-spacing: 0.1rem;
+    margin-top: 2rem;
+}
+
+.card-btn:hover,
+.card-btn:active{
+    background-color: #c2cffc;
+}
+
+.projectIcon{
+  width: 150px;
+  height: 100px;
+  border-radius: 25%;
+  box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.1);
+  position: relative;
+  transition: transform 500ms ease;
+}
+
+.projectIcon:hover{
+  transform: scale(1.25);
+}
+/*
+
+.card {
+    color: var(--clr-neutral-100);
+    background-image: url(/images/areas/EcoSustain.webp);
+    background-size: cover;
+    padding: 10rem 0 0;
+    max-width: 35ch;
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+.card-content {
+    --padding: 1.5rem;
+    padding: var(--padding);
+    background: linear-gradient(
+        hsl(0 0% 0% / 0),
+        hsl(20 0% 0% /0.3),
+        hsl(0 0% 0% / 1)
+    );
+}
+
+.card-title {
+    position: relative;
+    width: max-content;
+}
+
+.card-title::after{
+    content:"";
+    position: absolute;
+    height: 4px;
+    left: calc(var(--padding) * -1);
+    bottom: 0;
+    width: calc(100% + var(--padding));
+    background: var(--clr-accent-400);
+
+}
+*/
+
 </style>

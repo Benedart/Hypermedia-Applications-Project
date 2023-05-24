@@ -5,15 +5,17 @@ import AreaCard from '@/components/AreaCard.vue'
 
 <template>
     <main>
-        <h1>Areas</h1>
-
         <div class="container-fluid">
-            <div class="row g-3">
-                <div v-for="area in areas" class="col">
-                    <AreaCard :AreaID="area.AreaID" :Title="area.Title" :projects="area.projects" />
-                </div>
+        <div style="font-size: 3.5em; margin-bottom: 1em;">
+                Areas
             </div>
+
+        <div class="grid">
+                <div v-for="area in areas" class="grid-item">
+                    <AreaCard :areaid="area.AreaID" :title="area.Title" :projects="area.projects" />
+                </div>
         </div>
+    </div>
     </main>
 </template>
 
@@ -66,3 +68,41 @@ export default {
     },
 };
 </script>
+
+<style>
+.grid{
+    display: grid;
+    gap: 6rem;
+    grid-template-columns: repeat(auto-fit,minmax(30rem,1fr));
+    align-items: start;
+}
+
+
+.grid-item{
+    /*display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;*/
+    background-color: #fff;
+    border-radius: 0.4rem;
+    overflow: hidden;
+    box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.grid-item:hover{
+    transform: translateY(-0.5%);
+    box-shadow: 0 4rem 8rem rgba(0, 0, 0, 0.5);
+}
+</style>
+
+
+            <!--div class="row g-2" style="margin-top: 20px;">
+                <div class="col" v-for="project in projects">
+                    <router-link :to="`/project/${project.ProjectID}`" class="mytooltip">
+                        <span className="tooltiptext"> {{project.Title}} </span>
+                        <img :src="`/images/projects/${project.Title}.webp`" class="projectIcon"/>
+                    </router-link>
+                </div>
+            </div-->
