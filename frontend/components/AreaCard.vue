@@ -8,23 +8,21 @@
             <div class="row row-cols-1 row-cols-lg-3">
                 <div v-for="project in projects" class="col mb-4">
                     <NuxtLink :to="`/projects/${project.ProjectID}`" class="mytooltip">
-                        <span class="tooltiptext">{{ project.Title }}</span>
-                        <img :src="`/images/projects/${project.Title}.webp`" alt="project1" class="rounded-circle"
-                            style="width: 2rem; height: 2rem; object-fit: cover;">
+                        <span class="tooltiptext"> {{ project.Title }} </span>
+                        <img :src="`/images/projects/${project.Title}.webp`" class="projectIcon" />
                     </NuxtLink>
                 </div>
             </div>
 
+            <NuxtLink :to="`/areas/${areaid}`">
+                <button class="card-btn">Learn more</button>
+            </NuxtLink>
 
-
-            <button class="card-btn">Learn more</button>
         </div>
     </div>
 </template>
 
 <script lang="ts">
-import { makeCall } from '@/utils/common'
-
 export default {
 
     props: {
@@ -37,8 +35,6 @@ export default {
 
 
 }
-
-
 </script>
 
 <style>
