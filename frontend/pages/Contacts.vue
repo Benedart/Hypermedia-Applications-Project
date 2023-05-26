@@ -24,8 +24,8 @@ import ContactForm from '@/components/ContactForm.vue'
             </div>
             <div class="row justify-content-center pb-5 card-container" style="background: #a9a9a9;">
                 <div class="row mx-3 justify-content-center">
-                    <div class="col-md-4 card mb-3 card-custom mx-auto mr-md-3 ml-md-3 first-card">
-                        <div class="row">
+                    <div class="col-md-4 card mb-3 card-custom mx-auto mr-md-3 ml-md-3">
+                        <div class="row image-container">
                             <img class="card-img-top img-custom" src="/images/contact/address.webp" alt="Position Icon">
                         </div>
                         <br>
@@ -35,7 +35,7 @@ import ContactForm from '@/components/ContactForm.vue'
                         </div>
                     </div>
                     <div class="col-md-4 card mb-3 card-custom mx-auto mr-md-3 ml-md-3">
-                        <div class="row">
+                        <div class="row image-container">
                             <img class="card-img-top img-custom" src="/images/contact/phone.webp" alt="Phone Icon">
                         </div>
                         <br>
@@ -45,7 +45,7 @@ import ContactForm from '@/components/ContactForm.vue'
                         </div>
                     </div>
                     <div class="col-md-4 card mb-3 card-custom mx-auto mr-md-3 ml-md-3">
-                        <div class="row">
+                        <div class="row image-container">
                             <img class="card-img-top img-custom" src="/images/contact/email.webp" alt="Email Icon">
                         </div>
                         <br>
@@ -68,13 +68,19 @@ import ContactForm from '@/components/ContactForm.vue'
     font-size: 3.5em;
 }
 
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .centered-image {
     max-width: 100%;
     max-height: 100%;
     width: auto;
     height: auto;
     display: block; 
-    margin: 0; 
+    margin: 0;
 }
 
 @media (min-width: 768px) {
@@ -89,21 +95,19 @@ import ContactForm from '@/components/ContactForm.vue'
   }
 
   .first-card {
-    margin-top: 40px; /* Added this to create space when less than 3 cards are displayed */
+    margin-top: 40px;
   }
 }
 
 .card-container {
-    margin-bottom: 50px; /* Added this to create space between the cards and the form */
+    margin-bottom: 50px;
 }
 
 .card-custom {
-    display: flex;
     max-width: 300px;
     height: 300px;
-    align-items: center;
-    justify-content: center;
     text-align: center;
+    justify-content: center;
 }
 
 .img-custom {
@@ -119,6 +123,6 @@ import ContactForm from '@/components/ContactForm.vue'
 }
 
 .contact-form-container {
-    margin-top: 50px; /* Added this to create space above the form */
+    margin-top: 50px;
 }
 </style>

@@ -30,18 +30,6 @@ create table Projects(
 								on update cascade
 );
 
-create table Partecipates(
-	PersonID int unsigned not null,
-	ProjectID int unsigned not null,
-
-	primary key(PersonID, ProjectID),
-	foreign key(PersonID) references People(PersonID)
-							on delete cascade
-							on update cascade,
-	foreign key(ProjectID) references Projects(ProjectID)
-							on delete cascade
-							on update cascade
-);
 
 create table Areas(
 	AreaID int unsigned auto_increment,

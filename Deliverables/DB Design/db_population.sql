@@ -5,7 +5,7 @@ VALUES (
     'Thompson',
     42,
     'JamesThompson@HyperMeow.com',
-    'https://www.linkedin.com/feed/',
+    'https://www.linkedin.com/in/james-thompson-5753a859/',
     'Education: B.S. in Business Administration from Harvard University; M.B.A. from Stanford Graduate School of Business. Past Job Experience: Investment Banking Analyst at Goldman Sachs; Senior Associate at Bain & Company.',
     'CFO'
 );
@@ -17,7 +17,7 @@ VALUES (
     'Martinez',
     37,
     'LindaMartinez@HyperMeow.com',
-    'https://www.linkedin.com/feed/',
+    'https://www.linkedin.com/in/lindamartinez100/',
     'Education: B.S. in Computer Science from MIT; Ph.D. in Artificial Intelligence from Carnegie Mellon University. Past Job Experience: Research Scientist at Google DeepMind; Co-founder and CTO at an AI startup.',
     'CTO'
 );
@@ -29,7 +29,7 @@ VALUES (
     'Chen',
     35,
     'EmilyChen@HyperMeow.com',
-    'https://www.linkedin.com/feed/',
+    'https://www.linkedin.com/in/emily-chen-82b20431/',
     'Education: B.A. in Economics from Yale University; M.S. in Finance from London School of Economics. Past Job Experience: Equity Research Analyst at Morgan Stanley; Portfolio Manager at BlackRock.',
     'CEO'
 );
@@ -41,7 +41,7 @@ VALUES (
     'Robinson',
     40,
     'MarkRobinson@HyperMeow.com',
-    'https://www.linkedin.com/feed/',
+    'https://www.linkedin.com/in/mark-robinson-959230177/',
     'Education: B.S. in Mechanical Engineering from Caltech; M.S. in Energy Systems from UC Berkeley. Past Job Experience: Project Manager at Tesla; Renewable Energy Consultant at McKinsey & Company.',
     'Project Manager'
 );
@@ -53,7 +53,7 @@ VALUES (
     'Johnson',
     38,
     'SarahJohnson@HyperMeow.com',
-    'https://www.linkedin.com/feed/',
+    'https://www.linkedin.com/in/sarah-johnson-35032723a/',
     'Education: B.A. in International Relations from Princeton University; M.P.P. from Harvard Kennedy School. Past Job Experience: Diplomat at the U.S. Department of State; Strategy Consultant at Boston Consulting Group.',
     'Project Manager'
 );
@@ -65,7 +65,7 @@ VALUES (
     'Brown',
     45,
     'DavidBrown@HyperMeow.com',
-    'https://www.linkedin.com/feed/',
+    'https://www.linkedin.com/in/david-brown-1835b2b8/',
     'Education: B.S. in Biology from UCLA; M.D. from Johns Hopkins University School of Medicine. Past Job Experience: Medical Director at a major hospital; Healthcare Entrepreneur.',
     'COO'
 );
@@ -77,7 +77,7 @@ VALUES (
     'Adams',
     36,
     'LauraAdams@HyperMeow.com',
-    'https://www.linkedin.com/feed/',
+    'https://www.linkedin.com/in/lauraadams/',
     'Education: B.S. in Industrial Engineering from Georgia Tech; M.B.A. from Wharton School, University of Pennsylvania. Past Job Experience: Operations Manager at Amazon; Product Manager at a major IoT startup.',
     'Director'
 );
@@ -89,7 +89,7 @@ VALUES (
     'Williams',
     42,
     'MichaelWilliams@HyperMeow.com',
-    'https://www.linkedin.com/feed/',
+    'https://www.linkedin.com/in/mikewilliams1125/',
     'Education: B.A. in Communication from USC; M.S. in Marketing from Northwestern University. Past Job Experience: Brand Manager at Procter & Gamble; Marketing Director at a leading SaaS company.',
     'CMO'
 );
@@ -101,7 +101,7 @@ VALUES (
     'Lee',
     39,
     'KarenLee@HyperMeow.com',
-    'https://www.linkedin.com/feed/',
+    'https://www.linkedin.com/in/karenlmx/',
     'Education: B.S. in Environmental Science from Stanford University; Ph.D. in Environmental Policy from Duke University. Past Job Experience: Environmental Scientist at the EPA; Sustainability Consultant at a global firm.',
     'HR Manager'
 );
@@ -113,372 +113,10 @@ VALUES (
     'Martin',
     37,
     'AlexMartin@HyperMeow.com',
-    'https://www.linkedin.com/feed/',
+    'https://www.linkedin.com/in/alex-marti-80546544/',
     'Education: B.S. in Electrical Engineering from the University of Texas at Austin; M.S. in Robotics from MIT. Past Job Experience: Robotics Engineer at a leading robotics company; Co-founder and CEO of an autonomous vehicle startup.',
     'HR'
 );
-
--- Startupper #1
-INSERT INTO People (Name, Surname, Age, Email, Linkedin, CV, Role)
-VALUES (
-    'Jane',
-    'Smith',
-    40,
-    'JaneSmith@gmail.com',
-    'https://www.linkedin.com/feed/',
-    'Education: B.A. in Business Administration from University of California, Berkeley; MHA in Healthcare Administration from Columbia University. Past Job Experience: Hospital Administrator at a major medical center; Healthcare Consultant at a leading management consulting firm.',
-    'Founder in Residence'
-);
-
--- Startupper #2
-INSERT INTO People (Name, Surname, Age, Email, Linkedin, CV, Role)
-VALUES (
-    'John',
-    'Doe',
-    35,
-    'JohnDoe@gmail.com',
-    'https://www.linkedin.com/feed/',
-    'Education: B.S. in Computer Science from Stanford University; M.S. in Artificial Intelligence from Carnegie Mellon University. Past Job Experience: Software Engineer at a prominent tech company; Co-founder and CTO of a successful AI startup.',
-    'Founder in Residence'
-);
-
--- Startupper #3
-INSERT INTO People (Name, Surname, Age, Email, Linkedin, CV, Role)
-VALUES (
-    'Emily',
-    'Green',
-    38,
-    'EmilyGreen@gmail.com',
-    'https://www.linkedin.com/feed/',
-    'Education: B.S. in Electrical Engineering from Massachusetts Institute of Technology; MBA in Energy Management from Stanford University. Past Job Experience: Energy Industry Executive at a leading energy company; Project Manager at a renewable energy firm.',
-    'Founder in Residence'
-);
-
--- Startupper #4
-INSERT INTO People (Name, Surname, Age, Email, Linkedin, CV, Role)
-VALUES (
-    'Michael',
-    'Brown',
-    34,
-    'MichaelBrown@gmail.com',
-    'https://www.linkedin.com/feed/',
-    'Education: B.S. in Electrical Engineering from California Institute of Technology; M.S. in Materials Science from University of California, Los Angeles. Past Job Experience: Electrical Engineer at a major battery manufacturer; Senior Researcher in energy storage solutions.',
-    'Founder in Residence'
-);
-
--- Startupper #5
-INSERT INTO People (Name, Surname, Age, Email, Linkedin, CV, Role)
-VALUES (
-    'Sarah',
-    'Thompson',
-    37,
-    'SarahThompson@gmail.com',
-    'https://www.linkedin.com/feed/',
-    'Education: B.S. in Agronomy from University of California, Davis; M.S. in Sustainable Agriculture from Cornell University. Past Job Experience: Agronomist at a leading agricultural research institute; Sustainability Consultant for agribusinesses.',
-    'Founder in Residence'
-);
-
--- Startupper #6
-INSERT INTO People (Name, Surname, Age, Email, Linkedin, CV, Role)
-VALUES (
-    'James',
-    'White',
-    33,
-    'JamesWhite@gmail.com',
-    'https://www.linkedin.com/feed/',
-    'Education: B.S. in Computer Science from University of Illinois Urbana-Champaign; M.S. in Data Science from New York University. Past Job Experience: Data Scientist at a leading agricultural technology firm; Software Engineer focused on IoT and analytics in agriculture.',
-    'Founder in Residence'
-);
-
--- Startupper #
-INSERT INTO People (Name, Surname, Age, Email, Linkedin, CV, Role)
-VALUES (
-    'Laura',
-    'Martinez',
-    36,
-    'LauraMartinez@gmail.com',
-    'https://www.linkedin.com/feed/',
-    'Education: B.A. in Education from University of Washington; M.Ed. in Educational Technology from Harvard University. Past Job Experience: Educator at a leading school district; Curriculum Developer at a top edtech company.',
-    'Founder in Residence'
-);
-
--- Startupper #8
-INSERT INTO People (Name, Surname, Age, Email, Linkedin, CV, Role)
-VALUES (
-    'Daniel',
-    'Lee',
-    34,
-    'DanielLee@gmail.com',
-    'https://www.linkedin.com/feed/',
-    'Education: B.S. in Computer Science from University of Southern California; M.S. in Virtual Reality from Georgia Institute of Technology. Past Job Experience: VR Software Engineer at a major tech company; VR Content Developer at an immersive learning start-up.',
-    'Founder in Residence'
-);
-
--- Startupper #9
-INSERT INTO People (Name, Surname, Age, Email, Linkedin, CV, Role)
-VALUES (
-    'Peter',
-    'Johnson',
-    39,
-    'PeterJohnson@gmail.com',
-    'https://www.linkedin.com/feed/',
-    'Education: B.S. in Computer Engineering from University of Michigan; MBA in Technology Management from Northwestern University. Past Job Experience: Product Manager at a leading home security company; IoT Solutions Architect at a smart home start-up.',
-    'Founder in Residence'
-);
-
--- Startupper #10
-INSERT INTO People (Name, Surname, Age, Email, Linkedin, CV, Role)
-VALUES (
-    'Lisa',
-    'Williams',
-    32,
-    'LisaWilliams@gmail.com',
-    'https://www.linkedin.com/feed/',
-    'Education: B.S. in Software Engineering from Carnegie Mellon University; M.S. in Artificial Intelligence from Massachusetts Institute of Technology. Past Job Experience: Software Engineer at a prominent home security firm; AI Researcher focusing on machine learning for security applications.',
-    'Founder in Residence'
-);
-
--- Startupper #11
-INSERT INTO People (Name, Surname, Age, Email, Linkedin, CV, Role)
-VALUES (
-    'Thomas',
-    'Johnson',
-    45,
-    'ThomasJohnson@gmail.com',
-    'https://www.linkedin.com/feed/',
-    'Education: B.A. in Public Administration from University of Virginia; M.S. in Computer Science from University of California, San Diego. Past Job Experience: Public Safety Manager at a major city; AI Solutions Architect at a leading security technology firm.',
-    'Founder in Residence'
-);
-
--- Startupper #12
-INSERT INTO People (Name, Surname, Age, Email, Linkedin, CV, Role)
-VALUES (
-    'Maria',
-    'Williams',
-    33,
-    'MariaWilliams@gmail.com',
-    'https://www.linkedin.com/feed/',
-    'Education: B.S. in Computer Engineering from University of Texas at Austin; M.S. in Artificial Intelligence from Stanford University. Past Job Experience: AI Researcher focusing on computer vision at a prominent tech company; Software Engineer at a security technology  startup.',
-    'Founder in Residence'
-);
-
--- Startupper #13
-INSERT INTO People (Name, Surname, Age, Email, Linkedin, CV, Role)
-VALUES (
-    'Jasmine',
-    'Turner',
-    29,
-    'JasmineTurner@gmail.com',
-    'https://www.linkedin.com/feed/',
-    'Education: B.S. in Kinesiology from University of Oregon; M.S. in Exercise Science from University of Florida. Past Job Experience: Fitness Trainer at a leading fitness center; Nutrition Consultant for a wellness start-up.',
-    'Founder in Residence'
-);
-
--- Startupper #14
-INSERT INTO People (Name, Surname, Age, Email, Linkedin, CV, Role)
-VALUES (
-    'Kevin',
-    'Chen',
-    31,
-    'KevinChen@gmail.com',
-    'https://www.linkedin.com/feed/',
-    'Education: B.S. in Computer Science from University of California, Berkeley; M.S. in Software Engineering from University of Washington. Past Job Experience: Software Engineer at a prominent fitness technology company; Co-founder and CTO of a health and wellness app start-up.',
-    'Founder in Residence'
-);
-
--- Startupper #15
-INSERT INTO People (Name, Surname, Age, Email, Linkedin, CV, Role)
-VALUES (
-    'Ashley',
-    'Martin',
-    35,
-    'AshleyMartin@gmail.com',
-    'https://www.linkedin.com/feed/',
-    'Education: B.A. in International Business from University of Pennsylvania; MBA in Travel and Hospitality Management from Cornell University. Past Job Experience: Operations Manager at a leading travel agency; Business Development Manager at a travel technology firm.',
-    'Founder in Residence'
-);
-
--- Startupper #16
-INSERT INTO People (Name, Surname, Age, Email, Linkedin, CV, Role)
-VALUES (
-    'Alex',
-    'Smith',
-    28,
-    'AlexSmith@gmail.com',
-    'https://www.linkedin.com/feed/',
-    'Education: B.S. in Computer Science from California Institute of Technology; M.S. in Artificial Intelligence from University of California, Los Angeles. Past Job Experience: Software Engineer at a major travel technology company; AI Researcher focusing on personalized recommendations in the travel industry.',
-    'Founder in Residence'
-);
-
--- Startupper #17
-INSERT INTO People (Name, Surname, Age, Email, Linkedin, CV, Role)
-VALUES (
-    'Rachel',
-    'Adams',
-    33,
-    'RachelAdams@gmail.com',
-    'https://www.linkedin.com/feed/',
-    'Education: B.S. in Marine Biology from University of Miami; M.S. in Environmental Science from Yale University. Past Job Experience: Marine Biologist at a leading oceanographic research institute; Project Manager at an environmental conservation organization.',
-    'Founder in Residence'
-);
-
--- Startupper #18
-INSERT INTO People (Name, Surname, Age, Email, Linkedin, CV, Role)
-VALUES (
-    'Noah',
-    'Evans',
-    32,
-    'NoahEvans@gmail.com',
-    'https://www.linkedin.com/feed/',
-    'Education: B.S. in Environmental Engineering from University of Michigan; M.S. in Material Science and Engineeringfrom University of California. Past Job Experience: Environmental Engineer at a major waste management company; Researcher in plastic recycling technologies.',
-    'Founder in Residence'
-);
-
-
--- Startupper #19
-INSERT INTO People (Name, Surname, Age, Email, Linkedin, CV, Role)
-VALUES (
-    'Michelle',
-    'Clark',
-    34,
-    'MichelleClark@gmail.com',
-    'https://www.linkedin.com/feed/',
-    'Education: B.A. in Economics from New York University; MBA in Finance from Harvard Business School. Past Job Experience: Financial Analyst at a leading investment bank; Finance Manager at a fintech start-up.',
-    'Founder in Residence'
-);
-
--- Startupper #20
-INSERT INTO People (Name, Surname, Age, Email, Linkedin, CV, Role)
-VALUES (
-    'Lucas',
-    'Morgan',
-    30,
-    'LucasMorgan@gmail.com',
-    'https://www.linkedin.com/feed/',
-    'Education: B.S. in Computer Science from University of Illinois Urbana-Champaign; M.S. in Data Science from Massachusetts Institute of Technology. Past Job Experience: Data Analyst at a major financial institution; Software Engineer at a fintech start-up focusing on personal finance tools.',
-    'Founder in Residence'
-);
-
--- Startupper #21
-INSERT INTO People (Name, Surname, Age, Email, Linkedin, CV, Role)
-VALUES (
-    'Katherine',
-    'Ross',
-    33,
-    'KatherineRoss@gmail.com',
-    'https://www.linkedin.com/feed/',
-    'Education: B.S. in Aerospace Engineering from Georgia Institute of Technology; M.S. in Satellite Communications from University of Colorado Boulder. Past Job Experience: Satellite Systems Engineer at a leading aerospace company; Project Manager at a satellite communications start-up.',
-    'Founder in Residence'
-);
-
--- Startupper #22
-INSERT INTO People (Name, Surname, Age, Email, Linkedin, CV, Role)
-VALUES (
-    'Benjamin',
-    'Johnson',
-    36,
-    'BenjaminJohnson@gmail.com',
-    'https://www.linkedin.com/feed/',
-    'Education: B.S. in Electrical Engineering from University of California, Los Angeles; M.S. in Telecommunications Engineering from University of Southern California. Past Job Experience: Telecommunications Engineer at a major satellite communications company; Co-founder and CTO of a satellite-based IoT start-up.',
-    'Founder in Residence'
-);
-
--- Startupper #23
-INSERT INTO People (Name, Surname, Age, Email, Linkedin, CV, Role)
-VALUES (
-    'Olivia',
-    'Miller',
-    32,
-    'OliviaMiller@gmail.com',
-    'https://www.linkedin.com/feed/',
-    'Education: B.S. in Food Science from University of California, Davis; M.S. in Food Technology and Innovation from Wageningen University & Research. Past Job Experience: Food Scientist at a major food processing company; Researcher in food preservation technologies.',
-    'Founder in Residence'
-);
-
--- Startupper #24
-INSERT INTO People (Name, Surname, Age, Email, Linkedin, CV, Role)
-VALUES (
-    'Ethan',
-    'Wilson',
-    28,
-    'EthanWilson@gmail.com',
-    'https://www.linkedin.com/feed/',
-    'Education: B.S. in Supply Chain Management from Arizona State University; M.S. in Data Science from Northwestern University. Past Job Experience: Supply Chain Analyst at a global food distribution company; Software Engineer at a food technology start-up focusing on supply chain optimization.',
-    'Founder in Residence'
-);
-
--- Startupper #25
-INSERT INTO People (Name, Surname, Age, Email, Linkedin, CV, Role)
-VALUES (
-    'Rebecca',
-    'Turner',
-    40,
-    'RebeccaTurner@gmail.com',
-    'https://www.linkedin.com/feed/',
-    'Education: B.A. in Gerontology from University of Southern California; M.S. in Healthcare Administration from Columbia University. Past Job Experience: Geriatric Care Manager at a senior care facility; Director of Operations at a home healthcare agency.',
-    'Founder in Residence'
-);
-
--- Startupper #26
-INSERT INTO People (Name, Surname, Age, Email, Linkedin, CV, Role)
-VALUES (
-    'Martin',
-    'Lee',
-    35,
-    'MartinLee@gmail.com',
-    'https://www.linkedin.com/feed/',
-    'Education: B.S. in Computer Science from University of Toronto; M.S. in Health Informatics from Johns Hopkins University. Past Job Experience: Software Engineer at a leading health technology company; Co-founder and CTO of a start-up focused on AI-driven health monitoring solutions.',
-    'Founder in Residence'
-);
-
--- Startupper #27
-INSERT INTO People (Name, Surname, Age, Email, Linkedin, CV, Role)
-VALUES (
-    'Daniel',
-    'Jackson',
-    38,
-    'DanielJackson@gmail.com',
-    'https://www.linkedin.com/feed/',
-    'Education: B.S. in Environmental Science from University of California, Berkeley; M.S. in Urban Planning and Sustainability from Massachusetts Institute of Technology. Past Job Experience: Urban Sustainability Consultant at a leading environmental consulting firm; Co-founder of a start-up focused on green urban design.',
-    'Founder in Residence'
-);
-
--- Startupper #28
-INSERT INTO People (Name, Surname, Age, Email, Linkedin, CV, Role)
-VALUES (
-    'Samantha',
-    'Lee',
-    31,
-    'SamanthaLee@gmail.com',
-    'https://www.linkedin.com/feed/',
-    'Education: B.S. in Architectural Engineering from University of Colorado Boulder; M.S. in Environmental Engineering from Stanford University. Past Job Experience: Architectural Engineer at a green building design firm; Researcher in sustainable urban development and vertical farming technologies.',
-    'Founder in Residence'
-);
-
--- Startupper #29
-INSERT INTO People (Name, Surname, Age, Email, Linkedin, CV, Role)
-VALUES (
-    'Allison',
-    'Grant',
-    37,
-    'AllisonGrant@gmail.com',
-    'https://www.linkedin.com/feed/',
-    'Education: M.D. from Harvard Medical School; Ph.D. in Biomedical Informatics from Stanford University. Past Job Experience: Physician specializing in internal medicine; Researcher in AI-driven medical diagnostics.',
-    'Founder in Residence'
-);
-
--- Startupper #30
-INSERT INTO People (Name, Surname, Age, Email, Linkedin, CV, Role)
-VALUES (
-    'Charles',
-    'Kim',
-    34,
-    'CharlesKim@gmail.com',
-    'https://www.linkedin.com/feed/',
-    'Education: B.S. in Computer Science from University of California, Berkeley; Ph.D. in Artificial Intelligence from Carnegie Mellon University. Past Job Experience: AI Research Scientist at a leading technology company; Co-founder and CTO of a healthcare AI start-up focusing on predictive analytics.',
-    'Founder in Residence'
-);
-
 
 /*----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
@@ -790,22 +428,3 @@ VALUES
 (4, 4), (4, 8), (4, 10);
 
 /*----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
-
--- People Partecipates Projects
-INSERT INTO Partecipates (PersonID, ProjectID)
-VALUES
-(11, 1), (12, 1),
-(13, 2), (14, 2),
-(15, 3), (16, 3),
-(17, 4), (18, 4),
-(19, 5), (20, 5),
-(21, 6), (22, 6),
-(23, 7), (24, 7),
-(25, 8), (26, 8),
-(27, 9), (28, 9),
-(29, 10), (30, 10),
-(31, 11), (32, 11),
-(33, 12), (34, 12),
-(35, 13), (36, 13),
-(37, 14), (38, 14),
-(39, 15), (40, 15);

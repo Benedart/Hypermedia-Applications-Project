@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { makeCall } from '@/utils/common'
 import ProjectCard from '@/components/ProjectCard.vue'
+import PeopleCard from '@/components/PeopleCard.vue'
 </script>
 
 <template>
@@ -138,7 +139,11 @@ import ProjectCard from '@/components/ProjectCard.vue'
             <br>
             <div class="row mx-3 d-flex justify-content-center">
                 <div class="row mx-3 justify-content-center">
-                    TEAM MEMBERS GO HERE
+                    <div v-for="person in people.slice(0, 3)" class="col mb-3 d-flex justify-content-center">
+                        <PeopleCard :personid="person.personid" :name="person.name" :surname="person.surname"
+                            :age="person.age" :email="person.email" :linkedin="person.linkedin" :CV="person.CV"
+                            :role="person.role" />
+                    </div>
                 </div>
             </div>
             <br>
@@ -200,6 +205,8 @@ import ProjectCard from '@/components/ProjectCard.vue'
 .btn-secondary {
     width: 90%;
 }
+
+
 </style>
 
 <script lang="ts">
@@ -207,11 +214,13 @@ export default {
     data() {
         return {
             projects: [],
+            people: [],
         }
     },
 
     components: {
         ProjectCard,
+        PeopleCard,
     },
 
     created() {
@@ -221,11 +230,14 @@ export default {
     methods: {
         async getData() {
             try {
-                const data = await makeCall(this.$config.public.SERVER_URL + "/getFeaturedProjects", 'GET');
-                console.log(data);
-                this.projects = data;
+                const projectsData = await makeCall(this.$config.public.SERVER_URL + "/getFeaturedProjects", 'GET');
+                const peopleData = await makeCall(this.$config.public.SERVER_URL + "/getPeople", 'GET');
+                console.log(projectsData);
+                console.log(peopleData);
+                this.projects = projectsData;
+                this.people = peopleData;
             } catch (error) {
-                alert("Error while fetching projects")
+                alert("Error while fetching data")
                 console.error(error);
             }
         }
