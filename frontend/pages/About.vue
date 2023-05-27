@@ -129,8 +129,9 @@ import PeopleCard from '@/components/PeopleCard.vue'
             </div>
             <br>
             <div class="row mx-3 d-flex justify-content-center">
-                <router-link to="/projects" tag="button" class="btn btn-secondary d-flex justify-content-center">Explore all
-                    projects</router-link>
+                <nuxt-link to="/projects" class="d-flex justify-content-center">
+                    <button type="button" class="btn btn-secondary ">Explore all projects</button>
+                </nuxt-link>
             </div>
             <div class="row my-5"></div>
             <div class="row mx-3 justify-content-center">
@@ -148,8 +149,9 @@ import PeopleCard from '@/components/PeopleCard.vue'
             </div>
             <br>
             <div class="row mx-3 d-flex justify-content-center">
-                <router-link to="/people" tag="button" class="btn btn-secondary d-flex justify-content-center">Meet the
-                    whole team</router-link>
+                <nuxt-link to="/people" class="d-flex justify-content-center">
+                    <button type="button" class="btn btn-secondary">Meet the whole team</button>
+                </nuxt-link>
             </div>
             <div class="row my-5"></div>
             <div class="row mx-3">
