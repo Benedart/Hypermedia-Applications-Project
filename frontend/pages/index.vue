@@ -1,12 +1,195 @@
+<script setup lang="ts">
+import ContactForm from '@/components/ContactForm.vue'
+</script>
+
 <template>
   <main>
-    <img src="https://cataas.com/cat" alt="cat" />
+    <div class = "container-fluid">
+      <div class = "row justify-content-center">
+        <div class="col-md-4 d-flex align-items-center justify-content-center">
+            <div class="text-center">
+                <div class="row mt-6 custom-heading">
+                    <b>Crazy title that will have a great impact</b>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-md-12">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Habitant cras morbi hendrerit nunc vel sapien. In habitasse at diam suspendisse non vitae fermentum, pharetra arcu. Viverra a morbi ut donec in. Ac diam, at sed cras nisi. </p>
+                    </div>
+                </div>
+                <div class="row d-flex justify-content-left">
+                  <nuxt-link to="/about" tag="button" type="button" class="btn btn-rounded d-flex justify-content-left" style="width: auto;">
+                    Learn more ->
+                  </nuxt-link>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 d-flex align-items-center justify-content-center my-2">
+            <img class="rounded-image image-container" src="/images/index/crazyImage.webp" alt="HyperMeow">
+        </div>
+      </div>
+      <div class = "row my-3"> </div>
+      <div class = "row justify-content-center " style="align-items: center;">
+        <div class = "card-custom d-flex justify-content-center align-items-center" style="max-width: 50%;">
+          <div class="col-md-3 justify-content-center d-flex" style="text-align: center; margin-right: 30%;">
+            <div class="child-card-custom d-flex justify-content-center align-items-center">
+              <div class="child-card-content">
+                <slot></slot>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-9 justify-content-center d-flex align-items-center" style="text-align: center;">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eget duis mi nunc bibendum. Tellus elementum nec lorem eget dictumst. Risus in gravida eu, enim lorem. Sed consequat ut suspendisse eros. 
+          </div>
+        </div>
+      </div>
+      <br>
+      <div class = "row d-flex justify-content-center" style="text-align: center;"> 
+        <h2> What we do</h2>
+      </div>
+      <br>
+      <div class = "row d-flex justify-content-center">
+        <div class="card-right d-flex justify-content-center align-items-center" style="max-width: 50%;">
+        </div>
+      </div>
+      <br>
+      <div class = "row d-flex justify-content-center">
+        <div class="card-left d-flex justify-content-center align-items-center" style="max-width: 50%;">
+        </div>
+      </div>
+      <br>
+      <div class = "row d-flex justify-content-center">
+        <div class="card-right d-flex justify-content-center align-items-center" style="max-width: 50%;">
+        </div>
+      </div>
+      <br>
+      <div class="row justify-content-center mb-4 contact-form-container">
+          <ContactForm style="width: 75%;"></ContactForm>
+      </div>
+      <br>
+    </div>
   </main>
 </template>
 
 <style scoped>
-header {
-  line-height: 1.5;
+
+.card-custom {
+  position: relative;
+  background-color: #818181;
+  height: 200px;  
+  width: 60%;
+  z-index: 0;
+}
+
+.card-custom::before,
+.card-custom::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 200px;
+  background-color: #818181;
+  z-index: -1;
+}
+
+.card-custom::before {
+  left: -20%;
+  border-radius: 50% 0 0 50%;
+}
+
+.card-custom::after {
+  right: -20%;
+  border-radius: 0 50% 50% 0;
+}
+
+.child-card-custom {
+  position: relative;
+  background-color: #ffffff;
+  height: 180px; 
+  width: 45%; 
+  z-index: 0;
+  margin: auto;
+}
+
+.child-card-custom::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 180px; /* Fai corrispondere questa larghezza all'altezza della card figlia */
+  background-color: #ffffff;
+  border-radius: 50% 0 0 50%;
+  z-index: -1;
+  left: -90px; /* Fai corrispondere questo valore alla metà della larghezza del semicerchio */
+}
+
+.child-card-content {
+  z-index: 1;
+}
+
+.card-left {
+    position: relative;
+    background-color: #818181;
+    height: 200px;
+    width: 60%;
+    z-index: 0;
+  }
+  
+  .card-left::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 200px;
+    background-color: #818181;
+    left: -20%;
+    border-radius: 50% 0 0 50%;
+    z-index: -1;
+  }
+
+  .card-right {
+    position: relative;
+    background-color: #818181;
+    height: 200px;
+    width: 60%;
+    z-index: 0;
+  }
+  
+  .card-right::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 200px;
+    background-color: #818181;
+    right: -20%;
+    border-radius: 0 50% 50% 0;
+    z-index: -1;
+  }
+
+
+.custom-heading {
+    font-size: 3.5em;
+    line-height: 90%;
+}
+
+.btn-rounded {
+    border-radius: 25px;
+    background: linear-gradient(90deg, #555555, #A3A3A3);
+    border: none;
+    color: white; 
+}
+
+.rounded-image {
+  border-radius: 50%;
+  max-width: 75%;
+}
+
+.image-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .logo {

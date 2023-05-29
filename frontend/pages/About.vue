@@ -129,8 +129,8 @@ import PeopleCard from '@/components/PeopleCard.vue'
             </div>
             <br>
             <div class="row mx-3 d-flex justify-content-center">
-                <nuxt-link to="/projects" class="d-flex justify-content-center">
-                    <button type="button" class="btn btn-secondary ">Explore all projects</button>
+                <nuxt-link to="/projects" tag="button" type="button" class="btn btn-secondary d-flex justify-content-center">
+                    Explore all projects
                 </nuxt-link>
             </div>
             <div class="row my-5"></div>
@@ -149,8 +149,8 @@ import PeopleCard from '@/components/PeopleCard.vue'
             </div>
             <br>
             <div class="row mx-3 d-flex justify-content-center">
-                <nuxt-link to="/people" class="d-flex justify-content-center">
-                    <button type="button" class="btn btn-secondary">Meet the whole team</button>
+                <nuxt-link to="/people" tag="button" type="button" class="btn btn-secondary d-flex justify-content-center">
+                    Meet the whole team
                 </nuxt-link>
             </div>
             <div class="row my-5"></div>
