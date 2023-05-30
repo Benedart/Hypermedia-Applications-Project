@@ -30,15 +30,13 @@ import ContactForm from '@/components/ContactForm.vue'
       </div>
       <div class = "row my-3"> </div>
       <div class = "row justify-content-center " style="align-items: center;">
-        <div class = "card-custom d-flex justify-content-center align-items-center" style="max-width: 50%;">
-          <div class="col-md-3 justify-content-center d-flex" style="text-align: center; margin-right: 30%;">
-            <div class="child-card-custom d-flex justify-content-center align-items-center">
-              <div class="child-card-content">
-                <slot></slot>
-              </div>
-            </div>
+        <div class = "d-flex justify-content-center align-items-center" style="max-width: 50%;">
+          <div class="col-md-3 justify-content-center d-flex card-left align-items-center">
+          <div class="card-left-inner d-flex justify-content-center align-items-center">
+
           </div>
-          <div class="col-md-9 justify-content-center d-flex align-items-center" style="text-align: center;">
+          </div>
+          <div class="col-md-9 justify-content-center d-flex align-items-center card-right" style="text-align: center;">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eget duis mi nunc bibendum. Tellus elementum nec lorem eget dictumst. Risus in gravida eu, enim lorem. Sed consequat ut suspendisse eros. 
           </div>
         </div>
@@ -49,7 +47,7 @@ import ContactForm from '@/components/ContactForm.vue'
       </div>
       <br>
       <div class = "row d-flex justify-content-center">
-        <div class="card-right d-flex justify-content-center align-items-center" style="max-width: 50%;">
+        <div class="card-right d-flex justify-content-center align-items-center" style="max-width: 50%;"> 
         </div>
       </div>
       <br>
@@ -73,100 +71,27 @@ import ContactForm from '@/components/ContactForm.vue'
 
 <style scoped>
 
-.card-custom {
-  position: relative;
-  background-color: #818181;
-  height: 200px;  
-  width: 60%;
-  z-index: 0;
-}
-
-.card-custom::before,
-.card-custom::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 200px;
-  background-color: #818181;
-  z-index: -1;
-}
-
-.card-custom::before {
-  left: -20%;
-  border-radius: 50% 0 0 50%;
-}
-
-.card-custom::after {
-  right: -20%;
-  border-radius: 0 50% 50% 0;
-}
-
-.child-card-custom {
-  position: relative;
-  background-color: #ffffff;
-  height: 180px; 
-  width: 45%; 
-  z-index: 0;
-  margin: auto;
-}
-
-.child-card-custom::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 180px; /* Fai corrispondere questa larghezza all'altezza della card figlia */
-  background-color: #ffffff;
-  border-radius: 50% 0 0 50%;
-  z-index: -1;
-  left: -90px; /* Fai corrispondere questo valore alla metà della larghezza del semicerchio */
-}
-
-.child-card-content {
-  z-index: 1;
-}
-
 .card-left {
     position: relative;
     background-color: #818181;
+    border-radius: 90px 0px 0px 90px;
     height: 200px;
-    width: 60%;
-    z-index: 0;
-  }
-  
-  .card-left::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 200px;
-    background-color: #818181;
-    left: -20%;
-    border-radius: 50% 0 0 50%;
-    z-index: -1;
   }
 
+  .card-left-inner {
+    position: relative;
+    background-color: #ffffff;
+    border-radius: 90px 0px 0px 90px;
+    width: 90%;
+    height: 90%;
+  }
+  
   .card-right {
     position: relative;
     background-color: #818181;
+    border-radius: 0px 90px 90px 0px;
     height: 200px;
-    width: 60%;
-    z-index: 0;
   }
-  
-  .card-right::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 200px;
-    background-color: #818181;
-    right: -20%;
-    border-radius: 0 50% 50% 0;
-    z-index: -1;
-  }
-
 
 .custom-heading {
     font-size: 3.5em;
