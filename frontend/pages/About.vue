@@ -14,9 +14,9 @@ import PeopleCard from '@/components/PeopleCard.vue'
             <br>
             <div class="row mx-3 justify-content-center">
                 <div class="col-md-6 d-flex align-items-center justify-content-center">
-                    <h3 style="text-align:center;"> <b>“Embracing novel ideas, fueling unprecedented innovations, and
+                    <p class = "custom-h3" style="text-align:center;"> <b>“Embracing novel ideas, fueling unprecedented innovations, and
                             committing to the creation of a future where sustainability is not just a concept, but an
-                            established practice.”</b></h3>
+                            established practice.”</b></p>
                 </div>
             </div>
             <br>
@@ -56,19 +56,19 @@ import PeopleCard from '@/components/PeopleCard.vue'
             <div class="row mx-3 justify-content-center">
                 <div class="col-md-5 rounded mb-3 text-center">
                     <div class="row" style="font-size: 3.5em;">
-                        <b>100+</b>
+                        <p class ="custom-bold">100+</p>
                     </div>
                     <div class="row">
-                        <b>Startups Funded</b>
+                        <p class = "custom-bold">Startups Funded</p>
                     </div>
                 </div>
                 <div class="col-md-2"></div>
                 <div class="col-md-5 rounded mb-3 text-center">
                     <div class="row" style="font-size: 3.5em;">
-                        <b>$500M+</b>
+                        <p class = "custom-bold">$500M+</p>
                     </div>
                     <div class="row">
-                        <b>Total Capital Deployed</b>
+                        <p class = "custom-bold">Total Capital Deployed</p>
                     </div>
                 </div>
             </div>
@@ -98,7 +98,7 @@ import PeopleCard from '@/components/PeopleCard.vue'
             <div class="row my-4"></div>
             <div class="row mx-3 justify-content-center">
                 <div class="col-md-8" style="text-align: center;">
-                    <h3><b>“Investing in the future does not only mean foreseeing the future, but creating it”</b></h3>
+                    <h3><p class = "custom-bold">“Investing in the future does not only mean foreseeing the future, but creating it”</p></h3>
                 </div>
                 <div class="row my-3"></div>
                 <div class="col-md-8 justify-content-center" style="text-align: justify;">
@@ -192,8 +192,21 @@ import PeopleCard from '@/components/PeopleCard.vue'
 
 
 <style scoped>
+
 .custom-heading {
     font-size: 3.5em;
+}
+
+.custom-h3 {
+    font-size: 1.75em;
+    font-weight: 700;
+    color: #086788;
+}
+
+
+.custom-bold {
+    font-weight: bold;
+    color: #086788;
 }
 
 .rounded {
@@ -214,6 +227,8 @@ import PeopleCard from '@/components/PeopleCard.vue'
 
 .btn-secondary {
     width: 90%;
+    background-color: #086788;
+    margin-top: 2%;
 }
 
 

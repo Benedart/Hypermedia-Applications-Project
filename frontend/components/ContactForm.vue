@@ -7,24 +7,24 @@
     <h2>Get in touch</h2>
     <form @submit="handleSubmit" class="form-content">
       <div class="form-group">
-        <label for="name">Full Name*</label>
+        <label for="name" style="color: #FFFBFA;">Full Name*</label>
         <input type="text" id="name" name="name" v-model="name" placeholder="Enter your full name" class="form-control">
         <p class="error-text" v-if="errors.name === 'required'">It appears that you are missing Full Name. Please fill it in before submitting again.</p>
       </div>
       <div class="form-group">
-        <label for="email">Email Address*</label>
+        <label for="email" style="color: #FFFBFA;">Email Address*</label>
         <input type="email" id="email" name="email" v-model="email" placeholder="Enter your email address" class="form-control">
         <p class="error-text" v-if="errors.email === 'required'">It appears that you are missing Email Address. Please fill it in before submitting again.</p>
         <p class="error-text" v-if="errors.email === 'invalid'">It appears that you have entered an invalid email address. Please correct it before submitting again.</p>
       </div>
       <div class="form-group">
-        <label for="phone">Phone Number*</label>
+        <label for="phone" style="color: #FFFBFA;">Phone Number*</label>
         <input type="tel" id="phone" name="phone" v-model="phone" placeholder="Enter your phone number" class="form-control">
         <p class="error-text" v-if="errors.phone === 'required'">It appears that you have not entered a phone number. Please fill it in before submitting again.</p>
         <p class="error-text" v-if="errors.phone === 'invalid'">It appears that you have entered an invalid phone number. Please correct it before submitting again.</p>
       </div>
       <div class="form-group">
-        <label for="message">Have anything to say?*</label>
+        <label for="message" style="color: #FFFBFA;">Have anything to say?*</label>
         <textarea id="message" name="message" v-model="message" placeholder="Your message here" class="form-control"></textarea>
         <p class="error-text" v-if="errors.message === 'required'">It appears that you are missing the message. Please fill it in before submitting again.</p>
       </div>
@@ -113,10 +113,10 @@ export default {
 .card-form {
   position: relative;
   padding: 25px;
-  border: 1px solid #ccc;
+  border: 1px solid #000022;
   border-radius: 15px;
-  box-shadow: 2px 2px 6px 0px #c0c0c0;
-  background-color: #EBEBEB;
+  box-shadow: 2px 2px 6px 0px #000022;
+  background-color: #000022;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -124,7 +124,7 @@ export default {
 
 .corner-circle {
   position: absolute;
-  background-color: #A3A3A3;
+  background-color: #FFFBFA;
   border-radius: 50%;
   width: 10vw;
   height: 10vw;
@@ -132,7 +132,7 @@ export default {
 
 .small-circle {
   position: absolute;
-  background-color: #A3A3A3;
+  background-color: #D9D9D9;
   border-radius: 50%;
   width: 2.5vw;
   height: 2.5vw;
@@ -160,6 +160,7 @@ export default {
 
 h2 {
   align-self: center;
+  color: #FFFBFA;
 }
 
 .form-content {
@@ -189,7 +190,7 @@ h2 {
   border: none;
   border-radius: 3px;
   color: #fff;
-  background-color: #555555;
+  background-color: #086788;
 }
 
 .confirmation {

@@ -3,7 +3,7 @@ import ContactForm from '@/components/ContactForm.vue'
 </script>
 
 <template>
-    <main>
+    <main style="background-color: #FFFBFA;">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-6 d-flex align-items-center justify-content-center">
@@ -22,14 +22,14 @@ import ContactForm from '@/components/ContactForm.vue'
                     <img class="centered-image" src="/images/contact/team.webp" alt="Team photo">
                 </div>
             </div>
-            <div class="row justify-content-center pb-5 card-container" style="background: #a9a9a9;">
+            <div class="row justify-content-center pb-5 card-container" style="background: #E5E5E5;">
                 <div class="row mx-3 justify-content-center">
                     <div class="col-md-4 card mb-3 card-custom mx-auto mr-md-3 ml-md-3">
                         <div class="row image-container">
                             <img class="card-img-top img-custom" src="/images/contact/address.webp" alt="Position Icon">
                         </div>
                         <br>
-                        <div class="row justify-content-center">
+                        <div class="row justify-content-center" style="color: #FFFBFA;">
                             <h2>Our main office</h2>
                             Via Camillo Golgi, 39, Milano, MI
                         </div>
@@ -39,19 +39,19 @@ import ContactForm from '@/components/ContactForm.vue'
                             <img class="card-img-top img-custom" src="/images/contact/phone.webp" alt="Phone Icon">
                         </div>
                         <br>
-                        <div class="row justify-content-center mx-3">
+                        <div class="row justify-content-center mx-3" style="color: #FFFBFA;">
                             <h2>Phone number</h2>
                             +39 3337183949
                         </div>
                     </div>
-                    <div class="col-md-4 card mb-3 card-custom mx-auto mr-md-3 ml-md-3">
+                    <div class="col-md-4 card mb-3 card-custom mx-auto mr-md-3 ml-md-3" style="color: #FFFBFA;">
                         <div class="row image-container">
                             <img class="card-img-top img-custom" src="/images/contact/email.webp" alt="Email Icon">
                         </div>
                         <br>
                         <div class="row justify-content-center">
                             <h2>Email</h2>
-                            <a href="mailto:teamHyperMeow@gmail.com" class="email-link">teamHyperMeow@gmail.com</a>
+                            <a href="mailto:teamHyperMeow@gmail.com" class="email-link" style="color: #FFFBFA;">teamHyperMeow@gmail.com</a>
                         </div>
                     </div>
                 </div>
@@ -108,6 +108,7 @@ import ContactForm from '@/components/ContactForm.vue'
     height: 300px;
     text-align: center;
     justify-content: center;
+    background-color: #086788;
 }
 
 .img-custom {

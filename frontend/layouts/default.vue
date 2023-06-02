@@ -4,7 +4,7 @@ import Footer from '@/components/Footer.vue'
 </script>
 
 <template>
-    <div>
+    <div class = "mx-3">
         <Navbar />
         <slot />
         <Footer />
@@ -19,3 +19,9 @@ export default {
     }
 }
 </script>
+
+<style>
+* {
+    font-family: 'Inter', sans-serif;
+}
+</style>
