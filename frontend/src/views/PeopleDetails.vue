@@ -31,13 +31,6 @@ import ProjectCard from '@/components/ProjectCard.vue'
                     :stage="project.stage" :year="project.year" :featured="project.featured" />
                 </div>
             </div>
-            <h3 class="h3" style="margin-top: 200px; margin-left: 35px; margin-bottom: 50px;" v-if="projectsJoined.length > 0">Projects joined:</h3>
-            <div class="row g-3" v-if="projectsJoined.length > 0">
-                <div v-for="project in projectsJoined" class="col-12 col-md-6 col-lg-4">
-                    <ProjectCard :projectid="project.projectid" :title="project.title" :preview="project.preview"
-                    :stage="project.stage" :year="project.year" :featured="project.featured" />
-                </div>
-            </div>
         </div>
         <div style = "margin-top: 300px;">
         </div>  
@@ -72,17 +65,6 @@ export default {
                 }
             ],
 
-            projectsJoined: [
-                {
-                    
-                    projectid: -1,
-                    title: 'project',
-                    preview: 'preview',
-                    stage: 'stage',
-                    year: 'year',
-                }
-                
-            ],
         }
     },
 
@@ -97,59 +79,29 @@ export default {
     },
 
     methods: {
-        getPersonData: function (personid: number) {
+        getPersonData: async function (personid: number) {
             console.log(this.$route.params)
 
-            // get person details
-            makeCall("GET", import.meta.env.VITE_APP_URL + "/getPerson/" + personid,
-                (req) => {
-                    if (req.readyState === 4) {
-                        let message = req.responseText;
-                        console.log(message)
+            //get person details
+            try {
+                const data = await makeCall(this.$config.public.SERVER_URL + "/getPerson/" + personid, 'GET');
+                console.log(data);
+                this.personDetails = data
+            } catch (error) {
+                alert("Error, couldn't retrieve person details");
+                console.error(error);
+            }
 
-                        if (req.status === 200) {
-                            let data = JSON.parse(message);
-                            this.personDetails = data
-                        } else {
-                            alert("Error, couldn't retrieve person details");
-                        }
-                    }
-                }
-            )
+            //get projects supervised 
+            try {
+                const data = await makeCall(this.$config.public.SERVER_URL + "/getProjectsSupervisedFromPerson/" + personid, 'GET');
+                console.log(data);
+                this.projectsSupervised = data
+            } catch (error) {
+                alert("Error, couldn't retrieve projects supervised");
+                console.error(error);
+            }
 
-            // get projects which a person is supervised
-            makeCall("GET", import.meta.env.VITE_APP_URL + "/getProjectsSupervisedFromPerson/" + personid,
-                (req) => {
-                    if (req.readyState === 4) {
-                        let message = req.responseText;
-                        console.log(message)
-
-                        if (req.status === 200) {
-                            let data = JSON.parse(message);
-                            this.projectsSupervised = data
-                        } else {
-                            alert("Error, couldn't retrieve projects supervised");
-                        }
-                    }
-                }
-            )
-
-            // get projects which a person is joining
-            makeCall("GET", import.meta.env.VITE_APP_URL + "/getProjectsJoinedFromPerson/" + personid,
-                (req) => {
-                    if (req.readyState === 4) {
-                        let message = req.responseText;
-                        console.log(message)
-
-                        if (req.status === 200) {
-                            let data = JSON.parse(message);
-                            this.projectsJoined = data
-                        } else {
-                            alert("Error, couldn't retrieve projects joined");
-                        }
-                    }
-                }
-            )
         },
 
         /*getLinkedinLink(personid: number) {

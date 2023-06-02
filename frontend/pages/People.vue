@@ -5,48 +5,34 @@ import PeopleCard from '@/components/PeopleCard.vue'
 
 <template>
     <main>
-        <h1> People</h1>
-        <div class="container-fluid">
-            <div class="search-wrapper panel-heading col-sm-12">
-                <input type="text" v-model="search" placeholder="Search">
-            </div>
-            <!--<div v-if="!search" class="accordion" id="accordionPanelsStayOpen">
-                <div v-for="role in people.role" class="accordion-item">
-                    <h2 class="accordion-header">
-                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                            :data-bs-target="`#panelsStayOpen-${person.role}`" aria-expanded="true"
-                            :aria-controls="`panelsStayOpen-${person.role}`">
-                            <b>{{ person.role }}</b>
-                        </button>
-                    </h2>
-                    <div :id="`panelsStayOpen-${person.role}`" class="accordion-collapse collapse show">
-                        <div class="accordion-body">
-                            <div class="row g-3">
-                                <div v-for="user in peopleByRole(person.role)" class="col-12 col-md-6 col-lg-4">
+        <div class="container-text-center">
+                <div class = "title">
+                    People
+                </div>
+                <div class="search-wrapper panel-heading col-sm-12" style= "margin-top : 5em; margin-left : -30em;">
+                        <input type="text" v-model="search" placeholder="  Search by title">
+                        <svg id="i-search" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="20" height="32" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+                        <circle cx="14" cy="14" r="12" />
+                        <path d="M23 23 L30 30"  />
+                        </svg>
+                </div>
+                <div class="container">
+                    <div class="row d-flex justify-content-center">
+                        <div v-if = "search" class="row g-3">
+                            <div v-for="person in visiblePeople" class="col" style="margin-bottom: 70px;">
+                                <PeopleCard :personid ="person.personid" :name ="person.name" :surname="person.surname" :age="person.age"
+                                    :email="person.email" :linkedin="person.linkedin" :CV="person.CV" :role="person.role" />
+                            </div>
+                        </div>
+                        <div v-if="!search" class="row g-3">
+                            <div v-for="user in people" class="col" style="margin-bottom: 70px;">
                                     <PeopleCard :personid ="user.personid" :name="user.name" :surname="user.surname"
-                                        :age="user.age" :email="user.email" :linkedin="user.linkedin"
-                                        :CV="user.CV" :role="user.role" />
-                                </div>
+                                            :age="user.age" :email="user.email" :linkedin="user.linkedin"
+                                            :CV="user.CV" :role="user.role" />
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>-->
-            <div v-if = "search" class="row g-3">
-                <div v-for="person in visiblePeople" class="col">
-                    <PeopleCard :personid ="person.personid" :name ="person.name" :surname="person.surname" :age="person.age"
-                        :email="person.email" :linkedin="person.linkedin" :CV="person.CV" :role="person.role" />
-                </div>
-            </div>
-            <div v-if="!search" v-for="role in getRole(people)" class="row g-3">
-                <h2 style = "margin-top: 300 px;"></h2>
-                <h1 style = "margin-top: 100 px;">{{ role }}</h1>
-                <div v-for="user in peopleByRole(role)" class="col-12 col-md-6 col-lg-4">
-                    <PeopleCard :personid ="user.personid" :name="user.name" :surname="user.surname"
-                                        :age="user.age" :email="user.email" :linkedin="user.linkedin"
-                                        :CV="user.CV" :role="user.role" />
-                </div>
-            </div>
         </div>
     </main>
 </template>
@@ -75,16 +61,8 @@ export default {
                     ],
                 },
             ],
-            /*
-            // this will contain the projects of the visible people
-            projects: [
-                {
-                    projectid: -1,
-                    title: 'project'
-                }
-            ],
-            */
             search: ""
+           
         }
     },
    
@@ -94,7 +72,7 @@ export default {
     },
 
     created() {
-        this.getData()
+        this.getPersonData()
     },
 
     computed: {
@@ -120,86 +98,52 @@ export default {
 
     methods: {
 
-        
-        // returns the list of roles
-        peopleByRole: function (role: string) {
-            return this.people.filter(p => p.role === role)
-        },
-        
-        
-        // returns the role of the visible person
-        getRole(people: any[]) {
-            let roles = []
-
-            // for each person, add the role that are not already in the list
-            people.forEach(person => {
-                console.log(person)
-                if (!roles.includes(person.role)) {
-                    roles.push(person.role)
-                }
-                
-            })
-
-            return roles;
-        },
-        //get projects for each person
-        //controlla 
-        /*
-        getPojects: function(){
-            
-            let projects = []
-
-            // for each project, add the areas that are not already in the list
-            people.forEach(person => {
-                console.log(person)
-                person.projects.forEach(project => {
-                    if (!projects.some(a => a.areaid === area.areaid)) {
-                        areas.push(area)
-                    }
-                })
-            })
-
-            console.log("VISIBLE AREAS:")
-            console.log(areas)
-
-            this.areas = areas
-        },*/
-        
-
         // get the data from the server
-        getData: function () {
-            makeCall("GET", import.meta.env.VITE_APP_URL + "/getPeople",
-                (req) => {
-                    if (req.readyState === 4) {
-                        let message = req.responseText;
-
-                        if (req.status === 200) {
-                            let data = JSON.parse(message);
-
-                            console.log(data)
-
-                            // itintially all the projects are shown, so we save them in both arrays
-                            this.people = data
-                            
-                            //this.getProjects(this.people)
-                        } else {
-                            alert("Error, couldn't retrieve data");
-                        }
-                    }
-                }
-            )
+        getPersonData: async function () {
+            try {
+                const data = await makeCall(this.$config.public.SERVER_URL + "/getPeople", 'GET');
+                console.log(data);
+                this.people = data;
+            } catch (error) {
+                alert("Error, couldn't retrieve people cards");
+                console.error(error);
+            }
         },
     },
 }
 </script>
 
-<style>
-.card {
-    cursor: pointer;
+<style scoped>
+
+
+
+.title{
+    font-size: 3.5em;
+    text-align: center;
+    font-family: secular one, sans-serif;
+    color: #FFFFFF;
+    margin-top : 1.5em;
 }
 
 .card:hover {
-    filter: brightness(80%);
+    
     transition: 0.5s;
+    margin-top: 5em;
+    transform: translateY(-0.5%);
+    box-shadow: 0 4rem 8rem rgba(0, 0, 0, 0.5);
+    
+    
+}
+
+
+.container{
+    border-radius: 0.4rem;
+    background-color: #fff;
+    max-width: 90%;
+    width : auto;
+    height: auto;
+    max-height: 100%;
+    margin: auto;
+    
 }
 </style>

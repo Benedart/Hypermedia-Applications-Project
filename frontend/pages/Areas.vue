@@ -61,7 +61,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .grid{
     display: grid;
     gap: 6rem;

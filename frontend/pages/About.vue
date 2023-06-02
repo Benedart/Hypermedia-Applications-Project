@@ -204,6 +204,14 @@ import PeopleCard from '@/components/PeopleCard.vue'
     text-align: right;
 }
 
+.card:hover {
+    
+    transition: 0.5s;
+    margin-top: 5em;
+    transform: translateY(-0.5%);
+    box-shadow: 0 4rem 8rem rgba(0, 0, 0, 0.5);
+}
+
 .btn-secondary {
     width: 90%;
 }

@@ -192,25 +192,6 @@ def get_project_from_area(areaid):
     return json.dumps(projects)
 
 
-# get all projects to which each person partecipates
-@app.route("/getProjectsJoinedFromPerson/<personid>", methods=['GET'])
-def get_projects_joined_from_person(personid):
-    cursor = mysql.connection.cursor()
-
-    query = """
-        select projectid, title, stage, yearoffoundation as year, featured
-        from projects natural join partecipates 
-        where personid = %s
-    """
-    tuple = (personid,)
-
-    cursor.execute(query, tuple)
-    projects = cursor.fetchall()
-
-    cursor.close()
-
-    return json.dumps(projects)
-
 
 # get all projects that each person supervises
 @app.route("/getProjectsSupervisedFromPerson/<personid>", methods=['GET'])
@@ -235,18 +216,6 @@ def get_projects_supervied_from_person(personid):
 # ------------------- PEOPLE ------------------- #
 
 
-'''
-# get all people
-@app.route("/getPeople", methods=['GET'])
-def get_people():
-    cursor = mysql.connection.cursor()
-
-    cursor.execute("select * from people")
-    people = cursor.fetchall()
-    cursor.close()
-
-    return json.dumps(people)
-'''
 
 # get all people
 @app.route("/getPeople", methods=['GET'])
@@ -254,7 +223,7 @@ def get_people():
     cursor = mysql.connection.cursor()
 
     query = """
-        select personid, name, surname, age, email, linkedin, role
+        select personid, name, surname, age, linkedin, CV, role
         from people
     """
     cursor.execute(query)
@@ -281,7 +250,7 @@ def get_person(personid):
     cursor.close()
     return json.dumps(person)
 
-    
+ 
 # get all people working on a project
 @app.route("/getPeopleFromProject/<projectid>", methods=['GET'])
 def get_people_from_project(projectid):
