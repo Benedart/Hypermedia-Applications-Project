@@ -153,26 +153,6 @@ def get_stages():
     return json.dumps(stages)
 
 
-# get project min and max budget
-@app.route("/getBudgetRange", methods=['GET'])
-def get_budget_range():
-    cursor = mysql.connection.cursor()
-
-    query = """
-        select min(budget) as min, max(budget) as max
-        from projects
-    """
-    cursor.execute(query)
-    budget_range = cursor.fetchone()
-    cursor.close()
-
-    # make it serializable for json
-    budget_range['min'] = str(budget_range['min'])
-    budget_range['max'] = str(budget_range['max'])
-
-    return json.dumps(budget_range)
-
-
 # get all projects which refer an area 
 @app.route("/getProjectsFromArea/<areaid>", methods=['GET'])
 def get_project_from_area(areaid):
@@ -249,26 +229,6 @@ def get_person(personid):
     person = cursor.fetchone()
     cursor.close()
     return json.dumps(person)
-
- 
-# get all people working on a project
-@app.route("/getPeopleFromProject/<projectid>", methods=['GET'])
-def get_people_from_project(projectid):
-    cursor = mysql.connection.cursor()
-
-    query = """
-        select personid, name, surname, age, email, linkedin, role
-        from people natural join partecipates
-        where projectid = %s
-    """
-    tuple = (projectid,)
-
-    cursor.execute(query, tuple)
-    people = cursor.fetchall()
-    cursor.close()
-
-    return json.dumps(people)
-
 
 
 # ------------------- AREAS ------------------- #

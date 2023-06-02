@@ -6,6 +6,7 @@ create table People(
 	Email varchar(100) unique not NULL,
 	Linkedin varchar (150) not null,
 	CV varchar(1500) not null,
+	Description varchar(1500) not null,
 	Role varchar(50) not null,
 
 	primary key(PersonID)
