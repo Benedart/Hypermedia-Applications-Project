@@ -6,33 +6,34 @@ import PeopleCard from '@/components/PeopleCard.vue'
 <template>
     <main>
         <div class="container-text-center">
-                <div class = "title">
-                    People
-                </div>
-                <div class="search-wrapper panel-heading col-sm-12" style= "margin-top : 5em; margin-left : -30em;">
-                        <input type="text" v-model="search" placeholder="  Search by title">
-                        <svg id="i-search" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="20" height="32" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
-                        <circle cx="14" cy="14" r="12" />
-                        <path d="M23 23 L30 30"  />
-                        </svg>
-                </div>
-                <div class="container">
-                    <div class="row d-flex justify-content-center">
-                        <div v-if = "search" class="row g-3">
-                            <div v-for="person in visiblePeople" class="col" style="margin-bottom: 70px;">
-                                <PeopleCard :personid ="person.personid" :name ="person.name" :surname="person.surname" :age="person.age"
-                                    :email="person.email" :linkedin="person.linkedin" :CV="person.CV" :role="person.role" />
-                            </div>
+            <div class="title">
+                People
+            </div>
+            <div class="search-wrapper panel-heading col-sm-12" style="margin-top : 5em; margin-left : -30em;">
+                <input type="text" v-model="search" placeholder="  Search by title">
+                <svg id="i-search" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="20" height="32" fill="none"
+                    stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+                    <circle cx="14" cy="14" r="12" />
+                    <path d="M23 23 L30 30" />
+                </svg>
+            </div>
+            <div class="container">
+                <div class="row d-flex justify-content-center">
+                    <div v-if="search" class="row g-3">
+                        <div v-for="person in visiblePeople" class="col" style="margin-bottom: 70px;">
+                            <PeopleCard :personid="person.personid" :name="person.name" :surname="person.surname"
+                                :age="person.age" :email="person.email" :linkedin="person.linkedin" :CV="person.CV"
+                                :role="person.role" />
                         </div>
-                        <div v-if="!search" class="row g-3">
-                            <div v-for="user in people" class="col" style="margin-bottom: 70px;">
-                                    <PeopleCard :personid ="user.personid" :name="user.name" :surname="user.surname"
-                                            :age="user.age" :email="user.email" :linkedin="user.linkedin"
-                                            :CV="user.CV" :role="user.role" />
-                            </div>
+                    </div>
+                    <div v-if="!search" class="row g-3">
+                        <div v-for="user in people" class="col" style="margin-bottom: 70px;">
+                            <PeopleCard :personid="user.personid" :name="user.name" :surname="user.surname" :age="user.age"
+                                :email="user.email" :linkedin="user.linkedin" :CV="user.CV" :role="user.role" />
                         </div>
                     </div>
                 </div>
+            </div>
         </div>
     </main>
 </template>
@@ -41,33 +42,34 @@ import PeopleCard from '@/components/PeopleCard.vue'
 export default {
     data() {
         return {
-            
             // this will contain all the people, used to reset the filters
             people: [
                 {
                     personid: -1,
                     name: 'Paolo',
                     surname: 'Rossi',
-                    age: '37',
-                    email : 'paolo.rossi@gmail.com',
+                    age: 37,
+                    email: 'paolo.rossi@gmail.com',
                     linkedin: 'https://www.linkedin.com/feed/',
                     CV: 'Laureato e molto bravo in costruzioni lego',
                     role: 'CEO',
                     projects: [
                         {
+                            featured: 0,
                             projectid: -1,
-                            title: 'project'
+                            title: 'project',
+                            stage: 'stage',
+                            year: 1024,
                         }
                     ],
                 },
             ],
+
             search: ""
-           
         }
     },
-   
+
     components: {
-        
         PeopleCard
     },
 
@@ -80,7 +82,7 @@ export default {
         visiblePeople: function () {
             let matchingPeople = this.people.filter(p => {
                 let indexList = [0];
-                for (let i = 0; i < (p.name + " " + p.surname).length ; i++) {
+                for (let i = 0; i < (p.name + " " + p.surname).length; i++) {
                     const character = (p.name + " " + p.surname).charAt(i);
                     if (character == " ")
                         indexList.push(i + 1);
@@ -94,10 +96,9 @@ export default {
 
             return matchingPeople;
         },
-    }, 
+    },
 
     methods: {
-
         // get the data from the server
         getPersonData: async function () {
             try {
@@ -114,36 +115,29 @@ export default {
 </script>
 
 <style scoped>
-
-
-
-.title{
+.title {
     font-size: 3.5em;
     text-align: center;
     font-family: secular one, sans-serif;
     color: #FFFFFF;
-    margin-top : 1.5em;
+    margin-top: 1.5em;
 }
 
 .card:hover {
-    
     transition: 0.5s;
     margin-top: 5em;
     transform: translateY(-0.5%);
     box-shadow: 0 4rem 8rem rgba(0, 0, 0, 0.5);
-    
-    
 }
 
 
-.container{
+.container {
     border-radius: 0.4rem;
     background-color: #fff;
     max-width: 90%;
-    width : auto;
+    width: auto;
     height: auto;
     max-height: 100%;
     margin: auto;
-    
 }
 </style>

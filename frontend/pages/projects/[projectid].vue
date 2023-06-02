@@ -31,22 +31,6 @@
                     {{ projectDetails.name + " " + projectDetails.surname }}
                 </NuxtLink>
             </p>
-            <b>People: </b>
-            <span v-for="(person, index) in people">
-                <NuxtLink :to="`/people/${person.personid}`">
-                    {{ person.name }} {{ person.surname }}
-                </NuxtLink>
-                <span v-if="index < people.length - 1">, </span>
-            </span>
-        </div>
-        <!-- add the possibility to navigate to the next and previous project -->
-        <div>
-            <NuxtLink :to="`/projects/${previousProject}`">
-                Previous project
-            </NuxtLink>
-            <NuxtLink :to="`/projects/${nextProject}`">
-                Next project
-            </NuxtLink>
         </div>
     </div>
 </template>
@@ -70,28 +54,12 @@ export default {
                 areas: [{ areaid: -1, title: "Area" }],
                 featured: 1,
             },
-
-            people: ['Person1', 'Person2'],
         }
     },
 
     created() {
         this.projectDetails.projectid = this.$route.params.projectid
         this.getProjectData(this.projectDetails.projectid)
-    },
-
-    computed: {
-        // compute next and previous project id (range 1 to )
-        nextProject() {
-            return (this.projectDetails.projectid % 15) + 1
-        },
-
-        previousProject() {
-            if (this.projectDetails.projectid == 1) {
-                return 15
-            }
-            return (this.projectDetails.projectid - 1)
-        },
     },
 
     methods: {
@@ -105,16 +73,6 @@ export default {
                 this.projectDetails = data
             } catch (error) {
                 alert("Error, couldn't retrieve project details");
-                console.error(error);
-            }
-
-            // get people working on the project
-            try {
-                const data = await makeCall(this.$config.public.SERVER_URL + "/getPeopleFromProject/" + projectid, 'GET');
-                console.log(data);
-                this.people = data
-            } catch (error) {
-                alert("Error, couldn't retrieve people working on the project");
                 console.error(error);
             }
         },
