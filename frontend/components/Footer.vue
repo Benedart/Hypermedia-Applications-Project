@@ -56,7 +56,22 @@
         </div>
 
         <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
-            <p>&copy; 2023 HyperMeow, All rights reserved.</p>
+            <p class="ms-4">&copy; 2023 HyperMeow, All rights reserved.</p>
         </div>
     </footer>
 </template>
+
+<style scoped>
+footer {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+}
+
+.row {
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 0 15px;
+}
+</style>

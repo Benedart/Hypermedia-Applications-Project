@@ -4,7 +4,7 @@ import Footer from '@/components/Footer.vue'
 </script>
 
 <template>
-    <div class = "mx-3">
+    <div>
         <Navbar />
         <slot />
         <Footer />
