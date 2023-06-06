@@ -7,8 +7,10 @@ import PeopleCard from '@/components/PeopleCard.vue'
 <template>
     <main>
         <div class="container-fluid">
-            <div class="row custom-heading">
-                About us
+            <br>
+            <div class = "row my-4"></div>
+            <div class="row custom-heading mx-3">
+                <strong>About us</strong>
             </div>
             <br>
             <br>
@@ -48,8 +50,8 @@ import PeopleCard from '@/components/PeopleCard.vue'
                             sustainable future through innovation and growth</strong>.
                     </div>
                 </div>
-                <div class="col-md-6 my-3">
-                    <img class="card-img-top rounded" src="/images/about/usCats.webp" alt="Our Team">
+                <div class="col-md-6 my-3 d-flex justify-content-center">
+                    <img class="card-img-top rounded d-flex justify-content-center" style="width: 70%; height: auto;" src="/images/about/usCats.webp" alt="Our Team">
                 </div>
             </div>
             <div class="row my-5"></div>
@@ -74,8 +76,8 @@ import PeopleCard from '@/components/PeopleCard.vue'
             </div>
             <div class="row my-5"></div>
             <div class="row mx-3">
-                <div class="col-md-6 my-3">
-                    <img class="card-img-top rounded" src="/images/about/invest.webp" alt="Investment Approach">
+                <div class="col-md-6 my-3 d-flex justify-content-center align-items-center">
+                    <img class="card-img-top rounded" style="width: 70%; height: auto;" src="/images/about/invest.webp" alt="Investment Approach">
                 </div>
                 <div class="col-md-6 text-right my-3">
                     <div>
