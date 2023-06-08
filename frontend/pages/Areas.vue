@@ -5,16 +5,22 @@ import AreaCard from '@/components/AreaCard.vue'
 
 <template>
     <main>
-        <div class="container-fluid">
-        <div style="font-size: 3.5em; margin-bottom: 1em;">
+        <div class="container">
+        <div style="font-size: 3.5em; margin-bottom: 2rem;">
                 Areas
             </div>
 
         <div class="grid">
-                <div v-for="area in areas" class="grid-item">
+                <div v-for="area in areas" >
                     <AreaCard :areaid="area.AreaID" :title="area.Title" :projects="area.projects" />
                 </div>
         </div>
+
+        <!--div class="row g-3">
+            <div v-for="area in areas" class="col-12 col-md-6 col-lg-4">
+                <AreaCard :areaid="area.AreaID" :title="area.Title" :projects="area.projects" />
+            </div>
+        </div-->
     </div>
     </main>
 </template>
@@ -61,20 +67,20 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 .grid{
     display: grid;
-    gap: 6rem;
-    grid-template-columns: repeat(auto-fit,minmax(30rem,1fr));
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit,minmax(20rem,1fr));
     align-items: start;
 }
 
 
 .grid-item{
-    /*display: flex;
+    display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;*/
+    align-items: center;
     background-color: #fff;
     border-radius: 0.4rem;
     overflow: hidden;
@@ -87,14 +93,14 @@ export default {
     transform: translateY(-0.5%);
     box-shadow: 0 4rem 8rem rgba(0, 0, 0, 0.5);
 }
+
+.container {
+    border-radius: 0.4rem;
+    background-color: #fff;
+    max-width: 90%;
+    width: auto;
+    height: auto;
+    max-height: 90%;
+    margin: auto;
+}
 </style>
-
-
-            <!--div class="row g-2" style="margin-top: 20px;">
-                <div class="col" v-for="project in projects">
-                    <router-link :to="`/project/${project.ProjectID}`" class="mytooltip">
-                        <span className="tooltiptext"> {{project.Title}} </span>
-                        <img :src="`/images/projects/${project.Title}.webp`" class="projectIcon"/>
-                    </router-link>
-                </div>
-            </div-->
