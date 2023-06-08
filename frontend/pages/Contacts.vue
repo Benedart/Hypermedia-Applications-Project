@@ -1,25 +1,5 @@
 <script setup lang="ts">
-import { ref, computed, onMounted, onBeforeUnmount } from 'vue'
 import ContactForm from '@/components/ContactForm.vue'
-
-//Code to handle cards positiong and resizing according to display dimensions
-let windowWidth = ref(window.innerWidth)
-
-let resizeHandler = () => {
-    windowWidth.value = window.innerWidth
-}
-
-onMounted(() => {
-    window.addEventListener('resize', resizeHandler)
-})
-
-onBeforeUnmount(() => {
-    window.removeEventListener('resize', resizeHandler)
-})
-
-let columnClass = computed(() => {
-    return windowWidth.value >= 760 && windowWidth.value <= 1025 ? 'col-md-6' : 'col-md-4'
-})
 </script>
 
 <template>
@@ -44,7 +24,7 @@ let columnClass = computed(() => {
             </div>
             <div class="row justify-content-center pb-5 card-container" style="background: #E5E5E5;">
                 <div class="row mx-3 justify-content-center">
-                    <div :class="columnClass + ' card mb-3 card-custom mx-auto mr-md-3 ml-md-3'">
+                    <div class="card mb-3 card-custom mx-auto mr-md-3 ml-md-3">
                         <div class="row image-container">
                             <img class="card-img-top img-custom" src="/images/contact/address.webp" alt="Position Icon">
                         </div>
@@ -54,7 +34,7 @@ let columnClass = computed(() => {
                             Via Camillo Golgi, 39, Milano, MI
                         </div>
                     </div>
-                    <div :class="columnClass + ' card mb-3 card-custom mx-auto mr-md-3 ml-md-3'">
+                    <div class="card mb-3 card-custom mx-auto mr-md-3 ml-md-3">
                         <div class="row image-container">
                             <img class="card-img-top img-custom" src="/images/contact/phone.webp" alt="Phone Icon">
                         </div>
@@ -64,7 +44,7 @@ let columnClass = computed(() => {
                             +39 3337183949
                         </div>
                     </div>
-                    <div :class="columnClass + ' card mb-3 card-custom mx-auto mr-md-3 ml-md-3'" style="color: #FFFBFA;">
+                    <div class="card mb-3 card-custom mx-auto mr-md-3 ml-md-3" style="color: #FFFBFA;">
                         <div class="row image-container">
                             <img class="card-img-top img-custom" src="/images/contact/email.webp" alt="Email Icon">
                         </div>
