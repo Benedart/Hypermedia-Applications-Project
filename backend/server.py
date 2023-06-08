@@ -203,7 +203,7 @@ def get_people():
     cursor = mysql.connection.cursor()
 
     query = """
-        select personid, name, surname, age, linkedin, CV, role
+        select personid, name, surname, age, linkedin, CV, Description, role
         from people
     """
     cursor.execute(query)
@@ -219,7 +219,7 @@ def get_person(personid):
     cursor = mysql.connection.cursor()
 
     query = """
-        select personid, name, surname, age, email, linkedin, CV, role
+        select personid, name, surname, age, email, linkedin, CV, Description, role
         from people 
         where PersonID = %s
     """
