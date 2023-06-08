@@ -31,7 +31,7 @@ import PeopleCard from '@/components/PeopleCard.vue'
             <br>
             <br>
             <br>
-            <div class="row justify-content-center">
+            <div class="row d-flex justify-content-center">
                 <div class="col-md-1"></div>
                 <div class="col-md-5 my-3">
                     <div class="my-auto">
@@ -84,7 +84,7 @@ import PeopleCard from '@/components/PeopleCard.vue'
             </div>
             <div class="row my-5"></div>
             <div class="row mx-3 d-flex justify-content-center">
-                <div class="col-md-6 my-3 d-flex justify-content-center align-items-center">
+                <div class="col-md-6 my-3 d-flex justify-content-end align-items-center">
                     <img class="card-img-top rounded" style="width: 70%; height: auto;" src="/images/about/invest.webp" alt="Investment Approach">
                 </div>
                 <div class="col-md-5 text-right my-3">
