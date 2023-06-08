@@ -1,5 +1,25 @@
 <script setup lang="ts">
+import { ref, computed, onMounted, onBeforeUnmount } from 'vue'
 import ContactForm from '@/components/ContactForm.vue'
+
+//Code to handle cards positiong and resizing according to display dimensions
+let windowWidth = ref(window.innerWidth)
+
+let resizeHandler = () => {
+    windowWidth.value = window.innerWidth
+}
+
+onMounted(() => {
+    window.addEventListener('resize', resizeHandler)
+})
+
+onBeforeUnmount(() => {
+    window.removeEventListener('resize', resizeHandler)
+})
+
+let columnClass = computed(() => {
+    return windowWidth.value >= 760 && windowWidth.value <= 1025 ? 'col-md-6' : 'col-md-4'
+})
 </script>
 
 <template>
@@ -24,7 +44,7 @@ import ContactForm from '@/components/ContactForm.vue'
             </div>
             <div class="row justify-content-center pb-5 card-container" style="background: #E5E5E5;">
                 <div class="row mx-3 justify-content-center">
-                    <div class="col-md-4 card mb-3 card-custom mx-auto mr-md-3 ml-md-3">
+                    <div :class="columnClass + ' card mb-3 card-custom mx-auto mr-md-3 ml-md-3'">
                         <div class="row image-container">
                             <img class="card-img-top img-custom" src="/images/contact/address.webp" alt="Position Icon">
                         </div>
@@ -34,7 +54,7 @@ import ContactForm from '@/components/ContactForm.vue'
                             Via Camillo Golgi, 39, Milano, MI
                         </div>
                     </div>
-                    <div class="col-md-4 card mb-3 card-custom mx-auto mr-md-3 ml-md-3">
+                    <div :class="columnClass + ' card mb-3 card-custom mx-auto mr-md-3 ml-md-3'">
                         <div class="row image-container">
                             <img class="card-img-top img-custom" src="/images/contact/phone.webp" alt="Phone Icon">
                         </div>
@@ -44,7 +64,7 @@ import ContactForm from '@/components/ContactForm.vue'
                             +39 3337183949
                         </div>
                     </div>
-                    <div class="col-md-4 card mb-3 card-custom mx-auto mr-md-3 ml-md-3" style="color: #FFFBFA;">
+                    <div :class="columnClass + ' card mb-3 card-custom mx-auto mr-md-3 ml-md-3'" style="color: #FFFBFA;">
                         <div class="row image-container">
                             <img class="card-img-top img-custom" src="/images/contact/email.webp" alt="Email Icon">
                         </div>
@@ -82,6 +102,19 @@ import ContactForm from '@/components/ContactForm.vue'
     display: block; 
     margin: 0;
 }
+
+
+@media (min-width: 760px) and (max-width: 1025px) {
+    .card-custom:nth-child(1),
+    .card-custom:nth-child(2) {
+        margin-top: 30px;  /* Regola il valore in base alle tue esigenze */
+    }
+
+    .card-custom:nth-child(3) {
+        margin-top: 30px;  /* Regola il valore in base alle tue esigenze */
+    }
+}
+
 
 @media (min-width: 768px) {
   .card-custom {
@@ -126,4 +159,5 @@ import ContactForm from '@/components/ContactForm.vue'
 .contact-form-container {
     margin-top: 50px;
 }
+
 </style>

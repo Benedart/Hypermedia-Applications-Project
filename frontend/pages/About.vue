@@ -10,16 +10,16 @@ import PeopleCard from '@/components/PeopleCard.vue'
             <br>
             <br>
             <div class = "row my-4"></div>
-            <div class="row custom-heading">
+            <div class="row custom-heading mx-3">
                 <div class ="col-md-1"></div>
-                <div class = "col-md-5">
-                    <strong class = "mx-3">About us</strong>
+                <div class = "col-md-8">
+                    <div class = "row mx-3"><strong>About us</strong></div>
                 </div>
-                <div class = "col-md-6"></div>
+                <div class = "col-md-3"></div>
             </div>
             <br>
             <br>
-            <div class="row mx-3 justify-content-center">
+            <div class="row justify-content-center">
                 <div class = "col-md-1"></div>
                 <div class="col-md-5 d-flex align-items-center justify-content-center">
                     <p class = "custom-h3" style="text-align:center;"> <b>“Embracing novel ideas, fueling unprecedented innovations, and
@@ -31,7 +31,7 @@ import PeopleCard from '@/components/PeopleCard.vue'
             <br>
             <br>
             <br>
-            <div class="row mx-3 justify-content-center">
+            <div class="row justify-content-center">
                 <div class="col-md-1"></div>
                 <div class="col-md-5 my-3">
                     <div class="my-auto">
@@ -58,12 +58,12 @@ import PeopleCard from '@/components/PeopleCard.vue'
                     </div>
                 </div>
                 <div class="col-md-5 my-3 d-flex justify-content-center">
-                    <img class="card-img-top rounded d-flex justify-content-center mr-2" style="width: 70%; height: auto;" src="/images/about/usCats.webp" alt="Our Team">
+                    <img class="card-img-top rounded d-flex justify-content-center mr-2" style="width: 70%; object-fit: cover;" src="/images/about/usCats.webp" alt="Our Team">
                 </div>
             </div>
             <div class="row my-5"></div>
             <div class="row mx-3 justify-content-center">
-                <div class="col-md-5 rounded mb-3 text-center">
+                <div class="col-md-6 rounded mb-3 text-center">
                     <div class="row" style="font-size: 3.5em;">
                         <p class ="custom-bold">100+</p>
                     </div>
@@ -71,8 +71,7 @@ import PeopleCard from '@/components/PeopleCard.vue'
                         <p class = "custom-bold">Startups Funded</p>
                     </div>
                 </div>
-                <div class="col-md-2"></div>
-                <div class="col-md-5 rounded mb-3 text-center">
+                <div class="col-md-6 rounded mb-3 text-center">
                     <div class = "col-md-1"></div>
                     <div class = "col-md-3"></div>
                     <div class="row" style="font-size: 3.5em;">
@@ -81,13 +80,12 @@ import PeopleCard from '@/components/PeopleCard.vue'
                     <div class="row">
                         <p class = "custom-bold">Total Capital Deployed</p>
                     </div>
-                    <div class = "col-md-1"></div>
                 </div>
             </div>
             <div class="row my-5"></div>
-            <div class="row mx-3">
+            <div class="row mx-3 d-flex justify-content-center">
                 <div class="col-md-6 my-3 d-flex justify-content-center align-items-center">
-                    <img class="card-img-top rounded ml-2" style="width: 70%; height: auto;" src="/images/about/invest.webp" alt="Investment Approach">
+                    <img class="card-img-top rounded" style="width: 70%; height: auto;" src="/images/about/invest.webp" alt="Investment Approach">
                 </div>
                 <div class="col-md-5 text-right my-3">
                     <div>
