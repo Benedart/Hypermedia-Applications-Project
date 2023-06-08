@@ -2,7 +2,7 @@
 
 
     <div class="card" >
-        <img class="card-img" :src="`/images/areas/${title}.webp`" >
+        <img class="card-img" :src="`/images/areas/${title}.jpg`" >
         <NuxtLink :to="`/areas/${areaid}`">
                 <button class="card-btn">Learn more</button>
         </NuxtLink>
