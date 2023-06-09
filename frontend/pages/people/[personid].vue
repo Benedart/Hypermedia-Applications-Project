@@ -3,44 +3,46 @@ import ProjectCard from '@/components/ProjectCard.vue'
 </script>
 
 <template>
-    <div class="container">
-        <div class="row align-items-center justify-content-center">
-            <div class="col-md-5">
-                <img class="image-person align-items-center justify-content-center" :src="`/images/People/${personDetails.personid}.webp`"
-                    :alt="personDetails.personid">
-            </div>
-            <div class="col-md-7">
-                <h3 class="name-person">{{ personDetails.name + " " + personDetails.surname }}
-                </h3>
-                <i>
-                    <h3 style="margin-bottom: 15px; color: #000022; font-family:Avenir, sans-serif; font-size: 18px;">{{ personDetails.role }}</h3>
-                </i>
-                <hr>
-                <p style="font-family: Avenir, sans-serif;color:#000022;" >{{ personDetails.Description }}</p>
-                <br>
-                <h3 class="formation">FORMATION</h3>
-                <p style="margin-bottom: 15px; font-family:Avenir, sans-serif; color:#000022;">{{ personDetails.CV }}</p>
-                <hr>
-                <div style="margin-top: 20px; color:#000022;">
-                    <a :href="`mailto:${personDetails.email}`"><img class="card-img-top img-custom"
+    <main style="background-color: #FFFBFA;">
+        <div class="container" style="background-color: snow;">
+            <div class="row align-items-center justify-content-center">
+                <div class="col-md-5" style="background-color: snow;">
+                    <img class="image-person align-items-center justify-content-center" :src="`/images/People/${personDetails.personid}.webp`"
+                        :alt="personDetails.personid">
+                </div>
+                <div class="col-md-7" style="background-color: snow;">
+                    <h3 class="name-person">{{ personDetails.name + " " + personDetails.surname }}
+                    </h3>
+                    <i>
+                        <h3 style="margin-bottom: 15px; color: #000022; font-family:Avenir, sans-serif; font-size: 18px;">{{ personDetails.role }}</h3>
+                    </i>
+                    <hr>
+                    <p style="font-family: Avenir, sans-serif;color:#000022;" >{{ personDetails.Description }}</p>
+                    <br>
+                    <h3 class="formation">FORMATION</h3>
+                    <p style="margin-bottom: 15px; font-family:Avenir, sans-serif; color:#000022;">{{ personDetails.CV }}</p>
+                    <hr>
+                    <div style="margin-top: 20px; color:#000022;">
+                        <a :href="`mailto:${personDetails.email}`"><img class="card-img-top img-custom"
                             src="/images/contact/email.webp" alt="Email Icon" style="width: 30px; height: auto;"></a>
-                    <a :href="personDetails.linkedin" style="margin-left: 20px;"><img class="card-img-top img-custom"
+                        <a :href="personDetails.linkedin" style="margin-left: 20px;"><img class="card-img-top img-custom"
                             src="/images/contact/linkedin.webp" alt="Linkedin Icon" style="width: 30px; height: auto; "></a>
+                    </div>
+                </div>
+                <div class="row" style="margin-top: 40px; margin-left: -60px; padding-block: 5%;" v-if="projectsSupervised.length > 0">
+                    <span class="row mx-3 badge custom-color justify-content-center" style="padding:2%;">
+                        <h3 class="h3" style="margin-left : 10px; margin-top: 2px; padding:2%; float:left;">PROJECTS SUPERVISED</h3>
+                        <div class="row">
+                            <div v-for="project in projectsSupervised" class="col-12 col-sm-7 col-md-6 col-lg-5" style="padding:5%;">
+                                <ProjectCard :projectid="project.projectid" :title="project.title" :preview="project.preview"
+                                :stage="project.stage" :year="project.year" :featured="project.featured" />
+                            </div>
+                        </div>
+                    </span>
                 </div>
             </div>
-            <div class="row" style="margin-top: 40px; margin-left: -60px; padding-block: 5%;" v-if="projectsSupervised.length > 0">
-                <span class="row mx-3 badge custom-color justify-content-center" style="padding:2%;">
-                    <h3 class="h3" style="margin-left : 10px; margin-top: 2px; padding:2%; float:left;">PROJECTS SUPERVISED</h3>
-                    <div class="row">
-                        <div v-for="project in projectsSupervised" class="col-12 col-sm-7 col-md-6 col-lg-5" style="padding:5%;">
-                            <ProjectCard :projectid="project.projectid" :title="project.title" :preview="project.preview"
-                                :stage="project.stage" :year="project.year" :featured="project.featured" />
-                        </div>
-                    </div>
-                </span>
-            </div>
         </div>
-    </div>
+    </main>
 </template>
 
 <script lang="ts">

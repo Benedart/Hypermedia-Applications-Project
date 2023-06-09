@@ -4,29 +4,14 @@ import PeopleCard from '@/components/PeopleCard.vue'
 </script>
 
 <template>
-    <main>
-        <div class="container-text-center">
-            <div class="title">
+    <main style="background-color: #FFFBFA;">
+        <div class="container-text-center" style="background-color: #FFFBFA;">
+            <div class="title" style="background-color: #FFFBFA;">
                 People
             </div>
-            <!--<div class="search-wrapper panel-heading col-sm-12" style="margin-top : 5em; margin-left : -30em;">
-                <input type="text" v-model="search" placeholder="  Search by title">
-                <svg id="i-search" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="20" height="32" fill="none"
-                    stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
-                    <circle cx="14" cy="14" r="12" />
-                    <path d="M23 23 L30 30" />
-                </svg>
-            </div>-->
-            <div class="container">
+            <div class="container" style="background-color: #FFFBFA;">
                 <div class="row d-flex justify-content-center">
-                    <div v-if="search" class="row g-3">
-                        <div v-for="person in visiblePeople" class="col" style="margin-bottom: 70px;">
-                            <PeopleCard :personid="person.personid" :name="person.name" :surname="person.surname"
-                                :age="person.age" :email="person.email" :linkedin="person.linkedin" :Description="person.Description"
-                                :role="person.role" />
-                        </div>
-                    </div>
-                    <div v-if="!search" class="row g-3">
+                    <div class="row g-3">
                         <div v-for="user in people" class="col" style="margin-bottom: 70px;">
                             <PeopleCard :personid="user.personid" :name="user.name" :surname="user.surname" :age="user.age"
                                 :email="user.email" :linkedin="user.linkedin" :Description="user.Description" :role="user.role" />

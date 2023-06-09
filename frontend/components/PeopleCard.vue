@@ -1,4 +1,4 @@
-<template>
+<template >
     <div class="card h-100 mx-auto" style="width: 18rem; margin-top: 2em; background-color:#FFFBFA;">
         <img class="card-img-top" :src="`/images/People/${personid}.webp`" :alt="personid">
         <div class="card-body">
@@ -8,12 +8,11 @@
 
         <div class="card-footer">
             <p class="card-Description">{{ shorterDescription(Description) }}.</p>
-            <!--<a :href="`mailto:${email}`" class="float-start"><img class="card-img-mail img-custom" src="/images/contact/email.webp" alt="Email Icon" style ="width: 30px; height: auto;"></a>-->
             <a :href="linkedin" class="float-end"><img class="card-img-linkedin img-custom"
                     src="/images/contact/linkedin.webp" alt="Linkedin Icon" style="height: auto;"></a>
-            <NuxtLink :to="`/People/${personid}`">
-                <button class="card-btn">Learn more</button>
-            </NuxtLink>
+            <nuxt-link :to="`/People/${personid}`" tag="button" type="button" class="card-btn ">
+                   Learn more
+            </nuxt-link>
         </div>
     </div>
 </template>
