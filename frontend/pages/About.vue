@@ -151,10 +151,11 @@ import PeopleCard from '@/components/PeopleCard.vue'
             <br>
             <div class="row mx-3 d-flex justify-content-center">
                 <div class="row mx-3 justify-content-center">
-                    <div v-for="person in people.slice(0, 3)" class="col mb-3 d-flex justify-content-center">
-                        <PeopleCard :personid="person.personid" :name="person.name" :surname="person.surname"
-                            :age="person.age" :email="person.email" :linkedin="person.linkedin" :CV="person.CV"
-                            :role="person.role" />
+                    <div v-if="!search" class="row g-3">
+                        <div v-for="user in people.slice(0,3)" class="col mb-3 d-flex justify-content-center" style="margin-bottom: 70px;">
+                            <PeopleCard :personid="user.personid" :name="user.name" :surname="user.surname" :age="user.age"
+                                :email="user.email" :linkedin="user.linkedin" :Description="user.Description" :role="user.role" />
+                        </div>
                     </div>
                 </div>
             </div>
