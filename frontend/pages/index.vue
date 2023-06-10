@@ -4,6 +4,19 @@ import ContactForm from '@/components/ContactForm.vue'
 
 <template>
   <main>
+    <div class="container-fluid">
+        <div class="row">
+          <div class="title">If you don’t believe in it, we do.</div>
+          <div class="subtitle">Dedicated to fueling innovation and driving growth.  We collaborate with visionary entrepreneurs and disruptive startups igniting breakthrough technologies and ideas, empowering the next generation of game-changers.</div>
+          <nuxt-link to="/about" tag="button" type="button" class="btn d-flex justify-content-left" >
+                  About us
+          </nuxt-link>
+        </div>
+    </div>
+  </main>
+</template>
+<!--<template>
+  <main>
     <div class = "container-fluid">
       <div class = "row d-flex justify-content-around">
         <div class ="col-md-1"></div>
@@ -25,9 +38,7 @@ import ContactForm from '@/components/ContactForm.vue'
                 </div>
             </div>
         </div>
-        <div class="col-md-5 d-flex align-items-center justify-content-center my-2">
-            <img class="rounded-image image-container" src="/images/index/crazyImage.webp" alt="HyperMeow">
-        </div>
+        <div class="image align-items-center justify-content-center"> </div>
         <div class = "col-md-1"></div>
       </div>
       <div class = "row my-3"> </div>
@@ -137,11 +148,61 @@ import ContactForm from '@/components/ContactForm.vue'
       <br>
     </div>
   </main>
-</template>
+</template>-->
 
 <style scoped>
 
-.card-left {
+
+.row{
+  background-image: url("./images/index/plant.webp");
+  margin-top:-8em;
+}
+
+.title{
+  max-width: 50%;
+  text-align:start;
+  margin-left: 1em;
+  margin-top:5em;
+  color:snow;
+  font-family: Avenir, sans-serif;
+}
+
+.subtitle{
+  width: 45%;
+  text-align:start;
+  margin-left:-42.5em;
+  margin-top: 30em;
+  
+  color:snow;
+  font-family: Avenir, sans-serif;
+}
+.btn {
+    width: auto;
+    font-size: 1rem;
+    font-weight: 450;
+    text-align: center;
+    margin: auto;
+    color: #086788;
+    background-color: #E5E5E5;
+    border: none;
+    border-radius: 0.4rem;
+    transition: 0.2s;
+    cursor: pointer;
+    letter-spacing: 0.1rem;
+    margin-top: 37em;
+    margin-bottom:10em;
+    margin-left:-35.3em;
+    font-family: Avenir, sans-serif;
+}
+
+.btn:hover,
+.btn:active {
+    background-color: #c2cffc;
+}
+
+
+
+/*.card-left {
     position: relative;
     background-color: #818181;
     border-radius: 90px 0px 0px 90px;
@@ -163,6 +224,8 @@ import ContactForm from '@/components/ContactForm.vue'
     width: 90%;
     height: 90%;
 }
+
+
   
 .card-right {
     position: relative;
@@ -184,23 +247,24 @@ import ContactForm from '@/components/ContactForm.vue'
     line-height: 90%;
 }
 
-.btn-rounded {
-    border-radius: 25px;
-    background: linear-gradient(90deg, #555555, #A3A3A3);
-    border: none;
-    color: white; 
-}
+
 
 .rounded-image {
     border-radius: 50%;
     max-width: 75%;
 }
 
-.image-container {
-    width: 80%;
+.image{
+    background-image: url("./images/index/plant.webp"); 
+    height: auto;
+    width: 100%;
+    max-width: none;
     display: flex;
     justify-content: center;
+    margin-top: -25rem;
     align-items: center;
+    overflow: hidden;
+    
 }
 
 .card-image{
@@ -254,7 +318,7 @@ import ContactForm from '@/components/ContactForm.vue'
     .card-right {
         height: 100px;
     }
-}
+}*/
 
 </style>
 

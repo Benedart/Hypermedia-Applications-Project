@@ -13,7 +13,7 @@ import ContactForm from '@/components/ContactForm.vue'
                         </div>
                         <div class="row">
                             <div class="col-md-12">
-                                <h3>Do you love cats and want to collaborate? Contact us!</h3>
+                                <h3>Do you want to present your project and want to collaborate? Contact us!</h3>
                             </div>
                         </div>
                     </div>

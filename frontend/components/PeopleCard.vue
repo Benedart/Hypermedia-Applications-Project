@@ -79,7 +79,7 @@ export default {
 
 .card-img-linkedin
 {
-    margin-top: -52em;
+    margin-top: -53.5em;
     width: 40px; 
     
 }

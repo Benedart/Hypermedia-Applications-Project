@@ -4,9 +4,8 @@ import PeopleCard from '@/components/PeopleCard.vue'
 </script>
 
 <template>
-    <main style="background-color: #FFFBFA;">
-        <div class="container-text-center" style="background-color: #FFFBFA;">
-            <div class="title" style="background-color: #FFFBFA;">
+        <div class="container-text-center" >
+            <div class="title" >
                 People
             </div>
             <div class="container" style="background-color: #FFFBFA;">
@@ -21,7 +20,7 @@ import PeopleCard from '@/components/PeopleCard.vue'
                 </div>
             </div>
         </div>
-    </main>
+    
 </template>
 
 <script lang="ts">

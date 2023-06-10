@@ -3,14 +3,13 @@ import ProjectCard from '@/components/ProjectCard.vue'
 </script>
 
 <template>
-    <main style="background-color: #FFFBFA;">
         <div class="container" style="background-color: snow;">
             <div class="row align-items-center justify-content-center">
                 <div class="col-md-5" style="background-color: snow;">
                     <img class="image-person align-items-center justify-content-center" :src="`/images/People/${personDetails.personid}.webp`"
                         :alt="personDetails.personid">
                 </div>
-                <div class="col-md-7" style="background-color: snow;">
+                <div class="col-md-7">
                     <h3 class="name-person">{{ personDetails.name + " " + personDetails.surname }}
                     </h3>
                     <i>
@@ -42,7 +41,7 @@ import ProjectCard from '@/components/ProjectCard.vue'
                 </div>
             </div>
         </div>
-    </main>
+    
 </template>
 
 <script lang="ts">
