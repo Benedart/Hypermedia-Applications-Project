@@ -51,7 +51,8 @@ import ContactForm from '@/components/ContactForm.vue'
                         <br>
                         <div class="row justify-content-center">
                             <h2>Email</h2>
-                            <a href="mailto:teamHyperMeow@gmail.com" class="email-link" style="color: #FFFBFA;">teamHyperMeow@gmail.com</a>
+                            <a href="mailto:teamHyperMeow@gmail.com" class="email-link"
+                                style="color: #FFFBFA;">teamHyperMeow@gmail.com</a>
                         </div>
                     </div>
                 </div>
@@ -79,37 +80,40 @@ import ContactForm from '@/components/ContactForm.vue'
     max-height: 100%;
     width: auto;
     height: auto;
-    display: block; 
+    display: block;
     margin: 0;
 }
 
 
 @media (min-width: 760px) and (max-width: 1025px) {
+
     .card-custom:nth-child(1),
     .card-custom:nth-child(2) {
-        margin-top: 30px;  /* Regola il valore in base alle tue esigenze */
+        margin-top: 30px;
+        /* Regola il valore in base alle tue esigenze */
     }
 
     .card-custom:nth-child(3) {
-        margin-top: 30px;  /* Regola il valore in base alle tue esigenze */
+        margin-top: 30px;
+        /* Regola il valore in base alle tue esigenze */
     }
 }
 
 
 @media (min-width: 768px) {
-  .card-custom {
-    margin-top: -100px;
-  }
+    .card-custom {
+        margin-top: -100px;
+    }
 }
 
 @media (max-width: 767px) {
-  .card-container {
-    padding-top: 30px;
-  }
+    .card-container {
+        padding-top: 30px;
+    }
 
-  .first-card {
-    margin-top: 40px;
-  }
+    .first-card {
+        margin-top: 40px;
+    }
 }
 
 .card-container {
@@ -138,6 +142,4 @@ import ContactForm from '@/components/ContactForm.vue'
 
 .contact-form-container {
     margin-top: 50px;
-}
-
-</style>
+}</style>

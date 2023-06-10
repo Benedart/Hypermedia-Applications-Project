@@ -14,7 +14,8 @@ import PeopleCard from '@/components/PeopleCard.vue'
                     <div class="row g-3">
                         <div v-for="user in people" class="col" style="margin-bottom: 70px;">
                             <PeopleCard :personid="user.personid" :name="user.name" :surname="user.surname" :age="user.age"
-                                :email="user.email" :linkedin="user.linkedin" :Description="user.Description" :role="user.role" />
+                                :email="user.email" :linkedin="user.linkedin" :Description="user.Description"
+                                :role="user.role" />
                         </div>
                     </div>
                 </div>
@@ -101,11 +102,7 @@ export default {
 
 <style scoped>
 .title {
-    font-size: 3.5em;
     text-align: center;
-    font-family: secular one, sans-serif;
-    color: #000022;
-    margin-top : 1.5em;
 }
 
 .card:hover {
@@ -114,7 +111,4 @@ export default {
     transform: translateY(-0.5%);
     box-shadow: 0 4rem 8rem rgba(0, 1, 33, 0.5);
 }
-
-
-
 </style>

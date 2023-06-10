@@ -6,22 +6,22 @@ import AreaCard from '@/components/AreaCard.vue'
 <template>
     <main>
         <div class="container">
-        <div style="font-size: 3.5em; margin-bottom: 2rem;">
+            <div class="title" style="font-size: 3.5em; margin-bottom: 2rem;">
                 Areas
             </div>
 
-        <div class="grid">
-                <div v-for="area in areas" >
+            <div class="grid">
+                <div v-for="area in areas">
                     <AreaCard :areaid="area.AreaID" :title="area.Title" :projects="area.projects" />
                 </div>
-        </div>
+            </div>
 
-        <!--div class="row g-3">
+            <!--div class="row g-3">
             <div v-for="area in areas" class="col-12 col-md-6 col-lg-4">
                 <AreaCard :areaid="area.AreaID" :title="area.Title" :projects="area.projects" />
             </div>
         </div-->
-    </div>
+        </div>
     </main>
 </template>
 
@@ -68,15 +68,14 @@ export default {
 </script>
 
 <style>
-.grid{
+.grid {
     display: grid;
     gap: 2rem;
-    grid-template-columns: repeat(auto-fit,minmax(20rem,1fr));
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
     align-items: start;
 }
 
-
-.grid-item{
+.grid-item {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -89,7 +88,7 @@ export default {
     transition: 0.2s;
 }
 
-.grid-item:hover{
+.grid-item:hover {
     transform: translateY(-0.5%);
     box-shadow: 0 4rem 8rem rgba(0, 0, 0, 0.5);
 }

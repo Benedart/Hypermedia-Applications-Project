@@ -1,24 +1,22 @@
 <template>
-
-
-    <div class="card" >
-        <img class="card-img" :src="`/images/areas/${title}.jpg`" >
+    <div class="card">
+        <img class="card-img" :src="`/images/areas/${title}.jpg`">
         <NuxtLink :to="`/areas/${areaid}`">
-                <button class="card-btn">Learn more</button>
+            <button class="card-btn">Learn more</button>
         </NuxtLink>
         <div class="card-content">
             <h1 class="card-header">{{ title }} </h1>
-            <p style="font-size: 1.2rem; margin-bottom: 0.5rem;" >Projects</p>
+            <p style="font-size: 1.2rem; margin-bottom: 0.5rem;">Projects</p>
 
-            <div class="grid" >
-                <div v-for="project in projects" >
-                    <NuxtLink :to="`/project/${project.ProjectID}`" class="mytooltip">
-                        <span class="tooltiptext"> {{project.Title}} </span>
-                        <img :src="`/images/projects/${project.Title}.webp`" class="projectIcon"/>
+            <div class="grid">
+                <div v-for="project in projects">
+                    <NuxtLink :to="`/projects/${project.ProjectID}`" class="mytooltip">
+                        <span class="tooltiptext"> {{ project.Title }} </span>
+                        <img :src="`/images/projects/${project.Title}.webp`" class="projectIcon" />
                     </NuxtLink>
                 </div>
             </div>
-            
+
             <!--div class="row row-cols-1 row-cols-lg-3" >
                 <div v-for="project in projects" class="col mb-4">
                     <NuxtLink :to="`/project/${project.ProjectID}`" class="mytooltip">
@@ -28,12 +26,10 @@
                 </div>
             </div-->
 
-            
+
 
         </div>
     </div>
-    
-
 </template>
 
 <script lang="ts">
@@ -65,11 +61,12 @@ export default {
     align-items: start;
 }
 
-.grid-item{
+.grid-item {
     display: flex;
     justify-content: center;
 }
-.card{
+
+.card {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -82,14 +79,15 @@ export default {
     transition: 0.2s;
 }
 
-.card:hover{
+.card:hover {
     transform: translateY(-0.5%);
     box-shadow: 0 4rem 8rem rgba(8, 103, 136, 0.5);
 }
 
-.card:hover .card-btn{
+.card:hover .card-btn {
     opacity: 1;
 }
+
 .mytooltip {
     position: relative;
     display: inline-block;
@@ -137,17 +135,18 @@ export default {
     padding: 0;
 }
 
-.card-img{
+.card-img {
     display: inline-block;
     width: 100%;
     height: 10rem;
     object-fit: cover;
 }
- .card-content{
-    padding: 1rem;
- }
 
-.card-header{
+.card-content {
+    padding: 1rem;
+}
+
+.card-header {
     font-size: 2rem;
     font-weight: 500;
     text-justify: center;
@@ -156,19 +155,19 @@ export default {
     background-color: #fff;
 }
 
-.card-btn{
+.card-btn {
     display: block;
     width: 50%;
     padding: 0.5rem;
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-200%);
+    transform: translate(-50%, -200%);
     font-size: 1.5rem;
     text-align: center;
-    color:#3363ff;
+    color: #3363ff;
     background-color: #d8e0fd;
-    border:none;
+    border: none;
     border-radius: 0.4rem;
     transition: 0.2s;
     cursor: pointer;
@@ -179,25 +178,25 @@ export default {
 }
 
 .card-btn:hover,
-.card-btn:active{
+.card-btn:active {
     background-color: #c2cffc;
 }
 
-.projectIcon{
-  /*max-width: 6rem;
+.projectIcon {
+    /*max-width: 6rem;
   max-height: 4rem;
   min-width: 3rem;
   min-height: 2rem;*/
-  width: 6rem;
-  height: 4rem;
-  border-radius: 25%;
-  box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.1);
-  position: relative;
-  transition: transform 500ms ease;
-  justify-content: center ;
+    width: 6rem;
+    height: 4rem;
+    border-radius: 25%;
+    box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.1);
+    position: relative;
+    transition: transform 500ms ease;
+    justify-content: center;
 }
 
-.projectIcon:hover{
-  transform: scale(1.25);
+.projectIcon:hover {
+    transform: scale(1.25);
 }
 </style>

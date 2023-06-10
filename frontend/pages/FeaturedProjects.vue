@@ -5,7 +5,7 @@ import ProjectCard from '@/components/ProjectCard.vue'
 
 <template>
     <main>
-        <h1>Featured projects</h1>
+        <div class="title">Featured projects</div>
         <div class="container-fluid">
             <div class="row g-3">
                 <div v-for="project in projects" class="col">
@@ -57,6 +57,10 @@ export default {
 </script>
 
 <style scoped>
+.title {
+    text-align: center;
+}
+
 .card {
     cursor: pointer;
 }

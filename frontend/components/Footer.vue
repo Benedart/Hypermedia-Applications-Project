@@ -69,6 +69,12 @@ footer {
     height: 100px;
 }
 
+/* set background color of only the footer */
+footer {
+    background-color: snow;
+}
+
+
 .row {
     margin: 0 auto;
     max-width: 1200px;

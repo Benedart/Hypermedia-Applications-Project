@@ -6,7 +6,7 @@ import ProjectCard from '@/components/ProjectCard.vue'
 
 <template>
     <main>
-        <h1>Projects</h1>
+        <div class="title">Projects</div>
         <div class="container-fluid">
             <div class="search-wrapper panel-heading col-sm-12">
                 <input type="text" v-model="search" placeholder="Search">
