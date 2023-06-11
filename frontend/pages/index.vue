@@ -14,17 +14,13 @@ import PeopleCard from '@/components/PeopleCard.vue'
                   About us
           </nuxt-link>
         </div>
-        <br>
-        <br>
-        <div class = "row custom-margins justify-content-center">
-          <div class = "col-md-10 d-flex justify-content-center mx-3">
+        <div class = "col-md-10 d-flex justify-content-center mx-3">
             <h3 class="custom-bold" style="text-align: center;">“HyperMeow is very good at doing the things it does. Like a lot. Aren’t you convinced yet? I pinky promise”</h3>
           </div>
           <div class = "col-md-6 sm-separator" style="text-align: justify;">
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eget duis mi nunc bibendum. Tellus elementum nec lorem eget dictumst. Risus in gravida eu, enim lorem. Sed consequat ut suspendisse eros. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eget duis mi nunc bibendum. Tellus elementum nec lorem eget dictumst. Risus in gravida eu, enim lorem. Sed consequat ut suspendisse eros. </p>
           </div>
-          <div class="row sm-separator"></div>
-          <div class="row mx-3 justify-content-center">
+          <div class="row mx-3 justify-content-center sm-separator">
                 <div class="col-md-6 rounded mb-3 text-center">
                     <div class="row" style="font-size: 3.5em;">
                         <p class="custom-bold">1000+</p>
@@ -84,7 +80,6 @@ import PeopleCard from '@/components/PeopleCard.vue'
                   </nuxt-link>
               </div>
             </div>
-        </div>
     </div>
     
   </main>

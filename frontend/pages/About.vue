@@ -6,117 +6,117 @@ import PeopleCard from '@/components/PeopleCard.vue'
 
 <template>
     <main>
-        <div class="custom-margins">
-            <div class="row mx-3">
-                <div class="col-md-12">
-                    <div class="title row">About us</div>
+        <div class="row mx-3">
+            <div class="col-md-12 custom-margins">
+                <div class="custom-heading row custom-top-margin"><b>About us</b></div>
+            </div>
+        </div>
+        <div class="row justify-content-center sm-separator custom-margins">
+            <div class="col-md-6 d-flex align-items-center justify-content-center">
+                <b class="custom-h3" style="text-align:center; line-height: 100%;">“Embracing novel ideas, fueling unprecedented
+                        innovations, and
+                        committing to the creation of a future where sustainability is not just a concept, but an
+                        established practice.”</b>
+            </div>
+        </div>
+        <div class="row d-flex justify-content-center separator-margin custom-margins">
+            <div class="col-md-6 my-3 justify-content-center">
+                <div class="my-auto">
+                    We are a <strong>leading venture capital firm</strong> with a clear focus: to <strong>support and
+                        foster groundbreaking ideas</strong> that have the potential to <strong>disrupt the
+                        market</strong> and contribute to a <strong>sustainable future</strong>. Since our
+                    establishment, we have guided <strong>countless startups</strong> to <strong>scale, innovate, and
+                        thrive</strong>.
+                </div>
+                <br>
+                <div class="my-auto">
+                    Our belief is firm: <strong>innovation disrupts</strong> and sparks growth. In startups, it's not
+                    just about capital, but also <strong>guidance, mentorship, and valuable connections</strong>. We
+                    offer a rich support ecosystem that empowers these budding enterprises, providing resources like
+                    <strong>strategic advisory</strong> and <strong>infrastructural assistance</strong>. These tools
+                    help them traverse their challenging entrepreneurial journey with <strong>confidence and
+                        skill</strong>.
+                </div>
+                <br>
+                <div class="my-auto">
+                    Our success stories mirror our expertise and dedication in nurturing the market disruptors of
+                    tomorrow. In this fluctuating landscape, we stand firm in our mission: <strong>fostering a
+                        sustainable future through innovation and growth</strong>.
                 </div>
             </div>
-            <div class="row justify-content-center" style="margin-top: 25px;">
-                <div class="col-md-6 d-flex align-items-center justify-content-center">
-                    <p class="custom-h3" style="text-align:center;"> <b>“Embracing novel ideas, fueling unprecedented
-                            innovations, and
-                            committing to the creation of a future where sustainability is not just a concept, but an
-                            established practice.”</b></p>
+            <div class="col-md-6 my-3 d-flex justify-content-center">
+                <img class="card-img-top rounded"
+                    style="width: 70%; object-fit: cover;" src="/images/about/usCats.webp" alt="Our Team">
+            </div>
+        </div>
+        <div class="row mx-3 d-flex justify-content-center separator-margin custom-margins">
+            <div class="col-md-6 rounded mb-3 text-center">
+                <div class="row" style="font-size: 3.5em;">
+                    <p class="custom-bold">100+</p>
+                </div>
+                <div class="row">
+                    <p class="custom-bold">Startups Funded</p>
                 </div>
             </div>
-            <div class="row d-flex justify-content-center" style = "margin-top: 25px;">
-                <div class="col-md-6 my-3">
-                    <div class="my-auto">
-                        We are a <strong>leading venture capital firm</strong> with a clear focus: to <strong>support and
-                            foster groundbreaking ideas</strong> that have the potential to <strong>disrupt the
-                            market</strong> and contribute to a <strong>sustainable future</strong>. Since our
-                        establishment, we have guided <strong>countless startups</strong> to <strong>scale, innovate, and
-                            thrive</strong>.
-                    </div>
-                    <br>
-                    <div class="my-auto">
-                        Our belief is firm: <strong>innovation disrupts</strong> and sparks growth. In startups, it's not
-                        just about capital, but also <strong>guidance, mentorship, and valuable connections</strong>. We
-                        offer a rich support ecosystem that empowers these budding enterprises, providing resources like
-                        <strong>strategic advisory</strong> and <strong>infrastructural assistance</strong>. These tools
-                        help them traverse their challenging entrepreneurial journey with <strong>confidence and
-                            skill</strong>.
-                    </div>
-                    <br>
-                    <div class="my-auto">
-                        Our success stories mirror our expertise and dedication in nurturing the market disruptors of
-                        tomorrow. In this fluctuating landscape, we stand firm in our mission: <strong>fostering a
-                            sustainable future through innovation and growth</strong>.
-                    </div>
+            <div class="col-md-6 rounded mb-3 text-center">
+                <div class="row" style="font-size: 3.5em;">
+                    <p class="custom-bold">$500M+</p>
                 </div>
-                <div class="col-md-6 my-3 d-flex justify-content-center">
-                    <img class="card-img-top rounded d-flex justify-content-center"
-                        style="width: 70%; object-fit: cover;" src="/images/about/usCats.webp" alt="Our Team">
+                <div class="row">
+                    <p class="custom-bold">Total Capital Deployed</p>
                 </div>
             </div>
-            <div class="row mx-3 justify-content-center separator-margin">
-                <div class="col-md-6 rounded mb-3 text-center">
-                    <div class="row" style="font-size: 3.5em;">
-                        <p class="custom-bold">100+</p>
-                    </div>
-                    <div class="row">
-                        <p class="custom-bold">Startups Funded</p>
-                    </div>
+        </div>
+        <div class="row mx-3 separator-margin custom-margins">
+            <div class="col-md-6 my-3 d-flex justify-content-center align-items-center">
+                <img class="card-img-top rounded" style="width: 70%; height: auto;" src="/images/about/invest.webp"
+                    alt="Investment Approach">
+            </div>
+            <div class="col-md-6 text-right my-3 custom-padding">
+                <div>
+                    <h3> <b> Our Investment Approach </b></h3>
                 </div>
-                <div class="col-md-6 rounded mb-3 text-center">
-                    <div class="row" style="font-size: 3.5em;">
-                        <p class="custom-bold">$500M+</p>
-                    </div>
-                    <div class="row">
-                        <p class="custom-bold">Total Capital Deployed</p>
-                    </div>
+                <br>
+                <div> Our investment strategy is centered around the <strong>discovery and support of startups</strong>
+                    that are not only viable but <strong>transformative</strong>. We provide our portfolio companies
+                    with the <strong>capital, resources, and strategic guidance</strong> they need to achieve their full
+                    potential.</div>
+                <br>
+                <div> Our perspective is global, our approach, personalized. We are firm believers in the <strong>power
+                        of diversity</strong>, both in sectors and geography. Our portfolio reflects this. We invest in
+                    a broad range of industries, from technology to healthcare, energy to education. It's not just about
+                    numbers for us; it's about the <strong>impact</strong>, the <strong>transformation</strong>. Our
+                    partnership with these startups is a journey, a <strong>shared vision for a future</strong> where
+                    technology and innovation bring about a widespread change.</div>
+            </div>
+        </div>
+        <div class="row mx-3 justify-content-center separator-margin custom-margins">
+            <div class="col-md-8" style="text-align: center;">
+                <h3 class = "custom-bold">“Investing in the future does not only mean foreseeing the future, but creating it”
+                </h3>
+            </div>
+            <div class="col-md-9 justify-content-center sm-separator" style="text-align: justify;">
+                <div> We believe that <strong>venture capital is not just about money</strong>. It's about
+                    <strong>building relationships</strong>, providing guidance, and supporting our portfolio companies
+                    every step of the way. We are committed to this philosophy and strive to make a difference in the
+                    startup ecosystem.
+                </div>
+                <br>
+                <div> We view venture capital as a <strong>catalyst for transformation and growth</strong>. It's about
+                    <strong>empowering startups</strong>, fostering creativity, and promoting sustainable practices.
+                    This commitment shapes our actions and initiatives, reinforcing our aim to become a <strong>positive
+                        force in the entrepreneurial landscape</strong>.
                 </div>
             </div>
-            <div class="row mx-3 d-flex justify-content-center separator-margin">
-                <div class="col-md-6 my-3 d-flex justify-content-center align-items-center">
-                    <img class="card-img-top rounded" style="width: 70%; height: auto;" src="/images/about/invest.webp"
-                        alt="Investment Approach">
-                </div>
-                <div class="col-md-6 text-right my-3">
-                    <div>
-                        <h3> <b> Our Investment Approach </b></h3>
-                    </div>
-                    <br>
-                    <div> Our investment strategy is centered around the <strong>discovery and support of startups</strong>
-                        that are not only viable but <strong>transformative</strong>. We provide our portfolio companies
-                        with the <strong>capital, resources, and strategic guidance</strong> they need to achieve their full
-                        potential.</div>
-                    <br>
-                    <div> Our perspective is global, our approach, personalized. We are firm believers in the <strong>power
-                            of diversity</strong>, both in sectors and geography. Our portfolio reflects this. We invest in
-                        a broad range of industries, from technology to healthcare, energy to education. It's not just about
-                        numbers for us; it's about the <strong>impact</strong>, the <strong>transformation</strong>. Our
-                        partnership with these startups is a journey, a <strong>shared vision for a future</strong> where
-                        technology and innovation bring about a widespread change.</div>
-                </div>
-            </div>
-            <div class="row mx-3 justify-content-center separator-margin">
-                <div class="col-md-8" style="text-align: center;">
-                    <h3 class = "custom-bold">“Investing in the future does not only mean foreseeing the future, but creating it”
-                    </h3>
-                </div>
-                <div class="col-md-8 justify-content-center sm-separator" style="text-align: justify;">
-                    <div> We believe that <strong>venture capital is not just about money</strong>. It's about
-                        <strong>building relationships</strong>, providing guidance, and supporting our portfolio companies
-                        every step of the way. We are committed to this philosophy and strive to make a difference in the
-                        startup ecosystem.
-                    </div>
-                    <br>
-                    <div> We view venture capital as a <strong>catalyst for transformation and growth</strong>. It's about
-                        <strong>empowering startups</strong>, fostering creativity, and promoting sustainable practices.
-                        This commitment shapes our actions and initiatives, reinforcing our aim to become a <strong>positive
-                            force in the entrepreneurial landscape</strong>.
-                    </div>
-                </div>
-            </div>
-            <div class="row mx-3 justify-content-center separator-margin">
-                <h1 style="text-align: center;"> Featured Portfolio </h1>
+        </div>
+        <div class ="row separator-margin custom-margins">
+            <div class="row mx-3 justify-content-center">
+            <h1 style="text-align: center;"> Featured Portfolio </h1>
             </div>
             <br>
-            <div class="row mx-3 d-flex justify-content-center">
-                <div class="row mx-3 justify-content-center">
-                    <div v-for="project in projects" class="col mb-3 d-flex justify-content-center">
+            <div class="row mx-3 d-flex justify-content-center custom-margins">
+                <div class="row mx-3">
+                    <div v-for="project in projects" class="col mb-3">
                         <ProjectCard :projectid="project.projectid" :title="project.title" :preview="project.preview"
                             :stage="project.stage" :areas="project.areas" :year="project.year"
                             :featured="project.featured" />
@@ -124,18 +124,20 @@ import PeopleCard from '@/components/PeopleCard.vue'
                 </div>
             </div>
             <br>
-            <div class="row mx-3 d-flex justify-content-center">
+            <div class="row mx-3 d-flex justify-content-center custom-margins">
                 <nuxt-link to="/projects" tag="button" type="button"
-                    class="btn btn-secondary d-flex justify-content-center">
+                    class="btn btn-secondary">
                     Explore all projects
                 </nuxt-link>
             </div>
-            <div class="row mx-3 justify-content-center separator-margin">
-                <h1 style="text-align: center;"> Meet Our Team </h1>
+        </div>
+        <div class = "row custom-margins separator-margin">
+            <div class="row justify-content-center">
+            <h1 style="text-align: center;"> Meet Our Team </h1>
             </div>
             <br>
-            <div class="row mx-3 d-flex justify-content-center">
-                <div class="row mx-3 justify-content-center">
+            <div class="row mx-3 d-flex justify-content-center custom-margins">
+                <div class="row mx-3">
                     <div v-for="person in people.slice(0, 3)" class="col mb-3 d-flex justify-content-center">
                         <PeopleCard :personid="person.personid" :name="person.name" :surname="person.surname"
                             :age="person.age" :email="person.email" :linkedin="person.linkedin" :CV="person.CV"
@@ -144,39 +146,39 @@ import PeopleCard from '@/components/PeopleCard.vue'
                 </div>
             </div>
             <br>
-            <div class="row mx-3 d-flex justify-content-center">
-                <nuxt-link to="/people" tag="button" type="button" class="btn btn-secondary d-flex justify-content-center">
+            <div class="row mx-3 d-flex justify-content-center custom-margins">
+                <nuxt-link to="/people" tag="button" type="button" class="btn btn-secondary">
                     Meet the whole team
                 </nuxt-link>
             </div>
-            <div class="row mx-3 testimonial-margin">
-                <h2 style="text-align: center;"> Testimonials </h2>
+        </div>
+        <div class="row mx-3 testimonial-margin custom-margins">
+            <h2 style="text-align: center;"> Testimonials </h2>
+        </div>
+        <br>
+        <div class="row mx-3 justify-content-center bottom-margin custom-margins">
+            <div class="col-md-3 mx-auto my-3 d-flex flex-column" style="text-align: center;">
+                <div class="quote">
+                    “The guidance and resources we received from the team were invaluable to our success”
+                </div>
+                <div class="author mt-auto">
+                    <b> - Portfolio Company CEO</b>
+                </div>
             </div>
-            <br>
-            <div class="row mx-3 justify-content-center bottom-margin">
-                <div class="col-md-3 mx-auto my-3 d-flex flex-column" style="text-align: center;">
-                    <div class="quote">
-                        “The guidance and resources we received from the team were invaluable to our success”
-                    </div>
-                    <div class="author mt-auto">
-                        <b> - Portfolio Company CEO</b>
-                    </div>
+            <div class="col-md-3 mx-auto my-3 d-flex flex-column" style="text-align: center;">
+                <div class="quote">
+                    “They've provided more than capital, they've been a true partner in our journey”
                 </div>
-                <div class="col-md-3 mx-auto my-3 d-flex flex-column" style="text-align: center;">
-                    <div class="quote">
-                        “They've provided more than capital, they've been a true partner in our journey”
-                    </div>
-                    <div class="author mt-auto">
-                        <b> - Startup Founder</b>
-                    </div>
+                <div class="author mt-auto">
+                    <b> - Startup Founder</b>
                 </div>
-                <div class="col-md-3 mx-auto my-3 d-flex flex-column" style="text-align: center;">
-                    <div class="quote">
-                        “Their strategic insights and industry connections have been instrumental”
-                    </div>
-                    <div class="author mt-auto">
-                        <b> - Portfolio Company COO</b>
-                    </div>
+            </div>
+            <div class="col-md-3 mx-auto my-3 d-flex flex-column" style="text-align: center;">
+                <div class="quote">
+                    “Their strategic insights and industry connections have been instrumental”
+                </div>
+                <div class="author mt-auto">
+                    <b> - Portfolio Company COO</b>
                 </div>
             </div>
         </div>
@@ -221,9 +223,17 @@ export default {
 
 <style scoped>
 
+.custom-top-margin{
+    margin-top: 150px;
+}
+
 .custom-margins {
     margin-left: 100px;
     margin-right: 100px;
+}
+
+.custom-heading{
+    font-size: 4.5em;
 }
 
 .separator-margin{
@@ -242,12 +252,20 @@ export default {
     margin-top: 80px;
 }
 
+.custom-padding{
+    padding-right: 200px;
+}
+
 /* larghezza dello schermo fino a 768px */
 @media (max-width: 768px) {
     .custom-margins {
         margin-left: 50px;
         margin-right: 50px;
     }
+
+    .custom-top-margin{
+    margin-top: 40px;
+}
 
     .separator-margin{
         margin-top: 40px;
@@ -264,6 +282,11 @@ export default {
     .testimonial-margin{
         margin-top: 60px;
     }
+
+    .custom-padding{
+    padding-right: 0px;
+}
+
 }
 
 /* larghezza dello schermo fino a 480px */
@@ -273,6 +296,10 @@ export default {
         margin-right: 20px;
     }
     
+    .custom-top-margin{
+    margin-top: 30px;
+}
+
     .separator-margin{
         margin-top: 15px;
     }
@@ -288,6 +315,10 @@ export default {
     .testimonial-margin{
         margin-top: 30px;
     }
+
+    .custom-padding{
+    padding-right: 0px;
+}
 }
 
 .custom-h3 {
