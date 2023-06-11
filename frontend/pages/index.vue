@@ -18,13 +18,12 @@ import PeopleCard from '@/components/PeopleCard.vue'
         <br>
         <div class = "row custom-margins justify-content-center">
           <div class = "col-md-10 d-flex justify-content-center mx-3">
-            <h3><p class="custom-bold" style="text-align: center;">“HyperMeow is very good at doing the things it does. Like a lot. Aren’t you convinced yet? I pinky promise”</p></h3>
+            <h3 class="custom-bold" style="text-align: center;">“HyperMeow is very good at doing the things it does. Like a lot. Aren’t you convinced yet? I pinky promise”</h3>
           </div>
-          <div class="row my-3"></div>
-          <div class = "col-md-6" style="text-align: justify;">
+          <div class = "col-md-6 sm-separator" style="text-align: justify;">
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eget duis mi nunc bibendum. Tellus elementum nec lorem eget dictumst. Risus in gravida eu, enim lorem. Sed consequat ut suspendisse eros. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eget duis mi nunc bibendum. Tellus elementum nec lorem eget dictumst. Risus in gravida eu, enim lorem. Sed consequat ut suspendisse eros. </p>
           </div>
-          <div class="row my-3"></div>
+          <div class="row sm-separator"></div>
           <div class="row mx-3 justify-content-center">
                 <div class="col-md-6 rounded mb-3 text-center">
                     <div class="row" style="font-size: 3.5em;">
@@ -44,8 +43,7 @@ import PeopleCard from '@/components/PeopleCard.vue'
                 </div>
             </div>
             <hr>
-            <div class="row my-3"></div>
-            <div class="row mx-3 justify-content-center">
+            <div class="row mx-3 justify-content-center separator-margin">
                 <h1 style="text-align: center;"> Featured Projects </h1>
             </div>
             <br>
@@ -65,8 +63,7 @@ import PeopleCard from '@/components/PeopleCard.vue'
                     Explore all projects
                 </nuxt-link>
             </div>
-            <div class="row my-5"></div>
-            <div class ="py-5" style = "background-color: #D9D9D9;">
+            <div class ="separator-margin py-5" style = "background-color: #D9D9D9;">
               <div class="row mx-3 justify-content-center">
                 <h1 style="text-align: center;"> Our People </h1>
               </div>
@@ -87,7 +84,6 @@ import PeopleCard from '@/components/PeopleCard.vue'
                   </nuxt-link>
               </div>
             </div>
-            <div class="row my-5"></div>
         </div>
     </div>
     
@@ -140,6 +136,37 @@ export default {
   flex-wrap: wrap;
   margin-right: -15px;
   margin-left: -15px;
+
+}
+
+.separator-margin{
+    margin-top: 80px;
+}
+
+.sm-separator{
+    margin-top: 40px;
+}
+
+/* larghezza dello schermo fino a 768px */
+@media (max-width: 768px) {
+    .separator-margin{
+    margin-top: 40px;
+}
+
+.sm-separator{
+    margin-top: 20px;
+}
+}
+
+/* larghezza dello schermo fino a 480px */
+@media (max-width: 480px) {
+    .separator-margin{
+    margin-top: 15px;
+}
+
+.sm-separator{
+    margin-top: 15px;
+}
 
 }
 

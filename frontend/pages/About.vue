@@ -12,9 +12,7 @@ import PeopleCard from '@/components/PeopleCard.vue'
                     <div class="title row">About us</div>
                 </div>
             </div>
-            <br>
-            <br>
-            <div class="row justify-content-center">
+            <div class="row justify-content-center" style="margin-top: 25px;">
                 <div class="col-md-6 d-flex align-items-center justify-content-center">
                     <p class="custom-h3" style="text-align:center;"> <b>“Embracing novel ideas, fueling unprecedented
                             innovations, and
@@ -22,11 +20,7 @@ import PeopleCard from '@/components/PeopleCard.vue'
                             established practice.”</b></p>
                 </div>
             </div>
-            <br>
-            <br>
-            <br>
-            <br>
-            <div class="row d-flex justify-content-center">
+            <div class="row d-flex justify-content-center" style = "margin-top: 25px;">
                 <div class="col-md-6 my-3">
                     <div class="my-auto">
                         We are a <strong>leading venture capital firm</strong> with a clear focus: to <strong>support and
@@ -56,8 +50,7 @@ import PeopleCard from '@/components/PeopleCard.vue'
                         style="width: 70%; object-fit: cover;" src="/images/about/usCats.webp" alt="Our Team">
                 </div>
             </div>
-            <div class="row my-5"></div>
-            <div class="row mx-3 justify-content-center">
+            <div class="row mx-3 justify-content-center separator-margin">
                 <div class="col-md-6 rounded mb-3 text-center">
                     <div class="row" style="font-size: 3.5em;">
                         <p class="custom-bold">100+</p>
@@ -75,8 +68,7 @@ import PeopleCard from '@/components/PeopleCard.vue'
                     </div>
                 </div>
             </div>
-            <div class="row my-5"></div>
-            <div class="row mx-3 d-flex justify-content-center">
+            <div class="row mx-3 d-flex justify-content-center separator-margin">
                 <div class="col-md-6 my-3 d-flex justify-content-center align-items-center">
                     <img class="card-img-top rounded" style="width: 70%; height: auto;" src="/images/about/invest.webp"
                         alt="Investment Approach">
@@ -99,16 +91,12 @@ import PeopleCard from '@/components/PeopleCard.vue'
                         technology and innovation bring about a widespread change.</div>
                 </div>
             </div>
-            <div class="row my-4"></div>
-            <div class="row mx-3 justify-content-center">
+            <div class="row mx-3 justify-content-center separator-margin">
                 <div class="col-md-8" style="text-align: center;">
-                    <h3>
-                        <p class="custom-bold">“Investing in the future does not only mean foreseeing the future, but
-                            creating it”</p>
+                    <h3 class = "custom-bold">“Investing in the future does not only mean foreseeing the future, but creating it”
                     </h3>
                 </div>
-                <div class="row my-3"></div>
-                <div class="col-md-8 justify-content-center" style="text-align: justify;">
+                <div class="col-md-8 justify-content-center sm-separator" style="text-align: justify;">
                     <div> We believe that <strong>venture capital is not just about money</strong>. It's about
                         <strong>building relationships</strong>, providing guidance, and supporting our portfolio companies
                         every step of the way. We are committed to this philosophy and strive to make a difference in the
@@ -122,8 +110,7 @@ import PeopleCard from '@/components/PeopleCard.vue'
                     </div>
                 </div>
             </div>
-            <div class="row my-5"></div>
-            <div class="row mx-3 justify-content-center">
+            <div class="row mx-3 justify-content-center separator-margin">
                 <h1 style="text-align: center;"> Featured Portfolio </h1>
             </div>
             <br>
@@ -143,8 +130,7 @@ import PeopleCard from '@/components/PeopleCard.vue'
                     Explore all projects
                 </nuxt-link>
             </div>
-            <div class="row my-5"></div>
-            <div class="row mx-3 justify-content-center">
+            <div class="row mx-3 justify-content-center separator-margin">
                 <h1 style="text-align: center;"> Meet Our Team </h1>
             </div>
             <br>
@@ -163,12 +149,11 @@ import PeopleCard from '@/components/PeopleCard.vue'
                     Meet the whole team
                 </nuxt-link>
             </div>
-            <div class="row my-5"></div>
-            <div class="row mx-3">
+            <div class="row mx-3 testimonial-margin">
                 <h2 style="text-align: center;"> Testimonials </h2>
             </div>
             <br>
-            <div class="row mx-3 justify-content-center">
+            <div class="row mx-3 justify-content-center bottom-margin">
                 <div class="col-md-3 mx-auto my-3 d-flex flex-column" style="text-align: center;">
                     <div class="quote">
                         “The guidance and resources we received from the team were invaluable to our success”
@@ -194,8 +179,6 @@ import PeopleCard from '@/components/PeopleCard.vue'
                     </div>
                 </div>
             </div>
-            <br>
-            <br>
         </div>
     </main>
 </template>
@@ -243,12 +226,43 @@ export default {
     margin-right: 100px;
 }
 
+.separator-margin{
+    margin-top: 80px;
+}
+
+.sm-separator{
+    margin-top: 40px;
+}
+
+.bottom-margin{
+    margin-bottom: 50px;
+}
+
+.testimonial-margin{
+    margin-top: 80px;
+}
 
 /* larghezza dello schermo fino a 768px */
 @media (max-width: 768px) {
     .custom-margins {
         margin-left: 50px;
         margin-right: 50px;
+    }
+
+    .separator-margin{
+        margin-top: 40px;
+    }
+
+    .sm-separator{
+        margin-top: 20px;
+    }
+
+    .bottom-margin{
+        margin-bottom: 25px;
+    }
+
+    .testimonial-margin{
+        margin-top: 60px;
     }
 }
 
@@ -257,6 +271,22 @@ export default {
     .custom-margins {
         margin-left: 20px;
         margin-right: 20px;
+    }
+    
+    .separator-margin{
+        margin-top: 15px;
+    }
+
+    .sm-separator{
+        margin-top: 10px;
+    }
+
+    .bottom-margin{
+        margin-bottom: 15px;
+    }
+
+    .testimonial-margin{
+        margin-top: 30px;
     }
 }
 

@@ -90,12 +90,10 @@ import ContactForm from '@/components/ContactForm.vue'
     .card-custom:nth-child(1),
     .card-custom:nth-child(2) {
         margin-top: 30px;
-        /* Regola il valore in base alle tue esigenze */
     }
 
     .card-custom:nth-child(3) {
         margin-top: 30px;
-        /* Regola il valore in base alle tue esigenze */
     }
 }
 
@@ -142,4 +140,5 @@ import ContactForm from '@/components/ContactForm.vue'
 
 .contact-form-container {
     margin-top: 50px;
-}</style>
+}
+</style>
