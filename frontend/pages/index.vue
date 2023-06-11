@@ -1,161 +1,166 @@
 <script setup lang="ts">
-import ContactForm from '@/components/ContactForm.vue'
+import { makeCall } from '@/utils/common'
+import ProjectCard from '@/components/ProjectCard.vue'
+import PeopleCard from '@/components/PeopleCard.vue'
 </script>
 
 <template>
   <main>
     <div class="container-fluid">
-        <div class="row">
+        <div class="custom-row">
           <div class="title">If you don’t believe in it, we do.</div>
           <div class="subtitle">Dedicated to fueling innovation and driving growth.  We collaborate with visionary entrepreneurs and disruptive startups igniting breakthrough technologies and ideas, empowering the next generation of game-changers.</div>
-          <nuxt-link to="/about" tag="button" type="button" class="btn d-flex justify-content-left" >
+          <nuxt-link to="/about" tag="button" type="button" class="custom-btn d-flex justify-content-left" >
                   About us
           </nuxt-link>
         </div>
-    </div>
-  </main>
-</template>
-<!--<template>
-  <main>
-    <div class = "container-fluid">
-      <div class = "row d-flex justify-content-around">
-        <div class ="col-md-1"></div>
-        <div class="col-md-5 d-flex align-items-center justify-content-center">
-            <div class="text-left" style="width: 75%;">
-                <div class="row mt-6 custom-heading" style="text-align: left;">
-                    <b>Crazy title that will have a great impact</b>
-                </div>
-                <br>
-                <div class="row">
-                    <div class="col-md-12" style="text-align: left;">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Habitant cras morbi hendrerit nunc vel sapien. In habitasse at diam suspendisse non vitae fermentum, pharetra arcu. Viverra a morbi ut donec in. Ac diam, at sed cras nisi. </p>
+        <br>
+        <br>
+        <div class = "row custom-margins justify-content-center">
+          <div class = "col-md-10 d-flex justify-content-center mx-3">
+            <h3><p class="custom-bold" style="text-align: center;">“HyperMeow is very good at doing the things it does. Like a lot. Aren’t you convinced yet? I pinky promise”</p></h3>
+          </div>
+          <div class="row my-3"></div>
+          <div class = "col-md-6" style="text-align: justify;">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eget duis mi nunc bibendum. Tellus elementum nec lorem eget dictumst. Risus in gravida eu, enim lorem. Sed consequat ut suspendisse eros. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eget duis mi nunc bibendum. Tellus elementum nec lorem eget dictumst. Risus in gravida eu, enim lorem. Sed consequat ut suspendisse eros. </p>
+          </div>
+          <div class="row my-3"></div>
+          <div class="row mx-3 justify-content-center">
+                <div class="col-md-6 rounded mb-3 text-center">
+                    <div class="row" style="font-size: 3.5em;">
+                        <p class="custom-bold">1000+</p>
+                    </div>
+                    <div class="row">
+                        <p class="custom-bold">Founders in Residence</p>
                     </div>
                 </div>
-                <div class="row d-flex justify-content-left">
-                  <nuxt-link to="/about" tag="button" type="button" class="btn btn-rounded d-flex justify-content-left" style="width: auto;">
-                    Learn more ->
-                  </nuxt-link>
+                <div class="col-md-6 rounded mb-3 text-center">
+                    <div class="row" style="font-size: 3.5em;">
+                        <p class="custom-bold">5</p>
+                    </div>
+                    <div class="row">
+                        <p class="custom-bold">Incubated Unicorns</p>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="image align-items-center justify-content-center"> </div>
-        <div class = "col-md-1"></div>
-      </div>
-      <div class = "row my-3"> </div>
-      <div class = "row justify-content-center " style="align-items: center;">
-        <div class = "d-flex justify-content-center align-items-center" style="max-width: 75%;">
-          <div class="col-md-3 justify-content-center d-flex card-left-comp align-items-center">
-          <div class="card-left-inner d-flex justify-content-center align-items-center border-end border-success">
-              <div class="col-md-2 d-flex justify-content-center"> <h2> About HyperMeow</h2></div>
-          </div>
-          </div>
-          <div class="col-md-9 justify-content-center d-flex align-items-center card-right-comp" style="text-align: justify;">
-            <div class = "col-md-8 mx-2"> <p class = "my-2"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-              Eget duis mi nunc bibendum. Tellus elementum nec lorem eget dictumst. 
-              Risus in gravida eu, enim lorem. Sed consequat ut suspendisse eros.</p>
-              <p class = "my-2"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-              Eget duis mi nunc bibendum. Tellus elementum nec lorem eget dictumst. 
-              Risus in gravida eu, enim lorem. Sed consequat ut suspendisse eros.</p>
+            <hr>
+            <div class="row my-3"></div>
+            <div class="row mx-3 justify-content-center">
+                <h1 style="text-align: center;"> Featured Projects </h1>
             </div>
-          </div>
-        </div>
-      </div>
-      <br>
-      <br>
-      <div class = "row my-3"> </div>
-      <div class = "row d-flex justify-content-center" style="text-align: center;"> 
-        <h2> <strong> What we do </strong></h2>
-      </div>
-      <br>
-      <div class = "row d-flex justify-content-center">
-        <div class="card-right d-flex justify-content-center align-items-center" style="max-width: 75%;"> 
-          <div class = "col-md-9 d-flex justify-content-center align-items-center">
-            <div class="text-left">
-              <div class = "row">
-              <b> Projects </b>
-           </div>
-           <br>
-          <div class = "row">
-           <p class = "my-2"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consequat bibendum sit felis, sollicitudin et.</p>
-          </div>
-          <br>
-          <div class = "row">
-            <nuxt-link to="/projects" tag="button" type="button" class="btn btn-rounded d-flex justify-content-left" style="width: auto;">
-                Learn more ->
-            </nuxt-link>
-          </div>
+            <br>
+            <div class="row mx-3 d-flex justify-content-center">
+                <div class="row mx-3 justify-content-center">
+                    <div v-for="project in projects" class="col mb-3 d-flex justify-content-center">
+                        <ProjectCard :projectid="project.projectid" :title="project.title" :preview="project.preview"
+                            :stage="project.stage" :areas="project.areas" :year="project.year"
+                            :featured="project.featured" />
+                    </div>
+                </div>
             </div>
-          </div>
-          <div class ="col-md-4 d-flex justify-content-center align-items-center">
-            <img class="card-image" src="/images/index/crazyImage.webp" alt="HyperMeow">
-          </div>
-        </div>
-      </div>
-      <br>
-      <div class = "row d-flex justify-content-center">
-        <div class="card-left d-flex justify-content-center align-items-center" style="max-width: 75%;">
-          <div class ="col-md-4 d-flex justify-content-center">
-            <img class="card-image" src="/images/index/crazyImage.webp" alt="HyperMeow">
-          </div>
-          <div class = "col-md-9 d-flex justify-content-center align-items-center">
-            <div class="text-left">
-              <div class = "row">
-              <b> People </b>
-           </div>
-           <br>
-          <div class = "row">
-           <p class = "my-2"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consequat bibendum sit felis, sollicitudin et.</p>
-          </div>
-          <br>
-          <div class = "row">
-            <nuxt-link to="/people" tag="button" type="button" class="btn btn-rounded d-flex justify-content-left" style="width: auto;">
-                Learn more ->
-            </nuxt-link>
-          </div>
+            <br>
+            <div class="row mx-3 d-flex justify-content-center">
+                <nuxt-link to="/projects" tag="button" type="button"
+                    class="btn btn-secondary d-flex justify-content-center">
+                    Explore all projects
+                </nuxt-link>
             </div>
-          </div>
-        </div>
-      </div>
-      <br>
-      <div class = "row d-flex justify-content-center">
-        <div class="card-right d-flex justify-content-center align-items-center" style="max-width: 75%;">
-          <div class = "col-md-9 d-flex justify-content-center align-items-center">
-            <div class="text-left">
-              <div class = "row">
-              <b> Areas </b>
-           </div>
-           <br>
-          <div class = "row">
-           <p class = "my-2"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consequat bibendum sit felis, sollicitudin et.</p>
-          </div>
-          <br>
-          <div class = "row">
-            <nuxt-link to="/areas" tag="button" type="button" class="btn btn-rounded d-flex justify-content-left" style="width: auto;">
-                Learn more ->
-            </nuxt-link>
-          </div>
+            <div class="row my-5"></div>
+            <div class ="py-5" style = "background-color: #D9D9D9;">
+              <div class="row mx-3 justify-content-center">
+                <h1 style="text-align: center;"> Our People </h1>
+              </div>
+              <br>
+              <div class="row mx-3 d-flex justify-content-center">
+                  <div class="row mx-3 justify-content-center">
+                      <div v-for="person in people.slice(0, 3)" class="col mb-3 d-flex justify-content-center">
+                          <PeopleCard :personid="person.personid" :name="person.name" :surname="person.surname"
+                              :age="person.age" :email="person.email" :linkedin="person.linkedin" :CV="person.CV"
+                              :Description="person.Description" :role="person.role" />
+                      </div>
+                  </div>
+              </div>
+              <br>
+              <div class="row mx-3 d-flex justify-content-center">
+                  <nuxt-link to="/people" tag="button" type="button" class="btn btn-secondary d-flex justify-content-center">
+                      Meet the whole team
+                  </nuxt-link>
+              </div>
             </div>
-          </div>
-          <div class ="col-md-4">
-            <img class="card-image" src="/images/index/crazyImage.webp" alt="HyperMeow">
-          </div>
+            <div class="row my-5"></div>
         </div>
-      </div>
-      <br>
-      <div class="row justify-content-center mb-4 contact-form-container">
-          <ContactForm style="width: 75%;"></ContactForm>
-      </div>
-      <br>
     </div>
+    
   </main>
-</template>-->
+</template>
+
+<script lang="ts">
+export default {
+    data() {
+        return {
+            projects: [],
+            people: [],
+        }
+    },
+
+    components: {
+        ProjectCard,
+        PeopleCard,
+    },
+
+    created() {
+        this.getData()
+    },
+
+    methods: {
+        async getData() {
+            try {
+                const projectsData = await makeCall(this.$config.public.SERVER_URL + "/getFeaturedProjects", 'GET');
+                const peopleData = await makeCall(this.$config.public.SERVER_URL + "/getPeople", 'GET');
+                console.log(projectsData);
+                console.log(peopleData);
+                this.projects = projectsData;
+                this.people = peopleData;
+            } catch (error) {
+                alert("Error while fetching data")
+                console.error(error);
+            }
+        }
+    }
+}
+</script>
 
 <style scoped>
 
 
-.row{
+.custom-row{
   background-image: url("./images/index/plant.webp");
   margin-top:-8em;
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+
+}
+
+.rounded {
+    border-radius: 75%;
+}
+
+.custom-bold {
+    font-weight: bold;
+    color: #086788;
+}
+
+.btn-secondary {
+    width: 90%;
+    background-color: #086788;
+    margin-top: 2%;
+}
+
+.custom-margins {
+    margin-left: 100px;
+    margin-right: 100px;
 }
 
 .title{
@@ -176,7 +181,11 @@ import ContactForm from '@/components/ContactForm.vue'
   color:snow;
   font-family: Avenir, sans-serif;
 }
-.btn {
+.custom-btn {
+    display: inline-block;
+    padding: .375rem .75rem;
+    vertical-align: middle;
+    user-select: none;
     width: auto;
     font-size: 1rem;
     font-weight: 450;
@@ -200,125 +209,6 @@ import ContactForm from '@/components/ContactForm.vue'
     background-color: #c2cffc;
 }
 
-
-
-/*.card-left {
-    position: relative;
-    background-color: #818181;
-    border-radius: 90px 0px 0px 90px;
-    height: auto;
-    min-height: 200px;
-}
-
-.card-left-comp {
-    position: relative;
-    background-color: #818181;
-    border-radius: 90px 0px 0px 90px;
-    height: 200px;
-}
-
-.card-left-inner {
-    position: relative;
-    background-color: #ffffff;
-    border-radius: 90px 0px 0px 90px;
-    width: 90%;
-    height: 90%;
-}
-
-
-  
-.card-right {
-    position: relative;
-    background-color: #818181;
-    border-radius: 0px 90px 90px 0px;
-    height: auto;
-    min-height: 200px;
-}
-
-.card-right-comp {
-    position: relative;
-    background-color: #818181;
-    border-radius: 0px 90px 90px 0px;
-    height: 200px;
-}
-
-.custom-heading {
-    font-size: 3.5em;
-    line-height: 90%;
-}
-
-
-
-.rounded-image {
-    border-radius: 50%;
-    max-width: 75%;
-}
-
-.image{
-    background-image: url("./images/index/plant.webp"); 
-    height: auto;
-    width: 100%;
-    max-width: none;
-    display: flex;
-    justify-content: center;
-    margin-top: -25rem;
-    align-items: center;
-    overflow: hidden;
-    
-}
-
-.card-image{
-    width: 50%;
-    justify-content: center;
-    align-items: center;
-}
-
-.logo {
-    display: block;
-    margin: 0 auto 2rem;
-}
-
-@media screen and (max-width: 1024px) {
-    .custom-heading {
-        font-size: 2.5em;
-    }
-    .rounded-image,
-    .card-image {
-        max-width: 80%;
-    }
-    .card-left,
-    .card-right {
-        height: 150px;
-    }
-}
-
-@media screen and (max-width: 768px) {
-    .custom-heading {
-        font-size: 2em;
-    }
-    .rounded-image,
-    .card-image {
-        max-width: 90%;
-    }
-    .card-left,
-    .card-right {
-        height: 120px;
-    }
-}
-
-@media screen and (max-width: 576px) {
-    .custom-heading {
-        font-size: 1.5em;
-    }
-    .rounded-image,
-    .card-image {
-        max-width: 100%;
-    }
-    .card-left,
-    .card-right {
-        height: 100px;
-    }
-}*/
 
 </style>
 
