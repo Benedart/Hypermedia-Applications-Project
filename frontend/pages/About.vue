@@ -6,19 +6,16 @@ import PeopleCard from '@/components/PeopleCard.vue'
 
 <template>
     <main>
-        <div class="container-fluid">
+        <div class="custom-margins">
             <div class="row mx-3">
-                <div class="col-md-1"></div>
-                <div class="col-md-8">
-                    <div class="title row mx-3">About us</div>
+                <div class="col-md-12">
+                    <div class="title row">About us</div>
                 </div>
-                <div class="col-md-3"></div>
             </div>
             <br>
             <br>
             <div class="row justify-content-center">
-                <div class="col-md-1"></div>
-                <div class="col-md-5 d-flex align-items-center justify-content-center">
+                <div class="col-md-6 d-flex align-items-center justify-content-center">
                     <p class="custom-h3" style="text-align:center;"> <b>“Embracing novel ideas, fueling unprecedented
                             innovations, and
                             committing to the creation of a future where sustainability is not just a concept, but an
@@ -30,8 +27,7 @@ import PeopleCard from '@/components/PeopleCard.vue'
             <br>
             <br>
             <div class="row d-flex justify-content-center">
-                <div class="col-md-1"></div>
-                <div class="col-md-5 my-3">
+                <div class="col-md-6 my-3">
                     <div class="my-auto">
                         We are a <strong>leading venture capital firm</strong> with a clear focus: to <strong>support and
                             foster groundbreaking ideas</strong> that have the potential to <strong>disrupt the
@@ -55,8 +51,8 @@ import PeopleCard from '@/components/PeopleCard.vue'
                             sustainable future through innovation and growth</strong>.
                     </div>
                 </div>
-                <div class="col-md-5 my-3 d-flex justify-content-center">
-                    <img class="card-img-top rounded d-flex justify-content-center mr-2"
+                <div class="col-md-6 my-3 d-flex justify-content-center">
+                    <img class="card-img-top rounded d-flex justify-content-center"
                         style="width: 70%; object-fit: cover;" src="/images/about/usCats.webp" alt="Our Team">
                 </div>
             </div>
@@ -71,8 +67,6 @@ import PeopleCard from '@/components/PeopleCard.vue'
                     </div>
                 </div>
                 <div class="col-md-6 rounded mb-3 text-center">
-                    <div class="col-md-1"></div>
-                    <div class="col-md-3"></div>
                     <div class="row" style="font-size: 3.5em;">
                         <p class="custom-bold">$500M+</p>
                     </div>
@@ -83,11 +77,11 @@ import PeopleCard from '@/components/PeopleCard.vue'
             </div>
             <div class="row my-5"></div>
             <div class="row mx-3 d-flex justify-content-center">
-                <div class="col-md-6 my-3 d-flex justify-content-end align-items-center">
+                <div class="col-md-6 my-3 d-flex justify-content-center align-items-center">
                     <img class="card-img-top rounded" style="width: 70%; height: auto;" src="/images/about/invest.webp"
                         alt="Investment Approach">
                 </div>
-                <div class="col-md-5 text-right my-3">
+                <div class="col-md-6 text-right my-3">
                     <div>
                         <h3> <b> Our Investment Approach </b></h3>
                     </div>
@@ -104,7 +98,6 @@ import PeopleCard from '@/components/PeopleCard.vue'
                         partnership with these startups is a journey, a <strong>shared vision for a future</strong> where
                         technology and innovation bring about a widespread change.</div>
                 </div>
-                <div class="col-md-1"></div>
             </div>
             <div class="row my-4"></div>
             <div class="row mx-3 justify-content-center">
@@ -244,6 +237,29 @@ export default {
 </script>
 
 <style scoped>
+
+.custom-margins {
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+
+/* larghezza dello schermo fino a 768px */
+@media (max-width: 768px) {
+    .custom-margins {
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+}
+
+/* larghezza dello schermo fino a 480px */
+@media (max-width: 480px) {
+    .custom-margins {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+}
+
 .custom-h3 {
     font-size: 1.75em;
     font-weight: 700;
