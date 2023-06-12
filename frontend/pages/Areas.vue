@@ -74,7 +74,6 @@ export default {
 .title {
     font-size: 3.5em;
     text-align: center;
-    font-family: secular one, sans-serif;
     color: #000022;
     margin-bottom: 5rem;
 }

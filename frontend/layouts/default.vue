@@ -22,7 +22,7 @@ export default {
 
 <style>
 * {
-    font-family: 'Inter', sans-serif;
+    font-family: Avenir, sans-serif;
 }
 
  /*our palette*/
