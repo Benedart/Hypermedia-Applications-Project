@@ -11,7 +11,7 @@
             <a :href="linkedin" class="float-end"><img class="card-img-linkedin img-custom"
                     src="/images/contact/linkedin.webp" alt="Linkedin Icon" style="height: auto;"></a>
             <nuxt-link :to="`/People/${personid}`" tag="button" type="button" class="card-btn ">
-                   Learn more
+                <b>Learn more</b>
             </nuxt-link>
         </div>
     </div>

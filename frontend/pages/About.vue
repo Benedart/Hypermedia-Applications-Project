@@ -125,7 +125,7 @@ import PeopleCard from '@/components/PeopleCard.vue'
         <div class ="row separator-margin custom-margins">
             <!-- Title -->
             <div class="row mx-3 justify-content-center">
-            <h1 style="text-align: center;"> Featured Portfolio </h1>
+            <h1 style="text-align: center;color: #000022;"> Featured Portfolio </h1>
             </div>
             <br>
             <!-- Portfolio Cards -->
@@ -148,8 +148,8 @@ import PeopleCard from '@/components/PeopleCard.vue'
         </div>
         <!-- Meet Our Team Section -->
         <div class = "row custom-margins separator-margin">
-            <div class="row justify-content-center">
-            <h1 style="text-align: center;"> Meet Our Team </h1>
+            <div class="row mx-3 justify-content-center">
+            <h1 style="text-align: center; color: #000022;"> Meet Our Team </h1>
             </div>
             <br>
             <div class="row mx-3 d-flex justify-content-center custom-margins">
@@ -255,6 +255,8 @@ export default {
 .text-style{
     font-size: 1.5em; /* Font size is 1.5 times the base size */
     line-height: 105%; /* Line height is 105% of the font size */
+    color: #000022;
+   
 }
 
 /* A class for setting a large top margin */
@@ -287,7 +289,10 @@ export default {
 
 /* A class for large headings */
 .custom-heading{
-    font-size: 4.5em;
+    font-size: 3.5em;
+    
+    color: #000022;
+    
 }
 
 /* A class for setting a smaller top margin */

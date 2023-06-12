@@ -28,7 +28,7 @@
             </div>
 
             <NuxtLink :to="`/areas/${areaid}`" class="card-btn" tag="button" type="button">
-                Learn more   
+                <b>Learn more </b>  
             </NuxtLink>
             
 

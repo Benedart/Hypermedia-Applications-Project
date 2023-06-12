@@ -18,7 +18,7 @@
             
                 
                 <nuxt-link :to="`/projects/${projectid}`" tag="button" type="button" class="card-btn ">
-                   Learn more
+                    <b>Learn more</b>
             </nuxt-link>
         </div>
         </div>

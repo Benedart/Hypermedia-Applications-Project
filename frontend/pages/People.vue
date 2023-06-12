@@ -102,6 +102,7 @@ export default {
 <style scoped>
 .title {
     text-align: center;
+    margin-bottom:  5rem;
 }
 
 .card:hover {

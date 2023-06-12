@@ -84,12 +84,14 @@
 .custom-heading {
     font-size: 5.5em;
     margin-top: 20%;
+    color: #000022;
 }
 
 /* Styling the margin */
 .custom-margin{
     margin-top: 9%;
     margin-bottom: 10%;
+    color: #000022;
 }
 
 /* Styling the image container */
