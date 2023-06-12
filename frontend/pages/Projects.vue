@@ -6,11 +6,24 @@ import ProjectCard from '@/components/ProjectCard.vue'
 
 <template>
     <main>
-        <div class="title">Projects</div>
-        <div class="container-fluid">
-            <div class="search-wrapper panel-heading col-sm-12">
-                <input type="text" v-model="search" placeholder="Search">
+        <div class="container">
+            <div class="title">Projects</div>
+        
+        
+        
+            <!--div class="search-wrapper">
+                <input type="text" v-model="search" placeholder="Search projects...">
+            </div-->
+
+            <div class="search">
+                <div class="icon"></div>
+                    <div class="input">
+                        <input type="text" v-model="search" placeholder="Search projects..." id="mysearch">
+                    </div>
+                
+                <span class="clear" onclick="document.getElementById('mysearch').value = ''"></span>
             </div>
+
             <br>
             <ProjectFilter @applyFilters="filterProjects" />
             <br>
@@ -29,7 +42,7 @@ import ProjectCard from '@/components/ProjectCard.vue'
                             <div class="row g-3">
                                 <div v-for="project in projectsByArea(area.areaid)" class="col-12 col-md-6 col-lg-4">
                                     <ProjectCard :projectid="project.projectid" :title="project.title"
-                                        :preview="project.preview" :stage="project.stage" :year="project.year"
+                                        :preview="project.preview" :stage="project.stage" :areas="project.areas" :year="project.year"
                                         :featured="project.featured" />
                                 </div>
                             </div>
@@ -227,6 +240,131 @@ export default {
                 console.error(error);
             }
         },
+
+        
     },
+
+    
+    
 }
+
+/*
+const icon = document.querySelector('.icon');
+const search = document.querySelector('.search');
+
+function doSearch(){
+    search.classList.toggle('active');
+    console.log("doing search");
+}
+icon.addEventListener("click",doSearch);
+*/
+
 </script>
+
+<style>
+
+.search{
+    position: relative;
+    width: 360px;
+    height: 60px;
+    background: var(--color-snow);
+    border-radius: 60px;
+    transition: 0.5s;
+    box-shadow: 0 0 0 5px var(--color-oxford-blue);
+    overflow: hidden;
+}
+.search .active{
+    width: 360px;
+}
+
+.search .icon{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 60px;
+    height: 60px;
+    background: var(--color-snow);
+    border-radius: 60px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    z-index: 1000;
+    cursor: pointer;
+}
+
+.search .icon::before{
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border: 3px solid var(--color-cerulean);
+    border-radius: 50%;
+    transform: translate(-4px,-4px) ;
+
+}
+
+.search .icon::after{
+    content: '';
+    position: absolute;
+    width: 3px;
+    height: 12px;
+    background:  var(--color-cerulean);
+    border-radius: 50%;
+    transform: translate(6px,6px) rotate(315deg);
+}
+
+.search .input{
+    position: relative;
+    width: 300px;
+    height: 60px;
+    left: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--color-snow);
+}
+
+.search .input input{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    padding: 10px 0;
+    background: var(--color-snow);
+}
+
+.clear{
+    position:absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 15px;
+    height: 15px;
+    right: 15px;
+    background: var(--color-snow);
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+clear::before{
+    position: absolute;
+    content: '';
+    width: 1px;
+    height: 15px;
+    background-color: var(--color-rose-quartz);
+    transform: rotate(45deg);
+}
+
+clear::after{
+    position: absolute;
+    content: '';
+    width: 1px;
+    height: 15px;
+    background-color: var(--color-rose-quartz);
+    transform: rotate(315deg);
+}
+</style>

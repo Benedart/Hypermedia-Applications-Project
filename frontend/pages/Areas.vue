@@ -5,14 +5,16 @@ import AreaCard from '@/components/AreaCard.vue'
 
 <template>
     <main>
-        <div class="container">
-            <div class="title" style="font-size: 3.5em; margin-bottom: 2rem;">
+        <div class="container-text-center">
+            <div class="title">
                 Areas
             </div>
+        </div>
 
-            <div class="grid">
-                <div v-for="area in areas">
-                    <AreaCard :areaid="area.AreaID" :title="area.Title" :projects="area.projects" />
+        <div class="container">
+        <div class="grid">
+                <div v-for="area in areas" >
+                    <AreaCard :areaid="area.AreaID" :title="area.Title" :projects="area.projects" style="margin-top: -5rem;"/>
                 </div>
             </div>
 
@@ -21,7 +23,7 @@ import AreaCard from '@/components/AreaCard.vue'
                 <AreaCard :areaid="area.AreaID" :title="area.Title" :projects="area.projects" />
             </div>
         </div-->
-        </div>
+    </div>
     </main>
 </template>
 
@@ -68,10 +70,21 @@ export default {
 </script>
 
 <style>
-.grid {
+
+.title {
+    font-size: 3.5em;
+    text-align: center;
+    font-family: secular one, sans-serif;
+    color: #000022;
+    margin-bottom: 5rem;
+}
+
+.grid{
+
+    padding: 5rem;
     display: grid;
-    gap: 2rem;
-    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    gap: 10rem;
+    grid-template-columns: repeat(auto-fit,minmax(15rem,1fr));
     align-items: start;
 }
 
@@ -94,8 +107,9 @@ export default {
 }
 
 .container {
+    padding: 4rem;
     border-radius: 0.4rem;
-    background-color: #fff;
+    background-color: var(--color-snow);
     max-width: 90%;
     width: auto;
     height: auto;
