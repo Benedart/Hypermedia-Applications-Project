@@ -97,8 +97,18 @@ import PeopleCard from '@/components/PeopleCard.vue'
                 <nuxt-link to="/areas" tag="button" type="button" class="custom-btn d-flex justify-content-center" style="background-color: #086788; color:snow;">
                    <b>All areas</b>
                 </nuxt-link>
+            </div>      
+            <div class="custom-row-c">
+                <div class="content-right">
+                    <div class="title-c col-md-5" style="line-height: 98%;">Ready to Transform Your Future? Let's <strong> Connect.</strong></div>
+                    <div class="col-md-4 mx-3 d-flex">
+                    <nuxt-link to="/contacts" tag="button" type="button" class="custom-btn-c d-flex">
+                        <b>Contact us</b>
+                    </nuxt-link>
+                    </div>
+                </div>
             </div>
-        </div>
+    </div>
   </main>
 </template>
 
@@ -139,18 +149,56 @@ export default {
 </script>
 
 <style scoped>
-
-
-.custom-row{
-  background-image: url("./images/index/plant.webp");
-  margin-top:-8em;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  margin-right: -15px;
-  margin-left: -15px;
-
+.custom-row-c {
+  position: relative;
+  min-height: 60em;
+  margin-top: 10em;
+  padding-bottom: 10em;
 }
+
+.custom-row-c::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -50px; /* shift the image to the left to cover the margins */
+  height: 100%;
+  width: calc(100vw + 2em); /* Full viewport width plus margins */
+  background-image: url('/images/index/contact.webp');
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+}
+
+.content-right {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end; /* aligns the items to the right */
+}
+
+.custom-row {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin-top: -8em;
+}
+
+.custom-row::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -50px; /* shift the image to the left to cover the margins */
+  height: 100%;
+  width: calc(100vw + 2em); /* Full viewport width plus margins */
+  background-image: url('./images/index/plant.webp');
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+}
+
 
 .background-extender{
     margin-left: -100px; 
@@ -236,6 +284,17 @@ export default {
   font-family: Poppins, sans-serif;
 }
 
+.title-c {
+  font-size: 3em;
+  text-align: end;
+  font-weight: bolder;
+  color: #000022;
+  margin-top: 7.2em;
+  margin-right: 2em;
+  max-width: 60%;
+  font-family: Poppins, sans-serif;
+}
+
 .subtitle{
   max-width: 45%;
   text-align:start;
@@ -272,6 +331,33 @@ export default {
 .btn:active {
     background-color: #c2cffc;
 }
+
+.custom-btn-c {
+    display: flex; /* cambiato da inline-block a flex */
+    justify-content: center; /* centra il contenuto del bottone */
+    align-items: center; /* allinea verticalmente il contenuto del bottone */
+    width: auto;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 450;
+    color: #E5E5E5;
+    background-color: #086788;
+    border: none;
+    border-radius: 0.4rem;
+    transition: 0.2s;
+    cursor: pointer;
+    letter-spacing: 0.1rem;
+    margin-top: 2em;
+    margin-left: auto; 
+    margin-right: 5.5em;
+    font-family: Avenir, sans-serif;
+}
+
+.btn:hover,
+.btn:active {
+    background-color: #c2cffc;
+}
+
 
 @media(max-width: 725px){
     .title{
@@ -317,6 +403,29 @@ export default {
     margin-left: 5.5em;
     font-family: Avenir, sans-serif;
 }
+
+.custom-btn-c {
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    width: auto;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 450;
+    color: #E5E5E5;
+    background-color: #086788;
+    border: none;
+    border-radius: 0.4rem;
+    transition: 0.2s;
+    cursor: pointer;
+    letter-spacing: 0.1rem;
+    margin-top: 1.5em;
+    margin-left: auto; 
+    margin-right: 5.5em;
+    font-family: Avenir, sans-serif;
+}
+
+
 }
 
 @media(max-width: 560px){
@@ -361,6 +470,26 @@ export default {
     margin-top: 1em;
     font-family: Avenir, sans-serif;
     justify-content: center;
+}
+
+.custom-btn-c {
+    display: flex; /* cambiato da inline-block a flex */
+    justify-content: center; /* centra il contenuto del bottone */
+    align-items: center; /* allinea verticalmente il contenuto del bottone */
+    width: auto;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 450;
+    color: #E5E5E5;
+    background-color: #086788;
+    border: none;
+    border-radius: 0.4rem;
+    transition: 0.2s;
+    cursor: pointer;
+    letter-spacing: 0.1rem;
+    margin-top: 1em;
+    margin-left: auto; 
+    font-family: Avenir, sans-serif;
 }
 }
 
