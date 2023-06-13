@@ -3,10 +3,13 @@ import { makeCall } from '@/utils/common'
 </script>
 
 <template>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <div>
         <div class="dropdown">
-            <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"
+            <button type="button" class="custom-btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"
                 data-bs-auto-close="outside">
+                <div class="icon" ><i class="bi bi-list-ul"></i></div>
                 Filter projects
             </button>
             <form class="dropdown-menu p-4">
@@ -47,6 +50,8 @@ import { makeCall } from '@/utils/common'
                 <button @click="applyFilters()" type="button" class="btn btn-primary">Apply</button>
                 <button type="reset" class="btn btn-secondary">Clear all</button>
             </form>
+
+
         </div>
     </div>
 </template>
@@ -58,8 +63,11 @@ export default {
             areas: [],
             years: [],
             stages: [],
+
         }
     },
+
+    
 
     created() {
         this.getFilters()
@@ -102,6 +110,42 @@ export default {
             this.$emit("applyFilters", filters)
         },
 
+        removeAreaFilter: function(areaid: number){
+
+            console.log("doing removaAreaFilter")
+            let areaSelector = document.getElementsByName("areaSelector")
+            areaSelector[areaid].checked = false;
+
+            this.applyFilters();
+
+        },
+
+        removeYearFilter: function(year: number){
+
+            let yearSelector = document.getElementsByName("yearSelector")
+            for (let i = 0; i < yearSelector.length; i++) {
+                if (yearSelector[i].value == year ) {
+                    yearSelector[i].checked = false;
+                }
+            }
+
+            this.applyFilters();
+
+        },
+
+        removeStageFilter: function(stage: string){
+
+            let stageSelector = document.getElementsByName("stageSelector")
+            for (let i = 0; i < stageSelector.length; i++) {
+                if (stageSelector[i].value == stage ) {
+                    stageSelector[i].checked = false;
+                }
+            }
+
+            this.applyFilters();
+
+        },
+
         getFilters: async function () {
             // get all the areas
             try {
@@ -135,8 +179,45 @@ export default {
 </script>
 
 <style scoped>
+
+
 .dropdown-menu {
     height: 50vh;
     overflow-y: auto;
 }
+
+.custom-btn{
+    position: relative;
+    padding-left: 2rem;
+    width: 160px;
+    height: 50px;
+    background: var(--color-snow);
+    color:var(--color-cerulean);
+    border-radius: 40px;
+    transition: 0.5s;
+    box-shadow: 0 0 0 1px var(--color-oxford-blue);
+    overflow: hidden;
+}
+
+.custom-btn:hover{
+    background: var(--color-oxford-blue);
+    color:var(--color-snow);
+}
+
+.custom-btn .icon{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50px;
+    height: 50px;
+    background: none;
+    color: var(--color-cerulean);
+    border-radius: 50px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    z-index: 1000;
+    cursor: pointer;
+}
+
 </style>

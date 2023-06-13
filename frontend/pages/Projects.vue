@@ -6,28 +6,56 @@ import ProjectCard from '@/components/ProjectCard.vue'
 
 <template>
     <main>
-        <div class="container">
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+        <div class="container-text-center">
             <div class="title">Projects</div>
-        
+        </div>
         
         
             <!--div class="search-wrapper">
                 <input type="text" v-model="search" placeholder="Search projects...">
             </div-->
+        <div class="container">
+            <div class="grid-container">
+            <div class="grid-projects">
+                <div class="search">
+                    <div class="icon"></div>
+                        <div class="input">
+                            <input type="text" v-model="search" placeholder="Search projects..." id="mysearch">
+                        </div>
+                    
+                    <span class="clear" onclick="document.getElementById('mysearch').value = ''"></span>
+                </div>       
+            
 
-            <div class="search">
-                <div class="icon"></div>
-                    <div class="input">
-                        <input type="text" v-model="search" placeholder="Search projects..." id="mysearch">
-                    </div>
+                    <ProjectFilter ref="projectFilter" @applyFilters="filterProjects" />
+                    
                 
-                <span class="clear" onclick="document.getElementById('mysearch').value = ''"></span>
+                <!--ProjectFilter @applyFilters="filterProjects" /-->
             </div>
 
-            <br>
-            <ProjectFilter @applyFilters="filterProjects" />
-            <br>
-
+            <span class="filter-grid" >
+                <div v-for="filterArea in filterAreas" >
+                    <div class="filter-btn"  @click="removeFilterArea(filterArea.areaid) "> {{ filterArea.title }} 
+                        <div class="icon" ><i class="bi bi-x"></i></div>
+                    </div>
+                </div>
+                <div v-for="filterYear in filterYears" >
+                    <div class="filter-btn" @click="removeFilterYear(filterYear)"> {{ filterYear }}
+                        <div class="icon" ><i class="bi bi-x"></i></div>
+                    </div>
+                </div>
+                <div v-for="filterStage in filterStages" >
+                    <div class="filter-btn" @click="removeFilterStage(filterStage)"> {{ filterStage }}
+                        <div class="icon" ><i class="bi bi-x"></i></div>
+                    </div>
+                </div>
+            </span>
+        </div>
+            
+        
             <div v-if="!search" class="accordion" id="accordionPanelsStayOpen">
                 <div v-for="area in areas" class="accordion-item">
                     <h2 class="accordion-header">
@@ -78,6 +106,7 @@ import ProjectCard from '@/components/ProjectCard.vue'
 </template>
 
 <script lang="ts">
+
 export default {
     data() {
         return {
@@ -119,11 +148,22 @@ export default {
             areas: [
                 {
                     areaid: -1,
-                    title: 'area'
+                    title: 'area',
                 }
             ],
 
-            search: ""
+            search: "",
+
+            filterAreas: [
+                {
+                    areaid: -1,
+                    title: 'area'
+                }],
+
+            filterStages: ['stage'],
+
+            filterYears: [-1]
+            
         }
     },
 
@@ -151,13 +191,13 @@ export default {
                 return indexList.includes(p.title.toLowerCase().indexOf(this.search.toLowerCase()));
             });
 
-            console.log("SEARCH RESULTS:")
-            console.log(matchingProjects)
+            //console.log("SEARCH RESULTS:")
+            //console.log(matchingProjects)
 
             return matchingProjects
         },
     },
-
+    
     methods: {
         // filter the projects by area, stage and year
         filterProjects: function (filters: { areas: number[]; stages: string[]; years: number[]; }) {
@@ -165,10 +205,20 @@ export default {
             let stages = filters.stages
             let years = filters.years
 
-            console.log("SELECTED FILTERS:")
+            let filteredAreas = []
+
+            //insert the filters used to make them visible in the page
+            this.areas.forEach(area => {
+                areas.forEach(area1 => {
+                    if(area.areaid == area1)
+                        filteredAreas.push(area)
+                })
+            });
+
+            /*console.log("SELECTED FILTERS:")
             console.log(areas)
             console.log(stages)
-            console.log(years)
+            console.log(years)*/
 
             let filteredProjects = []
             this.allProjects.forEach(project => {
@@ -180,9 +230,9 @@ export default {
                 let stageFilter = stages.length === 0 || stages.includes(project.stage)
                 let yearFilter = years.length === 0 || years.includes(project.year)
 
-                console.log(years.includes(project.year))
+                /*console.log(years.includes(project.year))
                 console.log(typeof (years[0]) + " " + typeof (project.year))
-                console.log("FILTER RESULTS: " + areaFilter + " " + stageFilter + " " + yearFilter)
+                console.log("FILTER RESULTS: " + areaFilter + " " + stageFilter + " " + yearFilter)*/
 
                 // if all the filters are passed, add the project to the filtered projects
                 if (areaFilter && stageFilter && yearFilter) {
@@ -198,6 +248,33 @@ export default {
 
             // update the list of projects
             this.projects = filteredProjects
+
+            //update the filters to show
+            this.filterAreas = filteredAreas
+            this.filterStages = stages
+            this.filterYears = years
+        },
+
+        //removing filter working, calling of the son function not working
+        removeFilterArea: function(areaid: number){
+            let self = this
+            self.filterAreas = this.filterAreas.filter(filterArea => filterArea.areaid !== areaid);
+            (self.$refs.projectFilter as any).removeAreaFilter(areaid)
+        
+        },
+
+        removeFilterYear: function(year: number){
+            let self = this
+            self.filterYears = this.filterYears.filter(filterYear => filterYear !== year);
+            (self.$refs.projectFilter as any).removeYearFilter(year)
+        
+        },
+
+        removeFilterStage: function(stage: string){
+            let self = this
+            self.filterStages = this.filterStages.filter(filterStage => filterStage !== stage);
+            (self.$refs.projectFilter as any).removeStageFilter(stage)
+        
         },
 
         // returns the list of projects that belong to the area with the given id
@@ -211,7 +288,7 @@ export default {
 
             // for each project, add the areas that are not already in the list
             projects.forEach(project => {
-                console.log(project)
+                //console.log(project)
                 project.areas.forEach(area => {
                     if (!areas.some(a => a.areaid === area.areaid)) {
                         areas.push(area)
@@ -219,8 +296,8 @@ export default {
                 })
             })
 
-            console.log("VISIBLE AREAS:")
-            console.log(areas)
+            //console.log("VISIBLE AREAS:")
+            //console.log(areas)
 
             this.areas = areas
         },
@@ -229,7 +306,7 @@ export default {
         getData: async function () {
             try {
                 const data = await makeCall(this.$config.public.SERVER_URL + "/getProjects", 'GET');
-                console.log(data);
+                //console.log(data);
 
                 // itintially all the projects are shown, so we save them in both arrays
                 this.allProjects = data
@@ -263,28 +340,69 @@ icon.addEventListener("click",doSearch);
 
 <style>
 
+.grid-container{
+    display: flex;
+}
+
+@media screen and (max-width: 960px){
+    .grid-container{     
+        justify-content: center;
+    }
+}
+
+.filter-grid{
+    display: flex;
+  padding: 1.25rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  
+}
+
+@media screen and (max-width: 400px) {
+  .filter-grid {
+    flex-direction: column;  }
+}
+
+.grid-projects{
+
+    padding: 1rem;
+    display: grid ;
+    gap: 1rem;
+
+  grid-auto-flow: column;
+    align-items: start;
+
+}
+
+@media screen and (max-width: 720px) {
+  .grid-projects {
+    grid-auto-flow: row;
+  }
+}
+
 .search{
+    float: inline-start;
     position: relative;
-    width: 360px;
-    height: 60px;
+    width: 250px;
+    height: 50px;
     background: var(--color-snow);
-    border-radius: 60px;
+    border-radius: 50px;
     transition: 0.5s;
-    box-shadow: 0 0 0 5px var(--color-oxford-blue);
+    box-shadow: 0 0 0 3px var(--color-oxford-blue);
     overflow: hidden;
 }
 .search .active{
-    width: 360px;
+    width: 250px;
 }
 
 .search .icon{
     position: absolute;
     top: 0;
     left: 0;
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     background: var(--color-snow);
-    border-radius: 60px;
+    border-radius: 50px;
     justify-content: center;
     align-items: center;
     display: flex;
@@ -295,29 +413,29 @@ icon.addEventListener("click",doSearch);
 .search .icon::before{
     content: '';
     position: absolute;
-    width: 15px;
-    height: 15px;
+    width: 12px;
+    height: 12px;
     border: 3px solid var(--color-cerulean);
     border-radius: 50%;
-    transform: translate(-4px,-4px) ;
+    transform: translate(-2.5px,-2.5px) ;
 
 }
 
 .search .icon::after{
     content: '';
     position: absolute;
-    width: 3px;
-    height: 12px;
+    width: 2px;
+    height: 10px;
     background:  var(--color-cerulean);
     border-radius: 50%;
-    transform: translate(6px,6px) rotate(315deg);
+    transform: translate(5.5px,5.5px) rotate(315deg);
 }
 
 .search .input{
     position: relative;
-    width: 300px;
-    height: 60px;
-    left: 60px;
+    width: 150px;
+    height: 50px;
+    left: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -331,8 +449,8 @@ icon.addEventListener("click",doSearch);
     height: 100%;
     border: none;
     outline: none;
-    font-size: 18px;
-    padding: 10px 0;
+    font-size: 15px;
+    padding: 8px 0;
     background: var(--color-snow);
 }
 
@@ -340,22 +458,23 @@ icon.addEventListener("click",doSearch);
     position:absolute;
     top: 50%;
     transform: translateY(-50%);
-    width: 15px;
-    height: 15px;
-    right: 15px;
+    width: 12px;
+    height: 12px;
+    right: 12px;
     background: var(--color-snow);
     cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
+
 }
 
 clear::before{
     position: absolute;
     content: '';
     width: 1px;
-    height: 15px;
-    background-color: var(--color-rose-quartz);
+    height: 12px;
+    background: var(--color-rose-quartz);
     transform: rotate(45deg);
 }
 
@@ -363,8 +482,53 @@ clear::after{
     position: absolute;
     content: '';
     width: 1px;
-    height: 15px;
-    background-color: var(--color-rose-quartz);
+    height: 12px;
+    background: var(--color-rose-quartz);
     transform: rotate(315deg);
+}
+
+.filter-btn{
+    text-align: center;
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    padding-left: 1rem;
+    height: 40px;
+    background: var(--color-platinum);
+    color: var(--color-cerulean);
+    border-radius: 50px;
+    transition: 0.5s;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: none;
+    justify-content: center;
+
+}
+
+.filter-btn .icon{
+    top: 0;
+    left: 0;
+    width: 30px;
+    height: 30px;
+    background: none;
+    color: var(--color-cerulean);
+    border-radius: 50px;
+    z-index: 1000;
+    cursor: pointer;
+    display: inline-block;
+
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.filter-btn:hover{
+    background: var(--color-oxford-blue);
+    color: var(--color-snow);
+}
+
+.filter-btn:hover .icon{
+    color: var(--color-snow);
 }
 </style>

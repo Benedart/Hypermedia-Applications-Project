@@ -5,13 +5,13 @@
                 <h1 class="card-header"><b> {{ title }} </b></h1>
                 <p class="card-description">{{ preview }}</p>
 
-                <span class="float-start" ><b>{{ stage }}</b>
-                    <row style="margin-left: 0.5rem;" v-for="area in areas" >
+                <span class="float-start" ><b>{{ stage }}</b></span>
+                    <row class="float-end"  v-for="area in areas" >
                         <NuxtLink :to="`/areas/${area.areaid}`" class="area-link">
                             <span class="area-title" >{{ area.title}}  </span>
                         </NuxtLink>
                     </row>
-                </span>
+                
                 <!--span class="float-end">{{ year }}</span-->
                 
             
@@ -68,6 +68,10 @@ export default {
 
 .float-start{
     color: var(--color-cerulean);
+    margin-top: 1rem;
+}
+
+.float-end{
     margin-top: 1rem;
 }
 
