@@ -594,8 +594,10 @@ clear::after{
     background-color: var(--color-snow);
 
     --bs-accordion-active-bg: var(--color-platinum);
-    --bs-accordion-btn-focus-border-color: var(--color-cerulean);
-    --bs-accordion-border-color: var(--color-cerulean);
+    --bs-accordion-btn-focus-border-color: var(--color-platinum);
+    --bs-accordion-border-color: var(--color-platinum);
+    --bs-accordion-btn-bg: var(--color-snow);
+    --bs-accordion-bg: var(--color-snow);
 
     box-shadow: 0 3rem 6rem rgba(0, 0, 34, 0.1);
 
@@ -621,7 +623,7 @@ clear::after{
 }
 
 .accordion-button:hover{
-    background-color: var(--color-rose-quartz);
+    background-color: var(--color-cerulean);
     color: var(--color-snow);
 }
 
@@ -635,5 +637,8 @@ clear::after{
 
 .accordion-body{
     background-color: var(--color-platinum);
+}
+.accordion-button:not(.collapsed){
+    box-shadow: none;
 }
 </style>
