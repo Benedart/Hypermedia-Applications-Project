@@ -8,7 +8,7 @@
   <main style="background-color: #FFFBFA;">
     
     <!-- Header row with contact details -->
-    <div class="row container-fluid">
+    <div class="row">
       <div class="col-md-6 d-flex align-items-center justify-content-center">
         <div class="text-center">
           <!-- Header title -->
@@ -80,6 +80,7 @@
 </template>
 
 <style scoped>
+
 /* Styling the heading */
 .custom-heading {
     font-size: 5.5em;

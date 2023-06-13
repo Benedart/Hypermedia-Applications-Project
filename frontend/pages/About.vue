@@ -306,7 +306,7 @@ export default {
 
 /* A class for large headings */
 .custom-heading{
-    font-size: 3.5em;
+    font-size: 5em;
     
     color: #000022;
     

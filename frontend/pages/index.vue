@@ -7,12 +7,12 @@ import PeopleCard from '@/components/PeopleCard.vue'
 <template>
   <main>
     <div class="container-fluid">
-        <div class="custom-row">
-          <div class="title">If you don’t believe in it, we do.</div>
-          <div class="subtitle">Dedicated to fueling innovation and driving growth. 
+        <div class="custom-row" style="min-height: 60em; padding-bottom: 10em;">
+          <div class="title col-md-5" style="line-height: 95%;">If you don’t believe in it, we do.</div>
+          <div class="subtitle col-md-4">Dedicated to fueling innovation and driving growth. 
             <p>We collaborate with visionary entrepreneurs and disruptive startups igniting breakthrough technologies and ideas, empowering the next generation of game-changers.</p></div>
-          <div class="row mx-3 d-flex justify-content-center">
-                <nuxt-link to="/about" tag="button" type="button" class="custom-btn d-flex justify-content-center">
+          <div class="col-md-4 mx-3 d-flex justify-content-start">
+                <nuxt-link to="/about" tag="button" type="button" class="custom-btn d-flex">
                     <b>About us</b>
                 </nuxt-link>
           </div>
@@ -44,7 +44,7 @@ import PeopleCard from '@/components/PeopleCard.vue'
                     </div>
                 </div>
             </div>
-            <hr>
+            <hr style = "width: 70%; margin: 0 auto;">
             <div class="row mx-3 justify-content-center separator-margin">
                 <h1 style="text-align: center; color: #000022;"> Featured Projects </h1>
             </div>
@@ -146,6 +146,7 @@ export default {
   margin-top:-8em;
   display: flex;
   flex-wrap: wrap;
+  flex-direction: column;
   margin-right: -15px;
   margin-left: -15px;
 
@@ -227,10 +228,10 @@ export default {
 }
 
 .title{
-  max-width: 50%;
+  max-width: 60%;
   text-align:start;
   margin-left: 2em;
-  margin-top:5em;
+  margin-top:4.8em;
   color:snow;
   font-family: Poppins, sans-serif;
 }
@@ -238,7 +239,7 @@ export default {
 .subtitle{
   max-width: 45%;
   text-align:start;
-  margin-top: 3em;
+  margin-top: 2em;
   margin-left: 5.5em;
   color:snow;
   font-size: 1.3em;
@@ -254,7 +255,6 @@ export default {
     font-weight: 450;
     text-align: center;
     align-items:start;
-    margin:auto;
     color: #000022;
     background-color: #E5E5E5;
     border: none;
@@ -262,14 +262,106 @@ export default {
     transition: 0.2s;
     cursor: pointer;
     letter-spacing: 0.1rem;
-    margin-top: 3.5em;
-    margin-bottom:10em;
+    justify-content: start;
+    margin-top: 2em;
+    margin-left: 5.5em;
     font-family: Avenir, sans-serif;
 }
 
 .btn:hover,
 .btn:active {
     background-color: #c2cffc;
+}
+
+@media(max-width: 725px){
+    .title{
+  max-width: 50%;
+  text-align:start;
+  align-items: start;
+  margin-left: 2em;
+  margin-top:3.5em;
+  color:snow;
+  font-family: Poppins, sans-serif;
+}
+
+.subtitle{
+  max-width: 45%;
+  text-align:start;
+  align-items: start;
+  margin-top: 1.5em;
+  margin-left: 5.5em;
+  color:snow;
+  font-size: 1.3em;
+  font-family: Avenir, sans-serif;
+}
+
+    .custom-btn {
+    display: inline-block;
+    padding: .375rem .75rem;
+    vertical-align: middle;
+    user-select: none;
+    width: auto;
+    font-size: 1rem;
+    font-weight: 450;
+    text-align: start;
+    align-items: start;
+    color: #000022;
+    background-color: #E5E5E5;
+    border: none;
+    border-radius: 0.4rem;
+    transition: 0.2s;
+    cursor: pointer;
+    letter-spacing: 0.1rem;
+    justify-content: start;
+    margin-top: 1.5em;
+    margin-left: 5.5em;
+    font-family: Avenir, sans-serif;
+}
+}
+
+@media(max-width: 560px){
+    .title{
+  max-width: 50%;
+  text-align:start;
+  align-items: start;
+  margin-left: 2em;
+  margin-top:3em;
+  color:snow;
+  font-family: Poppins, sans-serif;
+}
+
+.subtitle{
+  max-width: 45%;
+  text-align: start;
+  align-items: start;
+  margin-top: 1em;
+  margin-left: 5.5em;
+  color:snow;
+  font-size: 1.3em;
+  font-family: Avenir, sans-serif;
+}
+
+    .custom-btn {
+    display: inline-block;
+    padding: .375rem .75rem;
+    vertical-align: middle;
+    user-select: none;
+    width: auto;
+    font-size: 1rem;
+    font-weight: 450;
+    text-align: start;
+    align-items: start;
+    color: #000022;
+    background-color: #E5E5E5;
+    border: none;
+    border-radius: 0.4rem;
+    transition: 0.2s;
+    cursor: pointer;
+    letter-spacing: 0.1rem;
+    margin-top: 1em;
+    font-family: Avenir, sans-serif;
+    justify-content: center;
+}
 }
 
 
