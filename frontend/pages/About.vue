@@ -58,21 +58,21 @@ import PeopleCard from '@/components/PeopleCard.vue'
             </div>
         </div>
         <!-- Row with the VC achievements -->
-        <div class="row  justify-content-center margin-t-1 custom-margins">
-            <div class="col-md-6 rounded mb-3 text-center justify-content-center">
-                <div class="row" style="font-size: 5.5em;">
-                    <p class="custom-bold">100+</p>
+        <div class="row  justify-content-center separator-margin custom-margins">
+            <div class="col-md-6 rounded mb-3 text-center">
+                <div class="row" style="font-size: 8.75em;">
+                    <p class="custom-bold-1" style="font-family:'Times New Roman', Times, serif;">100+</p>
                 </div>
-                <div class="row" style="margin-top: -20px;">
-                    <p class="custom-bold">Startups Funded</p>
+                <div class="row">
+                    <p class="custom-bold-num">Startups Funded</p>
                 </div>
             </div>
-            <div class="col-md-6 rounded mb-3 text-center justify-content-center">
-                <div class="row" style="font-size: 5.5em;">
-                    <p class="custom-bold">500M</p>
+            <div class="col-md-6 rounded mb-3 text-center r-shifter-margin">
+                <div class="row" style="font-size: 8.75em;">
+                    <p class="custom-bold-1" style="font-family:'Times New Roman', Times, serif;">500M</p>
                 </div>
-                <div class="row" style="margin-top: -20px;">
-                    <p class="custom-bold">Total Capital Deployed</p>
+                <div class="row">
+                    <p class="custom-bold-num">Total Capital Deployed</p>
                 </div>
             </div>
         </div>
@@ -287,6 +287,23 @@ export default {
     margin-right: 150px;
 }
 
+/* A class to manager the right display of the big numbers, shifting one to the right */
+.r-shifter-margin{
+    margin-left: 0px;
+}
+
+@media(max-width: 860px){
+    .r-shifter-margin{
+    margin-left: 20px;
+}
+}
+
+@media(max-width: 859px){
+    .r-shifter-margin{
+    margin-left: 0px;
+}
+}
+
 /* A class for large headings */
 .custom-heading{
     font-size: 3.5em;
@@ -415,6 +432,23 @@ export default {
 .custom-bold {
     font-weight: bold;
     color: #086788;
+}
+
+/* A class for bold text with a specific color and alignment */
+.custom-bold-1 {
+    text-align: center;
+    font-weight: bold;
+    color: #000022;
+    
+}
+
+/* A class for bold text with a specific color, size and margin */
+.custom-bold-num {
+    font-size: 1.5em; 
+    margin-top:-2em;
+    font-weight: bold;
+    color: #000022;
+    
 }
 
 /* A class for making elements round */

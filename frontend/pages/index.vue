@@ -26,18 +26,18 @@ import PeopleCard from '@/components/PeopleCard.vue'
             <p>We are dedicated to contributing to the development of the communities we serve and safeguarding our planet through research projects in social, technological, healthcare, and environmental domains.</p>
             <p>We ensure equal opportunities for professional growth for all individuals working with us, promoting the values of diversity, inclusion, and meritocracy. </p>
         </div>
-        <div class="row mx-3 justify-content-center sm-separator">
+        <div class="row mx-3 d-flex justify-content-center sm-separator">
                 <div class="col-md-6 rounded mb-3 text-center">
-                    <div class="row" style="font-size: 3.5em;">
-                        <p class="custom-bold" style="font-family:'Times New Roman', Times, serif; font-size: 2.5em;">1000+</p>
+                    <div class="row" style="font-size: 8.75em;">
+                        <p class="custom-bold" style="font-family:'Times New Roman', Times, serif;">1000+</p>
                     </div>
                     <div class="row">
                         <p class="custom-bold-num">Founders in Residence</p>
                     </div>
                 </div>
                 <div class="col-md-6 rounded mb-3 text-center">
-                    <div class="row" style="font-size: 3.5em;">
-                        <p class="custom-bold" style="font-family:'Times New Roman', Times, serif; font-size: 2.5em;">5</p>
+                    <div class="row" style="font-size: 8.75em;">
+                        <p class="custom-bold" style="font-family:'Times New Roman', Times, serif;">5</p>
                     </div>
                     <div class="row">
                         <p class="custom-bold-num">Incubated Unicorns</p>
@@ -65,7 +65,7 @@ import PeopleCard from '@/components/PeopleCard.vue'
                     <b>Explore all projects</b>
                 </nuxt-link>
             </div>
-            <div class ="separator-margin py-5" style = "background-color: #D9D9D9; ">
+            <div class ="separator-margin py-5 background-extender" style = "background-color: #D9D9D9;">
               <div class="row mx-3 justify-content-center">
                     <h1 style="text-align: center; color: #000022; "> Our People </h1>
               </div>
@@ -149,6 +149,13 @@ export default {
   margin-right: -15px;
   margin-left: -15px;
 
+}
+
+.background-extender{
+    margin-left: -100px; 
+    margin-right: -100px; 
+    padding-left: 100px; 
+    padding-right: 100px;
 }
 
 .image-wood{
