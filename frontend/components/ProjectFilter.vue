@@ -10,13 +10,15 @@ import { makeCall } from '@/utils/common'
             <button type="button" class="custom-btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"
                 data-bs-auto-close="outside">
                 <div class="icon" ><i class="bi bi-list-ul"></i></div>
-                Filter projects
+                <b>Filter projects</b>
             </button>
-            <form class="dropdown-menu p-4">
-                <div class="hstack gap-3">
-                    <div class="filter-col bg-light border">
-                        Area
-                        <hr>
+            <form class="dropdown-menu ">
+                <div class="hstack gap-0">
+                    <div class="filter-col custom-color custom-border">
+                        <div class="checkform-title border-bottom">
+                            Area 
+                        </div>
+                        
                         <div v-for="area in areas" class="form-check">
                             <input class="form-check-input" name="areaSelector" type="checkbox" :value="area.AreaID"
                                 :id="`a-${area.AreaID}`">
@@ -25,9 +27,10 @@ import { makeCall } from '@/utils/common'
                             </label>
                         </div>
                     </div>
-                    <div class="filter-col bg-light border">
-                        Years
-                        <hr>
+                    <div class="filter-col custom-color custom-border">
+                        <div class="checkform-title border-bottom">
+                            Years 
+                        </div>
                         <div v-for="year in years" class="form-check">
                             <input class="form-check-input" name="yearSelector" type="checkbox" :value="year" :id="year">
                             <label class="form-check-label" :for="year">
@@ -35,9 +38,10 @@ import { makeCall } from '@/utils/common'
                             </label>
                         </div>
                     </div>
-                    <div class="filter-col bg-light border">
-                        Stages
-                        <hr>
+                    <div class="filter-col custom-color custom-border">
+                        <div class="checkform-title border-bottom" >
+                            Stages 
+                        </div>
                         <div v-for="stage in stages" class="form-check">
                             <input class="form-check-input" name="stageSelector" type="checkbox" :value="stage" :id="stage">
                             <label class="form-check-label" :for="stage">
@@ -46,9 +50,10 @@ import { makeCall } from '@/utils/common'
                         </div>
                     </div>
                 </div>
-                <hr>
-                <button @click="applyFilters()" type="button" class="btn btn-primary">Apply</button>
-                <button type="reset" class="btn btn-secondary">Clear all</button>
+                <div style="display: flex; padding: .5rem; background-color: var(--color-snow);" >
+                    <button @click="applyFilters()" type="button" class="apply-btn"><b>Apply</b></button>
+                    <button type="reset" class="clearall-btn"><b>Clear all</b></button>
+                </div>
             </form>
 
 
@@ -179,17 +184,63 @@ export default {
 </script>
 
 <style scoped>
+.checkform-title{
+    text-align: start;
+    padding-left: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    position: relative;
+    color: var(--color-oxford-blue);
 
+    
+}
+
+.border-bottom{
+    border-color: var(--color-cerulean);
+}
 
 .dropdown-menu {
-    height: 50vh;
-    overflow-y: auto;
+    height: 31vh;
+    border: var(--bs-border-width) var(--bs-border-style) var(--color-cerulean)!important;
+    overflow: hidden;
+    padding: 0;
+
+}
+
+.hstack{
+    align-items: flex-start;
+}
+
+.filter-col{
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding-right: 2rem;
+    height: 153px;
+    width: initial;
+
+}
+
+.form-check{
+    width: max-content;
+    margin-left: .5rem;
+}
+
+
+.custom-color{
+    background-color: var(--color-snow,0.5)!important;
+}
+
+.custom-border{
+    border-bottom: var(--bs-border-width) var(--bs-border-style) var(--color-cerulean)!important;
+    border-right: var(--bs-border-width) var(--bs-border-style) var(--color-cerulean)!important;
+    border-top: 0 0 0;
+    border-left: 0 0 0;
 }
 
 .custom-btn{
     position: relative;
-    padding-left: 2rem;
-    width: 160px;
+    padding-left: 2.5rem;
+    width: 180px;
     height: 50px;
     background: var(--color-snow);
     color:var(--color-cerulean);
@@ -218,6 +269,77 @@ export default {
     display: flex;
     z-index: 1000;
     cursor: pointer;
+}
+
+.apply-btn{
+    text-align: center;
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    padding: 1rem 1rem;
+    height: 30px;
+    background: var(--color-cerulean);
+    color: var(--color-snow);
+    border-radius: 50px;
+    border-width: 0;
+    transition: 0.5s;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: none;
+    justify-content: center;
+    margin-right: .5rem;
+
+}
+
+.apply-btn:hover{
+    background: var(--color-platinum);
+    color: var(--color-cerulean);
+
+}
+
+.clearall-btn{
+    text-align: center;
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    padding: 1rem 1rem;
+    height: 30px;
+    background: var(--color-platinum);
+    color: var(--color-cerulean);
+    border-radius: 50px;
+    border-width: 0;
+    transition: 0.5s;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: none;
+    justify-content: center;
+    margin-right: .5rem;
+
+}
+
+.clearall-btn:hover{
+    background: var(--color-oxford-blue);
+    color: var(--color-snow);
+
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background: var(--color-snow);
+    box-shadow: inset 0 0 5px var(--color-platinum);
+
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: var(--color-platinum);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-cerulean);
 }
 
 </style>

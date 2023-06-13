@@ -152,6 +152,14 @@ export default {
                 }
             ],
 
+            allAreas: [
+                {
+                    areaid: -1,
+                    title: 'area',
+                }
+            ],
+
+
             search: "",
 
             filterAreas: [
@@ -191,11 +199,17 @@ export default {
                 return indexList.includes(p.title.toLowerCase().indexOf(this.search.toLowerCase()));
             });
 
+        
             //console.log("SEARCH RESULTS:")
             //console.log(matchingProjects)
 
             return matchingProjects
         },
+
+        
+            
+
+        
     },
     
     methods: {
@@ -208,12 +222,29 @@ export default {
             let filteredAreas = []
 
             //insert the filters used to make them visible in the page
-            this.areas.forEach(area => {
-                areas.forEach(area1 => {
-                    if(area.areaid == area1)
-                        filteredAreas.push(area)
-                })
-            });
+            
+                
+
+            console.log("FILTERPROJECTS")   
+            console.log(areas)
+            console.log(this.allAreas)
+            console.log(filteredAreas)
+
+
+
+                //not working
+                for(let i=1; i<this.allAreas.length+1;i++){
+                    if(areas.includes(i))
+                        filteredAreas.push(this.allAreas[i])
+                }
+
+            ;
+
+            console.log("FILTERPROJECTS")   
+            console.log(areas)
+            console.log(this.allAreas)
+            console.log(filteredAreas)
+
 
             /*console.log("SELECTED FILTERS:")
             console.log(areas)
@@ -277,6 +308,8 @@ export default {
         
         },
 
+    
+
         // returns the list of projects that belong to the area with the given id
         projectsByArea: function (areaid: number) {
             return this.projects.filter(p => p.areas.some(a => a.areaid === areaid))
@@ -300,6 +333,13 @@ export default {
             //console.log(areas)
 
             this.areas = areas
+
+            if(this.filterStages[0]=="stage"){
+                this.filterAreas = [];
+                this.filterYears = [];
+                this.filterStages = [];
+            }
+
         },
 
         // get the data from the server
@@ -316,6 +356,16 @@ export default {
                 alert("Error, couldn't retrieve project details");
                 console.error(error);
             }
+
+            try {
+                const data = await makeCall(this.$config.public.SERVER_URL + "/getAreas", 'GET');
+                //console.log(data);
+
+                this.allAreas = data
+            } catch (error) {
+                alert("Error, couldn't retrieve project details");
+                console.error(error);
+            }
         },
 
         
@@ -324,6 +374,11 @@ export default {
     
     
 }
+
+
+
+        
+
 
 /*
 const icon = document.querySelector('.icon');
@@ -339,9 +394,13 @@ icon.addEventListener("click",doSearch);
 </script>
 
 <style>
-
+.title {
+    text-align: center;
+    margin-bottom:  5rem;
+}
 .grid-container{
     display: flex;
+    margin-bottom: 1rem;
 }
 
 @media screen and (max-width: 960px){
@@ -516,7 +575,6 @@ clear::after{
     z-index: 1000;
     cursor: pointer;
     display: inline-block;
-
     text-align: center;
     display: flex;
     align-items: center;
@@ -530,5 +588,52 @@ clear::after{
 
 .filter-btn:hover .icon{
     color: var(--color-snow);
+}
+
+.accordion{
+    background-color: var(--color-snow);
+
+    --bs-accordion-active-bg: var(--color-platinum);
+    --bs-accordion-btn-focus-border-color: var(--color-cerulean);
+    --bs-accordion-border-color: var(--color-cerulean);
+
+    box-shadow: 0 3rem 6rem rgba(0, 0, 34, 0.1);
+
+}
+
+.accordion-header{
+    background-color: var(--color-snow);
+
+}
+
+.accordion-button{
+    background-color: var(--color-snow);
+}
+
+.accordion-button::after{
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23086788'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+
+}
+
+.accordion-button.collapsed::after{
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23086788'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+
+}
+
+.accordion-button:hover{
+    background-color: var(--color-rose-quartz);
+    color: var(--color-snow);
+}
+
+.accordion-button:hover::after{
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fffbfa'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+
+.accordion-button:focus{
+    box-shadow: var(--color-cerulean);
+}
+
+.accordion-body{
+    background-color: var(--color-platinum);
 }
 </style>
