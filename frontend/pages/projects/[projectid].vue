@@ -7,7 +7,7 @@
     -->
     <div class="container">
         <div>
-            <h1>{{ projectDetails.title }}
+            <h1 class="name-project">{{ projectDetails.title }}
                 <span v-if="projectDetails.featured">
                     - Featured
                 </span>
@@ -15,22 +15,44 @@
         </div>
         <div>
             <i v-for="(area, index) in projectDetails.areas">
-                <NuxtLink :to="`/areas/${area.areaid}`">{{ area.title }}</NuxtLink>
+                <NuxtLink class="area-link" :to="`/areas/${area.areaid}`">
+                    <span class="area-title" >{{ area.title}}  </span>
+                </NuxtLink>
                 <span v-if="index < projectDetails.areas.length - 1"> - </span>
             </i>
-            <p><b>Budget:</b> {{ projectDetails.budget }}$</p>
-            <p><b>Stage:</b> {{ projectDetails.stage }}</p>
-            <hr>
-            <p>{{ projectDetails.section1 }}</p>
-            <p>{{ projectDetails.section2 }}</p>
-            <p>{{ projectDetails.section3 }}</p>
-            <hr>
-            <p>
-                <b>Supervisor: </b>
-                <NuxtLink :to="`/people/${projectDetails.supervisor}`">
-                    {{ projectDetails.name + " " + projectDetails.surname }}
-                </NuxtLink>
-            </p>
+            <!--p><b>Budget:</b> {{ projectDetails.budget }}$</p>
+            <p><b>Stage:</b> {{ projectDetails.stage }}</p!-->
+            <div class="section-1">
+                <p class="custom-paragraph-1">{{ projectDetails.section1 }}</p>
+                <span class="supervisor-span">
+                    <img class="image-person " 
+                        :src="`/images/People/${projectDetails.supervisor}.webp`">
+                    <p class="supervisor-p">
+                        <b>Supervisor: </b>
+                        <NuxtLink class="supervisor-link" :to="`/people/${projectDetails.supervisor}`">
+                            {{ projectDetails.name + " " + projectDetails.surname }}
+                        </NuxtLink>
+                        <p style="margin: 1rem;">{{ people[projectDetails.supervisor].CV }}</p>
+
+
+                    </p>
+                    
+
+                </span>
+            </div>
+            
+            <div class="section-1">
+                <img class="image-project " :src="`/images/projects/projectid/${projectDetails.title}.png`">
+                <p class="custom-paragraph-2">{{ projectDetails.section2 }}</p>
+            </div>
+            <div class="section-3">
+                <p class="custom-paragraph-3">{{ projectDetails.section3 }}</p>
+                <div class="image-container">
+                    <img  :src="`/images/projects/projectid/${projectDetails.title}2.png`">
+                </div>
+                
+            </div>
+                        
         </div>
     </div>
 </template>
@@ -54,6 +76,8 @@ export default {
                 areas: [{ areaid: -1, title: "Area" }],
                 featured: 1,
             },
+
+            people: [{personid:-1, CV: "lorem ipsum" }]
         }
     },
 
@@ -69,14 +93,182 @@ export default {
             // get project details
             try {
                 const data = await makeCall(this.$config.public.SERVER_URL + "/getProject/" + projectid, 'GET');
-                console.log(data);
+                //console.log(data);
                 this.projectDetails = data
+                console.log("karen lee")
+                console.log(this.projectDetails.supervisor)
             } catch (error) {
                 alert("Error, couldn't retrieve project details");
                 console.error(error);
             }
+
+            try {
+                const data = await makeCall(this.$config.public.SERVER_URL + "/getPeople" , 'GET');
+                console.log(data);
+                this.people = data
+            } catch (error) {
+                alert("Error, couldn't retrieve people ");
+                console.error(error);
+            }
         },
+        },
+    }
+
+
+</script>
+
+<style scoped>
+
+.name-project{
+    color: #000022;
+    margin: auto;
+    margin-top: 2.2em;
+    font-size: 40px;
+    margin-bottom: 1rem;
+}
+
+.area-link{
+    position: relative;
+    display: inline-block;
+}
+.area-link .area-title{
+    color: var(--color-oxford-blue); 
+    padding: 0.2rem;
+}
+
+.area-link .area-title:hover::after{
+    content: "";
+  position: absolute;
+  bottom: 0.3rem;
+  left: 0.3rem;
+  width: 90%;
+  height: 25%;
+  background-color: var(--color-cerulean); /* Colore di sfondo per l'evidenziazione */
+  opacity: 0.3;
+}
+
+.section-1{
+    display: flex;
+    margin-top: 2rem;
+
+}
+
+@media  screen and (max-width: 1000px) {
+    .section-1{
+        flex-direction: column;
+    }
+
+    .section-1.custom-paragraph-1{
+        width: auto;
+        justify-content: center;
+        text-align: center;
+        border-right: 0;
+        padding-right: 0;
+        border-bottom: 1px solid var(--color-cerulean);
+        padding-bottom: 2rem;
     }
 }
 
-</script>
+.section-3{
+    display: flex;
+    flex-direction: column;
+    margin-top: 3rem;
+}
+
+.custom-paragraph-1{
+    width: auto;
+    flex-grow: 1;
+    border-right:1px solid var(--color-cerulean);
+    padding-right: 2rem;
+}
+
+.custom-paragraph-2{
+    width: auto;
+    flex-grow: 1;
+    justify-content: right;
+    text-align: right;
+    padding: 3rem 0 3rem 3rem;
+     
+}
+.custom-paragraph-3{
+    
+    flex-grow: 1;
+    text-align: justify;
+
+}
+
+
+
+.supervisor-span{
+    display: flex;
+    width: auto;
+    flex-grow: 1;
+    padding-left: 2rem;
+}
+
+.supervisor-p{
+    width: 24rem;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.supervisor-link{
+    color: var(--color-oxford-blue);
+
+}
+
+.supervisor-link:hover::after{
+    content: "";
+  position: absolute;
+  bottom: 0.3rem;
+  left: 0.3rem;
+  width: 90%;
+  height: 25%;
+  background-color: var(--color-cerulean); /* Colore di sfondo per l'evidenziazione */
+  opacity: 0.3;
+}
+.image-person{
+    border-radius: 100%;
+    width: 170px;
+    margin: auto;
+}
+
+.image-project{
+    border-radius: 10%;
+    flex-grow: 1;
+    
+    width: 20rem;
+    margin: auto;
+    object-fit: cover;
+}
+
+.image-project-2{
+    border-radius: 10%;
+    flex-grow: 1;
+    align-self: center;
+    margin: auto;
+    object-fit: cover;
+}
+
+.image-container{
+    flex-grow: 1;
+
+
+    position: relative; /* Imposta la posizione relativa per consentire il posizionamento assoluto dell'immagine */
+  height: 50vh; /* Imposta l'altezza desiderata per visualizzare solo la metà superiore */
+  overflow: hidden;
+  border-top-right-radius: 10%;
+  border-top-left-radius: 10%;
+  transform: scale(0.75);
+}
+
+.image-container img {
+    position: absolute; /* Imposta la posizione assoluta per consentire il posizionamento all'interno del contenitore */
+  top: -60%;
+  width: 100%; /* Imposta la larghezza al 100% per coprire l'intera larghezza del contenitore */
+  height: auto; 
+}
+
+</style>
