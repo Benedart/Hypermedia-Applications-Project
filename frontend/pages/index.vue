@@ -1,3 +1,4 @@
+<!-- Import necessary utilities and components -->
 <script setup lang="ts">
 import { makeCall } from '@/utils/common'
 import ProjectCard from '@/components/ProjectCard.vue'
@@ -6,7 +7,9 @@ import PeopleCard from '@/components/PeopleCard.vue'
 
 <template>
   <main>
+    <!-- Main container -->
     <div class="container-fluid">
+         <!-- Custom row with introductory statement and a call to action -->
         <div class="custom-row" style="min-height: 60em; padding-bottom: 10em;">
           <div class="title col-md-5" style="line-height: 95%;">If you don’t believe in it, we do.</div>
           <div class="subtitle col-md-4">Dedicated to fueling innovation and driving growth. 
@@ -17,15 +20,18 @@ import PeopleCard from '@/components/PeopleCard.vue'
                 </nuxt-link>
           </div>
         </div>
+        <!-- Presenting a statement about the company and its mission -->
         <div class = "col-md-7 d-flex justify-content-center mx-auto">
             <h3 class="custom-bold" style="text-align: center; margin-top:2.5em;">HyperMeow is a global investment leader, 
                 <p class="custom-bold">reshaping opportunities in Italy and beyond with unprecedented growth.</p></h3>
         </div>
+        <!-- Section providing more details about the company's vision and goals -->
         <div class = "col-md-6 sm-separator mx-auto" style="text-align: justify; font-size: 1.3em;">
             <p>For over 50 years, we have been partnering with businesses, organizations, and institutions, assisting them in overcoming their most complex challenges, creating value, and accelerating their growth through sustainable and inclusive transformation processes.</p>
             <p>We are dedicated to contributing to the development of the communities we serve and safeguarding our planet through research projects in social, technological, healthcare, and environmental domains.</p>
             <p>We ensure equal opportunities for professional growth for all individuals working with us, promoting the values of diversity, inclusion, and meritocracy. </p>
         </div>
+        <!-- Highlighting company's achievements -->
         <div class="row mx-3 d-flex justify-content-center sm-separator">
                 <div class="col-md-6 rounded mb-3 text-center">
                     <div class="row" style="font-size: 8.75em;">
@@ -45,6 +51,7 @@ import PeopleCard from '@/components/PeopleCard.vue'
                 </div>
             </div>
             <hr style = "width: 70%; margin: 0 auto;">
+            <!-- Featured projects section, with each project presented using ProjectCard component -->
             <div class="row mx-3 justify-content-center separator-margin">
                 <h1 style="text-align: center; color: #000022;"> Featured Projects </h1>
             </div>
@@ -65,6 +72,7 @@ import PeopleCard from '@/components/PeopleCard.vue'
                     <b>Explore all projects</b>
                 </nuxt-link>
             </div>
+            <!-- Our People section presented on a colored background -->
             <div class ="separator-margin py-5 background-extender" style = "background-color: #D9D9D9;">
               <div class="row mx-3 justify-content-center">
                     <h1 style="text-align: center; color: #000022; "> Our People </h1>
@@ -87,17 +95,21 @@ import PeopleCard from '@/components/PeopleCard.vue'
                   </nuxt-link>
               </div>
             </div>
-            <div class="row mx-3 d-flex image-wood">
-                <h1 style="text-align: center; color: #000022; margin-top:1em;font-size:2.5em;">Areas that we explored</h1>
-                <div class="col-md-7 my-3 justify-content-center text-style px-5">
-                    <p class="custom-bold" style="text-align: start; font-size: 1.5em; margin-top:3em;">Investing in Healthcare, Ecosustainability, Technology, and Growth.</p>
-                    <p style="text-align: justify; font-size: 1.3em;">From revolutionizing healthcare to championing ecosustainability, leveraging technology, and fostering growth, we are at the forefront of driving innovation.</p>
-                    <p style="text-align: justify; font-size: 1.3em;">Join us on our mission to shape the future of these dynamic industries.</p>
+            <!-- A brief on areas that the company explored -->
+            <div>
+                <div class ="row justify-content-center custom-bold" style="font-size: 3em; margin-top: 2em;">Areas that we explored</div>
+                <div class="row image-wood" style="min-height: 60em;">
+                    <div class="title-a col-md-5" style="line-height: 103%;">Investing in Healthcare, Ecosustainability, Technology, and Growth.</div>
+                    <div class="subtitle-a col-md-4">From revolutionizing healthcare to championing ecosustainability, leveraging technology, and fostering growth, we are at the forefront of driving innovation. 
+                        <p>Join us on our mission to shape the future of these dynamic industries.</p></div>
+                    <div class="col-md-4 mx-3 d-flex justify-content-start">
+                            <nuxt-link to="/areas" tag="button" type="button" class="custom-btn-a d-flex">
+                                <b>All Areas</b>
+                            </nuxt-link>
+                    </div>
                 </div>
-                <nuxt-link to="/areas" tag="button" type="button" class="custom-btn d-flex justify-content-center" style="background-color: #086788; color:snow;">
-                   <b>All areas</b>
-                </nuxt-link>
-            </div>      
+            </div>  
+            <!-- A final call to contact us -->
             <div class="custom-row-c">
                 <div class="content-right">
                     <div class="title-c col-md-5" style="line-height: 98%;">Ready to Transform Your Future? Let's <strong> Connect.</strong></div>
@@ -112,8 +124,10 @@ import PeopleCard from '@/components/PeopleCard.vue'
   </main>
 </template>
 
+<!-- The script section where the data and components are initialized -->
 <script lang="ts">
 export default {
+    // Initial data
     data() {
         return {
             projects: [],
@@ -121,25 +135,34 @@ export default {
         }
     },
 
+    // Declare the components used in this file
     components: {
         ProjectCard,
         PeopleCard,
     },
 
+    // Fetch data once the component is created
     created() {
         this.getData()
     },
 
     methods: {
+        // Method to fetch data from the server
         async getData() {
             try {
+                // Fetch data for projects and people
                 const projectsData = await makeCall(this.$config.public.SERVER_URL + "/getFeaturedProjects", 'GET');
                 const peopleData = await makeCall(this.$config.public.SERVER_URL + "/getPeople", 'GET');
+
+                // Log fetched data
                 console.log(projectsData);
                 console.log(peopleData);
+
+                // Assign fetched data to projects and people data properties
                 this.projects = projectsData;
                 this.people = peopleData;
             } catch (error) {
+                // Handle any errors during the fetch operation
                 alert("Error while fetching data")
                 console.error(error);
             }
@@ -149,26 +172,110 @@ export default {
 </script>
 
 <style scoped>
+/* Define style for a custom row */
 .custom-row-c {
+  position: relative; 
+  min-height: 60em; /* The minimum height of the row */
+  margin-top: -25em; /* Move the row up by 25em */
+  padding-bottom: 10em; /* Add padding at the bottom of the row */
+}
+
+/* Define the ::before pseudo-element for the custom row */
+.custom-row-c::before {
+  content: ""; /* No content inside the pseudo-element */
+  position: absolute; /* Positioning is absolute to its nearest positioned ancestor */
+  top: 0; /* Position the top edge at the top edge of the parent element */
+  left: -50px; /* Shift the element 50px to the left */
+  height: 100%; /* The element should take up the full height of the parent */
+  width: calc(100vw + 2em); /* Calculate the width based on the full viewport width plus margins */
+  background-image: url('/images/index/contact.webp'); /* Set the background image of the element */
+  background-position: center; /* Center the background image */
+  background-repeat: no-repeat; /* Do not repeat the background image */
+  background-size: cover; /* Resize the background image to cover the entire element */
+}
+
+/* Define styles for different viewport widths */
+/* For viewport widths less than or equal to 986px */
+@media(max-width: 986px){
+    .custom-row-c {
   position: relative;
   min-height: 60em;
-  margin-top: 10em;
+  margin-top: -18em; /* Adjust the margin-top */
   padding-bottom: 10em;
 }
-
-.custom-row-c::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -50px; /* shift the image to the left to cover the margins */
-  height: 100%;
-  width: calc(100vw + 2em); /* Full viewport width plus margins */
-  background-image: url('/images/index/contact.webp');
-  background-position: center; /* Center the image */
-  background-repeat: no-repeat; /* Do not repeat the image */
-  background-size: cover; /* Resize the background image to cover the entire container */
 }
 
+/* For viewport widths less than or equal to 860px */
+@media(max-width: 860px){
+    .custom-row-c {
+  position: relative;
+  min-height: 60em;
+  margin-top: -13em; /* Adjust the margin-top */
+  padding-bottom: 10em;
+}
+}
+
+/* For viewport widths less than or equal to 770px */
+@media(max-width: 770px){
+    .custom-row-c {
+  position: relative;
+  min-height: 60em;
+  margin-top: -20em; /* Adjust the margin-top */
+  padding-bottom: 10em;
+}
+}
+
+/* For viewport widths less than or equal to 640px */
+@media(max-width: 640px){
+    .custom-row-c {
+  position: relative;
+  min-height: 60em;
+  margin-top: -15em; /* Adjust the margin-top */
+  padding-bottom: 10em;
+}
+}
+
+/* For viewport widths less than or equal to 570px */
+@media(max-width: 570px){
+    .custom-row-c {
+  position: relative;
+  min-height: 60em;
+  margin-top: -10em; /* Adjust the margin-top */
+  padding-bottom: 10em;
+}
+}
+
+/* For viewport widths less than or equal to 450px */
+@media(max-width: 450px){
+    .custom-row-c {
+  position: relative;
+  min-height: 60em;
+  margin-top: -5em; /* Adjust the margin-top */
+  padding-bottom: 10em;
+}
+}
+
+/* For viewport widths less than or equal to 425px */
+@media(max-width: 425px){
+    .custom-row-c {
+  position: relative;
+  min-height: 60em;
+  margin-top: 0em; /* Adjust the margin-top */
+  padding-bottom: 10em;
+}
+}
+
+/* For viewport widths less than or equal to 372px */
+@media(max-width: 372px){
+    .custom-row-c {
+  position: relative;
+  min-height: 60em;
+  margin-top: 5em;  /* Adjust the margin-top */
+  padding-bottom: 10em;
+}
+}
+
+/* CSS for content to be placed on the right side of the page */
 .content-right {
   position: absolute;
   top: 0;
@@ -178,6 +285,7 @@ export default {
   align-items: flex-end; /* aligns the items to the right */
 }
 
+/* CSS for a custom row layout */
 .custom-row {
   position: relative;
   display: flex;
@@ -186,6 +294,7 @@ export default {
   margin-top: -8em;
 }
 
+/* Styling for ::before pseudo-element of custom-row */
 .custom-row::before {
   content: "";
   position: absolute;
@@ -199,7 +308,7 @@ export default {
   background-size: cover; /* Resize the background image to cover the entire container */
 }
 
-
+/* CSS to extend the background beyond the container bounds */
 .background-extender{
     margin-left: -100px; 
     margin-right: -100px; 
@@ -207,23 +316,29 @@ export default {
     padding-right: 100px;
 }
 
+/* CSS to display a small background image */
 .image-wood{
     background-image: url("./images/index/wood.webp");
+    background-repeat: no-repeat;
+    background-position-x: right;
+    flex-direction: column;
     display: flex;
     flex-wrap: wrap;
     margin-right: -15px;
     margin-left: -15px;
 }
 
+/* CSS to create a space at the top of an element */
 .separator-margin{
     margin-top: 80px;
 }
 
+/* CSS to create a smaller space at the top of an element */
 .sm-separator{
     margin-top: 40px;
 }
 
-/* larghezza dello schermo fino a 768px */
+/* CSS for responsive design - when screen width is up to 768px */
 @media (max-width: 768px) {
     .separator-margin{
     margin-top: 40px;
@@ -234,7 +349,7 @@ export default {
 }
 }
 
-/* larghezza dello schermo fino a 480px */
+/* CSS for responsive design - when screen width is up to 480px */
 @media (max-width: 480px) {
     .separator-margin{
     margin-top: 15px;
@@ -246,35 +361,34 @@ export default {
 
 }
 
+/* CSS to make an element rounded */
 .rounded {
     border-radius: 75%;
 }
 
+/* CSS to center and bold text, and change its color */
 .custom-bold {
     text-align: center;
     font-weight: bold;
     color: #000022;
-    
 }
+
+/* CSS to change text size, bold it, and change its color */
 .custom-bold-num {
     font-size: 1.5em; 
     margin-top:-2em;
     font-weight: bold;
     color: #000022;
-    
 }
 
+/* CSS to style secondary button */
 .btn-secondary {
     width: 90%;
     background-color: #086788;
     margin-top: 2%;
 }
 
-.custom-margins {
-    margin-left: 100px;
-    margin-right: 100px;
-}
-
+/* CSS for the title styling */
 .title{
   max-width: 60%;
   text-align:start;
@@ -284,6 +398,19 @@ export default {
   font-family: Poppins, sans-serif;
 }
 
+/* CSS for areas title styling */
+.title-a {
+  font-size: 2em;
+  text-align: start;
+  font-weight: bolder;
+  color: #000022;
+  margin-top: 2.5em;
+  margin-left: 3.5em;
+  max-width: 60%;
+  font-family: Poppins, sans-serif;
+}
+
+/* CSS for contact us title styling */
 .title-c {
   font-size: 3em;
   text-align: end;
@@ -295,6 +422,7 @@ export default {
   font-family: Poppins, sans-serif;
 }
 
+/* CSS for subtitles styling */
 .subtitle{
   max-width: 45%;
   text-align:start;
@@ -304,7 +432,44 @@ export default {
   font-size: 1.3em;
   font-family: Avenir, sans-serif;
 }
+
+/* CSS for areas subtitles styling */
+.subtitle-a{
+  max-width: 45%;
+  text-align:start;
+  margin-top: 2em;
+  margin-left: 5.5em;
+  color:#000022;
+  font-size: 1.3em;
+  font-family: Avenir, sans-serif;
+}
+
+/* Custom button style */
 .custom-btn {
+    display: inline-block; /* Sets how to display the button */
+    padding: .375rem .75rem; /* Sets padding inside the button */
+    vertical-align: middle; /* Sets vertical alignment of the button */
+    user-select: none; /* Prevents the user from selecting the text */
+    width: auto; /* Auto adjust the width */
+    font-size: 1rem; /* Font size of the button text */
+    font-weight: 450; /* Weight of the font */
+    text-align: center; /* Horizontal alignment of the button text */
+    align-items:start; /* Vertical alignment of the button content */
+    color: #000022; /* Color of the button text */
+    background-color: #E5E5E5; /* Background color of the button */
+    border: none; /* Removes the border */
+    border-radius: 0.4rem; /* Makes the button corners rounded */
+    transition: 0.2s; /* Animation effect to slowly change from one style to another */
+    cursor: pointer; /* Changes the cursor to a pointer when hovering over the button */
+    letter-spacing: 0.1rem; /* Space between each letter */
+    justify-content: start; /* Horizontal alignment of the button content */
+    margin-top: 2em; /* Top margin */
+    margin-left: 5.5em; /* Left margin */
+    font-family: Avenir, sans-serif; /* Font of the button text */
+}
+
+/* Custom style for areas button*/
+.custom-btn-a {
     display: inline-block;
     padding: .375rem .75rem;
     vertical-align: middle;
@@ -314,28 +479,24 @@ export default {
     font-weight: 450;
     text-align: center;
     align-items:start;
-    color: #000022;
-    background-color: #E5E5E5;
+    color: #E5E5E5;
+    background-color: #086788;
     border: none;
     border-radius: 0.4rem;
     transition: 0.2s;
     cursor: pointer;
     letter-spacing: 0.1rem;
     justify-content: start;
-    margin-top: 2em;
+    margin-top: 1em;
     margin-left: 5.5em;
     font-family: Avenir, sans-serif;
 }
 
-.btn:hover,
-.btn:active {
-    background-color: #c2cffc;
-}
-
+/* Custom style for contact us button*/
 .custom-btn-c {
-    display: flex; /* cambiato da inline-block a flex */
-    justify-content: center; /* centra il contenuto del bottone */
-    align-items: center; /* allinea verticalmente il contenuto del bottone */
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
     width: auto;
     padding: .375rem .75rem;
     font-size: 1rem;
@@ -349,16 +510,11 @@ export default {
     letter-spacing: 0.1rem;
     margin-top: 2em;
     margin-left: auto; 
-    margin-right: 5.5em;
+    margin-right: 5em;
     font-family: Avenir, sans-serif;
 }
 
-.btn:hover,
-.btn:active {
-    background-color: #c2cffc;
-}
-
-
+/* CSS rules for screen widths up to 725px */
 @media(max-width: 725px){
     .title{
   max-width: 50%;
@@ -404,6 +560,29 @@ export default {
     font-family: Avenir, sans-serif;
 }
 
+.custom-btn-a {
+    display: inline-block;
+    padding: .375rem .75rem;
+    vertical-align: middle;
+    user-select: none;
+    width: auto;
+    font-size: 1rem;
+    font-weight: 450;
+    text-align: start;
+    align-items: start;
+    color: #E5E5E5;
+    background-color: #086788;
+    border: none;
+    border-radius: 0.4rem;
+    transition: 0.2s;
+    cursor: pointer;
+    letter-spacing: 0.1rem;
+    justify-content: start;
+    margin-top: 1em;
+    margin-left: 5.5em;
+    font-family: Avenir, sans-serif;
+}
+
 .custom-btn-c {
     display: flex; 
     justify-content: center; 
@@ -421,13 +600,14 @@ export default {
     letter-spacing: 0.1rem;
     margin-top: 1.5em;
     margin-left: auto; 
-    margin-right: 5.5em;
+    margin-right: 5em;
     font-family: Avenir, sans-serif;
 }
 
 
 }
 
+/* CSS rules for screen widths up to 560px */
 @media(max-width: 560px){
     .title{
   max-width: 50%;
@@ -472,10 +652,33 @@ export default {
     justify-content: center;
 }
 
+.custom-btn-a {
+    display: inline-block;
+    padding: .375rem .75rem;
+    vertical-align: middle;
+    user-select: none;
+    width: auto;
+    font-size: 1rem;
+    font-weight: 450;
+    text-align: start;
+    align-items: start;
+    color: #E5E5E5;
+    background-color: #086788;
+    border: none;
+    border-radius: 0.4rem;
+    transition: 0.2s;
+    cursor: pointer;
+    letter-spacing: 0.1rem;
+    margin-top: 0.5em;
+    margin-left: 5.5em;
+    font-family: Avenir, sans-serif;
+    justify-content: center;
+}
+
 .custom-btn-c {
-    display: flex; /* cambiato da inline-block a flex */
-    justify-content: center; /* centra il contenuto del bottone */
-    align-items: center; /* allinea verticalmente il contenuto del bottone */
+    display: flex; 
+    justify-content: center;
+    align-items: center;
     width: auto;
     padding: .375rem .75rem;
     font-size: 1rem;
@@ -492,7 +695,5 @@ export default {
     font-family: Avenir, sans-serif;
 }
 }
-
-
 </style>
 
