@@ -350,83 +350,29 @@ VALUES (
 INSERT INTO Areas (Title, Section1, Section2)
 VALUES
 ('Healthcare',
-'Healthcare, as an interdisciplinary domain, is situated at the intersection of life sciences, public safety, and healthcare services. This multifaceted domain embraces a holistic strategy aimed at augmenting human wellness and guaranteeing societal safety. At its core, it seeks to utilize state-of-the-art technology and scientific expertise to improve health outcomes, streamline medical procedures, and democratize access to healthcare services for all individuals.',
-'Healthcare Services
-
-Healthcare services is primarily devoted to elevating patient outcomes through the employment of cutting-edge technology. Ground-breaking advancements such as AI-driven diagnostics, telehealth solutions, and personalized medicine are being harnessed to provide more accurate, swift, and custom healthcare services. By incorporating technology into healthcare, the aim is to enhance the efficiency of medical processes, curtail waiting periods, and amplify the overall patient experience.
-
-Public Safety
-
-Public safety constitutes another fundamental pillar of this domain, focusing on formulating strong and efficient solutions for public security and emergency response. Emerging technologies like artificial intelligence (AI), computer vision, and the Internet of Things (IoT) are being exploited to create systems capable of predicting, preventing, and responding promptly to public safety incidents. This broad scope includes facets like traffic management, crime prevention, disaster response, and ensuring safety in public areas.
-
-Life Sciences
-
-Life sciences represent the third aspect of the healthcare domain, emphasizing the integration of technology to foster overall well-being. It spans the utilization of technology in sectors like biomedical research, pharmaceutical development, genomics, and personalized nutrition. The overarching goal here is to cultivate a deeper comprehension of human health and disease, subsequently using these insights to craft solutions that uplift the overall quality of life.');
+'Healthcare is an interdisciplinary domain focused on improving human wellness and ensuring societal safety. It integrates life sciences, public safety, and healthcare services. Through advanced technology and scientific expertise, it aims to enhance health outcomes, streamline medical procedures, and provide universal access to healthcare services.',
+'Healthcare services use innovative tech like AI and telehealth to deliver swift, tailored care. Public safety leverages AI and IoT to enhance security and emergency response, including traffic management and disaster response. Life sciences integrate technology in biomedical research and nutrition, seeking deeper health insights and quality of life improvement.');
 
 -- Area #2
 INSERT INTO Areas (Title, Section1, Section2)
 VALUES
 ('EcoSustain',
-'EcoSustain is an intersectional domain that lies at the crossroads of technology, environment, and agriculture, symbolizing a deep-rooted commitment to sustainability and the welfare of our planet. The area is marked by the development and execution of forward-thinking technologies, with a clear aim to endorse environmental sustainability, alleviate pollution, and amplify resource efficiency.',
-
-'Environmental Sustainability & Resource Management
-Central to EcoSustain is a vision of a purer, greener, and more sustainable planet. This is actualized through the implementation of avant-garde technologies tailored to reduce environmental footprints and refine how we exploit Earth precious resources. This involves progress in renewable energy, waste management, and recycling technologies, as well as inventive solutions that aim to curb pollution and endorse cleaner air and water.
-
-Agriculture & Sustainable Farming Practices
-
-Agriculture forms another crucial aspect of EcoSustain, with an emphasis on optimizing farming methods and managing resources more effectively. Achieving this involves the integration of data-driven insights and state-of-the-art technologies like precision farming, automated irrigation systems, and satellite imaging. These instruments not only aid in maximizing crop yields and enhancing livestock management but also ensure these procedures are conducted sustainably, with minimal impact on the environment.
-
-Sustainable Food Consumption
-
-In addition, EcoSustain recognizes the vital role sustainable food consumption plays in environmental preservation. This encompasses endorsing sustainable diets, reducing food waste, and facilitating a transition towards more sustainable food production practices.');
+'EcoSustain is an intersectional domain that lies at the crossroads of technology, environment, and agriculture, symbolizing a deep-rooted commitment to sustainability and the welfare of our planet. The area is marked by the development of forward-thinking technologies, with a clear aim to endorse environmental sustainability, alleviate pollution, and amplify resource efficiency.',
+'EcoSustain promotes a greener planet through sustainable practices and resource management. It utilizes advanced technologies in renewable energy, waste management, and farming to reduce environmental impact. Additionally, EcoSustain advocates for sustainable diets, decreased food waste, and eco-friendly food production.');
 
 -- Area #3
 INSERT INTO Areas (Title, Section1, Section2)
 VALUES
 ('Technology',
-'"Technology" is an expansive domain that encompasses the ever-evolving technological advancements across a diverse range of industries. It stands as a shining testament to human ingenuity and the boundless potential of contemporary computing. At the heart of this domain lies the development and improvement of algorithms and systems capable of learning from data, representing the tangible embodiment of machine intelligence.',
-'Internet of Things (IoT)
-
-A vital component of this domain is the Internet of Things (IoT), a network of physical objects—often called "things"—embedded with sensors, software, and other technologies to facilitate data exchange with other devices and systems over the internet. IoT has extensive applications in myriad industries, spanning from home automation and healthcare to manufacturing and beyond.
-
-Virtual Reality (VR)
-
-Virtual Reality (VR) represents another exhilarating aspect of technology, delivering immersive experiences that blur the boundaries between the physical and digital worlds. Its implications extend across sectors like gaming, education, and even real estate.
-
-Home Automation
-
-Home Automation is an embodiment of IoT applications in personal spaces, aimed at improving comfort, efficiency, and security. It involves a wide array of features, including smart lighting, temperature control, and advanced security systems.
-
-Robotics and Computer Vision
-
-The merger of physical systems with intelligent software is manifested in the fields of Robotics and Computer Vision. These technologies enable machines to interact with their environments, recognize objects or faces, and carry out complex tasks, revolutionizing industries like manufacturing, healthcare, and transportation.
-
-Satellite Communications
-
-Satellite Communications is a crucial sector, underpinning global connectivity and data exchange. This technology has significant impacts on navigation, weather forecasting, and global communication networks.
-
-Medical Imaging
-
-Lastly, Medical Imaging illustrates the application of technology within healthcare, enhancing diagnostic and treatment capabilities. Innovations in this field hold the potential to detect diseases earlier and with greater accuracy, dramatically improving patient outcomes.');
+'Technology is a vast and constantly evolving domain that encompasses various industries and showcases human ingenuity. It represents the limitless potential of modern computing and is driven by the development and enhancement of algorithms and systems that learn from data, showcasing the tangible manifestation of machine intelligence.',
+'IoT facilitates data exchange in various sectors. VR enhances gaming, education and real estate. Home automation improves comfort and security. Robotics revolutionizes manufacturing and healthcare. Satellite communications aid in global data sharing and forecasting. Medical imaging advances healthcare.');
 
 -- Area #4
 INSERT INTO Areas (Title, Section1, Section2)
 VALUES
 ('Growth',
-'"Growth" is a multifaceted domain encompassing the sectors of finance, education, and travel. Its central objective is to promote individual and collective development through the application of innovative technological solutions.',
-'Finance
-
-In the sphere of finance, our concentration is on democratizing access to this field by providing user-friendly and personalized financial management tools. These tools are specifically designed to cater to the requirements of individuals and small enterprises, empowering them to make informed decisions and take proactive control of their financial well-being.
-
-Education
-
-Education, another pivotal component of this domain, is reconceptualized through the prism of advanced technology. Our goal is to curate immersive learning experiences that inspire and engage learners. By capitalizing on the possibilities of contemporary tech, we aim to revolutionize traditional learning paradigms, making education more interactive, effective, and enjoyable.
-
-Travel
-
-The travel sector is geared towards simplifying the overarching travel experience. With the help of technology, we aspire to smooth out travel logistics, rendering journeys more seamless and enjoyable. Our solutions target common travel inconveniences, aiming to offer a more streamlined, pleasurable, and personalized experience for all travelers.
-
-To encapsulate, the "Growth" domain is devoted to leveraging the potential of technology to fuel personal and economic development. We strongly endorse the transformative power of innovation to enhance experiences and drive progress within these crucial sectors of our lives.');
+'Growth is a multifaceted domain that spans across finance, education, and travel. Its central objective is to drive individual and collective development by leveraging cutting-edge technological solutions. By fostering innovation, it aims to facilitate sustainable and inclusive growth, empowering both individuals and societies to thrive in a rapidly changing world.',
+'In finance, we focus on democratizing access with personalized tools for informed decisions. In education, we are revolutionizing traditional paradigms with immersive tech-driven learning experiences. For travel, we are simplifying logistics to enhance the overall experience. Our goal in the Growth domain is to use technology to drive personal and economic progress.');
 /*----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
 -- Areas Refers Projects
