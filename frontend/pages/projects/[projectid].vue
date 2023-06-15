@@ -32,7 +32,7 @@
                         <NuxtLink class="supervisor-link" :to="`/people/${projectDetails.supervisor}`">
                             {{ projectDetails.name + " " + projectDetails.surname }}
                         </NuxtLink>
-                        <p style="margin: 1rem;">{{ people[projectDetails.supervisor].CV }}</p>
+                        <p style="margin: 1rem;">{{ supervisor.CV}}</p>
 
 
                     </p>
@@ -42,13 +42,13 @@
             </div>
             
             <div class="section-1">
-                <img class="image-project " :src="`/images/projects/projectid/${projectDetails.title}.png`">
+                <img class="image-project " :src="`/images/projects/${projectDetails.title}.webp`">
                 <p class="custom-paragraph-2">{{ projectDetails.section2 }}</p>
             </div>
             <div class="section-3">
                 <p class="custom-paragraph-3">{{ projectDetails.section3 }}</p>
                 <div class="image-container">
-                    <img  :src="`/images/projects/projectid/${projectDetails.title}2.png`">
+                    <img  :src="`/images/projects/${projectDetails.title}.webp`">
                 </div>
                 
             </div>
@@ -77,7 +77,7 @@ export default {
                 featured: 1,
             },
 
-            people: [{personid:-1, CV: "lorem ipsum" }]
+            supervisor: {personid:-1, CV: "lorem ipsum" }
         }
     },
 
@@ -105,7 +105,7 @@ export default {
             try {
                 const data = await makeCall(this.$config.public.SERVER_URL + "/getPeople" , 'GET');
                 console.log(data);
-                this.people = data
+                this.supervisor = data[this.projectDetails.supervisor]
             } catch (error) {
                 alert("Error, couldn't retrieve people ");
                 console.error(error);
@@ -236,7 +236,7 @@ export default {
 }
 
 .image-project{
-    border-radius: 10%;
+    border-radius: 5%;
     flex-grow: 1;
     
     width: 20rem;
@@ -259,8 +259,8 @@ export default {
     position: relative; /* Imposta la posizione relativa per consentire il posizionamento assoluto dell'immagine */
   height: 50vh; /* Imposta l'altezza desiderata per visualizzare solo la metà superiore */
   overflow: hidden;
-  border-top-right-radius: 10%;
-  border-top-left-radius: 10%;
+  border-top-right-radius: 5%;
+  border-top-left-radius: 5%;
   transform: scale(0.75);
 }
 
