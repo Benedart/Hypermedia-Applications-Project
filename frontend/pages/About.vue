@@ -9,10 +9,8 @@ import PeopleCard from '@/components/PeopleCard.vue'
     <!-- Main Content -->
     <main>
         <!-- Header Row -->
-        <div class="row mx-3">
-            <div class="col-md-12 custom-margins">
-                <div class="custom-heading row custom-top-margin"><b>About us</b></div>
-            </div>
+        <div class="row mx-3 d-flex justifyWhenNeeded">
+                <div class="custom-heading custom-top-margin"><b>About us</b></div>
         </div>
         <!-- Row with custom margins and separator-->
         <div class="row justify-content-center separator-margin custom-margins">
@@ -307,9 +305,28 @@ export default {
 /* A class for large headings */
 .custom-heading{
     font-size: 5em;
-    
     color: #000022;
+    max-width: 50vw;
+    margin-left: 2em;
+    line-height: 95%;
     
+}
+
+
+@media(max-width: 768px){
+    .custom-heading{
+    font-size: 4.5em;
+    line-height: 95%;
+    color: #000022;
+    text-align: center;
+    margin-left: 0em;
+    
+}
+
+/* A class to justify the content only incertain dimensions */
+.justifyWhenNeeded{
+justify-content: center;
+}
 }
 
 /* A class for setting a smaller top margin */
@@ -380,6 +397,7 @@ export default {
     .text2right{
         text-align: center;
     }
+
 }
 
 /* Media query for screens up to 480px wide */

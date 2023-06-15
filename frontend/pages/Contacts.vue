@@ -7,75 +7,77 @@
   <!-- Main content -->
   <main style="background-color: #FFFBFA;">
     
-    <!-- Header row with contact details -->
-    <div class="row">
-      <div class="col-md-6 d-flex align-items-center justify-content-center">
-        <div class="text-center">
-          <!-- Header title -->
-          <div class="row custom-heading" style="line-height: 80%;">
-            <b>Contact us</b>
-          </div>
-          <!-- Header description -->
-          <div class="row custom-margin">
-            <div class="col-md-12 my-2">
-              <h3>Do you want to present your project and want to collaborate? Contact us!</h3>
+    <div style="max-width: 98.1vw;">
+      <!-- Header row with contact details -->
+      <div class="row">
+        <div class="col-md-6 d-flex align-items-center justify-content-center">
+          <div class="text-center">
+            <!-- Header title -->
+            <div class="row custom-heading" style="line-height: 80%;">
+              <b>Contact us</b>
+            </div>
+            <!-- Header description -->
+            <div class="row custom-margin">
+              <div class="col-md-12 my-2">
+                <h3>Do you want to present your project and want to collaborate? Contact us!</h3>
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <!-- Image on the right -->
-      <div class="col-md-6 d-flex align-items-center justify-content-end ml-auto p-0">
-        <img class="centered-image" src="/images/contact/team.webp" alt="">
-      </div>
-    </div>
-    
-    <!-- Card container with contact details -->
-    <div class="row justify-content-center pb-5 card-container" style="background: #E5E5E5;">
-      <div class="row mx-3 justify-content-center">
-        <!-- Office address card -->
-        <div class="card mb-3 card-custom mx-auto mr-md-3 ml-md-3">
-          <div class="row image-container">
-            <img class="card-img-top img-custom" src="/images/contact/address.webp" alt="">
-          </div>
-          <br>
-          <div class="row justify-content-center" style="color: #FFFBFA;">
-            <h2>Our main office</h2>
-            Via Camillo Golgi, 39, Milano, MI
-          </div>
-        </div>
-
-        <!-- Phone number card -->
-        <div class="card mb-3 card-custom mx-auto mr-md-3 ml-md-3">
-          <div class="row image-container">
-            <img class="card-img-top img-custom" src="/images/contact/phone.webp" alt="">
-          </div>
-          <br>
-          <div class="row justify-content-center mx-3" style="color: #FFFBFA;">
-            <h2>Phone number</h2>
-            +39 3337183949
-          </div>
-        </div>
-
-        <!-- Email card -->
-        <div class="card mb-3 card-custom mx-auto mr-md-3 ml-md-3" style="color: #FFFBFA;">
-          <div class="row image-container">
-            <img class="card-img-top img-custom" src="/images/contact/email.webp" alt="">
-          </div>
-          <br>
-          <div class="row justify-content-center">
-            <h2>Email</h2>
-            <a href="mailto:teamHyperMeow@gmail.com" class="email-link"
-              style="color: #FFFBFA;">teamHyperMeow@gmail.com</a>
-          </div>
+        <!-- Image on the right -->
+        <div class="col-md-6 d-flex align-items-center p-0">
+          <img class="centered-image" src="/images/contact/team.webp" alt="">
         </div>
       </div>
       
-      <!-- Contact form -->
-      <div class="row justify-content-center mb-4 contact-form-container">
-        <ContactForm style="width: 75%;"></ContactForm>
+      <!-- Card container with contact details -->
+      <div class="row justify-content-center pb-5 card-container" style="background: #E5E5E5;">
+        <div class="row mx-3 justify-content-center">
+          <!-- Office address card -->
+          <div class="card mb-3 card-custom mx-auto mr-md-3 ml-md-3">
+            <div class="row image-container">
+              <img class="card-img-top img-custom" src="/images/contact/address.webp" alt="">
+            </div>
+            <br>
+            <div class="row justify-content-center" style="color: #FFFBFA;">
+              <h2>Our main office</h2>
+              Via Camillo Golgi, 39, Milano, MI
+            </div>
+          </div>
+
+          <!-- Phone number card -->
+          <div class="card mb-3 card-custom mx-auto mr-md-3 ml-md-3">
+            <div class="row image-container">
+              <img class="card-img-top img-custom" src="/images/contact/phone.webp" alt="">
+            </div>
+            <br>
+            <div class="row justify-content-center mx-3" style="color: #FFFBFA;">
+              <h2>Phone number</h2>
+              +39 3337183949
+            </div>
+          </div>
+
+          <!-- Email card -->
+          <div class="card mb-3 card-custom mx-auto mr-md-3 ml-md-3" style="color: #FFFBFA;">
+            <div class="row image-container">
+              <img class="card-img-top img-custom" src="/images/contact/email.webp" alt="">
+            </div>
+            <br>
+            <div class="row justify-content-center">
+              <h2>Email</h2>
+              <a href="mailto:teamHyperMeow@gmail.com" class="email-link"
+                style="color: #FFFBFA;">teamHyperMeow@gmail.com</a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Contact form -->
+        <div class="row justify-content-center mb-4 contact-form-container">
+          <ContactForm style="width: 75%;"></ContactForm>
+        </div>
       </div>
-    </div>
+  </div>
   </main>
 </template>
 
@@ -84,13 +86,13 @@
 /* Styling the heading */
 .custom-heading {
     font-size: 5.5em;
-    margin-top: 20%;
+    margin-top: 10%;
     color: #000022;
 }
 
 /* Styling the margin */
 .custom-margin{
-    margin-top: 9%;
+    margin-top: 3%;
     margin-bottom: 10%;
     color: #000022;
 }
@@ -127,14 +129,14 @@
 
     /* Adjusting the custom margin */
     .custom-margin{
-        margin-top: 4%;
+        margin-top: 3%;
         margin-bottom: 5%;
     }
 
     /* Adjusting the custom heading */
     .custom-heading {
         font-size: 5.5em;
-        margin-top: 10%;
+        margin-top: 5%;
     }
 }
 
@@ -152,11 +154,6 @@
         padding-top: 30px;
     }
 
-    /* Adjusting the margin for the first card */
-    .first-card {
-        margin-top: 40px;
-    }
-
     /* Adjusting the custom margin */
     .custom-margin{
         margin-top: 2%;
@@ -166,7 +163,7 @@
     /* Adjusting the custom heading */
     .custom-heading {
         font-size: 5.5em;
-        margin-top: 5%;
+        margin-top: 2%;
     }
 }
 
