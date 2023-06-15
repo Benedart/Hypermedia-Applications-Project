@@ -8,8 +8,6 @@ import PeopleCard from '@/components/PeopleCard.vue'
 
 <template>
   <main>
-    <!-- Main container -->
-    <div class="container-fluid">
          <!-- Custom row with introductory statement and a call to action -->
         <div class="custom-row" style="min-height: 60em; padding-bottom: 10em;">
           <div class="title col-md-5" style="line-height: 95%;">If you don’t believe in it, we do.</div>
@@ -124,7 +122,6 @@ import PeopleCard from '@/components/PeopleCard.vue'
                     </div>
                 </div>
             </div>
-    </div>
   </main>
 </template>
 
@@ -189,9 +186,9 @@ export default {
   content: ""; /* No content inside the pseudo-element */
   position: absolute; /* Positioning is absolute to its nearest positioned ancestor */
   top: 0; /* Position the top edge at the top edge of the parent element */
-  left: -50px; /* Shift the element 50px to the left */
   height: 100%; /* The element should take up the full height of the parent */
-  width: calc(100vw + 2em); /* Calculate the width based on the full viewport width plus margins */
+  max-width: calc(100vw); /* Calculate the width based on the full viewport */
+  width: 100%;
   background-image: url('/images/index/contact.gif'); /* Set the background image of the element */
   background-position: left; /* Center the background image */
   background-repeat: no-repeat; /* Do not repeat the background image */
@@ -303,19 +300,17 @@ export default {
   content: "";
   position: absolute;
   top: 0;
-  left: -50px; /* shift the image to the left to cover the margins */
   height: 100%;
-  width: calc(100vw + 2em); /* Full viewport width plus margins */
+  max-width: calc(100vw); /* Full viewport */
+  width: 100%;
   background-image: url('./images/index/plant.webp');
-  background-position: center; /* Center the image */
+  background-position: end; /* Center the image */
   background-repeat: no-repeat; /* Do not repeat the image */
   background-size: cover; /* Resize the background image to cover the entire container */
 }
 
 /* CSS to extend the background beyond the container bounds */
 .background-extender{
-    margin-left: -100px; 
-    margin-right: -100px; 
     padding-left: 100px; 
     padding-right: 100px;
 }
@@ -328,8 +323,8 @@ export default {
     flex-direction: column;
     display: flex;
     flex-wrap: wrap;
-    margin-right: -15px;
-    margin-left: -15px;
+    margin-right: 0;
+    margin-left: 0;
 }
 
 /* CSS to create a space at the top of an element */
