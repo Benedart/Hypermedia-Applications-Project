@@ -105,10 +105,4 @@ export default {
     margin-bottom:  5rem;
 }
 
-.card:hover {
-    transition: 0.5s;
-    margin-top: 5em;
-    transform: translateY(-0.5%);
-    box-shadow: 0 4rem 8rem rgba(0, 1, 33, 0.5);
-}
 </style>

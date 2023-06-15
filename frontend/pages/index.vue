@@ -3,6 +3,7 @@
 import { makeCall } from '@/utils/common'
 import ProjectCard from '@/components/ProjectCard.vue'
 import PeopleCard from '@/components/PeopleCard.vue'
+
 </script>
 
 <template>
@@ -49,7 +50,7 @@ import PeopleCard from '@/components/PeopleCard.vue'
                         <p class="custom-bold-num">Incubated Unicorns</p>
                     </div>
                 </div>
-            </div>
+        </div>
             <hr style = "width: 70%; margin: 0 auto;">
             <!-- Featured projects section, with each project presented using ProjectCard component -->
             <div class="row mx-3 justify-content-center separator-margin">
@@ -96,8 +97,9 @@ import PeopleCard from '@/components/PeopleCard.vue'
               </div>
             </div>
             <!-- A brief on areas that the company explored -->
-            <div>
-                <div class ="row justify-content-center custom-bold" style="font-size: 3em; margin-top: 2em;">Areas that we explored</div>
+            <div style="background-color:#FFF">
+                <div class ="row justify-content-center custom-bold" style="margin-top: 2em;"></div>
+                <h1 style="text-align: center; color: #000022; "> Areas that we explored </h1>
                 <div class="row image-wood" style="min-height: 60em;">
                     <div class="title-a col-md-5" style="line-height: 103%;">Investing in Healthcare, Ecosustainability, Technology, and Growth.</div>
                     <div class="subtitle-a col-md-4">From revolutionizing healthcare to championing ecosustainability, leveraging technology, and fostering growth, we are at the forefront of driving innovation. 
@@ -110,13 +112,15 @@ import PeopleCard from '@/components/PeopleCard.vue'
                 </div>
             </div>  
             <!-- A final call to contact us -->
-            <div class="custom-row-c">
-                <div class="content-right">
-                    <div class="title-c col-md-5" style="line-height: 98%;">Ready to Transform Your Future? Let's <strong> Connect.</strong></div>
-                    <div class="col-md-4 mx-3 d-flex">
-                    <nuxt-link to="/contacts" tag="button" type="button" class="custom-btn-c d-flex">
-                        <b>Contact us</b>
-                    </nuxt-link>
+            <div style="background-color:#D9D9D9">
+                <div class="custom-row-c">
+                    <div class="content-right">
+                        <div class="title-c col-md-5" style="line-height: 98%;">Ready to Transform Your Future? Let's <strong> Connect.</strong></div>
+                        <div class="col-md-4 mx-3 d-flex">
+                        <nuxt-link to="/contacts" tag="button" type="button" class="custom-btn-c d-flex">
+                            <b>Contact us</b>
+                        </nuxt-link>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -175,7 +179,7 @@ export default {
 /* Define style for a custom row */
 .custom-row-c {
   position: relative; 
-  min-height: 60em; /* The minimum height of the row */
+  min-height: 40em; /* The minimum height of the row */
   margin-top: -25em; /* Move the row up by 25em */
   padding-bottom: 10em; /* Add padding at the bottom of the row */
 }
@@ -188,8 +192,8 @@ export default {
   left: -50px; /* Shift the element 50px to the left */
   height: 100%; /* The element should take up the full height of the parent */
   width: calc(100vw + 2em); /* Calculate the width based on the full viewport width plus margins */
-  background-image: url('/images/index/contact.webp'); /* Set the background image of the element */
-  background-position: center; /* Center the background image */
+  background-image: url('/images/index/contact.gif'); /* Set the background image of the element */
+  background-position: left; /* Center the background image */
   background-repeat: no-repeat; /* Do not repeat the background image */
   background-size: cover; /* Resize the background image to cover the entire element */
 }
@@ -414,12 +418,11 @@ export default {
 .title-c {
   font-size: 3em;
   text-align: end;
-  font-weight: bolder;
   color: #000022;
-  margin-top: 7.2em;
+  margin-top: 4.5em;
   margin-right: 2em;
   max-width: 60%;
-  font-family: Poppins, sans-serif;
+  
 }
 
 /* CSS for subtitles styling */
@@ -695,5 +698,10 @@ export default {
     font-family: Avenir, sans-serif;
 }
 }
+
+
+
+
+
 </style>
 

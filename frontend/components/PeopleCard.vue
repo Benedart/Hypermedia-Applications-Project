@@ -1,5 +1,8 @@
 <template >
     <div class="card h-100 mx-auto" style="width: 18rem; margin-top: 2em; background-color:#FFFBFA;">
+        <nuxt-link :to="linkedin" tag="button" type="button" class="float-end" >
+                <img class="card-img-linkedin img-custom" src="/images/contact/linkedin.webp" alt="Linkedin Icon">
+        </nuxt-link>
         <img class="card-img-top" :src="`/images/People/${personid}.webp`" :alt="personid">
         <div class="card-body">
             <h5 class="card-title">{{ name + " " + surname }}</h5>
@@ -8,12 +11,11 @@
 
         <div class="card-footer">
             <p class="card-Description">{{ shorterDescription(Description) }}.</p>
-            <a :href="linkedin" class="float-end"><img class="card-img-linkedin img-custom"
-                    src="/images/contact/linkedin.webp" alt="Linkedin Icon" style="height: auto;"></a>
             <nuxt-link :to="`/People/${personid}`" tag="button" type="button" class="card-btn ">
                 <b>Learn more</b>
             </nuxt-link>
         </div>
+
     </div>
 </template>
 
@@ -49,11 +51,17 @@ export default {
 </script> 
 
 <style scoped>
+
+.float-end{
+    height: auto; 
+    margin-top: 1em;
+    margin-left:15em;
+}
 .card-img-top {
     border-radius: 100%;
     width: 170px;
     margin: auto;
-    margin-top: 40px;
+    margin-top: 25px;
 }
 
 .card-body {
@@ -79,7 +87,7 @@ export default {
 
 .card-img-linkedin
 {
-    margin-top: -53.5em;
+    
     width: 40px; 
     
 }
@@ -87,6 +95,7 @@ export default {
 .card-footer {
     background-color: #086788;
     font-size: 1.0em;
+    margin-top: -1em;
 }
 
 .card-Description {
@@ -113,15 +122,22 @@ export default {
     transition: 0.2s;
     cursor: pointer;
     letter-spacing: 0.1rem;
-    margin-top: 0.5em;
+    margin-top: 1.5em;
     margin-bottom:0.5em;
     margin-right: 4em;
     margin-left: 4em;
     font-family: Avenir, sans-serif;
 }
 
-.card-btn:hover,
+
 .card-btn:active {
     background-color: #c2cffc;
+}
+
+.card:hover {
+    transition: 0.5s;
+    margin-top: 5em;
+    transform: translateY(-0.5%);
+    box-shadow: 0 4rem 8rem rgba(0, 1, 33, 0.5);
 }
 </style>
