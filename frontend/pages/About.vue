@@ -10,17 +10,20 @@ import PeopleCard from '@/components/PeopleCard.vue'
     <main>
         <!-- Header Row -->
         <div class="row mx-3 d-flex justifyWhenNeeded">
-                <div class="custom-heading custom-top-margin"><b>About us</b></div>
+                <div class="title">About us</div>
         </div>
         <!-- Row with custom margins and separator-->
+    <div class ="separator-margin py-5 " style = "background-color: #9991A1;">
         <div class="row justify-content-center separator-margin custom-margins">
-            <div class="col-md-7 d-flex align-items-center justify-content-center">
-                <b class="custom-h3" style="text-align:center; line-height: 100%; font-size: 2em;">“Embracing novel ideas, fueling unprecedented
+            <div class="col-md-9 d-flex align-items-center justify-content-center">
+                    <b class="custom-h3" style="text-align:center; line-height: 100%; font-size: 2em; margin-top:-2.5em;">
+                        Embracing novel ideas, fueling unprecedented
                         innovations, and
                         committing to the creation of a future where sustainability is not just a concept, but an
-                        established practice.”</b>
+                        established practice.</b>
             </div>
         </div>
+    </div>
         <!-- Row with mission text and image -->
         <div class="row d-flex justify-content-center margin-t-1 custom-margins-l">
             <!-- Mission Text Column -->
@@ -52,7 +55,7 @@ import PeopleCard from '@/components/PeopleCard.vue'
             <!-- Image Column -->
             <div class="col-md-5 my-3 d-flex justify-content-center">
                 <img class="card-img-top rounded"
-                    style="width: 70%; object-fit: cover;" src="/images/about/usCats.webp" alt="">
+                    style="width: 90%; object-fit: cover;" src="/images/about/usCats.webp" alt="">
             </div>
         </div>
         <!-- Row with the VC achievements -->
@@ -102,6 +105,9 @@ import PeopleCard from '@/components/PeopleCard.vue'
         <!-- Row with investment philosophy -->
         <div class="row mx-3 justify-content-center custom-top-margin custom-margins text-style">
             <div class="col-md-6" style="text-align: center;">
+                <br>
+                <br>
+                <br>
                 <h3 class = "custom-bold" style ="font-size: 1.5em;">“Investing in the future does not only mean foreseeing the future, but creating it”
                 </h3>
             </div>
@@ -140,7 +146,7 @@ import PeopleCard from '@/components/PeopleCard.vue'
             <div class="row mx-3 d-flex justify-content-center custom-margins">
                 <nuxt-link to="/projects" tag="button" type="button"
                     class="btn btn-secondary">
-                    Explore all projects
+                    <b>Explore all projects</b>
                 </nuxt-link>
             </div>
         </div>
@@ -162,7 +168,7 @@ import PeopleCard from '@/components/PeopleCard.vue'
             <br>
             <div class="row mx-3 d-flex justify-content-center custom-margins">
                 <nuxt-link to="/people" tag="button" type="button" class="btn btn-secondary">
-                    Meet the whole team
+                    <b>Meet the whole team</b>
                 </nuxt-link>
             </div>
         </div>
@@ -254,13 +260,10 @@ export default {
     font-size: 1.5em; /* Font size is 1.5 times the base size */
     line-height: 105%; /* Line height is 105% of the font size */
     color: #000022;
+    text-align:justify;
    
 }
 
-/* A class for setting a large top margin */
-.custom-top-margin{
-    margin-top: 150px; 
-}
 
 /* A class for setting a top margin of 120px */
 .margin-t-1{
@@ -303,23 +306,21 @@ export default {
 }
 
 /* A class for large headings */
-.custom-heading{
-    font-size: 5em;
+.title{
+    font-size: 3.5em;
     color: #000022;
-    max-width: 50vw;
-    margin-left: 2em;
-    line-height: 95%;
+    text-align:center
     
 }
 
 
 @media(max-width: 768px){
-    .custom-heading{
-    font-size: 4.5em;
-    line-height: 95%;
+    .title{
+    font-size: 3.5em;
+    
     color: #000022;
     text-align: center;
-    margin-left: 0em;
+    
     
 }
 
@@ -377,9 +378,7 @@ justify-content: center;
         margin-top: 60px;
     }
 
-    .custom-top-margin{
-        margin-top: 40px;
-    }
+    
 
     .separator-margin{
         margin-top: 40px;
@@ -418,9 +417,6 @@ justify-content: center;
         margin-right: 30px;
     }
     
-    .custom-top-margin{
-        margin-top: 30px;
-    }
 
     .margin-t-1{
         margin-top: 30px;
@@ -443,7 +439,7 @@ justify-content: center;
 .custom-h3 {
     font-size: 1.75em;
     font-weight: 700;
-    color: #086788;
+    color: snow;
 }
 
 /* A class for bold text with a specific color */
@@ -472,11 +468,13 @@ justify-content: center;
 /* A class for making elements round */
 .rounded {
     border-radius: 75%;
+    
 }
 
 /* A class for aligning text to the right */
 .text-right {
     text-align: right;
+    text-align:justify;
 }
 
 
@@ -485,5 +483,12 @@ justify-content: center;
     width: 90%;
     background-color: #086788;
     margin-top: 2%;
+    
+}
+
+.btn-secondary:hover,
+
+.btn-secondary:active {
+    background-color:  rgb(13, 79, 106);
 }
 </style>

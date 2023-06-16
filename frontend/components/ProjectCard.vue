@@ -134,7 +134,7 @@ export default {
 
 .card-btn:hover,
 .card-btn:active {
-    background-color: #c2cffc;
+    background-color: rgb(180, 205, 214);
 }
 
 .card:hover {

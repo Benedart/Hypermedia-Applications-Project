@@ -25,7 +25,7 @@ import PeopleCard from '@/components/PeopleCard.vue'
                 <p class="custom-bold">reshaping opportunities in Italy and beyond with unprecedented growth.</p></h3>
         </div>
         <!-- Section providing more details about the company's vision and goals -->
-        <div class = "col-md-6 sm-separator mx-auto" style="text-align: justify; font-size: 1.3em;">
+        <div class = "col-md-6 custom-margin justify-content-center mx-auto" style="text-align:justify; font-size:1.3em;">
             <p>For over 50 years, we have been partnering with businesses, organizations, and institutions, assisting them in overcoming their most complex challenges, creating value, and accelerating their growth through sustainable and inclusive transformation processes.</p>
             <p>We are dedicated to contributing to the development of the communities we serve and safeguarding our planet through research projects in social, technological, healthcare, and environmental domains.</p>
             <p>We ensure equal opportunities for professional growth for all individuals working with us, promoting the values of diversity, inclusion, and meritocracy. </p>
@@ -49,7 +49,7 @@ import PeopleCard from '@/components/PeopleCard.vue'
                     </div>
                 </div>
         </div>
-            <hr style = "width: 70%; margin: 0 auto;">
+            <hr class="color-line" style = "width: 70%; margin: 0 auto;">
             <!-- Featured projects section, with each project presented using ProjectCard component -->
             <div class="row mx-3 justify-content-center separator-margin">
                 <h1 style="text-align: center; color: #000022;"> Featured Projects </h1>
@@ -72,7 +72,7 @@ import PeopleCard from '@/components/PeopleCard.vue'
                 </nuxt-link>
             </div>
             <!-- Our People section presented on a colored background -->
-            <div class ="separator-margin py-5 background-extender" style = "background-color: #D9D9D9;">
+            <div class ="separator-margin py-5 " style = "background-color: #D9D9D9;">
               <div class="row mx-3 justify-content-center">
                     <h1 style="text-align: center; color: #000022; "> Our People </h1>
               </div>
@@ -110,7 +110,7 @@ import PeopleCard from '@/components/PeopleCard.vue'
                 </div>
             </div>  
             <!-- A final call to contact us -->
-            <div style="background-color:#D9D9D9">
+            <div style="background-color:#000022">
                 <div class="custom-row-c">
                     <div class="content-right">
                         <div class="title-c col-md-5" style="line-height: 98%;">Ready to Transform Your Future? Let's <strong> Connect.</strong></div>
@@ -181,11 +181,18 @@ export default {
   padding-bottom: 10em; /* Add padding at the bottom of the row */
 }
 
+/*to color the line between numbers and projects*/
+.color-line{
+    color:#000022;
+    
+}
+
 /* Define the ::before pseudo-element for the custom row */
 .custom-row-c::before {
   content: ""; /* No content inside the pseudo-element */
   position: absolute; /* Positioning is absolute to its nearest positioned ancestor */
   top: 0; /* Position the top edge at the top edge of the parent element */
+   /* Shift the element 50px to the left */
   height: 100%; /* The element should take up the full height of the parent */
   max-width: calc(100vw); /* Calculate the width based on the full viewport */
   width: 100%;
@@ -333,28 +340,39 @@ export default {
 }
 
 /* CSS to create a smaller space at the top of an element */
-.sm-separator{
-    margin-top: 40px;
+.custom-margin{
+    margin-top: 15px;
 }
 
 /* CSS for responsive design - when screen width is up to 768px */
 @media (max-width: 768px) {
     .separator-margin{
     margin-top: 40px;
-}
+    
+    }
 
-.sm-separator{
-    margin-top: 20px;
-}
+    .custom-margin{
+        
+        padding-left: 50px;
+        padding-right: 50px;
+        margin-top: 15px;
+        
+    }
+    .custom-bold{
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
 }
 
 /* CSS for responsive design - when screen width is up to 480px */
 @media (max-width: 480px) {
     .separator-margin{
     margin-top: 15px;
+    
 }
 
-.sm-separator{
+.custom-margin{
     margin-top: 15px;
 }
 
@@ -386,6 +404,11 @@ export default {
     background-color: #086788;
     margin-top: 2%;
 }
+.btn-secondary:hover,
+
+.btn-secondary:active {
+    background-color:  rgb(13, 79, 106);
+}
 
 /* CSS for the title styling */
 .title{
@@ -413,7 +436,7 @@ export default {
 .title-c {
   font-size: 3em;
   text-align: end;
-  color: #000022;
+  color: snow;
   margin-top: 4.5em;
   margin-right: 2em;
   max-width: 60%;
@@ -465,6 +488,12 @@ export default {
     margin-left: 5.5em; /* Left margin */
     font-family: Avenir, sans-serif; /* Font of the button text */
 }
+.custom-btn:hover,
+
+
+.custom-btn:active {
+    background-color:  rgb(180, 205, 214);
+}
 
 /* Custom style for areas button*/
 .custom-btn-a {
@@ -490,6 +519,13 @@ export default {
     font-family: Avenir, sans-serif;
 }
 
+.custom-btn-a:hover,
+
+
+.custom-btn-a:active {
+    background-color:  rgb(13, 79, 106);
+}
+
 /* Custom style for contact us button*/
 .custom-btn-c {
     display: flex; 
@@ -510,6 +546,12 @@ export default {
     margin-left: auto; 
     margin-right: 5em;
     font-family: Avenir, sans-serif;
+}
+.custom-btn-c:hover,
+
+
+.custom-btn-c:active {
+    background-color:  rgb(13, 79, 106);
 }
 
 /* CSS rules for screen widths up to 725px */

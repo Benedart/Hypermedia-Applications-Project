@@ -158,6 +158,8 @@ export default {
 .section-2{
     display: flex;
     margin-top: 2rem;
+    text-align:justify;
+    font-size:1em;
 
 }
 
@@ -172,6 +174,9 @@ export default {
 
     .section-2{
         flex-direction: column;
+        text-align:justify;
+        font-size:1em;
+   
     }
 
     

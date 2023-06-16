@@ -232,6 +232,13 @@ export default {
     background-color: #086788;
   }
 
+  .btn:hover,
+
+  .btn:active {
+
+    background-color:  rgb(13, 79, 106);
+  } 
+
   /* Style for confirmation text */
   .confirmation {
     align-self: center;

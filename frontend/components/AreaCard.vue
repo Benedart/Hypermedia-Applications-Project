@@ -175,6 +175,7 @@ export default {
     color: var(--color-oxford-blue);
     margin-bottom: 1rem;
     background-color: var(--color-snow);
+    border-bottom: var(--bs-card-border-width) solid var(--color-cerulean);
 }
 
 .card-btn {
@@ -202,7 +203,7 @@ export default {
 
 .card-btn:hover,
 .card-btn:active {
-    background-color: #c2cffc;
+    background-color:rgb(180, 205, 214);
 }
 
 .projectIcon{

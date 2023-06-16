@@ -105,4 +105,8 @@ export default {
     margin-bottom:  5rem;
 }
 
+.container-text-center{
+    margin-bottom:10em;
+}
+
 </style>

@@ -130,5 +130,6 @@ export default {
     height: auto;
     max-height: 90%;
     margin: auto;
+    
 }
 </style>

@@ -28,7 +28,7 @@
                     <img class="image-person " 
                         :src="`/images/People/${projectDetails.supervisor}.webp`">
                     <p class="supervisor-p">
-                        <b style="font-size: 20px;">Supervisor: </b>
+                        <b style="font-size: 20px; margin-left:0.7em; color:#000022">Supervisor: </b>
                         <NuxtLink class="supervisor-link" :to="`/people/${projectDetails.supervisor}`">
                             {{ projectDetails.name + " " + projectDetails.surname }}
                         </NuxtLink>
@@ -48,7 +48,7 @@
             <div class="section-3">
                 <p class="custom-paragraph-3">{{ projectDetails.section3 }}</p>
                 <div class="image-container">
-                    <img  :src="`/images/projects/${projectDetails.title}.webp`">
+                    <img  :src="`/images/projects/work.webp`">
                 </div>
                 
             </div>
@@ -150,22 +150,28 @@ export default {
 .section-1{
     display: flex;
     margin-top: 2rem;
+    text-align:justify;
+    font-size:1em;
 
 }
 
 @media  screen and (max-width: 1000px) {
     .section-1{
         flex-direction: column;
+        text-align:justify;
+        font-size:1em;
     }
 
     .section-1.custom-paragraph-1{
         width: auto;
         justify-content: center;
-        text-align: center;
+        text-align: justify;
         border-right: 0;
         padding-right: 0;
         border-bottom: 1px solid var(--color-cerulean);
         padding-bottom: 2rem;
+        font-size:1.3em;
+        
     }
 }
 
@@ -173,6 +179,8 @@ export default {
     display: flex;
     flex-direction: column;
     margin-top: 3rem;
+    text-align:justify;
+    font-size:1em;
 }
 
 .custom-paragraph-1{
@@ -182,6 +190,8 @@ export default {
     padding-right: 2rem;
     padding:  3rem 3rem 3rem 0;
     margin-bottom: auto;
+    text-align:justify;
+    font-size:1em;
 
 }
 
@@ -213,10 +223,11 @@ export default {
 
 .supervisor-p{
     width: 24rem;
-    text-align: center;
+    text-align: left;
+    margin-left:2em;
     align-items: center;
     justify-content: center;
-    margin-top: 1rem;
+    margin-top: -1.5em;
 }
 
 .supervisor-link{
@@ -239,6 +250,8 @@ export default {
     border-radius: 100%;
     width: 170px;
     margin: auto;
+    margin-top:-1em;
+    margin-left:1em;
 }
 
 .image-project{
@@ -260,14 +273,14 @@ export default {
 
 .image-container{
     flex-grow: 1;
-
-
     position: relative; /* Imposta la posizione relativa per consentire il posizionamento assoluto dell'immagine */
-  height: 50vh; /* Imposta l'altezza desiderata per visualizzare solo la metà superiore */
-  overflow: hidden;
-  border-top-right-radius: 5%;
-  border-top-left-radius: 5%;
-  transform: scale(0.75);
+    height: 50vh; /* Imposta l'altezza desiderata per visualizzare solo la metà superiore */
+    overflow: hidden;
+    border-top-right-radius: 5%;
+    border-top-left-radius: 5%;
+    margin-top:3em;
+    margin-bottom:5em;
+    
 }
 
 .image-container img {

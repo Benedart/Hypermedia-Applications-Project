@@ -5,8 +5,7 @@
 
 <template>
   <!-- Main content -->
-  <main style="background-color: #FFFBFA;">
-    
+  <main class="margin">
     <div style="max-width: 98.1vw;">
       <!-- Header row with contact details -->
       <div class="row">
@@ -19,7 +18,9 @@
             <!-- Header description -->
             <div class="row custom-margin">
               <div class="col-md-12 my-2">
-                <h3>Do you want to present your project and want to collaborate? Contact us!</h3>
+                <br>
+                <h3>Do you want to present your project</h3>
+                <h3>and want to collaborate? <b>Contact us!</b></h3>
               </div>
             </div>
           </div>
@@ -30,7 +31,7 @@
           <img class="centered-image" src="/images/contact/team.webp" alt="">
         </div>
       </div>
-      
+    
       <!-- Card container with contact details -->
       <div class="row justify-content-center pb-5 card-container" style="background: #E5E5E5;">
         <div class="row mx-3 justify-content-center">
@@ -59,33 +60,38 @@
           </div>
 
           <!-- Email card -->
-          <div class="card mb-3 card-custom mx-auto mr-md-3 ml-md-3" style="color: #FFFBFA;">
-            <div class="row image-container">
-              <img class="card-img-top img-custom" src="/images/contact/email.webp" alt="">
-            </div>
-            <br>
-            <div class="row justify-content-center">
-              <h2>Email</h2>
-              <a href="mailto:teamHyperMeow@gmail.com" class="email-link"
-                style="color: #FFFBFA;">teamHyperMeow@gmail.com</a>
-            </div>
-          </div>
+          <NuxtLink :to="`mailto:teamHyperMeow@gmail.com`" class="btn card mb-3 card-custom mx-auto mr-md-3 ml-md-3" tag="button" type="button" style="color: #FFFBFA;">
+              <div class="row image-container">
+                  <img class="card-img-top img-custom" src="/images/contact/email.webp" alt="">
+              </div>
+              <br>
+              <div class="row justify-content-center">
+                <h2>Email</h2>
+                teamHyperMeow@gmail.com
+              </div>
+          </NuxtLink>
         </div>
         
-        <!-- Contact form -->
-        <div class="row justify-content-center mb-4 contact-form-container">
-          <ContactForm style="width: 75%;"></ContactForm>
-        </div>
+          <!-- Contact form -->
+          <div class="row justify-content-center mb-4 contact-form-container">
+            <ContactForm style="width: 75%;"></ContactForm>
+          </div>
       </div>
-  </div>
+    </div>
   </main>
 </template>
 
 <style scoped>
 
+/* Styling the margin of the page from the footer*/
+.margin{
+  background-color: #FFFBFA; 
+  margin-bottom:10em;
+}
+
 /* Styling the heading */
 .custom-heading {
-    font-size: 5.5em;
+    font-size: 3.5em;
     margin-top: 10%;
     color: #000022;
 }
@@ -114,6 +120,12 @@
     margin: 0;
 }
 
+.btn:hover,
+.btn:active {
+    background-color: rgb(13, 79, 106);
+    
+}
+
 /* Media queries for screen width between 760px and 1460px */
 @media (min-width: 760px) and (max-width: 1460px) {
     /* Adjusting margin for the first and second child of card-custom class */
@@ -135,7 +147,7 @@
 
     /* Adjusting the custom heading */
     .custom-heading {
-        font-size: 5.5em;
+        font-size: 3.5em;
         margin-top: 5%;
     }
 }
@@ -162,7 +174,7 @@
 
     /* Adjusting the custom heading */
     .custom-heading {
-        font-size: 5.5em;
+        font-size: 3.5em;
         margin-top: 2%;
     }
 }
@@ -189,11 +201,7 @@
     height: auto;
 }
 
-/* Styling the email link */
-.email-link {
-    color: black;
-    text-decoration: none;
-}
+
 
 /* Styling the contact form container */
 .contact-form-container {

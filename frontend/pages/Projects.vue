@@ -381,7 +381,12 @@ icon.addEventListener("click",doSearch);
 
 </script>
 
-<style>
+<style scoped>
+
+.container{
+    margin-bottom:10em;
+}
+
 .title {
     text-align: center;
     margin-bottom:  5rem;
