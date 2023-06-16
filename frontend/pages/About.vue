@@ -16,7 +16,7 @@ import PeopleCard from '@/components/PeopleCard.vue'
     <div class ="separator-margin py-5 " style = "background-color: #9991A1;">
         <div class="row justify-content-center separator-margin custom-margins">
             <div class="col-md-9 d-flex align-items-center justify-content-center">
-                    <b class="custom-h3" style="text-align:center; line-height: 100%; font-size: 2em; margin-top:-2.5em;">
+                    <b class="custom-h3" style="text-align:center; line-height: 100%; font-size: 2em;">
                         Embracing novel ideas, fueling unprecedented
                         innovations, and
                         committing to the creation of a future where sustainability is not just a concept, but an
@@ -440,6 +440,16 @@ justify-content: center;
     font-size: 1.75em;
     font-weight: 700;
     color: snow;
+    margin-top:-2.5em;
+}
+
+@media(max-width: 768px){
+    .custom-h3 {
+    font-size: 1.75em;
+    font-weight: 700;
+    color: snow;
+    margin-top:-1em;
+}
 }
 
 /* A class for bold text with a specific color */
