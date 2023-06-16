@@ -6,26 +6,17 @@
         
         <div class="card-content">
             <h1 class="card-header"><b> {{ title }} </b></h1>
-            <p style="font-size: 1.2rem; margin-bottom: 0.5rem; text-align: center; color: var(--color-oxford-blue);" >Projects</p>
+            <p style="top: 12%; left: 50%; transform: translate(-50%,100%); font-size: 1.2rem; text-align: center; color: var(--color-oxford-blue); position: absolute;" >Projects</p>
 
-            
-            <!--div class="grid" >
+            <div class="icon-scroller snaps-inline" > 
                 <div v-for="project in projects" >
-                    <NuxtLink :to="`/project/${project.ProjectID}`" class="mytooltip">
+                    <NuxtLink :to="`/projects/${project.ProjectID}`" class="mytooltip tooltip-container" >
                         <span class="tooltiptext"> {{project.Title}} </span>
-                        <img :src="`/images/projects/${project.Title}.webp`" class="projectIcon"/>
-                    </NuxtLink>
-                </div>
-            </div-->
-
-            <div class="icon-scroller snaps-inline" >
-                <div v-for="project in projects" >
-                    <NuxtLink :to="`/projects/${project.ProjectID}`" class="mytooltip" >
-                        <span class="tooltiptext"> {{project.Title}} </span>
-                        <img :src="`/images/projects/${project.Title}.webp`" class="projectIcon" tag="button" type="button"/>
+                        <img  :src="`/images/projects/${project.Title}.webp`" class="projectIcon" tag="button" type="button"/>
                     </NuxtLink>
                 </div>
             </div>
+        
 
             <NuxtLink :to="`/areas/${areaid}`" class="card-btn" tag="button" type="button">
                 <b>Learn more </b>  
@@ -68,16 +59,25 @@ export default {
 
 .icon-scroller{
 
-    padding: 1rem;
+
+    padding: 4rem 1rem 1rem 1rem;
     display: grid;
     grid-auto-flow: column;
     gap: 20px;
-
+    position: relative;
     overflow-x: scroll;
-    overflow-y: hidden;
     overscroll-behavior-inline: contain;
 }
 
+.mytooltip{
+    overflow: visible;
+    position: relative;
+    display: inline-block;
+}
+
+.icon-scroller .tooltip-container {
+  overflow: visible;
+}
 .snaps-inline{
     scroll-snap-type: inline mandatory;
     scroll-padding-inline: 1rem;
@@ -93,6 +93,7 @@ export default {
 
 .card {
     display: flex;
+    position: relative;
     flex-direction: column;
     justify-content: center;
     /*align-items: center;*/
@@ -109,10 +110,6 @@ export default {
 }
 
 
-.mytooltip {
-    position: relative;
-    display: inline-block;
-}
 
 .mytooltip .tooltiptext {
     order:1;
@@ -173,7 +170,6 @@ export default {
     font-weight: 500;
     text-align: center;
     color: var(--color-oxford-blue);
-    margin-bottom: 1rem;
     background-color: var(--color-snow);
     border-bottom: var(--bs-card-border-width) solid var(--color-cerulean);
 }
