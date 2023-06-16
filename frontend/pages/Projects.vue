@@ -38,7 +38,7 @@ import ProjectCard from '@/components/ProjectCard.vue'
 
             <span class="filter-grid" >
                 <div v-for="filterArea in filterAreas" >
-                    <div class="filter-btn"  @click="removeFilterArea(filterArea.areaid) "> {{ filterArea.title }} 
+                    <div class="filter-btn"  @click="removeFilterArea(filterArea.AreaID) "> {{ filterArea.Title }} 
                         <div class="icon" ><i class="bi bi-x"></i></div>
                     </div>
                 </div>
@@ -57,7 +57,7 @@ import ProjectCard from '@/components/ProjectCard.vue'
             
         
             <div v-if="!search" class="accordion" id="accordionPanelsStayOpen">
-                <div v-for="area in areas" class="accordion-item">
+                <div v-for="area in areas" class="accordion-item" style="box-shadow:  0 0 10px rgba(0, 0, 34, 0.2);">
                     <h2 class="accordion-header">
                         <button class="accordion-button" type="button" data-bs-toggle="collapse"
                             :data-bs-target="`#panelsStayOpen-${area.areaid}`" aria-expanded="true"
@@ -222,34 +222,15 @@ export default {
             let filteredAreas = []
 
             //insert the filters used to make them visible in the page
-            
-                
 
-            console.log("FILTERPROJECTS")   
-            console.log(areas)
-            console.log(this.allAreas)
-            console.log(filteredAreas)
+            for(let i=1; i<this.allAreas.length+1;i++){
 
-
-
-                //not working
-                for(let i=1; i<this.allAreas.length+1;i++){
-                    if(areas.includes(i))
-                        filteredAreas.push(this.allAreas[i])
-                }
+                if(areas.includes(i))
+                    filteredAreas.push(this.allAreas[i-1])
+            }
 
             ;
 
-            console.log("FILTERPROJECTS")   
-            console.log(areas)
-            console.log(this.allAreas)
-            console.log(filteredAreas)
-
-
-            /*console.log("SELECTED FILTERS:")
-            console.log(areas)
-            console.log(stages)
-            console.log(years)*/
 
             let filteredProjects = []
             this.allProjects.forEach(project => {
@@ -284,12 +265,19 @@ export default {
             this.filterAreas = filteredAreas
             this.filterStages = stages
             this.filterYears = years
+
+            console.log(this.filterAreas)
         },
 
         //removing filter working, calling of the son function not working
         removeFilterArea: function(areaid: number){
             let self = this
-            self.filterAreas = this.filterAreas.filter(filterArea => filterArea.areaid !== areaid);
+
+            console.log(self.filterAreas)
+            console.log(areaid)
+
+
+            self.filterAreas = this.filterAreas.filter(filterArea => filterArea.AreaID !== areaid);
             (self.$refs.projectFilter as any).removeAreaFilter(areaid)
         
         },
@@ -641,4 +629,24 @@ clear::after{
 .accordion-button:not(.collapsed){
     box-shadow: none;
 }
+
+/* Track */
+::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background: var(--color-snow);
+    box-shadow: inset 0 0 5px var(--color-platinum);
+
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: var(--color-platinum);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-cerulean);
+}
+
 </style>

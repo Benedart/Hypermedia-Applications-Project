@@ -159,7 +159,7 @@ def get_project_from_area(areaid):
     cursor = mysql.connection.cursor()
 
     query = """
-        select projectid, title, stage, yearoffoundation as year, featured
+        select projectid, title, preview, stage, yearoffoundation as year, featured
         from projects natural join refers
         where areaid = %s
     """
@@ -167,6 +167,19 @@ def get_project_from_area(areaid):
 
     cursor.execute(query, tuple)
     projects = cursor.fetchall()
+
+    # get all areas for each project
+    for project in projects:
+        query = """
+            select areaid, title
+            from areas natural join refers
+            where projectid = %s
+        """
+        tuple = (project['projectid'],)
+
+        cursor.execute(query, tuple)
+        project['areas'] = cursor.fetchall()
+
     cursor.close()
 
     return json.dumps(projects)
@@ -179,7 +192,7 @@ def get_projects_supervied_from_person(personid):
     cursor = mysql.connection.cursor()
 
     query = """
-        select projectid, title, stage, yearoffoundation as year, featured
+        select projectid, title, preview, stage, yearoffoundation as year, featured
         from projects join people on personid = supervisor
         where personid = %s
     """
@@ -187,6 +200,19 @@ def get_projects_supervied_from_person(personid):
 
     cursor.execute(query, tuple)
     projects = cursor.fetchall()
+
+    # get all areas for each project
+    for project in projects:
+        query = """
+            select areaid, title
+            from areas natural join refers
+            where projectid = %s
+        """
+        tuple = (project['projectid'],)
+
+        cursor.execute(query, tuple)
+        project['areas'] = cursor.fetchall()
+
     cursor.close()
 
     return json.dumps(projects)

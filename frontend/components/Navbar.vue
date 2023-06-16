@@ -8,7 +8,7 @@
             </NuxtLink>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+                <span class=" navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
@@ -131,5 +131,22 @@
 .dropdown-item:visited {
     color: #ffffff;
     background-color: #9991A1;
+}
+
+.navbar-toggler{
+    border: var(--bs-border-width) solid var(--color-snow);
+    
+}
+
+.navbar-toggler.collapsed{
+    border: var(--bs-border-width) solid var(--color-snow);
+}
+
+.navbar-toggler-icon{
+    color: var(--color-snow);
+}
+
+ .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,251,252, 0.75)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
 }
 </style>

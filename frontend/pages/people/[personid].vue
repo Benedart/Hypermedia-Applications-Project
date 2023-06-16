@@ -29,12 +29,13 @@ import ProjectCard from '@/components/ProjectCard.vue'
                     </div>
                 </div>
                 <div class="row" style="margin-top: 40px; margin-left: -60px; padding-block: 5%;" v-if="projectsSupervised.length > 0">
-                    <span class="row mx-3 badge custom-color justify-content-center" style="padding:2%;">
+                    <span class="row mx-3 custom-color justify-content-center" style="padding:2%;">
                         <h3 class="h3" style="margin-left : 10px; margin-top: 2px; padding:2%; float:left;">PROJECTS SUPERVISED</h3>
                         <div class="row">
                             <div v-for="project in projectsSupervised" class="col-12 col-sm-7 col-md-6 col-lg-5" style="padding:5%;">
-                                <ProjectCard :projectid="project.projectid" :title="project.title" :preview="project.preview"
-                                :stage="project.stage" :year="project.year" :featured="project.featured" />
+                                <ProjectCard :projectid="project.projectid" :title="project.title"
+                                        :preview="project.preview" :stage="project.stage" :areas="project.areas" :year="project.year"
+                                        :featured="project.featured" />
                             </div>
                         </div>
                     </span>
@@ -67,9 +68,15 @@ export default {
                 {
                     projectid: -1,
                     title: 'project',
-                    preview: 'preview',
+                    preview: 'Questo progetto è bellissimo, davvero il futuro',
                     stage: 'stage',
-                    year: 1024,
+                    areas: [
+                        {
+                            areaid: -1,
+                            title: 'area'
+                        }
+                    ],
+                    year: 2020,
                 }
             ],
 

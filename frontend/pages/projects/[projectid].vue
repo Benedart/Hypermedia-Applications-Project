@@ -28,7 +28,7 @@
                     <img class="image-person " 
                         :src="`/images/People/${projectDetails.supervisor}.webp`">
                     <p class="supervisor-p">
-                        <b>Supervisor: </b>
+                        <b style="font-size: 20px;">Supervisor: </b>
                         <NuxtLink class="supervisor-link" :to="`/people/${projectDetails.supervisor}`">
                             {{ projectDetails.name + " " + projectDetails.surname }}
                         </NuxtLink>
@@ -180,6 +180,9 @@ export default {
     flex-grow: 1;
     border-right:1px solid var(--color-cerulean);
     padding-right: 2rem;
+    padding:  3rem 3rem 3rem 0;
+    margin-bottom: auto;
+
 }
 
 .custom-paragraph-2{
@@ -188,6 +191,7 @@ export default {
     justify-content: right;
     text-align: right;
     padding: 3rem 0 3rem 3rem;
+    margin-bottom: 0;
      
 }
 .custom-paragraph-3{
@@ -203,7 +207,8 @@ export default {
     display: flex;
     width: auto;
     flex-grow: 1;
-    padding-left: 2rem;
+    padding: 2rem 0 2rem 2rem;
+
 }
 
 .supervisor-p{
@@ -216,6 +221,7 @@ export default {
 
 .supervisor-link{
     color: var(--color-oxford-blue);
+    font-size: 20px;
 
 }
 

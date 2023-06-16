@@ -80,11 +80,27 @@ export default {
 
 .grid{
 
-    padding: 5rem;
+    margin: 5rem;
     display: grid;
     gap: 10rem;
     grid-template-columns: repeat(auto-fit,minmax(15rem,1fr));
     align-items: start;
+}
+
+@media  screen and (max-width: 600px) {
+    .grid{
+        margin: auto!important;
+
+    }
+
+}
+
+@media screen and (max-width: 600px) {
+    
+    .container{
+        padding: 0!important;
+    }
+    
 }
 
 .grid-item {

@@ -200,7 +200,6 @@ export default {
 }
 
 .dropdown-menu {
-    height: 31vh;
     border: var(--bs-border-width) var(--bs-border-style) var(--color-cerulean)!important;
     overflow: hidden;
     padding: 0;
@@ -292,8 +291,7 @@ export default {
 }
 
 .apply-btn:hover{
-    background: var(--color-platinum);
-    color: var(--color-cerulean);
+    background: var(--color-oxford-blue);
 
 }
 
@@ -318,8 +316,7 @@ export default {
 }
 
 .clearall-btn:hover{
-    background: var(--color-oxford-blue);
-    color: var(--color-snow);
+    background: #08688834;
 
 }
 
