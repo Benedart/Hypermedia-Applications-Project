@@ -11,8 +11,9 @@ import AreaCard from '@/components/AreaCard.vue'
             </div>
             <div class="container">
                 <div class="grid">
-                    <div v-for="area in areas" >
-                        <AreaCard :areaid="area.AreaID" :title="area.Title" :projects="area.projects" style="margin-top: -5rem;"/>
+                    <div v-for="area in areas">
+                        <AreaCard :areaid="area.AreaID" :title="area.Title" :projects="area.projects"
+                            style="margin-top: -5rem;" />
                     </div>
                 </div>
             </div>
@@ -37,7 +38,7 @@ export default {
                     projects: [
                         {
                             ProjectID: -1,
-                            Title: 'project'
+                            Title: 'example'
                         }
                     ]
                 },
@@ -86,9 +87,9 @@ export default {
 }
 
 
-@media  screen and (max-width: 600px) {
-    .grid{
-        margin: auto!important;
+@media screen and (max-width: 600px) {
+    .grid {
+        margin: auto !important;
 
 
     }
@@ -103,7 +104,7 @@ export default {
 
 }
 
-    
+
 
 .grid-item {
     display: flex;

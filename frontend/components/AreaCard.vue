@@ -1,6 +1,6 @@
 <template>
     <div class="card">
-        <img class="card-img" :src="`/images/areas/${title}.jpg`">
+        <img class="card-img" :src="`/images/areas/${title}/logo.jpg`">
         <div class="card-content">
             <h1 class="card-header"><b> {{ title }} </b></h1>
             <p

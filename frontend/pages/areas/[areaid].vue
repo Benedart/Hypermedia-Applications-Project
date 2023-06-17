@@ -10,36 +10,36 @@ import ProjectCard from '@/components/ProjectCard.vue'
                 <h1 class="name-area">{{ areaDetails.Title }}</h1>
                 <p class="custom-paragraph-1">{{ areaDetails.Section1 }}</p>
             </div>
-            
-            <img class="image-area-1 " :src="`/images/areas/${areaDetails.Title}.jpg`">
-                
+
+            <img class="image-area-1 " :src="`/images/areas/${areaDetails.Title}/logo.jpg`">
+
         </div>
 
         <div class="section-2">
-                <img class="image-area-2 " :src="`/images/areas/${areaDetails.Title}/image.webp`">
-                <p class="custom-paragraph-2">{{ areaDetails.Section2 }}</p>
-            </div>
+            <img class="image-area-2 " :src="`/images/areas/${areaDetails.Title}/image.webp`">
+            <p class="custom-paragraph-2">{{ areaDetails.Section2 }}</p>
+        </div>
 
-            <!--div class="row g-3">
+        <!--div class="row g-3">
                 <div v-for="project in projects" class="col-12 col-md-6 col-lg-4">
                     <ProjectCard :projectid="project.projectid" :title="project.title" :preview="project.preview"
                         :stage="project.stage" :year="project.year" :featured="project.featured" />
                 </div>
             </div-->
 
-            <div class="row" style="margin-top: 40px; margin-left: -60px; padding-block: 5%;" v-if="projects.length > 0">
-                    <span class="row mx-3 custom-color justify-content-center" style="padding:2%;">
-                        <h3 class="h3" style="margin-left : 10px; margin-top: 2px; padding:2%; float:left;">PROJECTS SUPERVISED</h3>
-                        <div class="row g-3">
-                            <div v-for="project in projects" class="col-12 col-md-6 col-lg-4" >
-                                <ProjectCard :projectid="project.projectid" :title="project.title" :preview="project.preview"
-                                :stage="project.stage" :areas="project.areas" :year="project.year" :featured="project.featured" />
-                            </div>
-                        </div>
-                    </span>
+        <div class="row" style="margin-top: 40px; margin-left: -60px; padding-block: 5%;" v-if="projects.length > 0">
+            <span class="row mx-3 custom-color justify-content-center" style="padding:2%;">
+                <h3 class="h3" style="margin-left : 10px; margin-top: 2px; padding:2%; float:left;">PROJECTS SUPERVISED</h3>
+                <div class="row g-3">
+                    <div v-for="project in projects" class="col-12 col-md-6 col-lg-4">
+                        <ProjectCard :projectid="project.projectid" :title="project.title" :preview="project.preview"
+                            :stage="project.stage" :areas="project.areas" :year="project.year"
+                            :featured="project.featured" />
+                    </div>
                 </div>
+            </span>
         </div>
-    
+    </div>
 </template>
 
 <script lang="js">
@@ -50,14 +50,14 @@ export default {
         return {
             areaDetails: {
                 AreaID: -1,
-                Title: 'title',
+                Title: 'area',
                 Description: 'description',
             },
 
             projects: [
                 {
                     projectid: -1,
-                    title: 'project',
+                    title: 'example',
                     preview: 'Questo progetto è bellissimo, davvero il futuro',
                     stage: 'stage',
                     areas: [
@@ -108,30 +108,30 @@ export default {
 </script>
 
 <style scoped>
-
-.name-area{
+.name-area {
     color: #000022;
     margin: auto;
     font-size: 40px;
     margin-bottom: 1rem;
     justify-content: center;
 
-    
+
 }
 
-.section-1{
+.section-1 {
     display: flex;
     margin-top: 88px;
 
 }
-.custom-paragraph-1{
+
+.custom-paragraph-1 {
     width: auto;
     justify-content: center;
-    
-     
+
+
 }
 
-.image-area-1{
+.image-area-1 {
     border-radius: 5%;
     flex-grow: 1;
     margin: auto;
@@ -139,14 +139,14 @@ export default {
     width: 20rem;
 }
 
-.image-area-2{
+.image-area-2 {
     border-radius: 5%;
     flex-grow: 1;
     width: 25rem;
     margin: auto;
 }
 
-.custom-paragraph-2{
+.custom-paragraph-2 {
     width: auto;
     flex-grow: 1;
     justify-content: right;
@@ -154,39 +154,38 @@ export default {
     padding: 3rem 0 3rem 3rem;
 }
 
-.section-2{
+.section-2 {
     display: flex;
     margin-top: 2rem;
-    text-align:justify;
-    font-size:1em;
+    text-align: justify;
+    font-size: 1em;
 
 }
 
-.custom-color{
+.custom-color {
     background-color: #e5e5e5;
 }
 
-@media  screen and (max-width: 1000px) {
+@media screen and (max-width: 1000px) {
     .section-1 {
         flex-direction: column;
     }
 
-    .section-2{
+    .section-2 {
         flex-direction: column;
-        text-align:justify;
-        font-size:1em;
-   
+        text-align: justify;
+        font-size: 1em;
+
     }
 
-    
+
 }
 
-.h3{
-    margin-top: 110px; 
-    margin-left: -30px; 
-    font-size:20px;  
-    color:#000022;
+.h3 {
+    margin-top: 110px;
+    margin-left: -30px;
+    font-size: 20px;
+    color: #000022;
     text-align: left;
 }
-
 </style>
