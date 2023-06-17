@@ -11,12 +11,12 @@ import ProjectCard from '@/components/ProjectCard.vue'
                 <p class="custom-paragraph-1">{{ areaDetails.Section1 }}</p>
             </div>
             
-            <img class="image-area-1 " :src="`/images/areas/${areaDetails.Title}/image.webp`">
+            <img class="image-area-1 " :src="`/images/areas/${areaDetails.Title}.jpg`">
                 
         </div>
 
         <div class="section-2">
-                <img class="image-area-2 " :src="`/images/areas/${areaDetails.Title}.jpg`">
+                <img class="image-area-2 " :src="`/images/areas/${areaDetails.Title}/image.webp`">
                 <p class="custom-paragraph-2">{{ areaDetails.Section2 }}</p>
             </div>
 
@@ -142,8 +142,7 @@ export default {
 .image-area-2{
     border-radius: 5%;
     flex-grow: 1;
-    
-    width: 20rem;
+    width: 25rem;
     margin: auto;
 }
 

@@ -36,10 +36,8 @@
                 <p class="custom-paragraph-2">{{ projectDetails.section2 }}</p>
             </div>
             <div class="section-3">
-                <p class="custom-paragraph-3">{{ projectDetails.section3 }}</p>
-                <div class="image-container">
-                    <img :src="`/images/projects/${projectDetails.title}/logo.webp`">
-                </div>
+                <p class="custom-paragraph-3">{{ projectDetails.section3 }} </p>
+                <img class="image" :src="`/images/projects/${projectDetails.title}/logo.webp`">
             </div>
         </div>
     </div>
@@ -276,6 +274,40 @@ export default {
     margin-bottom: 5em;
 
 }
+
+.image{
+    position:relative;
+    margin-top: 3em !important;
+    margin-bottom: 5em !important;
+    max-width:70%;
+    height:auto;
+    margin:auto;
+    width: 1000px;
+    height: 550px;
+    border-top-right-radius: 5%;
+    border-top-left-radius: 5%;
+    border-bottom-right-radius: 5%;
+    border-bottom-left-radius: 5%;
+}
+
+@media(max-width: 800px){
+    .image{
+    position:relative;
+    margin-top: 3em !important;
+    margin-bottom: 5em !important;
+    max-width:70%;
+    height:auto;
+    margin:auto;
+    width: 500px;
+    height: 275px;
+    border-top-right-radius: 5%;
+    border-top-left-radius: 5%;
+    border-bottom-right-radius: 5%;
+    border-bottom-left-radius: 5%;
+}
+}
+
+
 
 .image-container img {
     position: absolute;
