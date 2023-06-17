@@ -1,4 +1,4 @@
-export async function makeCall(url: RequestInfo | URL, method = 'GET') {
+export async function makeCall(url, method = 'GET') {
   try {
     const response = await fetch(url, { method });
     if (!response.ok) {
