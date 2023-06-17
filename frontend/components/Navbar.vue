@@ -106,6 +106,12 @@
     background-color: #000022;
 }
 
+.dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0;
+    /* remove the gap so it doesn't close */
+}
+
 .dropdown-item {
     color: #FFFBFA;
 }
