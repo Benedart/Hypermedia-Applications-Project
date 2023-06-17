@@ -4,23 +4,22 @@ import PeopleCard from '@/components/PeopleCard.vue'
 </script>
 
 <template>
-        <div class="container-text-center" >
-            <div class="title" >
-                People
-            </div>
-            <div class="container" style="background-color: #FFFBFA;">
-                <div class="row d-flex justify-content-center">
-                    <div class="row g-3">
-                        <div v-for="user in people" class="col" style="margin-bottom: 70px;">
-                            <PeopleCard :personid="user.personid" :name="user.name" :surname="user.surname" :age="user.age"
-                                :email="user.email" :linkedin="user.linkedin" :Description="user.Description"
-                                :role="user.role" />
-                        </div>
+    <div class="container-text-center">
+        <div class="title">
+            People
+        </div>
+        <div class="container" style="background-color: #FFFBFA;">
+            <div class="row d-flex justify-content-center">
+                <div class="row g-3">
+                    <div v-for="user in people" class="col" style="margin-bottom: 70px;">
+                        <PeopleCard :personid="user.personid" :name="user.name" :surname="user.surname" :age="user.age"
+                            :email="user.email" :linkedin="user.linkedin" :Description="user.Description"
+                            :role="user.role" />
                     </div>
                 </div>
             </div>
         </div>
-    
+    </div>
 </template>
 
 <script lang="ts">
@@ -102,11 +101,10 @@ export default {
 <style scoped>
 .title {
     text-align: center;
-    margin-bottom:  5rem;
+    margin-bottom: 5rem;
 }
 
-.container-text-center{
-    margin-bottom:10em;
+.container-text-center {
+    margin-bottom: 10em;
 }
-
 </style>

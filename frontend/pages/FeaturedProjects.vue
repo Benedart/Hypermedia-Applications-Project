@@ -61,9 +61,8 @@ export default {
     text-align: center;
 }
 
-.container-fluid{
+.container-fluid {
     margin-bottom: 10em;
     margin-top: 8em;
 }
-
 </style>

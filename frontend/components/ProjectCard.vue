@@ -1,29 +1,22 @@
 <template>
-        <div class="card h-100 mx-auto" style="width: 18rem;">
-            <img class="card-img" :src="`/images/projects/${title}.webp`" :alt="title">
-            <div class="card-body">
-                <h1 class="card-header"><b> {{ title }} </b></h1>
-                <p class="card-description">{{ preview }}</p>
+    <div class="card h-100 mx-auto" style="width: 18rem;">
+        <img class="card-img" :src="`/images/projects/${title}.webp`" :alt="title">
+        <div class="card-body">
+            <h1 class="card-header"><b> {{ title }} </b></h1>
+            <p class="card-description">{{ preview }}</p>
 
-                <span class="float-start" ><b>{{ stage }}</b>
-                    <row style="margin-left: 0.5rem;" v-for="area in areas" >
-                        <NuxtLink :to="`/areas/${area.areaid}`" class="area-link">
-                            <span class="area-title" >{{ area.title}}  </span>
-                        </NuxtLink>
-                    </row>
-                </span>
-                    
-                
-                <!--span class="float-end">{{ year }}</span-->
-                
-            
-            
-                
-                <nuxt-link :to="`/projects/${projectid}`" tag="button" type="button" class="card-btn ">
-                    <b>Learn more</b>
-            </nuxt-link>
+            <span class="float-start">
+                <b>{{ stage }}</b>
+            </span>
+
+            <span class="float-end">{{ year }}</span>
+
+
+            <NuxtLink :to="`/projects/${projectid}`" tag="button" type="button" class="card-btn ">
+                <b>Learn more</b>
+            </NuxtLink>
         </div>
-        </div>
+    </div>
 </template>
 
 <script lang="ts">
@@ -46,8 +39,7 @@ export default {
 </script>
 
 <style scoped>
-
-.card{
+.card {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -58,6 +50,7 @@ export default {
     box-shadow: 0 3rem 6rem rgba(0, 0, 34, 0.1);
     transition: 0.2s;
 }
+
 .card-img {
     display: inline-block;
     width: 100%;
@@ -72,10 +65,15 @@ export default {
     background-color: var(--color-snow);
 }
 
-.float-start{
+.float-start {
     color: var(--color-cerulean);
     margin-top: 1rem;
-    margin-left: 0.6rem;
+    margin-left: 1.5rem;
+}
+
+.float-end {
+    margin-top: 1rem;
+    margin-right: 1.5rem;
 }
 
 .card-title {
@@ -83,7 +81,7 @@ export default {
     font-weight: bold;
     font-size: 1.5em;
     font-family: Avenir, sans-serif;
-    color : var(--color-snow);
+    color: var(--color-snow);
 }
 
 .card-header {
@@ -111,7 +109,7 @@ export default {
 }
 
 .card-btn {
-    
+
     width: 50%;
     padding: 0.2rem;
     font-size: 1.0rem;
@@ -126,7 +124,7 @@ export default {
     cursor: pointer;
     letter-spacing: 0.1rem;
     margin-top: 1em;
-    margin-bottom:0.5em;
+    margin-bottom: 0.5em;
     margin-right: 4em;
     margin-left: 4em;
     font-family: Avenir, sans-serif;
@@ -142,24 +140,25 @@ export default {
     box-shadow: 0 4rem 8rem rgba(0, 0, 34, 0.5);
 }
 
-.area-link{
+.area-link {
     position: relative;
     display: inline-block;
 }
-.area-link .area-title{
-    color: var(--color-oxford-blue); 
+
+.area-link .area-title {
+    color: var(--color-oxford-blue);
     padding: 0.2rem;
 }
 
-.area-link .area-title:hover::after{
+.area-link .area-title:hover::after {
     content: "";
-  position: absolute;
-  bottom: 0.3rem;
-  left: 0.3rem;
-  width: 90%;
-  height: 25%;
-  background-color: var(--color-cerulean); /* Colore di sfondo per l'evidenziazione */
-  opacity: 0.3;
+    position: absolute;
+    bottom: 0.3rem;
+    left: 0.3rem;
+    width: 90%;
+    height: 25%;
+    background-color: var(--color-cerulean);
+    /* Colore di sfondo per l'evidenziazione */
+    opacity: 0.3;
 }
-
 </style>

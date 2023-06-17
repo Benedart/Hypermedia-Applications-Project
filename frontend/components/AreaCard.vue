@@ -1,28 +1,26 @@
 <template>
+    <div class="card">
+        <img class="card-img" :src="`/images/areas/${title}.jpg`">
 
-
-    <div class="card" >
-        <img class="card-img" :src="`/images/areas/${title}.jpg`" >
-        
         <div class="card-content">
             <h1 class="card-header"><b> {{ title }} </b></h1>
-            <p style="top: 12%; left: 50%; transform: translate(-50%,100%); font-size: 1.2rem; text-align: center; color: var(--color-oxford-blue); position: absolute;" >Projects</p>
+            <p
+                style="top: 12%; left: 50%; transform: translate(-50%,100%); font-size: 1.2rem; text-align: center; color: var(--color-oxford-blue); position: absolute;">
+                Projects</p>
 
-            <div class="icon-scroller snaps-inline" > 
-                <div v-for="project in projects" >
-                    <NuxtLink :to="`/projects/${project.ProjectID}`" class="mytooltip tooltip-container" >
-                        <span class="tooltiptext"> {{project.Title}} </span>
-                        <img  :src="`/images/projects/${project.Title}.webp`" class="projectIcon" tag="button" type="button"/>
+            <div class="icon-scroller snaps-inline">
+                <div v-for="project in projects">
+                    <NuxtLink :to="`/projects/${project.ProjectID}`" class="mytooltip tooltip-container">
+                        <span class="tooltiptext"> {{ project.Title }} </span>
+                        <img :src="`/images/projects/${project.Title}.webp`" class="projectIcon" tag="button"
+                            type="button" />
                     </NuxtLink>
                 </div>
             </div>
-        
 
             <NuxtLink :to="`/areas/${areaid}`" class="card-btn" tag="button" type="button">
-                <b>Learn more </b>  
+                <b>Learn more </b>
             </NuxtLink>
-            
-
         </div>
     </div>
 </template>
@@ -57,9 +55,7 @@ export default {
     align-items: start;
 }
 
-.icon-scroller{
-
-
+.icon-scroller {
     padding: 4rem 1rem 1rem 1rem;
     display: grid;
     grid-auto-flow: column;
@@ -69,24 +65,16 @@ export default {
     overscroll-behavior-inline: contain;
 }
 
-.mytooltip{
-    overflow: visible;
-    position: relative;
-    display: inline-block;
-}
-
-.icon-scroller .tooltip-container {
-  overflow: visible;
-}
-.snaps-inline{
+.snaps-inline {
     scroll-snap-type: inline mandatory;
     scroll-padding-inline: 1rem;
 }
 
-.snaps-inline > *{
+.snaps-inline>* {
     scroll-snap-align: start;
 }
-.grid-item{
+
+.grid-item {
     display: flex;
     justify-content: center;
 }
@@ -109,10 +97,14 @@ export default {
     box-shadow: 0 4rem 8rem rgba(0, 0, 34, 0.5);
 }
 
-
+.mytooltip {
+    overflow: visible;
+    position: relative;
+    display: inline-block;
+}
 
 .mytooltip .tooltiptext {
-    order:1;
+    order: 1;
     visibility: hidden;
     width: 120px;
     background-color: var(--color-oxford-blue);
@@ -127,30 +119,26 @@ export default {
 
     /* bottom tooltip */
     width: 120px;
-  bottom: 100%;
-  left: 50%;
-  margin-left: -60px; /* Use half of the width (120/2 = 60), to center the tooltip */
-    
+    bottom: 100%;
+    left: 50%;
+    margin-left: -60px;
+    /* Use half of the width (120/2 = 60), to center the tooltip */
 }
 
 .mytooltip .tooltiptext::after {
     content: " ";
-  position: absolute;
-  top: 100%; /* At the bottom of the tooltip */
-  left: 50%;
-  margin-left: -5px;
-  border-width: 5px;
-  border-style: solid;
-    border-color: transparent transparent var(--color-oxford-blue) transparent;
+    position: absolute;
+    top: 100%;
+    /* At the bottom of the tooltip */
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: var(--color-oxford-blue) transparent transparent transparent;
 }
 
 .mytooltip:hover .tooltiptext {
     visibility: visible;
-}
-
-* {
-    margin: 0;
-    padding: 0;
 }
 
 .card-img {
@@ -163,7 +151,7 @@ export default {
 .card-content {
     padding: 1rem;
     position: relative;
- }
+}
 
 .card-header {
     font-size: 2rem;
@@ -193,24 +181,24 @@ export default {
     margin-bottom: 1rem;
     top: 50%;
     left: 50%;
-    transform: translate(-100%,25%);
+    transform: translate(-100%, 25%);
     font-family: Avenir, sans-serif;
 }
 
 .card-btn:hover,
 .card-btn:active {
-    background-color:rgb(180, 205, 214);
+    background-color: rgb(180, 205, 214);
 }
 
-.projectIcon{
-  width: 4rem;
-  height: 4rem;
-  object-fit: cover;
-  border-radius: 100%;
-  position: relative;
-  transition: transform 500ms ease;
-  justify-content: center ;
-  
+.projectIcon {
+    width: 4rem;
+    height: 4rem;
+    object-fit: cover;
+    border-radius: 100%;
+    position: relative;
+    transition: transform 500ms ease;
+    justify-content: center;
+
 }
 
 .projectIcon:hover {
@@ -220,7 +208,7 @@ export default {
 
 /* width */
 ::-webkit-scrollbar {
-  width: 10px;
+    width: 10px;
 }
 
 /* Track */
@@ -239,6 +227,6 @@ export default {
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--color-cerulean);
+    background: var(--color-cerulean);
 }
 </style>

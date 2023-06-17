@@ -1,8 +1,8 @@
 <template >
     <div class="card h-100 mx-auto" style="width: 18rem; margin-top: 2em; background-color:#FFFBFA;">
-        <nuxt-link :to="linkedin" tag="button" type="button" class="float-end" >
-                <img class="card-img-linkedin img-custom" src="/images/contact/linkedin.webp" alt="Linkedin Icon">
-        </nuxt-link>
+        <NuxtLink :to="linkedin" tag="button" type="button" class="float-end">
+            <img class="card-img-linkedin img-custom" src="/images/contact/linkedin.webp" alt="Linkedin Icon">
+        </NuxtLink>
         <img class="card-img-top" :src="`/images/People/${personid}.webp`" :alt="personid">
         <div class="card-body">
             <h5 class="card-title">{{ name + " " + surname }}</h5>
@@ -11,9 +11,9 @@
 
         <div class="card-footer">
             <p class="card-Description">{{ shorterDescription(Description) }}.</p>
-            <nuxt-link :to="`/People/${personid}`" tag="button" type="button" class="card-btn ">
+            <NuxtLink :to="`/People/${personid}`" tag="button" type="button" class="card-btn ">
                 <b>Learn more</b>
-            </nuxt-link>
+            </NuxtLink>
         </div>
 
     </div>
@@ -51,12 +51,12 @@ export default {
 </script> 
 
 <style scoped>
-
-.float-end{
-    height: auto; 
+.float-end {
+    height: auto;
     margin-top: 1em;
-    margin-left:15em;
+    margin-left: 15em;
 }
+
 .card-img-top {
     border-radius: 100%;
     width: 170px;
@@ -75,7 +75,7 @@ export default {
     font-weight: bold;
     font-size: 1.5em;
     font-family: Avenir, sans-serif;
-    color : #000022;
+    color: #000022;
 }
 
 .card-subtitle {
@@ -85,11 +85,10 @@ export default {
 }
 
 
-.card-img-linkedin
-{
-    
-    width: 40px; 
-    
+.card-img-linkedin {
+
+    width: 40px;
+
 }
 
 .card-footer {
@@ -108,7 +107,7 @@ export default {
 }
 
 .card-btn {
-    
+
     width: 50%;
     padding: 0.2rem;
     font-size: 1.0rem;
@@ -123,7 +122,7 @@ export default {
     cursor: pointer;
     letter-spacing: 0.1rem;
     margin-top: 1.5em;
-    margin-bottom:0.5em;
+    margin-bottom: 0.5em;
     margin-right: 4em;
     margin-left: 4em;
     font-family: Avenir, sans-serif;

@@ -12,9 +12,10 @@ import AreaCard from '@/components/AreaCard.vue'
         </div>
 
         <div class="container">
-        <div class="grid">
-                <div v-for="area in areas" >
-                    <AreaCard :areaid="area.AreaID" :title="area.Title" :projects="area.projects" style="margin-top: -5rem;"/>
+            <div class="grid">
+                <div v-for="area in areas">
+                    <AreaCard :areaid="area.AreaID" :title="area.Title" :projects="area.projects"
+                        style="margin-top: -5rem;" />
                 </div>
             </div>
 
@@ -23,7 +24,7 @@ import AreaCard from '@/components/AreaCard.vue'
                 <AreaCard :areaid="area.AreaID" :title="area.Title" :projects="area.projects" />
             </div>
         </div-->
-    </div>
+        </div>
     </main>
 </template>
 
@@ -70,7 +71,6 @@ export default {
 </script>
 
 <style scoped>
-
 .title {
     font-size: 3.5em;
     text-align: center;
@@ -78,29 +78,29 @@ export default {
     margin-bottom: 5rem;
 }
 
-.grid{
+.grid {
 
     margin: 5rem;
     display: grid;
     gap: 10rem;
-    grid-template-columns: repeat(auto-fit,minmax(15rem,1fr));
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
     align-items: start;
 }
 
-@media  screen and (max-width: 600px) {
-    .grid{
-        margin: auto!important;
+@media screen and (max-width: 600px) {
+    .grid {
+        margin: auto !important;
 
     }
 
 }
 
 @media screen and (max-width: 600px) {
-    
-    .container{
-        padding: 0!important;
+
+    .container {
+        padding: 0 !important;
     }
-    
+
 }
 
 .grid-item {
@@ -130,6 +130,6 @@ export default {
     height: auto;
     max-height: 90%;
     margin: auto;
-    
+
 }
 </style>

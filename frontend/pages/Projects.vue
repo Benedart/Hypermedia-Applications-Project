@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup>
 import { makeCall } from '@/utils/common'
 import ProjectFilter from '@/components/ProjectFilter.vue'
 import ProjectCard from '@/components/ProjectCard.vue'
@@ -6,63 +6,61 @@ import ProjectCard from '@/components/ProjectCard.vue'
 
 <template>
     <main>
-
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-
         <div class="container-text-center">
             <div class="title">Projects</div>
         </div>
-        
-        
-            <!--div class="search-wrapper">
+
+        <!--div class="search-wrapper">
                 <input type="text" v-model="search" placeholder="Search projects...">
             </div-->
         <div class="container">
             <div class="grid-container">
-            <div class="grid-projects">
-                <div class="search">
-                    <div class="icon"></div>
+                <div class="grid-projects">
+                    <div class="search">
+                        <div class="icon"></div>
                         <div class="input">
                             <input type="text" v-model="search" placeholder="Search projects..." id="mysearch">
                         </div>
-                    
-                    <span class="clear" onclick="document.getElementById('mysearch').value = ''"></span>
-                </div>       
-            
+
+                        <span class="clear" onclick="document.getElementById('mysearch').value = ''"></span>
+                    </div>
 
                     <ProjectFilter ref="projectFilter" @applyFilters="filterProjects" />
-                    
-                
-                <!--ProjectFilter @applyFilters="filterProjects" /-->
+
+                    <!--ProjectFilter @applyFilters="filterProjects" /-->
+                </div>
+
+                <span class="filter-grid">
+                    <div v-for="filterArea in filterAreas">
+                        <div class="filter-btn" @click="removeFilter(filterArea.AreaID)">
+                            {{ filterArea.Title }}
+                            <div class="icon"><i class="bi bi-x"></i></div>
+                        </div>
+                    </div>
+                    <div v-for="filterYear in filterYears">
+                        <div class="filter-btn" @click="removeFilter(filterYear)">
+                            {{ filterYear }}
+                            <div class="icon"><i class="bi bi-x"></i></div>
+                        </div>
+                    </div>
+                    <div v-for="filterStage in filterStages">
+                        <div class="filter-btn" @click="removeFilter(filterStage)">
+                            {{ filterStage }}
+                            <div class="icon"><i class="bi bi-x"></i></div>
+                        </div>
+                    </div>
+                </span>
             </div>
 
-            <span class="filter-grid" >
-                <div v-for="filterArea in filterAreas" >
-                    <div class="filter-btn"  @click="removeFilterArea(filterArea.AreaID) "> {{ filterArea.Title }} 
-                        <div class="icon" ><i class="bi bi-x"></i></div>
-                    </div>
-                </div>
-                <div v-for="filterYear in filterYears" >
-                    <div class="filter-btn" @click="removeFilterYear(filterYear)"> {{ filterYear }}
-                        <div class="icon" ><i class="bi bi-x"></i></div>
-                    </div>
-                </div>
-                <div v-for="filterStage in filterStages" >
-                    <div class="filter-btn" @click="removeFilterStage(filterStage)"> {{ filterStage }}
-                        <div class="icon" ><i class="bi bi-x"></i></div>
-                    </div>
-                </div>
-            </span>
-        </div>
-            
-        
             <div v-if="!search" class="accordion" id="accordionPanelsStayOpen">
                 <div v-for="area in areas" class="accordion-item" style="box-shadow:  0 0 10px rgba(0, 0, 34, 0.2);">
                     <h2 class="accordion-header">
                         <button class="accordion-button" type="button" data-bs-toggle="collapse"
                             :data-bs-target="`#panelsStayOpen-${area.areaid}`" aria-expanded="true"
                             :aria-controls="`panelsStayOpen-${area.areaid}`">
-                            <b>{{ area.title }}</b>
+                            <NuxtLink :to="`/areas/${area.areaid}`">
+                                <b>{{ area.title }}</b>
+                            </NuxtLink>
                         </button>
                     </h2>
                     <div :id="`panelsStayOpen-${area.areaid}`" class="accordion-collapse collapse show">
@@ -70,8 +68,8 @@ import ProjectCard from '@/components/ProjectCard.vue'
                             <div class="row g-3">
                                 <div v-for="project in projectsByArea(area.areaid)" class="col-12 col-md-6 col-lg-4">
                                     <ProjectCard :projectid="project.projectid" :title="project.title"
-                                        :preview="project.preview" :stage="project.stage" :areas="project.areas" :year="project.year"
-                                        :featured="project.featured" />
+                                        :preview="project.preview" :stage="project.stage" :areas="project.areas"
+                                        :year="project.year" :featured="project.featured" />
                                 </div>
                             </div>
                         </div>
@@ -83,6 +81,13 @@ import ProjectCard from '@/components/ProjectCard.vue'
                     <ProjectCard :projectid="project.projectid" :title="project.title" :preview="project.preview"
                         :stage="project.stage" :areas="project.areas" :year="project.year" :featured="project.featured" />
                 </div>
+            </div>
+
+            <!-- if no projects are going to be shown (visibleProjects == 0 or areas empty), display a sad face -->
+            <div v-if="visibleProjects.length == 0 || areas.length == 0" class="container-text-center">
+                <div class="error">No projects found</div>
+                <div class="error-subtitle">Try to remove some filters</div>
+                <div class="icon"><i class="bi bi-emoji-frown"></i></div>
             </div>
 
             <!-- First prototype -->
@@ -105,8 +110,7 @@ import ProjectCard from '@/components/ProjectCard.vue'
     </main>
 </template>
 
-<script lang="ts">
-
+<script>
 export default {
     data() {
         return {
@@ -159,19 +163,16 @@ export default {
                 }
             ],
 
-
             search: "",
 
             filterAreas: [
                 {
                     areaid: -1,
                     title: 'area'
-                }],
-
+                }
+            ],
             filterStages: ['stage'],
-
             filterYears: [-1]
-            
         }
     },
 
@@ -199,22 +200,17 @@ export default {
                 return indexList.includes(p.title.toLowerCase().indexOf(this.search.toLowerCase()));
             });
 
-        
+
             //console.log("SEARCH RESULTS:")
             //console.log(matchingProjects)
 
             return matchingProjects
         },
-
-        
-            
-
-        
     },
-    
+
     methods: {
         // filter the projects by area, stage and year
-        filterProjects: function (filters: { areas: number[]; stages: string[]; years: number[]; }) {
+        filterProjects: function (filters) {
             let areas = filters.areas
             let stages = filters.stages
             let years = filters.years
@@ -222,15 +218,11 @@ export default {
             let filteredAreas = []
 
             //insert the filters used to make them visible in the page
-
-            for(let i=1; i<this.allAreas.length+1;i++){
-
-                if(areas.includes(i))
-                    filteredAreas.push(this.allAreas[i-1])
-            }
-
-            ;
-
+            this.allAreas.forEach(area => {
+                if (areas.includes(area.AreaID)) {
+                    filteredAreas.push(area)
+                }
+            })
 
             let filteredProjects = []
             this.allProjects.forEach(project => {
@@ -269,42 +261,18 @@ export default {
             console.log(this.filterAreas)
         },
 
-        //removing filter working, calling of the son function not working
-        removeFilterArea: function(areaid: number){
-            let self = this
-
-            console.log(self.filterAreas)
-            console.log(areaid)
-
-
-            self.filterAreas = this.filterAreas.filter(filterArea => filterArea.AreaID !== areaid);
-            (self.$refs.projectFilter as any).removeAreaFilter(areaid)
-        
+        // trigger the removal of the selected filter on the projectFilter component
+        removeFilter: function (filter) {
+            this.$refs.projectFilter.removeFilter(filter)
         },
-
-        removeFilterYear: function(year: number){
-            let self = this
-            self.filterYears = this.filterYears.filter(filterYear => filterYear !== year);
-            (self.$refs.projectFilter as any).removeYearFilter(year)
-        
-        },
-
-        removeFilterStage: function(stage: string){
-            let self = this
-            self.filterStages = this.filterStages.filter(filterStage => filterStage !== stage);
-            (self.$refs.projectFilter as any).removeStageFilter(stage)
-        
-        },
-
-    
 
         // returns the list of projects that belong to the area with the given id
-        projectsByArea: function (areaid: number) {
+        projectsByArea: function (areaid) {
             return this.projects.filter(p => p.areas.some(a => a.areaid === areaid))
         },
 
         // returns the list of distinct areas of the visible projects
-        getAreas: function (projects: any[]) {
+        getAreas: function (projects) {
             let areas = []
 
             // for each project, add the areas that are not already in the list
@@ -322,7 +290,7 @@ export default {
 
             this.areas = areas
 
-            if(this.filterStages[0]=="stage"){
+            if (this.filterStages[0] == "stage") {
                 this.filterAreas = [];
                 this.filterYears = [];
                 this.filterStages = [];
@@ -355,19 +323,8 @@ export default {
                 console.error(error);
             }
         },
-
-        
     },
-
-    
-    
 }
-
-
-
-        
-
-
 /*
 const icon = document.querySelector('.icon');
 const search = document.querySelector('.search');
@@ -378,61 +335,91 @@ function doSearch(){
 }
 icon.addEventListener("click",doSearch);
 */
-
 </script>
 
 <style scoped>
+.error {
+    color: var(--color-cerulean);
+    font-size: 1.5rem;
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
 
-.container{
-    margin-bottom:10em;
+    font-family: var(--font-family);
+    font-weight: var(--font-weight);
+    font-style: var(--font-style);
+    line-height: var(--line-height);
+    letter-spacing: var(--letter-spacing);
+}
+
+.error-subtitle {
+    font-size: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+
+    text-align: center;
+}
+
+.container-text-center .icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    text-align: center;
+
+    color: var(--color-cerulean);
+}
+
+.container {
+    margin-bottom: 10em;
 }
 
 .title {
     text-align: center;
-    margin-bottom:  5rem;
+    margin-bottom: 2rem;
 }
-.grid-container{
+
+.grid-container {
     display: flex;
     margin-bottom: 1rem;
 }
 
-@media screen and (max-width: 960px){
-    .grid-container{     
+@media screen and (max-width: 960px) {
+    .grid-container {
         justify-content: center;
     }
 }
 
-.filter-grid{
+.filter-grid {
     display: flex;
-  padding: 1.25rem;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  
+    padding: 1.25rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+
 }
 
 @media screen and (max-width: 400px) {
-  .filter-grid {
-    flex-direction: column;  }
+    .filter-grid {
+        flex-direction: column;
+    }
 }
 
-.grid-projects{
+.grid-projects {
 
     padding: 1rem;
-    display: grid ;
+    display: grid;
     gap: 1rem;
 
-  grid-auto-flow: column;
+    grid-auto-flow: column;
     align-items: start;
 
 }
 
 @media screen and (max-width: 720px) {
-  .grid-projects {
-    grid-auto-flow: row;
-  }
+    .grid-projects {
+        grid-auto-flow: row;
+    }
 }
 
-.search{
+.search {
     float: inline-start;
     position: relative;
     width: 250px;
@@ -443,11 +430,12 @@ icon.addEventListener("click",doSearch);
     box-shadow: 0 0 0 3px var(--color-oxford-blue);
     overflow: hidden;
 }
-.search .active{
+
+.search .active {
     width: 250px;
 }
 
-.search .icon{
+.search .icon {
     position: absolute;
     top: 0;
     left: 0;
@@ -462,28 +450,28 @@ icon.addEventListener("click",doSearch);
     cursor: pointer;
 }
 
-.search .icon::before{
+.search .icon::before {
     content: '';
     position: absolute;
     width: 12px;
     height: 12px;
     border: 3px solid var(--color-cerulean);
     border-radius: 50%;
-    transform: translate(-2.5px,-2.5px) ;
+    transform: translate(-2.5px, -2.5px);
 
 }
 
-.search .icon::after{
+.search .icon::after {
     content: '';
     position: absolute;
     width: 2px;
     height: 10px;
-    background:  var(--color-cerulean);
+    background: var(--color-cerulean);
     border-radius: 50%;
-    transform: translate(5.5px,5.5px) rotate(315deg);
+    transform: translate(5.5px, 5.5px) rotate(315deg);
 }
 
-.search .input{
+.search .input {
     position: relative;
     width: 150px;
     height: 50px;
@@ -494,7 +482,7 @@ icon.addEventListener("click",doSearch);
     background: var(--color-snow);
 }
 
-.search .input input{
+.search .input input {
     position: absolute;
     top: 0;
     width: 100%;
@@ -506,8 +494,8 @@ icon.addEventListener("click",doSearch);
     background: var(--color-snow);
 }
 
-.clear{
-    position:absolute;
+.clear {
+    position: absolute;
     top: 50%;
     transform: translateY(-50%);
     width: 12px;
@@ -521,7 +509,7 @@ icon.addEventListener("click",doSearch);
 
 }
 
-clear::before{
+clear::before {
     position: absolute;
     content: '';
     width: 1px;
@@ -530,7 +518,7 @@ clear::before{
     transform: rotate(45deg);
 }
 
-clear::after{
+clear::after {
     position: absolute;
     content: '';
     width: 1px;
@@ -539,7 +527,7 @@ clear::after{
     transform: rotate(315deg);
 }
 
-.filter-btn{
+.filter-btn {
     text-align: center;
     display: flex;
     align-items: center;
@@ -557,7 +545,7 @@ clear::after{
 
 }
 
-.filter-btn .icon{
+.filter-btn .icon {
     top: 0;
     left: 0;
     width: 30px;
@@ -574,16 +562,16 @@ clear::after{
     justify-content: center;
 }
 
-.filter-btn:hover{
+.filter-btn:hover {
     background: var(--color-oxford-blue);
     color: var(--color-snow);
 }
 
-.filter-btn:hover .icon{
+.filter-btn:hover .icon {
     color: var(--color-snow);
 }
 
-.accordion{
+.accordion {
     background-color: var(--color-snow);
 
     --bs-accordion-active-bg: var(--color-platinum);
@@ -596,42 +584,43 @@ clear::after{
 
 }
 
-.accordion-header{
+.accordion-header {
     background-color: var(--color-snow);
 
 }
 
-.accordion-button{
+.accordion-button {
     background-color: var(--color-snow);
 }
 
-.accordion-button::after{
+.accordion-button::after {
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23086788'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
 
 }
 
-.accordion-button.collapsed::after{
+.accordion-button.collapsed::after {
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23086788'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
 
 }
 
-.accordion-button:hover{
+.accordion-button:hover {
     background-color: var(--color-cerulean);
     color: var(--color-snow);
 }
 
-.accordion-button:hover::after{
+.accordion-button:hover::after {
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fffbfa'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
 }
 
-.accordion-button:focus{
+.accordion-button:focus {
     box-shadow: var(--color-cerulean);
 }
 
-.accordion-body{
+.accordion-body {
     background-color: var(--color-platinum);
 }
-.accordion-button:not(.collapsed){
+
+.accordion-button:not(.collapsed) {
     box-shadow: none;
 }
 
@@ -651,7 +640,6 @@ clear::after{
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--color-cerulean);
+    background: var(--color-cerulean);
 }
-
 </style>

@@ -1,7 +1,4 @@
 <template>
-    <!--
-        TODO: find a way to not make the logo light up when in the home page
-    -->
     <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top">
         <div class="container-fluid">
             <NuxtLink class="navbar-brand" to="/"><img src="@/images/logo.png" width="50"> <b>HyperMeow</b>
@@ -133,20 +130,20 @@
     background-color: #9991A1;
 }
 
-.navbar-toggler{
+.navbar-toggler {
     border: var(--bs-border-width) solid var(--color-snow);
-    
+
 }
 
-.navbar-toggler.collapsed{
+.navbar-toggler.collapsed {
     border: var(--bs-border-width) solid var(--color-snow);
 }
 
-.navbar-toggler-icon{
+.navbar-toggler-icon {
     color: var(--color-snow);
 }
 
- .navbar-toggler-icon {
-  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,251,252, 0.75)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,251,252, 0.75)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
 }
 </style>

@@ -6,24 +6,23 @@ import PeopleCard from '@/components/PeopleCard.vue'
 </script>
 
 <template>
-    <!-- Main Content -->
     <main>
         <!-- Header Row -->
         <div class="row mx-3 d-flex justifyWhenNeeded">
-                <div class="title">About us</div>
+            <div class="title">About us</div>
         </div>
         <!-- Row with custom margins and separator-->
-    <div class ="separator-margin py-5 " style = "background-color: #9991A1;">
-        <div class="row justify-content-center separator-margin custom-margins">
-            <div class="col-md-9 d-flex align-items-center justify-content-center">
-                    <b class="custom-h3" style="text-align:center; line-height: 100%; font-size: 2em;">
+        <div class="separator-margin py-5 " style="background-color: #9991A1;">
+            <div class="row justify-content-center separator-margin custom-margins">
+                <div class="col-md-9 d-flex align-items-center justify-content-center">
+                    <b class="custom-h3">
                         Embracing novel ideas, fueling unprecedented
                         innovations, and
                         committing to the creation of a future where sustainability is not just a concept, but an
                         established practice.</b>
+                </div>
             </div>
         </div>
-    </div>
         <!-- Row with mission text and image -->
         <div class="row d-flex justify-content-center margin-t-1 custom-margins-l">
             <!-- Mission Text Column -->
@@ -54,8 +53,8 @@ import PeopleCard from '@/components/PeopleCard.vue'
             </div>
             <!-- Image Column -->
             <div class="col-md-5 my-3 d-flex justify-content-center">
-                <img class="card-img-top rounded"
-                    style="width: 90%; object-fit: cover;" src="/images/about/usCats.webp" alt="">
+                <img class="card-img-top rounded" style="width: 90%; object-fit: cover;" src="/images/about/usCats.webp"
+                    alt="">
             </div>
         </div>
         <!-- Row with the VC achievements -->
@@ -79,13 +78,13 @@ import PeopleCard from '@/components/PeopleCard.vue'
         </div>
         <!-- Row with investment approach and related image -->
         <div class="row d-flex justify-content-center separator-margin custom-margins-r">
-            <div class = "row text2right text-style">
-                    <h3> <b> Our Investment Approach </b></h3>
+            <div class="row text2right text-style">
+                <h3> <b> Our Investment Approach </b></h3>
             </div>
-            <div class = "row">
+            <div class="row">
                 <div class="col-md-5 my-3 d-flex justify-content-center">
-                <img class="card-img-top rounded"
-                    style="width: 70%; object-fit: cover;" src="/images/about/invest.webp" alt="">
+                    <img class="card-img-top rounded" style="width: 70%; object-fit: cover;" src="/images/about/invest.webp"
+                        alt="">
                 </div>
                 <div class="col-md-7 text-right my-3 text-style pl-5">
                     <div> Our investment strategy is centered around the <strong>discovery and support of startups</strong>
@@ -108,7 +107,8 @@ import PeopleCard from '@/components/PeopleCard.vue'
                 <br>
                 <br>
                 <br>
-                <h3 class = "custom-bold" style ="font-size: 1.5em;">“Investing in the future does not only mean foreseeing the future, but creating it”
+                <h3 class="custom-bold" style="font-size: 1.5em;">“Investing in the future does not only mean foreseeing the
+                    future, but creating it”
                 </h3>
             </div>
             <div class="col-md-8 justify-content-center separator-margin" style="text-align: justify;">
@@ -126,10 +126,10 @@ import PeopleCard from '@/components/PeopleCard.vue'
             </div>
         </div>
         <!-- Featured Portfolio Section -->
-        <div class ="row separator-margin custom-margins">
+        <div class="row separator-margin custom-margins">
             <!-- Title -->
             <div class="row mx-3 justify-content-center">
-            <h1 style="text-align: center;color: #000022;"> Featured Portfolio </h1>
+                <h1 style="text-align: center;color: #000022;"> Featured Portfolio </h1>
             </div>
             <br>
             <!-- Portfolio Cards -->
@@ -144,16 +144,15 @@ import PeopleCard from '@/components/PeopleCard.vue'
             </div>
             <br>
             <div class="row mx-3 d-flex justify-content-center custom-margins">
-                <nuxt-link to="/projects" tag="button" type="button"
-                    class="btn btn-secondary">
+                <NuxtLink to="/projects" tag="button" type="button" class="btn btn-secondary">
                     <b>Explore all projects</b>
-                </nuxt-link>
+                </NuxtLink>
             </div>
         </div>
         <!-- Meet Our Team Section -->
-        <div class = "row custom-margins separator-margin">
+        <div class="row custom-margins separator-margin">
             <div class="row mx-3 justify-content-center">
-            <h1 style="text-align: center; color: #000022;"> Meet Our Team </h1>
+                <h1 style="text-align: center; color: #000022;"> Meet Our Team </h1>
             </div>
             <br>
             <div class="row mx-3 d-flex justify-content-center custom-margins">
@@ -167,9 +166,9 @@ import PeopleCard from '@/components/PeopleCard.vue'
             </div>
             <br>
             <div class="row mx-3 d-flex justify-content-center custom-margins">
-                <nuxt-link to="/people" tag="button" type="button" class="btn btn-secondary">
+                <NuxtLink to="/people" tag="button" type="button" class="btn btn-secondary">
                     <b>Meet the whole team</b>
-                </nuxt-link>
+                </NuxtLink>
             </div>
         </div>
         <!-- Testimonials Section -->
@@ -205,6 +204,7 @@ import PeopleCard from '@/components/PeopleCard.vue'
         </div>
     </main>
 </template>
+
 <script lang="ts">
 export default {
     // Defining data properties for the component
@@ -235,11 +235,11 @@ export default {
                 const projectsData = await makeCall(this.$config.public.SERVER_URL + "/getFeaturedProjects", 'GET');
                 // Making a GET request to get the people data
                 const peopleData = await makeCall(this.$config.public.SERVER_URL + "/getPeople", 'GET');
-                
+
                 // Log the received data
                 console.log(projectsData);
                 console.log(peopleData);
-                
+
                 // Assigning the fetched data to the component's data properties
                 this.projects = projectsData;
                 this.people = peopleData;
@@ -253,20 +253,21 @@ export default {
 }
 </script>
 
-
 <style scoped>
 /* A class for styling text elements */
-.text-style{
-    font-size: 1.5em; /* Font size is 1.5 times the base size */
-    line-height: 105%; /* Line height is 105% of the font size */
+.text-style {
+    font-size: 1.5em;
+    /* Font size is 1.5 times the base size */
+    line-height: 105%;
+    /* Line height is 105% of the font size */
     color: #000022;
-    text-align:justify;
-   
+    text-align: justify;
+
 }
 
 
 /* A class for setting a top margin of 120px */
-.margin-t-1{
+.margin-t-1 {
     margin-top: 120px;
 }
 
@@ -289,75 +290,75 @@ export default {
 }
 
 /* A class to manager the right display of the big numbers, shifting one to the right */
-.r-shifter-margin{
+.r-shifter-margin {
     margin-left: 0px;
 }
 
-@media(max-width: 860px){
-    .r-shifter-margin{
-    margin-left: 20px;
-}
+@media(max-width: 860px) {
+    .r-shifter-margin {
+        margin-left: 20px;
+    }
 }
 
-@media(max-width: 859px){
-    .r-shifter-margin{
-    margin-left: 0px;
-}
+@media(max-width: 859px) {
+    .r-shifter-margin {
+        margin-left: 0px;
+    }
 }
 
 /* A class for large headings */
-.title{
+.title {
     font-size: 3.5em;
     color: #000022;
-    text-align:center
-    
+    text-align: center
 }
 
 
-@media(max-width: 768px){
-    .title{
-    font-size: 3.5em;
-    
-    color: #000022;
-    text-align: center;
-    
-    
-}
+@media(max-width: 768px) {
+    .title {
+        font-size: 3.5em;
 
-/* A class to justify the content only incertain dimensions */
-.justifyWhenNeeded{
-justify-content: center;
-}
+        color: #000022;
+        text-align: center;
+
+
+    }
+
+    /* A class to justify the content only incertain dimensions */
+    .justifyWhenNeeded {
+        justify-content: center;
+    }
 }
 
 /* A class for setting a smaller top margin */
-.separator-margin{
+.separator-margin {
     margin-top: 80px;
 }
 
 /* A class for setting a bottom margin */
-.bottom-margin{
-    margin-bottom: 50px;
+.bottom-margin {
+    margin-bottom: 100px;
 }
 
 /* A class for styling testimonials with a larger top margin */
-.testimonial-margin{
-    margin-top: 80px;
+.testimonial-margin {
+    margin-top: 140px;
 }
 
 /* A class for styling the text within testimonials */
-.testimonial-text{
+.testimonial-text {
     font-size: 1.6em;
     line-height: 100%;
 }
 
 /* A class for aligning text to the right */
-.text2right{
+.text2right {
     text-align: end;
 }
 
 /* Media query for screens up to 768px wide */
 @media (max-width: 768px) {
+
     /* Adjust margins and alignment for smaller screens */
     .custom-margins {
         margin-left: 50px;
@@ -374,26 +375,26 @@ justify-content: center;
         margin-right: 75px;
     }
 
-    .margin-t-1{
+    .margin-t-1 {
         margin-top: 60px;
     }
 
-    
 
-    .separator-margin{
+
+    .separator-margin {
         margin-top: 40px;
     }
 
-    .bottom-margin{
+    .bottom-margin {
         margin-bottom: 25px;
     }
 
-    .testimonial-margin{
+    .testimonial-margin {
         margin-top: 60px;
     }
 
     /* Center align text on smaller screens */
-    .text2right{
+    .text2right {
         text-align: center;
     }
 
@@ -401,6 +402,7 @@ justify-content: center;
 
 /* Media query for screens up to 480px wide */
 @media (max-width: 480px) {
+
     /* Further adjust margins for even smaller screens */
     .custom-margins {
         margin-left: 20px;
@@ -416,40 +418,43 @@ justify-content: center;
         margin-left: 20px;
         margin-right: 30px;
     }
-    
 
-    .margin-t-1{
+
+    .margin-t-1 {
         margin-top: 30px;
     }
-    
-    .separator-margin{
+
+    .separator-margin {
         margin-top: 15px;
     }
 
-    .bottom-margin{
+    .bottom-margin {
         margin-bottom: 15px;
     }
 
-    .testimonial-margin{
+    .testimonial-margin {
         margin-top: 30px;
     }
 }
 
 /* A class for h3 elements with larger font size, bold, and specific color */
 .custom-h3 {
-    font-size: 1.75em;
-    font-weight: 700;
+    font-size: 1.6rem;
+    font-weight: 400;
     color: snow;
-    margin-top:-2.5em;
+    margin-top: -3em;
+    text-align: center;
+    line-height: normal;
+    font-style: italic;
 }
 
-@media(max-width: 768px){
+@media(max-width: 768px) {
     .custom-h3 {
-    font-size: 1.75em;
-    font-weight: 700;
-    color: snow;
-    margin-top:-1em;
-}
+        font-size: 1.75em;
+        font-weight: 700;
+        color: snow;
+        margin-top: -1em;
+    }
 }
 
 /* A class for bold text with a specific color */
@@ -463,28 +468,28 @@ justify-content: center;
     text-align: center;
     font-weight: bold;
     color: #000022;
-    
+
 }
 
 /* A class for bold text with a specific color, size and margin */
 .custom-bold-num {
-    font-size: 1.5em; 
-    margin-top:-2em;
+    font-size: 1.5em;
+    margin-top: -2em;
     font-weight: bold;
     color: #000022;
-    
+
 }
 
 /* A class for making elements round */
 .rounded {
     border-radius: 75%;
-    
+
 }
 
 /* A class for aligning text to the right */
 .text-right {
     text-align: right;
-    text-align:justify;
+    text-align: justify;
 }
 
 
@@ -493,12 +498,12 @@ justify-content: center;
     width: 90%;
     background-color: #086788;
     margin-top: 2%;
-    
+
 }
 
 .btn-secondary:hover,
 
 .btn-secondary:active {
-    background-color:  rgb(13, 79, 106);
+    background-color: rgb(13, 79, 106);
 }
 </style>
