@@ -11,7 +11,11 @@ export default defineNuxtConfig({
             meta: [
                 { charset: 'utf-8' },
                 { name: 'viewport', content: 'width=device-width,initial-scale=1' },
-                { hid: 'description', name: 'description', content: 'HyperMeow' },
+                {
+                    hid: 'description',
+                    name: 'description',
+                    content: 'HyperMeow is a venture capital firm that funds innovative projects and startups. Their website features a portfolio of over 15 investments, including detailed descriptions and visuals of each project. The site also highlights key team members, providing brief profiles and expertise. HyperMeow focuses on thematic areas, such as Health, Green, Education, and technologies, offering insights into their investment strategy and the ventures they support.'
+                },
             ],
 
             link: [
@@ -36,7 +40,7 @@ export default defineNuxtConfig({
     runtimeConfig: {
         apiSecret: '', // can be overridden by NUXT_API_SECRET environment variable
         public: {
-            SERVER_URL: process.env.SERVER_URL || 'http://127.0.0.1:5000', // can be overridden by NUXT_PUBLIC_API_BASE environment variable
+            SERVER_URL: 'https://reebo.it:5000', // can be overridden by NUXT_PUBLIC_API_BASE environment variable
         }
     },
 
