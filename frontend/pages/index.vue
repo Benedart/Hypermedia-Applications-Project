@@ -343,7 +343,7 @@ export default {
     max-width: calc(100vw);
     /* Full viewport */
     width: 100%;
-    background-image: url('./images/index/plant.webp');
+    background-image: url('/images/index/plant.webp');
     background-position: end;
     /* Center the image */
     background-repeat: no-repeat;
@@ -360,7 +360,7 @@ export default {
 
 /* CSS to display a small background image */
 .image-wood {
-    background-image: url("./images/index/wood.webp");
+    background-image: url("/images/index/wood.webp");
     background-repeat: no-repeat;
     background-position-x: right;
     flex-direction: column;
