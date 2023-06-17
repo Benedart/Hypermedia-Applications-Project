@@ -3,7 +3,6 @@
 import { makeCall } from '@/utils/common'
 import ProjectCard from '@/components/ProjectCard.vue'
 import PeopleCard from '@/components/PeopleCard.vue'
-
 </script>
 
 <template>
