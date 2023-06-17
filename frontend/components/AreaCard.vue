@@ -95,6 +95,7 @@ export default {
     margin-top: 2em!important;
 }
 
+
 .card:hover {
     transform: translateY(-0.5%);
     box-shadow: 0 4rem 8rem rgba(0, 0, 34, 0.5);

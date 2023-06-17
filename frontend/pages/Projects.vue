@@ -123,7 +123,7 @@ export default {
             projects: [
                 {
                     projectid: -1,
-                    title: 'example',
+                    title: 'project',
                     preview: 'Questo progetto è bellissimo, davvero il futuro',
                     stage: 'stage',
                     areas: [
@@ -140,7 +140,7 @@ export default {
             allProjects: [
                 {
                     projectid: -1,
-                    title: 'example',
+                    title: 'project',
                     preview: 'Questo progetto è bellissimo, davvero il futuro',
                     stage: 'stage',
                     areas: [
@@ -274,7 +274,7 @@ export default {
 
 
         //removing filter working, calling of the son function not working
-        removeFilterArea: function (areaid) {
+        removeFilterArea: function(areaid){
             let self = this
 
             console.log(self.filterAreas)
@@ -283,24 +283,24 @@ export default {
 
             self.filterAreas = this.filterAreas.filter(filterArea => filterArea.AreaID !== areaid);
             (self.$refs.projectFilter).removeAreaFilter(areaid)
-
+        
         },
 
-        removeFilterYear: function (year) {
+        removeFilterYear: function(year){
             let self = this
             self.filterYears = this.filterYears.filter(filterYear => filterYear !== year);
             (self.$refs.projectFilter).removeYearFilter(year)
-
+        
         },
 
-        removeFilterStage: function (stage) {
+        removeFilterStage: function(stage){
             let self = this
             self.filterStages = this.filterStages.filter(filterStage => filterStage !== stage);
             (self.$refs.projectFilter).removeStageFilter(stage)
-
+        
         },
 
-
+    
 
 
         // returns the list of projects that belong to the area with the given id

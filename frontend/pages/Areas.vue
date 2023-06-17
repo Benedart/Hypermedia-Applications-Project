@@ -107,25 +107,4 @@ export default {
 
 }
 
-/*
-@media screen and (max-width: 600px) {
-
-    .container {
-        padding: auto !important;
-        margin: auto;
-    }
-
-}
-*/
-
-/*.container {
-    padding: 4rem;
-    border-radius: 0.4rem;
-    background-color: var(--color-snow);
-    width: auto;
-    height: auto;
-    max-height: 90%;
-    margin: auto;
-
-}*/
 </style>
