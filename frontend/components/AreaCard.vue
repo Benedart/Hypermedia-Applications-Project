@@ -89,6 +89,10 @@ export default {
     overflow: hidden;
     box-shadow: 0 3rem 6rem rgba(0, 0, 34, 0.1);
     transition: 0.2s;
+    width: 383.05px;
+    margin-left: auto!important;
+    margin-right: auto!important;
+    margin-top: 2em!important;
 }
 
 .card:hover {
