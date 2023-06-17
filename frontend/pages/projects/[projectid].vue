@@ -32,12 +32,12 @@
             </div>
 
             <div class="section-1">
-                <img class="image-project " :src="`/images/projects/${projectDetails.title}.webp`">
+                <img class="image-project " :src="`/images/projects/${projectDetails.title}/logo.webp`">
                 <p class="custom-paragraph-2">{{ projectDetails.section2 }}</p>
             </div>
             <div class="section-3">
                 <p class="custom-paragraph-3">{{ projectDetails.section3 }} </p>
-                <img class="image" :src="`/images/projects/${projectDetails.title}/logo.webp`">
+                <img class="image" :src="`/images/projects/${projectDetails.title}/image.webp`">
             </div>
         </div>
     </div>
@@ -58,7 +58,7 @@ export default {
                 budget: '1000',
                 stage: 'stage',
                 year: 1900,
-                title: "Title",
+                title: "example",
                 areas: [{ areaid: -1, title: "Area" }],
                 featured: 1,
             },
@@ -275,13 +275,13 @@ export default {
 
 }
 
-.image{
-    position:relative;
+.image {
+    position: relative;
     margin-top: 3em !important;
     margin-bottom: 5em !important;
-    max-width:70%;
-    height:auto;
-    margin:auto;
+    max-width: 70%;
+    height: auto;
+    margin: auto;
     width: 1000px;
     height: 550px;
     border-top-right-radius: 5%;
@@ -290,21 +290,21 @@ export default {
     border-bottom-left-radius: 5%;
 }
 
-@media(max-width: 800px){
-    .image{
-    position:relative;
-    margin-top: 3em !important;
-    margin-bottom: 5em !important;
-    max-width:70%;
-    height:auto;
-    margin:auto;
-    width: 500px;
-    height: 275px;
-    border-top-right-radius: 5%;
-    border-top-left-radius: 5%;
-    border-bottom-right-radius: 5%;
-    border-bottom-left-radius: 5%;
-}
+@media(max-width: 800px) {
+    .image {
+        position: relative;
+        margin-top: 3em !important;
+        margin-bottom: 5em !important;
+        max-width: 70%;
+        height: auto;
+        margin: auto;
+        width: 500px;
+        height: 275px;
+        border-top-right-radius: 5%;
+        border-top-left-radius: 5%;
+        border-bottom-right-radius: 5%;
+        border-bottom-left-radius: 5%;
+    }
 }
 
 
@@ -316,4 +316,5 @@ export default {
     width: 100%;
     /* Imposta la larghezza al 100% per coprire l'intera larghezza del contenitore */
     height: auto;
-}</style>
+}
+</style>

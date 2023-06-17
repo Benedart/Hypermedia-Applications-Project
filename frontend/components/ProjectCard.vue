@@ -1,22 +1,22 @@
 
 <template>
     <div class="card h-100 mx-auto" style="width: 18rem;">
-        <img class="card-img" :src="`/images/projects/${title}.webp`" :alt="title">
+        <img class="card-img" :src="`/images/projects/${title}/logo.webp`" :alt="title">
         <div class="card-body">
             <h1 class="card-header"><b> {{ title }} </b></h1>
             <p class="card-description">{{ preview }}</p>
-                <span class="float-start" ><b>{{ stage }}</b>
-                    <row style="margin-left: 0.5rem;" v-for="area in areas" >
-                        <NuxtLink :to="`/areas/${area.areaid}`" class="area-link">
-                            <span class="area-title" >{{ area.title}}  </span>
-                        </NuxtLink>
-                    </row>
-                </span>
-            </div>
-            <nuxt-link :to="`/projects/${projectid}`" tag="button" type="button" class="card-btn ">
-                    <b>Learn more</b>
-            </nuxt-link>
+
+            <span class="float-start">
+                <b>{{ stage }}</b>
+            </span>
+
+            <span class="float-end">{{ year }}</span>
+
+            <NuxtLink :to="`/projects/${projectid}`" tag="button" type="button" class="card-btn ">
+                <b>Learn more</b>
+            </NuxtLink>
         </div>
+    </div>
 </template>
 
 <script lang="js">
@@ -32,10 +32,6 @@ export default {
         areas: Array
     },
 }
-
-
-
-
 </script>
 
 <style scoped>
@@ -79,7 +75,7 @@ export default {
     margin-top: 0.7em;
     font-weight: bold;
     font-size: 1.5em;
-    color : var(--color-snow);
+    color: var(--color-snow);
 }
 
 .card-header {
@@ -91,7 +87,6 @@ export default {
     background-color: var(--color-snow);
     border-bottom: var(--bs-card-border-width) solid var(--color-cerulean);
 }
-
 
 .card-footer {
     background-color: #086788;
@@ -106,7 +101,6 @@ export default {
 }
 
 .card-btn {
-
     width: 50%;
     padding: 0.2rem;
     font-size: 1.0rem;
@@ -120,8 +114,8 @@ export default {
     transition: 0.2s;
     cursor: pointer;
     letter-spacing: 0.1rem;
-    margin-top: 0.5em;
-    margin-bottom:1.3em;
+    margin-top: 1.5em;
+    margin-bottom: 1em;
     margin-right: 4em;
     margin-left: 4.5em;
 }

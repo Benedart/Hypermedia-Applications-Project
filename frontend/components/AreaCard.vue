@@ -1,6 +1,6 @@
 <template>
-    <div class="card" >
-        <img class="card-img" :src="`/images/areas/${title}.jpg`" >
+    <div class="card">
+        <img class="card-img" :src="`/images/areas/${title}.jpg`">
         <div class="card-content">
             <h1 class="card-header"><b> {{ title }} </b></h1>
             <p
@@ -11,7 +11,7 @@
                 <div v-for="project in projects">
                     <NuxtLink :to="`/projects/${project.ProjectID}`" class="mytooltip tooltip-container">
                         <span class="tooltiptext"> {{ project.Title }} </span>
-                        <img :src="`/images/projects/${project.Title}.webp`" class="projectIcon" tag="button"
+                        <img :src="`/images/projects/${project.Title}/logo.webp`" class="projectIcon" tag="button"
                             type="button" />
                     </NuxtLink>
                 </div>
@@ -180,7 +180,7 @@ export default {
     margin-bottom: 1rem;
     top: 50%;
     left: 50%;
-    transform: translate(-100%,25%);
+    transform: translate(-100%, 25%);
 }
 
 .card-btn:hover,
