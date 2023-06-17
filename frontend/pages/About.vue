@@ -12,7 +12,7 @@ import PeopleCard from '@/components/PeopleCard.vue'
             <div class="title">About us</div>
         </div>
         <!-- Row with custom margins and separator-->
-        <div class ="separator-margin py-5 " style = "background-color: #9991A1;">
+        <div class="separator-margin py-5 " style="background-color: #9991A1;">
             <div class="row justify-content-center separator-margin custom-margins">
                 <div class="col-md-9 d-flex align-items-center justify-content-center">
                     <h3 class="custom-h3" style="text-align:center; line-height: 100%; font-size: 2em;">
@@ -108,7 +108,8 @@ import PeopleCard from '@/components/PeopleCard.vue'
                 <br>
                 <br>
                 <br>
-                <h3 class = "custom-bold" style ="font-size: 1.5em;">“Investing in the future does not only mean foreseeing the future, but creating it”
+                <h3 class="custom-bold" style="font-size: 1.5em;">“Investing in the future does not only mean foreseeing the
+                    future, but creating it”
                 </h3>
             </div>
             <div class="col-md-8 justify-content-center separator-margin" style="text-align: justify;">
@@ -144,8 +145,7 @@ import PeopleCard from '@/components/PeopleCard.vue'
             </div>
             <br>
             <div class="row mx-3 d-flex justify-content-center custom-margins">
-                <nuxt-link to="/projects" tag="button" type="button"
-                    class="btn btn-secondary">
+                <nuxt-link to="/projects" tag="button" type="button" class="btn btn-secondary">
                     <b>Explore all projects</b>
                 </nuxt-link>
             </div>
@@ -440,18 +440,19 @@ export default {
 /* A class for h3 elements with larger font size, bold, and specific color */
 .custom-h3 {
     font-size: 1.75em;
-    font-weight: 700;
+    font-weight: 400;
     color: snow;
-    margin-top:-2.5em;
+    margin-top: -2.5em;
+    font-style: italic;
 }
 
 @media(max-width: 768px) {
     .custom-h3 {
-    font-size: 1.75em;
-    font-weight: 700;
-    color: snow;
-    margin-top:-1em;
-}
+        font-size: 1.75em;
+        font-weight: 700;
+        color: snow;
+        margin-top: -1em;
+    }
 }
 
 /* A class for bold text with a specific color */
@@ -496,7 +497,7 @@ export default {
     width: 30%;
     background-color: #086788;
     margin-top: 2%;
-    
+
 }
 
 .btn-secondary:hover,

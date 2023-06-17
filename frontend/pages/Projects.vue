@@ -3,6 +3,12 @@
 import { makeCall } from '@/utils/common'
 import ProjectFilter from '@/components/ProjectFilter.vue'
 import ProjectCard from '@/components/ProjectCard.vue'
+
+useSeoMeta({
+    title: 'Projects - HyperMeow',
+    description: 'Discover our diverse projects at HyperMeow. Revolutionizing techonology, healthcare, ecosustain, and more. Shape the future with us.',
+    keywords: 'projects, hypermeow, hypermeow projects, hypermeow projects page, hypermeow projects list, hypermeow projects list page',
+})
 </script>
 
 <template>
@@ -59,7 +65,7 @@ import ProjectCard from '@/components/ProjectCard.vue'
                         <button class="accordion-button" type="button" data-bs-toggle="collapse"
                             :data-bs-target="`#panelsStayOpen-${area.areaid}`" aria-expanded="true"
                             :aria-controls="`panelsStayOpen-${area.areaid}`">
-                            <NuxtLink :to="`/areas/${area.areaid}`">
+                            <NuxtLink :to="`/areas/${area.areaid}`" class="accordion-link-area">
                                 <b>{{ area.title }}</b>
                             </NuxtLink>
                         </button>
@@ -274,7 +280,7 @@ export default {
 
 
         //removing filter working, calling of the son function not working
-        removeFilterArea: function(areaid){
+        removeFilterArea: function (areaid) {
             let self = this
 
             console.log(self.filterAreas)
@@ -283,24 +289,24 @@ export default {
 
             self.filterAreas = this.filterAreas.filter(filterArea => filterArea.AreaID !== areaid);
             (self.$refs.projectFilter).removeAreaFilter(areaid)
-        
+
         },
 
-        removeFilterYear: function(year){
+        removeFilterYear: function (year) {
             let self = this
             self.filterYears = this.filterYears.filter(filterYear => filterYear !== year);
             (self.$refs.projectFilter).removeYearFilter(year)
-        
+
         },
 
-        removeFilterStage: function(stage){
+        removeFilterStage: function (stage) {
             let self = this
             self.filterStages = this.filterStages.filter(filterStage => filterStage !== stage);
             (self.$refs.projectFilter).removeStageFilter(stage)
-        
+
         },
 
-    
+
 
 
         // returns the list of projects that belong to the area with the given id
@@ -637,11 +643,14 @@ clear::after {
 
 .accordion-button.collapsed::after {
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23086788'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
-
 }
 
 .accordion-button:hover {
     background-color: var(--color-cerulean);
+    color: var(--color-snow);
+}
+
+.accordion-button:hover .accordion-link-area {
     color: var(--color-snow);
 }
 

@@ -1,6 +1,11 @@
-
 <template>
     <div class="container">
+
+        <Head>
+            <Title>{{ projectDetails.title }} - HyperMeow</Title>
+            <Meta name="description" :content="projectDetails.section1" />
+        </Head>
+
         <div>
             <h1 class="name-project">{{ projectDetails.title }}
                 <span v-if="projectDetails.featured">
@@ -20,7 +25,8 @@
             <div class="section-1">
                 <p class="custom-paragraph-1">{{ projectDetails.section1 }}</p>
                 <span class="supervisor-span">
-                    <img class="image-person " :src="`/images/People/${projectDetails.supervisor}.webp`">
+                    <img class="image-person " :src="`/images/People/${projectDetails.supervisor}.webp`"
+                        :alt="`Portrait of the supervisor ${projectDetails.name} ${projectDetails.surname}`">
                     <p class="supervisor-p">
                         <b style="font-size: 20px; margin-left:0.7em; color:#000022">Supervisor: </b>
                         <NuxtLink class="supervisor-link" :to="`/people/${projectDetails.supervisor}`">
@@ -32,7 +38,8 @@
             </div>
 
             <div class="section-1">
-                <img class="image-project " :src="`/images/projects/${projectDetails.title}/logo.webp`">
+                <img class="image-project " :src="`/images/projects/${projectDetails.title}/logo.webp`"
+                    :alt="`${projectDetails.title} logo`">
                 <p class="custom-paragraph-2">{{ projectDetails.section2 }}</p>
             </div>
             <div class="section-3">
@@ -99,8 +106,6 @@ export default {
         },
     },
 }
-
-
 </script>
 
 <style scoped>

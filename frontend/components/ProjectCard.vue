@@ -1,7 +1,7 @@
 
 <template>
     <div class="card h-100 mx-auto" style="width: 18rem;">
-        <img class="card-img" :src="`/images/projects/${title}/logo.webp`" :alt="title">
+        <img class="card-img" :src="`/images/projects/${title}/logo.webp`" :alt="`${title} logo`">
         <div class="card-body">
             <h1 class="card-header"><b> {{ title }} </b></h1>
             <p class="card-description">{{ preview }}</p>

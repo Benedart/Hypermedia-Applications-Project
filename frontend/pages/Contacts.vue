@@ -1,7 +1,13 @@
 
 <script setup lang="js">
-  // Importing ContactForm component
-  import ContactForm from '@/components/ContactForm.vue'
+// Importing ContactForm component
+import ContactForm from '@/components/ContactForm.vue'
+
+useSeoMeta({
+  title: 'Contact us - HyperMeow',
+  description: 'This is the contact page of HyperMeow website. Here you can find all the contact details of HyperMeow.',
+  keywords: 'HyperMeow, contact, hypermeow contact, email, phone, address, socials',
+})
 </script>
 
 <template>
@@ -86,7 +92,8 @@
 /* Styling the margin of the page from the footer*/
 .margin {
   background-color: #FFFBFA;
-  margin-bottom: 10em;
+  /* should reach the footer */
+  min-height: 100vh;
 }
 
 /* Styling the heading */

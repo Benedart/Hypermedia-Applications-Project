@@ -1,6 +1,12 @@
 <script setup lang="js">
 import { makeCall } from '@/utils/common'
 import ProjectCard from '@/components/ProjectCard.vue'
+
+useSeoMeta({
+    title: 'Featured Projects - HyperMeow',
+    description: 'HyperMeow featured projects page, where you can find all the projects that are featured on the website. Featured projects are the ones that are considered the most important and interesting by the HyperMeow team.',
+    keywords: 'HyperMeow, featured projects, projects, featured, important, interesting, HyperMeow projects, HyperMeow featured projects, HyperMeow featured projects page, HyperMeow featured projects list',
+})
 </script>
 
 <template>
@@ -25,7 +31,7 @@ export default {
             projects: [
                 {
                     projectid: -1,
-                    title: 'project',
+                    title: 'example',
                     preview: 'Questo progetto è bellissimo, davvero il futuro',
                     stage: 'stage'
                 },

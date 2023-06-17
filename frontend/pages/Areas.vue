@@ -1,6 +1,12 @@
 <script setup lang="js">
 import { makeCall } from '@/utils/common'
 import AreaCard from '@/components/AreaCard.vue'
+
+useSeoMeta({
+    title: 'Areas - HyperMeow',
+    description: 'This is the areas page of HyperMeow website. Here you can find all the areas of HyperMeow projects.',
+    keywords: 'HyperMeow, areas, ecosustain, technology, growth, healthcare, hypermeow areas',
+})
 </script>
 
 <template>
@@ -10,7 +16,7 @@ import AreaCard from '@/components/AreaCard.vue'
             <div class="title">
                 Areas
             </div>
-        
+
 
             <!--custom grid containing card areas-->
             <!--div class="container">
@@ -22,18 +28,19 @@ import AreaCard from '@/components/AreaCard.vue'
             </div-->
 
             <div class="container" style="background-color: #FFFBFA;">
-            <div class="row d-flex justify-content-center">
-                <div class="row g-3">
-                    <div v-for="area in areas " class="col" style="margin-bottom: 70px;">
-                        <AreaCard :areaid="area.AreaID" :title="area.Title" :projects="area.projects" style="margin-top: -5rem;"/>
+                <div class="row d-flex justify-content-center">
+                    <div class="row g-3">
+                        <div v-for="area in areas " class="col" style="margin-bottom: 70px;">
+                            <AreaCard :areaid="area.AreaID" :title="area.Title" :projects="area.projects"
+                                style="margin-top: -5rem;" />
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
-            
-        
+
+
     </main>
 </template>
 
@@ -97,9 +104,9 @@ export default {
 }
 
 
-@media  screen and (max-width: 600px) {
-    .grid{
-        margin: auto!important;
+@media screen and (max-width: 600px) {
+    .grid {
+        margin: auto !important;
         padding: auto;
 
 

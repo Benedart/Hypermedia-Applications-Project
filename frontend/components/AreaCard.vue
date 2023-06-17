@@ -11,8 +11,8 @@
                 <div v-for="project in projects">
                     <NuxtLink :to="`/projects/${project.ProjectID}`" class="mytooltip tooltip-container">
                         <span class="tooltiptext"> {{ project.Title }} </span>
-                        <img :src="`/images/projects/${project.Title}/logo.webp`" class="projectIcon" tag="button"
-                            type="button" />
+                        <img :src="`/images/projects/${project.Title}/logo.webp`" :alt="project.Title" class="projectIcon"
+                            tag="button" type="button" />
                     </NuxtLink>
                 </div>
             </div>
@@ -90,9 +90,9 @@ export default {
     box-shadow: 0 3rem 6rem rgba(0, 0, 34, 0.1);
     transition: 0.2s;
     width: 383.05px;
-    margin-left: auto!important;
-    margin-right: auto!important;
-    margin-top: 2em!important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    margin-top: 2em !important;
 }
 
 
