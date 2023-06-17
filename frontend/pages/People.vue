@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup lang="js">
 import { makeCall } from '@/utils/common'
 import PeopleCard from '@/components/PeopleCard.vue'
 </script>
@@ -22,7 +22,7 @@ import PeopleCard from '@/components/PeopleCard.vue'
     </div>
 </template>
 
-<script lang="ts">
+<script lang="js">
 export default {
     data() {
         return {

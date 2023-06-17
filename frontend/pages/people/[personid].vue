@@ -1,4 +1,4 @@
-<script lang="ts" setup>
+<script lang="js" setup>
 import ProjectCard from '@/components/ProjectCard.vue'
 </script>
 
@@ -13,13 +13,13 @@ import ProjectCard from '@/components/ProjectCard.vue'
                     <h3 class="name-person">{{ personDetails.name + " " + personDetails.surname }}
                     </h3>
                     <i>
-                        <h3 style="margin-bottom: 15px; color: #000022; font-family:Avenir, sans-serif; font-size: 18px;">{{ personDetails.role }}</h3>
+                        <h3 style="margin-bottom: 15px; color: #000022; font-size: 18px;">{{ personDetails.role }}</h3>
                     </i>
                     <hr>
-                    <p style="font-family: Avenir, sans-serif;color:#000022;" >{{ personDetails.Description }}</p>
+                    <p style="color:#000022;" >{{ personDetails.Description }}</p>
                     <br>
                     <h3 class="formation">FORMATION</h3>
-                    <p style="margin-bottom: 15px; font-family:Avenir, sans-serif; color:#000022;">{{ personDetails.CV }}</p>
+                    <p style="margin-bottom: 15px; color:#000022;">{{ personDetails.CV }}</p>
                     <hr>
                     <div style="margin-top: 20px; color:#000022;">
                         <a :href="`mailto:${personDetails.email}`"><img class="card-img-top img-custom"
@@ -45,7 +45,7 @@ import ProjectCard from '@/components/ProjectCard.vue'
     
 </template>
 
-<script lang="ts">
+<script lang="js">
 import { makeCall } from '@/utils/common'
 
 export default {
@@ -94,7 +94,7 @@ export default {
     },
 
     methods: {
-        getPersonData: async function (personid: number) {
+        getPersonData: async function (personid) {
             console.log(this.$route.params)
             //get person details
             try {
@@ -126,7 +126,7 @@ export default {
 
 <style scoped>
 .name-person {
-    font-family: Avenir, sans-serif;
+    
     color: #000022;
     margin: auto;
     margin-top: 2.2em;
@@ -136,7 +136,7 @@ export default {
 .formation{
     font-size: 18px; 
     color:#000022;
-    font-family:Avenir, sans-serif;
+    
 }
 .h3{
     margin-top: 110px; 

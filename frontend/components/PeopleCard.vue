@@ -1,4 +1,5 @@
-<template >
+
+<template>
     <div class="card h-100 mx-auto" style="width: 18rem; margin-top: 2em; background-color:#FFFBFA;">
         <NuxtLink :to="linkedin" tag="button" type="button" class="float-end">
             <img class="card-img-linkedin img-custom" src="/images/contact/linkedin.webp" alt="Linkedin Icon">
@@ -6,7 +7,7 @@
         <img class="card-img-top" :src="`/images/People/${personid}.webp`" :alt="personid">
         <div class="card-body">
             <h5 class="card-title">{{ name + " " + surname }}</h5>
-            <h3 class="card-subtitle">{{ role }}</h3>
+            <h3 class="card-subtitle"><b>{{ role }}</b></h3>
         </div>
 
         <div class="card-footer">
@@ -15,11 +16,11 @@
                 <b>Learn more</b>
             </NuxtLink>
         </div>
-
     </div>
 </template>
 
-<script lang="ts">
+
+<script lang="js">
 export default {
     props: {
         personid: Number,
@@ -34,7 +35,7 @@ export default {
 
     //to take the short preview of the Description
     methods: {
-        shorterDescription(Description: String) {
+        shorterDescription(Description) {
             let i = 0;
             while (i < Description.length) {
                 if (i > 85 && Description.charAt(i) === '.') {
@@ -65,7 +66,6 @@ export default {
 }
 
 .card-body {
-    font-family: Avenir, sans-serif;
     color: #000022;
     text-align: center;
 }
@@ -74,14 +74,13 @@ export default {
     margin-top: 0.7em;
     font-weight: bold;
     font-size: 1.5em;
-    font-family: Avenir, sans-serif;
-    color: #000022;
+    color : #000022;
+
 }
 
 .card-subtitle {
     font-weight: lighter;
     font-size: 1.2em;
-    font-family: Avenir, sans-serif;
 }
 
 
@@ -98,7 +97,7 @@ export default {
 }
 
 .card-Description {
-    font-family: Avenir, sans-serif;
+
     color: #FFFBFA;
     text-align: center;
     font-size: 0.75em;
@@ -121,11 +120,10 @@ export default {
     transition: 0.2s;
     cursor: pointer;
     letter-spacing: 0.1rem;
-    margin-top: 1.5em;
-    margin-bottom: 0.5em;
+    margin-top: 2em;
+    margin-bottom:1em;
     margin-right: 4em;
     margin-left: 4em;
-    font-family: Avenir, sans-serif;
 }
 
 .card-btn:hover,

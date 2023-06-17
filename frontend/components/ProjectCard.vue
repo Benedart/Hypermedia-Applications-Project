@@ -1,25 +1,25 @@
+
 <template>
     <div class="card h-100 mx-auto" style="width: 18rem;">
         <img class="card-img" :src="`/images/projects/${title}.webp`" :alt="title">
         <div class="card-body">
             <h1 class="card-header"><b> {{ title }} </b></h1>
             <p class="card-description">{{ preview }}</p>
-
-            <span class="float-start">
-                <b>{{ stage }}</b>
-            </span>
-
-            <span class="float-end">{{ year }}</span>
-
-
-            <NuxtLink :to="`/projects/${projectid}`" tag="button" type="button" class="card-btn ">
-                <b>Learn more</b>
-            </NuxtLink>
+                <span class="float-start" ><b>{{ stage }}</b>
+                    <row style="margin-left: 0.5rem;" v-for="area in areas" >
+                        <NuxtLink :to="`/areas/${area.areaid}`" class="area-link">
+                            <span class="area-title" >{{ area.title}}  </span>
+                        </NuxtLink>
+                    </row>
+                </span>
+            </div>
+            <nuxt-link :to="`/projects/${projectid}`" tag="button" type="button" class="card-btn ">
+                    <b>Learn more</b>
+            </nuxt-link>
         </div>
-    </div>
 </template>
 
-<script lang="ts">
+<script lang="js">
 export default {
     props: {
         projectid: Number,
@@ -59,7 +59,6 @@ export default {
 }
 
 .card-body {
-    font-family: Avenir, sans-serif;
     color: var(--color-oxford-blue);
     text-align: center;
     background-color: var(--color-snow);
@@ -80,8 +79,7 @@ export default {
     margin-top: 0.7em;
     font-weight: bold;
     font-size: 1.5em;
-    font-family: Avenir, sans-serif;
-    color: var(--color-snow);
+    color : var(--color-snow);
 }
 
 .card-header {
@@ -101,7 +99,6 @@ export default {
 }
 
 .card-description {
-    font-family: Avenir, sans-serif;
     color: var(--color-oxford-blue);
     text-align: center;
     font-size: 0.75em;
@@ -123,11 +120,10 @@ export default {
     transition: 0.2s;
     cursor: pointer;
     letter-spacing: 0.1rem;
-    margin-top: 1em;
-    margin-bottom: 0.5em;
+    margin-top: 0.5em;
+    margin-bottom:1.3em;
     margin-right: 4em;
-    margin-left: 4em;
-    font-family: Avenir, sans-serif;
+    margin-left: 4.5em;
 }
 
 .card-btn:hover,

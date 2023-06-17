@@ -1,4 +1,5 @@
-<script setup>
+
+<script setup lang="js">
 import { makeCall } from '@/utils/common'
 import ProjectFilter from '@/components/ProjectFilter.vue'
 import ProjectCard from '@/components/ProjectCard.vue'
@@ -110,7 +111,11 @@ import ProjectCard from '@/components/ProjectCard.vue'
     </main>
 </template>
 
-<script>
+
+
+<script lang="js">
+
+
 export default {
     data() {
         return {
@@ -261,10 +266,42 @@ export default {
             console.log(this.filterAreas)
         },
 
+
         // trigger the removal of the selected filter on the projectFilter component
         removeFilter: function (filter) {
             this.$refs.projectFilter.removeFilter(filter)
         },
+
+
+        //removing filter working, calling of the son function not working
+        removeFilterArea: function(areaid){
+            let self = this
+
+            console.log(self.filterAreas)
+            console.log(areaid)
+
+
+            self.filterAreas = this.filterAreas.filter(filterArea => filterArea.AreaID !== areaid);
+            (self.$refs.projectFilter).removeAreaFilter(areaid)
+        
+        },
+
+        removeFilterYear: function(year){
+            let self = this
+            self.filterYears = this.filterYears.filter(filterYear => filterYear !== year);
+            (self.$refs.projectFilter).removeYearFilter(year)
+        
+        },
+
+        removeFilterStage: function(stage){
+            let self = this
+            self.filterStages = this.filterStages.filter(filterStage => filterStage !== stage);
+            (self.$refs.projectFilter).removeStageFilter(stage)
+        
+        },
+
+    
+
 
         // returns the list of projects that belong to the area with the given id
         projectsByArea: function (areaid) {

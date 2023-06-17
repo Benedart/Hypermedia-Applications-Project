@@ -27,11 +27,7 @@
                             {{ projectDetails.name + " " + projectDetails.surname }}
                         </NuxtLink>
                     <p style="margin: 1rem;">{{ supervisor.CV }}</p>
-
-
                     </p>
-
-
                 </span>
             </div>
 
@@ -42,16 +38,14 @@
             <div class="section-3">
                 <p class="custom-paragraph-3">{{ projectDetails.section3 }}</p>
                 <div class="image-container">
-                    <img :src="`/images/projects/work.webp`">
+                    <img :src="`/images/projects/${projectDetails.title}/logo.webp`">
                 </div>
-
             </div>
-
         </div>
     </div>
 </template>
 
-<script lang="ts">
+<script lang="js">
 import { makeCall } from '@/utils/common'
 
 export default {
@@ -81,7 +75,7 @@ export default {
     },
 
     methods: {
-        getProjectData: async function (projectid: number) {
+        getProjectData: async function (projectid) {
             console.log(this.$route.params)
 
             // get project details

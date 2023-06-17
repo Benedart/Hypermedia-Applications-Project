@@ -47,7 +47,7 @@
       </div>
       
       <!-- Form submission button -->
-      <button type="submit" class="btn btn-primary">Send</button>
+      <button type="submit" class="btn btn-primary"><strong>Send</strong></button>
     </form>
     
     <!-- Confirmation message after successful submission -->

@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup lang="js">
 import { makeCall } from '@/utils/common'
 import ProjectCard from '@/components/ProjectCard.vue'
 </script>
@@ -17,7 +17,7 @@ import ProjectCard from '@/components/ProjectCard.vue'
     </main>
 </template>
 
-<script lang="ts">
+<script lang="js">
 export default {
     data() {
         return {

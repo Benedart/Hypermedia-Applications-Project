@@ -1,6 +1,7 @@
-<script setup lang="ts">
-// Importing ContactForm component
-import ContactForm from '@/components/ContactForm.vue'
+
+<script setup lang="js">
+  // Importing ContactForm component
+  import ContactForm from '@/components/ContactForm.vue'
 </script>
 
 <template>

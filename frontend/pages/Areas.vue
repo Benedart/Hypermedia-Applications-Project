@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup lang="js">
 import { makeCall } from '@/utils/common'
 import AreaCard from '@/components/AreaCard.vue'
 </script>
@@ -9,13 +9,11 @@ import AreaCard from '@/components/AreaCard.vue'
             <div class="title">
                 Areas
             </div>
-        </div>
-
-        <div class="container">
-            <div class="grid">
-                <div v-for="area in areas">
-                    <AreaCard :areaid="area.AreaID" :title="area.Title" :projects="area.projects"
-                        style="margin-top: -5rem;" />
+            <div class="container">
+                <div class="grid">
+                    <div v-for="area in areas" >
+                        <AreaCard :areaid="area.AreaID" :title="area.Title" :projects="area.projects" style="margin-top: -5rem;"/>
+                    </div>
                 </div>
             </div>
 
@@ -28,7 +26,7 @@ import AreaCard from '@/components/AreaCard.vue'
     </main>
 </template>
 
-<script lang="ts">
+<script lang="js">
 export default {
     data() {
         return {
@@ -87,9 +85,11 @@ export default {
     align-items: start;
 }
 
-@media screen and (max-width: 600px) {
-    .grid {
-        margin: auto !important;
+
+@media  screen and (max-width: 600px) {
+    .grid{
+        margin: auto!important;
+
 
     }
 
@@ -102,6 +102,8 @@ export default {
     }
 
 }
+
+    
 
 .grid-item {
     display: flex;

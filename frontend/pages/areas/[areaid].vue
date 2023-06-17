@@ -1,4 +1,4 @@
-<script lang="ts" setup>
+<script lang="js" setup>
 import ProjectCard from '@/components/ProjectCard.vue'
 </script>
 
@@ -11,7 +11,7 @@ import ProjectCard from '@/components/ProjectCard.vue'
                 <p class="custom-paragraph-1">{{ areaDetails.Section1 }}</p>
             </div>
             
-            <img class="image-area-1 " :src="`/images/areas/${areaDetails.Title}.jpg`">
+            <img class="image-area-1 " :src="`/images/areas/${areaDetails.Title}/image.webp`">
                 
         </div>
 
@@ -42,7 +42,7 @@ import ProjectCard from '@/components/ProjectCard.vue'
     
 </template>
 
-<script lang="ts">
+<script lang="js">
 import { makeCall } from '@/utils/common'
 
 export default {
@@ -82,7 +82,7 @@ export default {
     },
 
     methods: {
-        getAreaData: async function (areaid: number) {
+        getAreaData: async function (areaid) {
             // get area details
             try {
                 const data = await makeCall(this.$config.public.SERVER_URL + "/getArea/" + areaid, 'GET');

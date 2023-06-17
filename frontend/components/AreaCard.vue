@@ -1,7 +1,6 @@
 <template>
-    <div class="card">
-        <img class="card-img" :src="`/images/areas/${title}.jpg`">
-
+    <div class="card" >
+        <img class="card-img" :src="`/images/areas/${title}.jpg`" >
         <div class="card-content">
             <h1 class="card-header"><b> {{ title }} </b></h1>
             <p
@@ -25,7 +24,7 @@
     </div>
 </template>
 
-<script lang="ts">
+<script lang="js">
 export default {
 
     props: {
@@ -181,8 +180,7 @@ export default {
     margin-bottom: 1rem;
     top: 50%;
     left: 50%;
-    transform: translate(-100%, 25%);
-    font-family: Avenir, sans-serif;
+    transform: translate(-100%,25%);
 }
 
 .card-btn:hover,

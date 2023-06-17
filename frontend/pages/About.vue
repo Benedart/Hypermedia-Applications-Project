@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup lang="js">
 // Importing necessary modules and components
 import { makeCall } from '@/utils/common'
 import ProjectCard from '@/components/ProjectCard.vue'
@@ -12,14 +12,15 @@ import PeopleCard from '@/components/PeopleCard.vue'
             <div class="title">About us</div>
         </div>
         <!-- Row with custom margins and separator-->
-        <div class="separator-margin py-5 " style="background-color: #9991A1;">
+        <div class ="separator-margin py-5 " style = "background-color: #9991A1;">
             <div class="row justify-content-center separator-margin custom-margins">
                 <div class="col-md-9 d-flex align-items-center justify-content-center">
-                    <b class="custom-h3">
+                    <h3 class="custom-h3" style="text-align:center; line-height: 100%; font-size: 2em;">
                         Embracing novel ideas, fueling unprecedented
                         innovations, and
                         committing to the creation of a future where sustainability is not just a concept, but an
-                        established practice.</b>
+                        established practice.
+                    </h3>
                 </div>
             </div>
         </div>
@@ -107,8 +108,7 @@ import PeopleCard from '@/components/PeopleCard.vue'
                 <br>
                 <br>
                 <br>
-                <h3 class="custom-bold" style="font-size: 1.5em;">“Investing in the future does not only mean foreseeing the
-                    future, but creating it”
+                <h3 class = "custom-bold" style ="font-size: 1.5em;">“Investing in the future does not only mean foreseeing the future, but creating it”
                 </h3>
             </div>
             <div class="col-md-8 justify-content-center separator-margin" style="text-align: justify;">
@@ -144,9 +144,10 @@ import PeopleCard from '@/components/PeopleCard.vue'
             </div>
             <br>
             <div class="row mx-3 d-flex justify-content-center custom-margins">
-                <NuxtLink to="/projects" tag="button" type="button" class="btn btn-secondary">
+                <nuxt-link to="/projects" tag="button" type="button"
+                    class="btn btn-secondary">
                     <b>Explore all projects</b>
-                </NuxtLink>
+                </nuxt-link>
             </div>
         </div>
         <!-- Meet Our Team Section -->
@@ -166,13 +167,13 @@ import PeopleCard from '@/components/PeopleCard.vue'
             </div>
             <br>
             <div class="row mx-3 d-flex justify-content-center custom-margins">
-                <NuxtLink to="/people" tag="button" type="button" class="btn btn-secondary">
+                <nuxt-link to="/people" tag="button" type="button" class="btn btn-secondary">
                     <b>Meet the whole team</b>
-                </NuxtLink>
+                </nuxt-link>
             </div>
         </div>
         <!-- Testimonials Section -->
-        <div class="row mx-3 testimonial-margin custom-margins text-style">
+        <div class="row mx-3 testimonial-margin custom-margins text-style ">
             <h1 style="text-align: center;"> Testimonials </h1>
         </div>
         <br>
@@ -204,8 +205,7 @@ import PeopleCard from '@/components/PeopleCard.vue'
         </div>
     </main>
 </template>
-
-<script lang="ts">
+<script lang="js">
 export default {
     // Defining data properties for the component
     data() {
@@ -439,28 +439,26 @@ export default {
 
 /* A class for h3 elements with larger font size, bold, and specific color */
 .custom-h3 {
-    font-size: 1.6rem;
-    font-weight: 400;
+    font-size: 1.75em;
+    font-weight: 700;
     color: snow;
-    margin-top: -3em;
-    text-align: center;
-    line-height: normal;
-    font-style: italic;
+    margin-top:-2.5em;
 }
 
 @media(max-width: 768px) {
     .custom-h3 {
-        font-size: 1.75em;
-        font-weight: 700;
-        color: snow;
-        margin-top: -1em;
-    }
+    font-size: 1.75em;
+    font-weight: 700;
+    color: snow;
+    margin-top:-1em;
+}
 }
 
 /* A class for bold text with a specific color */
 .custom-bold {
     font-weight: bold;
     color: #086788;
+    font-size: 1.75em;
 }
 
 /* A class for bold text with a specific color and alignment */
@@ -495,10 +493,10 @@ export default {
 
 /* A class for styling a secondary button */
 .btn-secondary {
-    width: 90%;
+    width: 30%;
     background-color: #086788;
     margin-top: 2%;
-
+    
 }
 
 .btn-secondary:hover,
