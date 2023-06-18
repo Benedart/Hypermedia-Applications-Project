@@ -4,6 +4,14 @@ import ProjectCard from '@/components/ProjectCard.vue'
 
 <template>
     <div class="container" style="background-color: snow;">
+
+         <!-- Head section for SEO -->
+         <Head>
+            <Title>{{ personDetails.personid }} - HyperMeow</Title>
+            <Meta name="description" :content="personDetails.Section1" />
+        </Head>
+
+        <!-- Section 1: Person details -->
         <div class="row align-items-center justify-content-center">
             <div class="col-md-5" style="background-color: snow;">
                 <!-- Person Image -->
@@ -34,6 +42,7 @@ import ProjectCard from '@/components/ProjectCard.vue'
                         src="/images/contact/linkedin.webp" alt="LinkedIn Icon" style="width: 30px; height: auto; "></a>
                 </div>
             </div>
+             <!-- Section 2: Projects supervised -->
             <div class="row" style="margin-top: 40px; margin-left: -60px; padding-block: 5%;" v-if="projectsSupervised.length > 0">
                 <span class="row mx-3 custom-color justify-content-center" style="padding:2%;">
                     <!-- Title for Projects Supervised -->

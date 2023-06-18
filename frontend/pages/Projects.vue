@@ -112,22 +112,6 @@ useSeoMeta({
                 <div class="icon"><i class="bi bi-emoji-frown"></i></div>
             </div>
 
-            <!-- First prototype -->
-            <!--
-            <div v-if="!search" v-for="area in areas" class="row g-3">
-                <h2>{{ area.title }}</h2>
-                <div v-for="project in projectsByArea(area.areaid)" class="col-12 col-md-6 col-lg-4">
-                    <ProjectCard :projectid="project.projectid" :title="project.title" :preview="project.preview"
-                        :stage="project.stage" :areas="project.areas" :year="project.year" :featured="project.featured" />
-                </div>
-            </div>
-            <div v-else class="row g-3">
-                <div v-for="project in visibleProjects" class="col">
-                    <ProjectCard :projectid="project.projectid" :title="project.title" :preview="project.preview"
-                        :stage="project.stage" :areas="project.areas" :year="project.year" :featured="project.featured" />
-                </div>
-            </div>
-            -->
         </div>
     </main>
 </template>
@@ -231,10 +215,6 @@ export default {
                 return indexList.includes(p.title.toLowerCase().indexOf(this.search.toLowerCase()));
             });
 
-
-            //console.log("SEARCH RESULTS:")
-            //console.log(matchingProjects)
-
             return matchingProjects
         },
     },
@@ -265,9 +245,6 @@ export default {
                 let stageFilter = stages.length === 0 || stages.includes(project.stage)
                 let yearFilter = years.length === 0 || years.includes(project.year)
 
-                /*console.log(years.includes(project.year))
-                console.log(typeof (years[0]) + " " + typeof (project.year))
-                console.log("FILTER RESULTS: " + areaFilter + " " + stageFilter + " " + yearFilter)*/
 
                 // if all the filters are passed, add the project to the filtered projects
                 if (areaFilter && stageFilter && yearFilter) {
@@ -348,8 +325,7 @@ export default {
                 })
             })
 
-            //console.log("VISIBLE AREAS:")
-            //console.log(areas)
+        
 
             this.areas = areas
 
@@ -388,16 +364,7 @@ export default {
         },
     },
 }
-/*
-const icon = document.querySelector('.icon');
-const search = document.querySelector('.search');
 
-function doSearch(){
-    search.classList.toggle('active');
-    console.log("doing search");
-}
-icon.addEventListener("click",doSearch);
-*/
 </script>
 
 <style scoped>

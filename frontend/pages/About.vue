@@ -3,6 +3,12 @@
 import { makeCall } from '@/utils/common'
 import ProjectCard from '@/components/ProjectCard.vue'
 import PeopleCard from '@/components/PeopleCard.vue'
+
+useSeoMeta({
+    title: 'About us - HyperMeow',
+    description: 'Learn more about our leading venture capital firm and our commitment to fostering groundbreaking ideas and innovation, discover our team and our innovative projects',
+    keywords: 'about us, hypermeow, hypermeow about us, hypermeow projects, hypermeow people, team, who we are, investments, unicorns, startup, testimonials',
+})
 </script>
 
 <template>

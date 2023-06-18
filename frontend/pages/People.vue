@@ -1,6 +1,13 @@
 <script setup lang="js">
 import { makeCall } from '@/utils/common'
 import PeopleCard from '@/components/PeopleCard.vue'
+
+useSeoMeta({
+    title: 'People - HyperMeow',
+    description: 'Discover our team at HyperMeow. Fro, the CEO to the HR every single person that is supervising our projects. Get to know their names, roles, and backgrounds. Find contact information and connect with them on Linkedin.">',
+    keywords: 'people, hypermeow, hypermeow people, hypermeow people page, profiles, organization, team, names, roles, contact information, Linkedin ',
+})
+
 </script>
 <template>
     <div class="container-text-center">

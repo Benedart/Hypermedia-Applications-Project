@@ -46,6 +46,7 @@
   font-weight: normal;
 }
 
+/* decorations and details of the body of the pages*/
 body {
   min-height: 100vh;
   color: var(--color-text);
