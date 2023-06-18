@@ -37,7 +37,7 @@ import ProjectCard from '@/components/ProjectCard.vue'
         <div class="row" style="margin-top: 40px; margin-left: -60px; padding-block: 5%;" v-if="projects.length > 0">
             <span class="row mx-3 custom-color justify-content-center" style="padding:2%;">
                 <!-- Section title -->
-                <h3 class="h3" style="margin-left : 10px; margin-top: 2px; padding:2%; float:left;">Projects in this area</h3>
+                <h3 class="h3" style="margin-left : 10px; margin-top: 2px; padding:2%; float:left;">PROJECTS IN THIS AREA</h3>
                 <div class="row g-3">
                     <div v-for="project in projects" class="col-12 col-md-6 col-lg-4">
                         <!-- Render project card component for each project -->

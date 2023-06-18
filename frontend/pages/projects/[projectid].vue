@@ -246,10 +246,10 @@ export default {
 .supervisor-link:hover::after {
     content: "";
     position: absolute;
-    bottom: 0.3rem;
-    left: 0.3rem;
-    width: 90%;
-    height: 25%;
+    bottom: 0.1em;
+    left: 0.05em;
+    width: 100%;
+    height: 70%;
     background-color: var(--color-cerulean);
     /* Colore di sfondo per l'evidenziazione */
     opacity: 0.3;
