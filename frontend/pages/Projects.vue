@@ -17,12 +17,13 @@ useSeoMeta({
             <div class="title">Projects</div>
         </div>
 
-        <!--div class="search-wrapper">
-                <input type="text" v-model="search" placeholder="Search projects...">
-            </div-->
+        
         <div class="container">
-            <div class="grid-container">
-                <div class="grid-projects">
+            <!--container of two grids, one for element to apply filters, one for the filters applied-->
+            <div class="grid-container"> 
+                <!--a grid containing searchbar and button to apply filters-->
+                <div class="grid-filter">
+                    <!--searchbar-->
                     <div class="search">
                         <div class="icon"></div>
                         <div class="input">
@@ -32,24 +33,30 @@ useSeoMeta({
                         <span class="clear" onclick="document.getElementById('mysearch').value = ''"></span>
                     </div>
 
+                    <!--button component to filter all over the charateristics of the projects-->
                     <ProjectFilter ref="projectFilter" @applyFilters="filterProjects" />
 
-                    <!--ProjectFilter @applyFilters="filterProjects" /-->
                 </div>
 
+                <!--grid containing all the filters applied. empty if there are no filters applied-->
                 <span class="filter-grid">
+                    <!--iteration showing the filters about the area title-->
                     <div v-for="filterArea in filterAreas">
                         <div class="filter-btn" @click="removeFilter(filterArea.AreaID)">
                             {{ filterArea.Title }}
                             <div class="icon"><i class="bi bi-x"></i></div>
                         </div>
                     </div>
+
+                    <!--iteration showing the filters about the area year of foundation-->
                     <div v-for="filterYear in filterYears">
                         <div class="filter-btn" @click="removeFilter(filterYear)">
                             {{ filterYear }}
                             <div class="icon"><i class="bi bi-x"></i></div>
                         </div>
                     </div>
+
+                    <!--iteration showing the filters about the area stage-->
                     <div v-for="filterStage in filterStages">
                         <div class="filter-btn" @click="removeFilter(filterStage)">
                             {{ filterStage }}
@@ -59,9 +66,11 @@ useSeoMeta({
                 </span>
             </div>
 
+            <!--accordion containing all projects by area, showing the ones that match the filters-->
             <div v-if="!search" class="accordion" id="accordionPanelsStayOpen">
                 <div v-for="area in areas" class="accordion-item" style="box-shadow:  0 0 10px rgba(0, 0, 34, 0.2);">
                     <h2 class="accordion-header">
+                        <!--button that opens/closes the panel containing the projects by the area specified in the button-->
                         <button class="accordion-button" type="button" data-bs-toggle="collapse"
                             :data-bs-target="`#panelsStayOpen-${area.areaid}`" aria-expanded="true"
                             :aria-controls="`panelsStayOpen-${area.areaid}`">
@@ -70,10 +79,13 @@ useSeoMeta({
                             </NuxtLink>
                         </button>
                     </h2>
+                    <!--content of the panel when it's open-->
                     <div :id="`panelsStayOpen-${area.areaid}`" class="accordion-collapse collapse show">
                         <div class="accordion-body">
+                            <!--grid containing the projects-->
                             <div class="row g-3">
                                 <div v-for="project in projectsByArea(area.areaid)" class="col-12 col-md-6 col-lg-4">
+                                    <!-- Render ProjectCard component with props -->
                                     <ProjectCard :projectid="project.projectid" :title="project.title"
                                         :preview="project.preview" :stage="project.stage" :areas="project.areas"
                                         :year="project.year" :featured="project.featured" />
@@ -83,8 +95,11 @@ useSeoMeta({
                     </div>
                 </div>
             </div>
+            <!--grid containing the project cards that match the searchbar value-->
             <div v-else class="row g-3">
                 <div v-for="project in visibleProjects" class="col">
+
+                    <!-- Render ProjectCard component with props -->
                     <ProjectCard :projectid="project.projectid" :title="project.title" :preview="project.preview"
                         :stage="project.stage" :areas="project.areas" :year="project.year" :featured="project.featured" />
                 </div>
@@ -176,13 +191,18 @@ export default {
 
             search: "",
 
+            //this will contain the areas to filter
             filterAreas: [
                 {
                     areaid: -1,
                     title: 'area'
                 }
             ],
+
+            //this will contain the stages to filter
             filterStages: ['stage'],
+            
+            //this will contain the years to filter
             filterYears: [-1]
         }
     },
@@ -445,7 +465,7 @@ icon.addEventListener("click",doSearch);
     }
 }
 
-.grid-projects {
+.grid-filter {
 
     padding: 1rem;
     display: grid;
@@ -457,7 +477,7 @@ icon.addEventListener("click",doSearch);
 }
 
 @media screen and (max-width: 720px) {
-    .grid-projects {
+    .grid-filter {
         grid-auto-flow: row;
     }
 }

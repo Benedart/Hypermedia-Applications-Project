@@ -2,11 +2,13 @@
     <div class="container">
 
         <Head>
+            <!-- Page title and meta description -->
             <Title>{{ projectDetails.title }} - HyperMeow</Title>
             <Meta name="description" :content="projectDetails.section1" />
         </Head>
 
         <div>
+            <!-- Project title -->
             <h1 class="name-project">{{ projectDetails.title }}
                 <span v-if="projectDetails.featured">
                     - Featured
@@ -14,36 +16,48 @@
             </h1>
         </div>
         <div>
+            <!-- Iterate over project areas -->
             <i v-for="(area, index) in projectDetails.areas">
+                <!-- Link to area page -->
                 <NuxtLink class="area-link" :to="`/areas/${area.areaid}`">
                     <span class="area-title">{{ area.title }} </span>
                 </NuxtLink>
                 <span v-if="index < projectDetails.areas.length - 1"> - </span>
             </i>
-            <!--p><b>Budget:</b> {{ projectDetails.budget }}$</p>
-            <p><b>Stage:</b> {{ projectDetails.stage }}</p!-->
+
+            <!-- <p><b>Budget:</b> {{ projectDetails.budget }}$</p>
+            <p><b>Stage:</b> {{ projectDetails.stage }}</p> -->
+
             <div class="section-1">
+                <!-- Project description section -->
                 <p class="custom-paragraph-1">{{ projectDetails.section1 }}</p>
                 <span class="supervisor-span">
+                    <!-- Supervisor image -->
                     <img class="image-person " :src="`/images/People/${projectDetails.supervisor}.webp`"
                         :alt="`Portrait of the supervisor ${projectDetails.name} ${projectDetails.surname}`">
+                    <!-- Supervisor information -->
                     <p class="supervisor-p">
                         <b style="font-size: 20px; margin-left:0.7em; color:#000022">Supervisor: </b>
+                        <!-- Link to supervisor page -->
                         <NuxtLink class="supervisor-link" :to="`/people/${projectDetails.supervisor}`">
                             {{ projectDetails.name + " " + projectDetails.surname }}
                         </NuxtLink>
-                    <p style="margin: 1rem;">{{ supervisor.CV }}</p>
+                        <p style="margin: 1rem;">{{ supervisor.CV }}</p>
                     </p>
                 </span>
             </div>
 
             <div class="section-1">
+                <!-- Project logo -->
                 <img class="image-project " :src="`/images/projects/${projectDetails.title}/logo.webp`"
                     :alt="`${projectDetails.title} logo`">
+                <!-- Second section description -->
                 <p class="custom-paragraph-2">{{ projectDetails.section2 }}</p>
             </div>
             <div class="section-3">
+                <!-- Third section description -->
                 <p class="custom-paragraph-3">{{ projectDetails.section3 }} </p>
+                <!-- Image associated with the project -->
                 <img class="image" :src="`/images/projects/${projectDetails.title}/image.webp`">
             </div>
         </div>

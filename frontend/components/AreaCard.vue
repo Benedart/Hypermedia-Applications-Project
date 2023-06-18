@@ -1,22 +1,32 @@
 <template>
     <div class="card">
+        <!-- Head image -->
         <img class="card-img" :src="`/images/areas/${title}/logo.jpg`">
+
         <div class="card-content">
+            <!-- Area title -->
             <h1 class="card-header"><b> {{ title }} </b></h1>
-            <p
-                style="top: 12%; left: 50%; transform: translate(-50%,100%); font-size: 1.2rem; text-align: center; color: var(--color-oxford-blue); position: absolute;">
+
+            <!-- Projects text -->
+            <p style="top: 12%; left: 50%; transform: translate(-50%,100%); font-size: 1.2rem; text-align: center; color: var(--color-oxford-blue); position: absolute;">
                 Projects</p>
 
+            <!--Scroller showing projects for the area-->
             <div class="icon-scroller snaps-inline">
+                <!-- Loop over projects -->
                 <div v-for="project in projects">
+                    <!-- Link to project details -->
                     <NuxtLink :to="`/projects/${project.ProjectID}`" class="mytooltip tooltip-container">
+                        <!-- Tooltip with project title -->
                         <span class="tooltiptext"> {{ project.Title }} </span>
+                        <!-- Project logo -->
                         <img :src="`/images/projects/${project.Title}/logo.webp`" :alt="project.Title" class="projectIcon"
                             tag="button" type="button" />
                     </NuxtLink>
                 </div>
             </div>
 
+            <!-- Link to area details -->
             <NuxtLink :to="`/areas/${areaid}`" class="card-btn" tag="button" type="button">
                 <b>Learn more </b>
             </NuxtLink>

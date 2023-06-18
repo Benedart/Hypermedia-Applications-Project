@@ -5,39 +5,42 @@ import ProjectCard from '@/components/ProjectCard.vue'
 <template>
     <div class="container">
 
+        <!-- Head section for SEO -->
         <Head>
             <Title>{{ areaDetails.Title }} - HyperMeow</Title>
             <Meta name="description" :content="areaDetails.Section1" />
         </Head>
 
+        <!-- Section 1: Area details -->
         <div class="section-1">
             <div style="flex-grow: 1; padding-right: 2rem;">
+                <!-- Area title -->
                 <h1 class="name-area">{{ areaDetails.Title }}</h1>
+                <!-- Area description -->
                 <p class="custom-paragraph-1">{{ areaDetails.Section1 }}</p>
             </div>
 
+            <!-- Area logo -->
             <img class="image-area-1 " :src="`/images/areas/${areaDetails.Title}/logo.jpg`">
 
         </div>
 
+        <!-- Section 2: Area image and additional information -->
         <div class="section-2">
+            <!-- Area image -->
             <img class="image-area-2 " :src="`/images/areas/${areaDetails.Title}/image.webp`">
+            <!-- Additional information about the area -->
             <p class="custom-paragraph-2">{{ areaDetails.Section2 }}</p>
         </div>
 
-        <!--div class="row g-3">
-                <div v-for="project in projects" class="col-12 col-md-6 col-lg-4">
-                    <ProjectCard :projectid="project.projectid" :title="project.title" :preview="project.preview"
-                        :stage="project.stage" :year="project.year" :featured="project.featured" />
-                </div>
-            </div-->
-
+        <!-- Projects in this area -->
         <div class="row" style="margin-top: 40px; margin-left: -60px; padding-block: 5%;" v-if="projects.length > 0">
             <span class="row mx-3 custom-color justify-content-center" style="padding:2%;">
-                <h3 class="h3" style="margin-left : 10px; margin-top: 2px; padding:2%; float:left;">Projects in this area
-                </h3>
+                <!-- Section title -->
+                <h3 class="h3" style="margin-left : 10px; margin-top: 2px; padding:2%; float:left;">Projects in this area</h3>
                 <div class="row g-3">
                     <div v-for="project in projects" class="col-12 col-md-6 col-lg-4">
+                        <!-- Render project card component for each project -->
                         <ProjectCard :projectid="project.projectid" :title="project.title" :preview="project.preview"
                             :stage="project.stage" :areas="project.areas" :year="project.year"
                             :featured="project.featured" />
@@ -47,6 +50,7 @@ import ProjectCard from '@/components/ProjectCard.vue'
         </div>
     </div>
 </template>
+
 
 <script lang="js">
 import { makeCall } from '@/utils/common'

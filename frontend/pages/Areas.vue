@@ -17,20 +17,13 @@ useSeoMeta({
                 Areas
             </div>
 
-
-            <!--custom grid containing card areas-->
-            <!--div class="container">
-                <div class="grid">
-                    <div v-for="area in areas " class="col" style="margin-bottom: 70px;">
-                        <AreaCard :areaid="area.AreaID" :title="area.Title" :projects="area.projects" style="margin-top: -5rem;"/>
-                    </div>
-                </div>
-            </div-->
-
+            <!--container with grid which contains area cards-->
             <div class="container" style="background-color: #FFFBFA;">
                 <div class="row d-flex justify-content-center">
+                    <!--grid containing all areas-->
                     <div class="row g-3">
                         <div v-for="area in areas " class="col" style="margin-bottom: 70px;">
+                            <!-- Render AreaCard component with props -->
                             <AreaCard :areaid="area.AreaID" :title="area.Title" :projects="area.projects"
                                 style="margin-top: -5rem;" />
                         </div>

@@ -2,6 +2,7 @@
 import { makeCall } from '@/utils/common'
 import ProjectCard from '@/components/ProjectCard.vue'
 
+// Set SEO metadata for the page
 useSeoMeta({
     title: 'Featured Projects - HyperMeow',
     description: 'HyperMeow featured projects page, where you can find all the projects that are featured on the website. Featured projects are the ones that are considered the most important and interesting by the HyperMeow team.',
@@ -11,9 +12,11 @@ useSeoMeta({
 
 <template>
     <main>
+        <!-- Page title -->
         <div class="title">Featured projects</div>
         <div class="container-fluid">
             <div class="row g-3">
+                <!-- Loop over projects and render ProjectCard component for each project -->
                 <div v-for="project in projects" class="col">
                     <ProjectCard :projectid="project.projectid" :title="project.title" :preview="project.preview"
                         :stage="project.stage" :areas="project.areas" :year="project.year" :featured="project.featured" />
@@ -22,6 +25,7 @@ useSeoMeta({
         </div>
     </main>
 </template>
+
 
 <script lang="js">
 export default {
