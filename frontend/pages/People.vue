@@ -21,8 +21,7 @@ useSeoMeta({
                     <div v-for="user in people" class="col" style="margin-bottom: 70px;">
                         <!-- Pass user data as props to the PeopleCard component -->
                         <PeopleCard :personid="user.personid" :name="user.name" :surname="user.surname" :age="user.age"
-                            :email="user.email" :linkedin="user.linkedin" :Description="user.Description"
-                            :role="user.role" />
+                            :linkedin="user.linkedin" :Description="user.Description" :role="user.role" />
                     </div>
                 </div>
             </div>
@@ -41,7 +40,6 @@ export default {
                     name: 'Paolo',
                     surname: 'Rossi',
                     age: 37,
-                    email: 'paolo.rossi@gmail.com',
                     linkedin: 'https://www.linkedin.com/feed/',
                     Description: 'Si occupa prettamente di imballaggio',
                     role: 'CEO',

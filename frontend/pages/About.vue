@@ -166,8 +166,8 @@ useSeoMeta({
                 <div class="row mx-3">
                     <div v-for="person in people.slice(0, 3)" class="col mb-3 d-flex justify-content-center">
                         <PeopleCard :personid="person.personid" :name="person.name" :surname="person.surname"
-                            :age="person.age" :email="person.email" :linkedin="person.linkedin" :CV="person.CV"
-                            :Description="person.Description" :role="person.role" />
+                            :age="person.age" :linkedin="person.linkedin" :Description="person.Description"
+                            :role="person.role" />
                     </div>
                 </div>
             </div>
