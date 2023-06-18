@@ -6,10 +6,19 @@ import ProjectCard from '@/components/ProjectCard.vue'
     <div class="container">
 
         <!-- Head section for SEO -->
+
         <Head>
             <Title>{{ areaDetails.Title }} - HyperMeow</Title>
             <Meta name="description" :content="areaDetails.Section1" />
         </Head>
+
+        <nav aria-label="breadcrumb" class="breadcrump">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <NuxtLink to="/areas">Areas</NuxtLink>
+                </li>
+            </ol>
+        </nav>
 
         <!-- Section 1: Area details -->
         <div class="section-1">
@@ -37,7 +46,8 @@ import ProjectCard from '@/components/ProjectCard.vue'
         <div class="row" style="margin-top: 40px; margin-left: -60px; padding-block: 5%;" v-if="projects.length > 0">
             <span class="row mx-3 custom-color justify-content-center" style="padding:2%;">
                 <!-- Section title -->
-                <h3 class="h3" style="margin-left : 10px; margin-top: 2px; padding:2%; float:left;">PROJECTS IN THIS AREA</h3>
+                <h3 class="h3" style="margin-left : 10px; margin-top: 2px; padding:2%; float:left;">PROJECTS IN THIS AREA
+                </h3>
                 <div class="row g-3">
                     <div v-for="project in projects" class="col-12 col-md-6 col-lg-4">
                         <!-- Render project card component for each project -->
@@ -118,20 +128,20 @@ export default {
 </script>
 
 <style scoped>
+.breadcrump {
+    margin-top: 4rem;
+}
+
 .name-area {
     color: #000022;
     margin: auto;
     font-size: 40px;
     margin-bottom: 1rem;
     justify-content: center;
-
-
 }
 
 .section-1 {
     display: flex;
-    margin-top: 88px;
-
 }
 
 .custom-paragraph-1 {

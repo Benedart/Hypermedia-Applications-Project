@@ -31,9 +31,6 @@ useSeoMeta({
                 </div>
             </div>
         </div>
-
-
-
     </main>
 </template>
 
@@ -84,7 +81,7 @@ export default {
     font-size: 3.5em;
     text-align: center;
     color: #000022;
-    margin-bottom: 5rem;
+    margin-bottom: 1rem;
 }
 
 .grid {
@@ -96,15 +93,10 @@ export default {
     align-items: start;
 }
 
-
 @media screen and (max-width: 600px) {
     .grid {
         margin: auto !important;
         padding: auto;
-
-
     }
-
 }
-
 </style>

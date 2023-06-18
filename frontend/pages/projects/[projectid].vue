@@ -7,6 +7,14 @@
             <Meta name="description" :content="projectDetails.section1" />
         </Head>
 
+        <nav aria-label="breadcrumb" class="breadcrump">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <NuxtLink to="/projects">Projects</NuxtLink>
+                </li>
+            </ol>
+        </nav>
+
         <div>
             <!-- Project title -->
             <h1 class="name-project">{{ projectDetails.title }}
@@ -42,7 +50,7 @@
                         <NuxtLink class="supervisor-link" :to="`/people/${projectDetails.supervisor}`">
                             {{ projectDetails.name + " " + projectDetails.surname }}
                         </NuxtLink>
-                        <p style="margin: 1rem;">{{ supervisor.CV }}</p>
+                    <p style="margin: 1rem;">{{ supervisor.CV }}</p>
                     </p>
                 </span>
             </div>
@@ -123,10 +131,13 @@ export default {
 </script>
 
 <style scoped>
+.breadcrump {
+    margin-top: 4rem;
+}
+
 .name-project {
     color: #000022;
     margin: auto;
-    margin-top: 2.2em;
     font-size: 40px;
     margin-bottom: 1rem;
 }

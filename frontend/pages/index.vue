@@ -336,7 +336,7 @@ export default {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    margin-top: -8em;
+    margin-top: -4em;
 }
 
 /* Styling for ::before pseudo-element of custom-row */

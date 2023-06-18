@@ -1,4 +1,3 @@
-
 <script setup lang="js">
 import { makeCall } from '@/utils/common'
 import ProjectFilter from '@/components/ProjectFilter.vue'
@@ -17,10 +16,9 @@ useSeoMeta({
             <div class="title">Projects</div>
         </div>
 
-        
         <div class="container">
             <!--container of two grids, one for element to apply filters, one for the filters applied-->
-            <div class="grid-container"> 
+            <div class="grid-container">
                 <!--a grid containing searchbar and button to apply filters-->
                 <div class="grid-filter">
                     <!--searchbar-->
@@ -35,7 +33,6 @@ useSeoMeta({
 
                     <!--button component to filter all over the charateristics of the projects-->
                     <ProjectFilter ref="projectFilter" @applyFilters="filterProjects" />
-
                 </div>
 
                 <!--grid containing all the filters applied. empty if there are no filters applied-->
@@ -116,11 +113,7 @@ useSeoMeta({
     </main>
 </template>
 
-
-
 <script lang="js">
-
-
 export default {
     data() {
         return {
@@ -128,7 +121,7 @@ export default {
             projects: [
                 {
                     projectid: -1,
-                    title: 'project',
+                    title: 'example',
                     preview: 'Questo progetto è bellissimo, davvero il futuro',
                     stage: 'stage',
                     areas: [
@@ -145,7 +138,7 @@ export default {
             allProjects: [
                 {
                     projectid: -1,
-                    title: 'project',
+                    title: 'example',
                     preview: 'Questo progetto è bellissimo, davvero il futuro',
                     stage: 'stage',
                     areas: [
@@ -185,7 +178,7 @@ export default {
 
             //this will contain the stages to filter
             filterStages: ['stage'],
-            
+
             //this will contain the years to filter
             filterYears: [-1]
         }
@@ -269,42 +262,10 @@ export default {
             console.log(this.filterAreas)
         },
 
-
         // trigger the removal of the selected filter on the projectFilter component
         removeFilter: function (filter) {
             this.$refs.projectFilter.removeFilter(filter)
         },
-
-
-        //removing filter working, calling of the son function not working
-        removeFilterArea: function (areaid) {
-            let self = this
-
-            console.log(self.filterAreas)
-            console.log(areaid)
-
-
-            self.filterAreas = this.filterAreas.filter(filterArea => filterArea.AreaID !== areaid);
-            (self.$refs.projectFilter).removeAreaFilter(areaid)
-
-        },
-
-        removeFilterYear: function (year) {
-            let self = this
-            self.filterYears = this.filterYears.filter(filterYear => filterYear !== year);
-            (self.$refs.projectFilter).removeYearFilter(year)
-
-        },
-
-        removeFilterStage: function (stage) {
-            let self = this
-            self.filterStages = this.filterStages.filter(filterStage => filterStage !== stage);
-            (self.$refs.projectFilter).removeStageFilter(stage)
-
-        },
-
-
-
 
         // returns the list of projects that belong to the area with the given id
         projectsByArea: function (areaid) {
@@ -325,8 +286,6 @@ export default {
                 })
             })
 
-        
-
             this.areas = areas
 
             if (this.filterStages[0] == "stage") {
@@ -334,7 +293,6 @@ export default {
                 this.filterYears = [];
                 this.filterStages = [];
             }
-
         },
 
         // get the data from the server
@@ -364,7 +322,6 @@ export default {
         },
     },
 }
-
 </script>
 
 <style scoped>
@@ -423,7 +380,6 @@ export default {
     padding: 1.25rem;
     flex-wrap: wrap;
     gap: 0.5rem;
-
 }
 
 @media screen and (max-width: 400px) {
@@ -433,14 +389,12 @@ export default {
 }
 
 .grid-filter {
-
     padding: 1rem;
     display: grid;
     gap: 1rem;
 
     grid-auto-flow: column;
     align-items: start;
-
 }
 
 @media screen and (max-width: 720px) {
@@ -488,7 +442,6 @@ export default {
     border: 3px solid var(--color-cerulean);
     border-radius: 50%;
     transform: translate(-2.5px, -2.5px);
-
 }
 
 .search .icon::after {
@@ -611,12 +564,10 @@ clear::after {
     --bs-accordion-bg: var(--color-snow);
 
     box-shadow: 0 3rem 6rem rgba(0, 0, 34, 0.1);
-
 }
 
 .accordion-header {
     background-color: var(--color-snow);
-
 }
 
 .accordion-button {

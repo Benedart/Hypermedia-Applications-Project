@@ -7,8 +7,8 @@ useSeoMeta({
     description: 'Discover our team at HyperMeow. Fro, the CEO to the HR every single person that is supervising our projects. Get to know their names, roles, and backgrounds. Find contact information and connect with them on Linkedin.">',
     keywords: 'people, hypermeow, hypermeow people, hypermeow people page, profiles, organization, team, names, roles, contact information, Linkedin ',
 })
-
 </script>
+
 <template>
     <div class="container-text-center">
         <div class="title">
@@ -29,6 +29,7 @@ useSeoMeta({
         </div>
     </div>
 </template>
+
 <script lang="js">
 export default {
     data() {
@@ -106,13 +107,17 @@ export default {
     },
 }
 </script>
+
 <style scoped>
 .title {
-    text-align: center;  /* Centers the text horizontally within the element */
-    margin-bottom: 5rem;  /* Adds a bottom margin of 5rem to create space below the element */
+    text-align: center;
+    /* Centers the text horizontally within the element */
+    margin-bottom: 1rem;
+    /* Adds a bottom margin of 1rem to create space below the element */
 }
 
 .container-text-center {
-    margin-bottom: 10em;  /* Adds a bottom margin of 10em to create space below the element */
+    margin-bottom: 10em;
+    /* Adds a bottom margin of 10em to create space below the element */
 }
 </style>

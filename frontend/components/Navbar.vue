@@ -138,7 +138,6 @@
 
 .navbar-toggler {
     border: var(--bs-border-width) solid var(--color-snow);
-
 }
 
 .navbar-toggler.collapsed {

@@ -26,7 +26,6 @@ useSeoMeta({
     </main>
 </template>
 
-
 <script lang="js">
 export default {
     data() {
@@ -73,6 +72,6 @@ export default {
 
 .container-fluid {
     margin-bottom: 10em;
-    margin-top: 8em;
+    margin-top: 5em;
 }
 </style>
