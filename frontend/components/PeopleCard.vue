@@ -1,4 +1,3 @@
-
 <template>
     <!-- Container for the card -->
     <div class="card h-100 mx-auto" style="width: 18rem; margin-top: 2em; background-color:#FFFBFA;">
@@ -16,16 +15,15 @@
         </div>
 
         <div class="card-footer">
-             <!-- Shortened description  -->
+            <!-- Shortened description  -->
             <p class="card-Description">{{ shorterDescription(Description) }}.</p>
-             <!-- Learn more button -->
+            <!-- Learn more button -->
             <NuxtLink :to="`/People/${personid}`" tag="button" type="button" class="card-btn ">
                 <b>Learn more</b>
             </NuxtLink>
         </div>
     </div>
 </template>
-
 
 <script lang="js">
 export default {
@@ -62,90 +60,131 @@ export default {
 /* Styles for the LinkedIn link */
 .float-end {
     height: auto;
-    margin-top: 1em; /* Adjusts the top margin */
-    margin-left: 15em; /* Adjusts the left margin */
+    margin-top: 1em;
+    /* Adjusts the top margin */
+    margin-left: 15em;
+    /* Adjusts the left margin */
 }
 
 /* Styles for the person image */
 .card-img-top {
-    border-radius: 100%; /* Rounds the image to create a circular shape */
-    width: 170px; /* Sets the width of the image */
-    margin: auto; /* Centers the image horizontally */
-    margin-top: 25px; /* Adjusts the top margin */
+    border-radius: 100%;
+    /* Rounds the image to create a circular shape */
+    width: 170px;
+    /* Sets the width of the image */
+    margin: auto;
+    /* Centers the image horizontally */
+    margin-top: 25px;
+    /* Adjusts the top margin */
 }
 
 /* Styles for the body containing person name and role */
 .card-body {
-    color: #000022; /* Sets the text color */
-    text-align: center; /* Centers the text horizontally */
+    color: #000022;
+    /* Sets the text color */
+    text-align: center;
+    /* Centers the text horizontally */
 }
 
 /* Styles for the person name */
 .card-title {
-    margin-top: 0.7em; /* Adjusts the top margin */
-    font-weight: bold; /* Sets the font weight to bold */
-    font-size: 1.5em; /* Sets the font size */
-    color: #000022; /* Sets the text color */
+    margin-top: 0.7em;
+    /* Adjusts the top margin */
+    font-weight: bold;
+    /* Sets the font weight to bold */
+    font-size: 1.5em;
+    /* Sets the font size */
+    color: #000022;
+    /* Sets the text color */
 }
 
 /* Styles for the person role */
 .card-subtitle {
-    font-weight: lighter; /* Sets the font weight to lighter */
-    font-size: 1.2em; /* Sets the font size */
+    font-weight: lighter;
+    /* Sets the font weight to lighter */
+    font-size: 1.2em;
+    /* Sets the font size */
 }
 
 /* Styles for the Linkedin icon */
 .card-img-linkedin {
-    width: 40px; /* Sets the width of the LinkedIn icon */
+    width: 40px;
+    /* Sets the width of the LinkedIn icon */
 }
 
 /* Styles for the card footer */
 .card-footer {
-    background-color: #086788; /* Sets the background color */
-    font-size: 1.0em; /* Sets the font size */
-    margin-top: -1em; /* Adjusts the top margin */
+    background-color: #086788;
+    /* Sets the background color */
+    font-size: 1.0em;
+    /* Sets the font size */
+    margin-top: -1em;
+    /* Adjusts the top margin */
 }
 
 /* Styles for the card description */
 .card-Description {
-    color: #FFFBFA; /* Sets the text color */
-    text-align: center; /* Centers the text horizontally */
-    font-size: 0.75em; /* Sets the font size */
-    margin-top: 0.4em; /* Adjusts the top margin */
-    height: 5em; /* Sets the height of the element */
+    color: #FFFBFA;
+    /* Sets the text color */
+    text-align: center;
+    /* Centers the text horizontally */
+    font-size: 0.75em;
+    /* Sets the font size */
+    margin-top: 0.4em;
+    /* Adjusts the top margin */
+    height: 5em;
+    /* Sets the height of the element */
 }
 
 /* Styles for the "Learn more" button */
 .card-btn {
-    width: 50%; /* Sets the width of the button */
-    padding: 0.2rem; /* Adds padding to the button */
-    font-size: 1.0rem; /* Sets the font size */
-    font-weight: 450; /* Sets the font weight */
-    text-align: center; /* Centers the text horizontally */
-    margin: auto; /* Centers the button horizontally */
-    color: #086788; /* Sets the text color */
-    background-color: #E5E5E5; /* Sets the background color */
-    border: none; /* Removes the button border */
-    border-radius: 0.4rem; /* Adds border radius to the button */
-    transition: 0.2s; /* Adds transition effect */
-    cursor: pointer; /* Changes the cursor to a pointer */
-    letter-spacing: 0.1rem; /* Adds letter spacing to the text */
-    margin-top: 2em; /* Adjusts the top margin */
-    margin-bottom: 1em; /* Adjusts the bottom margin */
-    margin-right: 4em; /* Adjusts the right margin */
-    margin-left: 4em; /* Adjusts the left margin */
+    width: 50%;
+    /* Sets the width of the button */
+    padding: 0.2rem;
+    /* Adds padding to the button */
+    font-size: 1.0rem;
+    /* Sets the font size */
+    font-weight: 450;
+    /* Sets the font weight */
+    text-align: center;
+    /* Centers the text horizontally */
+    margin: auto;
+    /* Centers the button horizontally */
+    color: #086788;
+    /* Sets the text color */
+    background-color: #E5E5E5;
+    /* Sets the background color */
+    border: none;
+    /* Removes the button border */
+    border-radius: 0.4rem;
+    /* Adds border radius to the button */
+    transition: 0.2s;
+    /* Adds transition effect */
+    cursor: pointer;
+    /* Changes the cursor to a pointer */
+    letter-spacing: 0.1rem;
+    /* Adds letter spacing to the text */
+    margin-top: 2em;
+    /* Adjusts the top margin */
+    margin-bottom: 1em;
+    /* Adjusts the bottom margin */
+    margin-right: 4em;
+    /* Adjusts the right margin */
+    margin-left: 4em;
+    /* Adjusts the left margin */
 }
 
 /* Hover and active state styles for the button */
 .card-btn:hover,
 .card-btn:active {
-    background-color: rgb(180, 205, 214); /* Changes the background color on hover and click */
+    background-color: rgb(180, 205, 214);
+    /* Changes the background color on hover and click */
 }
 
 /* Hover effect for the card */
 .card:hover {
-    transition: 0.5s; /* Adds transition effect */
-    margin-top: 5em; /* Adjusts */
-}
-
-</style>
+    transition: 0.5s;
+    /* Adds transition effect */
+    margin-top: 5em;
+    /* Adjusts */
+}</style>

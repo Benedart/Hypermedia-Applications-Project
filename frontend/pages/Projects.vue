@@ -1,4 +1,3 @@
-
 <script setup lang="js">
 import { makeCall } from '@/utils/common'
 import ProjectFilter from '@/components/ProjectFilter.vue'
@@ -17,12 +16,12 @@ useSeoMeta({
             <div class="title">Projects</div>
         </div>
 
-        <!--div class="search-wrapper">
-                <input type="text" v-model="search" placeholder="Search projects...">
-            </div-->
         <div class="container">
+            <!--container of two grids, one for element to apply filters, one for the filters applied-->
             <div class="grid-container">
-                <div class="grid-projects">
+                <!--a grid containing searchbar and button to apply filters-->
+                <div class="grid-filter">
+                    <!--searchbar-->
                     <div class="search">
                         <div class="icon"></div>
                         <div class="input">
@@ -32,24 +31,29 @@ useSeoMeta({
                         <span class="clear" onclick="document.getElementById('mysearch').value = ''"></span>
                     </div>
 
+                    <!--button component to filter all over the charateristics of the projects-->
                     <ProjectFilter ref="projectFilter" @applyFilters="filterProjects" />
-
-                    <!--ProjectFilter @applyFilters="filterProjects" /-->
                 </div>
 
+                <!--grid containing all the filters applied. empty if there are no filters applied-->
                 <span class="filter-grid">
+                    <!--iteration showing the filters about the area title-->
                     <div v-for="filterArea in filterAreas">
                         <div class="filter-btn" @click="removeFilter(filterArea.AreaID)">
                             {{ filterArea.Title }}
                             <div class="icon"><i class="bi bi-x"></i></div>
                         </div>
                     </div>
+
+                    <!--iteration showing the filters about the area year of foundation-->
                     <div v-for="filterYear in filterYears">
                         <div class="filter-btn" @click="removeFilter(filterYear)">
                             {{ filterYear }}
                             <div class="icon"><i class="bi bi-x"></i></div>
                         </div>
                     </div>
+
+                    <!--iteration showing the filters about the area stage-->
                     <div v-for="filterStage in filterStages">
                         <div class="filter-btn" @click="removeFilter(filterStage)">
                             {{ filterStage }}
@@ -59,9 +63,11 @@ useSeoMeta({
                 </span>
             </div>
 
+            <!--accordion containing all projects by area, showing the ones that match the filters-->
             <div v-if="!search" class="accordion" id="accordionPanelsStayOpen">
                 <div v-for="area in areas" class="accordion-item" style="box-shadow:  0 0 10px rgba(0, 0, 34, 0.2);">
                     <h2 class="accordion-header">
+                        <!--button that opens/closes the panel containing the projects by the area specified in the button-->
                         <button class="accordion-button" type="button" data-bs-toggle="collapse"
                             :data-bs-target="`#panelsStayOpen-${area.areaid}`" aria-expanded="true"
                             :aria-controls="`panelsStayOpen-${area.areaid}`">
@@ -70,10 +76,13 @@ useSeoMeta({
                             </NuxtLink>
                         </button>
                     </h2>
+                    <!--content of the panel when it's open-->
                     <div :id="`panelsStayOpen-${area.areaid}`" class="accordion-collapse collapse show">
                         <div class="accordion-body">
+                            <!--grid containing the projects-->
                             <div class="row g-3">
                                 <div v-for="project in projectsByArea(area.areaid)" class="col-12 col-md-6 col-lg-4">
+                                    <!-- Render ProjectCard component with props -->
                                     <ProjectCard :projectid="project.projectid" :title="project.title"
                                         :preview="project.preview" :stage="project.stage" :areas="project.areas"
                                         :year="project.year" :featured="project.featured" />
@@ -83,8 +92,11 @@ useSeoMeta({
                     </div>
                 </div>
             </div>
+            <!--grid containing the project cards that match the searchbar value-->
             <div v-else class="row g-3">
                 <div v-for="project in visibleProjects" class="col">
+
+                    <!-- Render ProjectCard component with props -->
                     <ProjectCard :projectid="project.projectid" :title="project.title" :preview="project.preview"
                         :stage="project.stage" :areas="project.areas" :year="project.year" :featured="project.featured" />
                 </div>
@@ -97,31 +109,11 @@ useSeoMeta({
                 <div class="icon"><i class="bi bi-emoji-frown"></i></div>
             </div>
 
-            <!-- First prototype -->
-            <!--
-            <div v-if="!search" v-for="area in areas" class="row g-3">
-                <h2>{{ area.title }}</h2>
-                <div v-for="project in projectsByArea(area.areaid)" class="col-12 col-md-6 col-lg-4">
-                    <ProjectCard :projectid="project.projectid" :title="project.title" :preview="project.preview"
-                        :stage="project.stage" :areas="project.areas" :year="project.year" :featured="project.featured" />
-                </div>
-            </div>
-            <div v-else class="row g-3">
-                <div v-for="project in visibleProjects" class="col">
-                    <ProjectCard :projectid="project.projectid" :title="project.title" :preview="project.preview"
-                        :stage="project.stage" :areas="project.areas" :year="project.year" :featured="project.featured" />
-                </div>
-            </div>
-            -->
         </div>
     </main>
 </template>
 
-
-
 <script lang="js">
-
-
 export default {
     data() {
         return {
@@ -129,7 +121,7 @@ export default {
             projects: [
                 {
                     projectid: -1,
-                    title: 'project',
+                    title: 'example',
                     preview: 'Questo progetto è bellissimo, davvero il futuro',
                     stage: 'stage',
                     areas: [
@@ -146,7 +138,7 @@ export default {
             allProjects: [
                 {
                     projectid: -1,
-                    title: 'project',
+                    title: 'example',
                     preview: 'Questo progetto è bellissimo, davvero il futuro',
                     stage: 'stage',
                     areas: [
@@ -176,13 +168,18 @@ export default {
 
             search: "",
 
+            //this will contain the areas to filter
             filterAreas: [
                 {
                     areaid: -1,
                     title: 'area'
                 }
             ],
+
+            //this will contain the stages to filter
             filterStages: ['stage'],
+
+            //this will contain the years to filter
             filterYears: [-1]
         }
     },
@@ -210,10 +207,6 @@ export default {
                 // check if the search string is a substring of the project title (case insensitive)
                 return indexList.includes(p.title.toLowerCase().indexOf(this.search.toLowerCase()));
             });
-
-
-            //console.log("SEARCH RESULTS:")
-            //console.log(matchingProjects)
 
             return matchingProjects
         },
@@ -245,9 +238,6 @@ export default {
                 let stageFilter = stages.length === 0 || stages.includes(project.stage)
                 let yearFilter = years.length === 0 || years.includes(project.year)
 
-                /*console.log(years.includes(project.year))
-                console.log(typeof (years[0]) + " " + typeof (project.year))
-                console.log("FILTER RESULTS: " + areaFilter + " " + stageFilter + " " + yearFilter)*/
 
                 // if all the filters are passed, add the project to the filtered projects
                 if (areaFilter && stageFilter && yearFilter) {
@@ -272,42 +262,10 @@ export default {
             console.log(this.filterAreas)
         },
 
-
         // trigger the removal of the selected filter on the projectFilter component
         removeFilter: function (filter) {
             this.$refs.projectFilter.removeFilter(filter)
         },
-
-
-        //removing filter working, calling of the son function not working
-        removeFilterArea: function (areaid) {
-            let self = this
-
-            console.log(self.filterAreas)
-            console.log(areaid)
-
-
-            self.filterAreas = this.filterAreas.filter(filterArea => filterArea.AreaID !== areaid);
-            (self.$refs.projectFilter).removeAreaFilter(areaid)
-
-        },
-
-        removeFilterYear: function (year) {
-            let self = this
-            self.filterYears = this.filterYears.filter(filterYear => filterYear !== year);
-            (self.$refs.projectFilter).removeYearFilter(year)
-
-        },
-
-        removeFilterStage: function (stage) {
-            let self = this
-            self.filterStages = this.filterStages.filter(filterStage => filterStage !== stage);
-            (self.$refs.projectFilter).removeStageFilter(stage)
-
-        },
-
-
-
 
         // returns the list of projects that belong to the area with the given id
         projectsByArea: function (areaid) {
@@ -328,9 +286,6 @@ export default {
                 })
             })
 
-            //console.log("VISIBLE AREAS:")
-            //console.log(areas)
-
             this.areas = areas
 
             if (this.filterStages[0] == "stage") {
@@ -338,7 +293,6 @@ export default {
                 this.filterYears = [];
                 this.filterStages = [];
             }
-
         },
 
         // get the data from the server
@@ -368,16 +322,6 @@ export default {
         },
     },
 }
-/*
-const icon = document.querySelector('.icon');
-const search = document.querySelector('.search');
-
-function doSearch(){
-    search.classList.toggle('active');
-    console.log("doing search");
-}
-icon.addEventListener("click",doSearch);
-*/
 </script>
 
 <style scoped>
@@ -436,7 +380,6 @@ icon.addEventListener("click",doSearch);
     padding: 1.25rem;
     flex-wrap: wrap;
     gap: 0.5rem;
-
 }
 
 @media screen and (max-width: 400px) {
@@ -445,19 +388,17 @@ icon.addEventListener("click",doSearch);
     }
 }
 
-.grid-projects {
-
+.grid-filter {
     padding: 1rem;
     display: grid;
     gap: 1rem;
 
     grid-auto-flow: column;
     align-items: start;
-
 }
 
 @media screen and (max-width: 720px) {
-    .grid-projects {
+    .grid-filter {
         grid-auto-flow: row;
     }
 }
@@ -501,7 +442,6 @@ icon.addEventListener("click",doSearch);
     border: 3px solid var(--color-cerulean);
     border-radius: 50%;
     transform: translate(-2.5px, -2.5px);
-
 }
 
 .search .icon::after {
@@ -624,12 +564,10 @@ clear::after {
     --bs-accordion-bg: var(--color-snow);
 
     box-shadow: 0 3rem 6rem rgba(0, 0, 34, 0.1);
-
 }
 
 .accordion-header {
     background-color: var(--color-snow);
-
 }
 
 .accordion-button {

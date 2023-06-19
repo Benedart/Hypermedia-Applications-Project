@@ -1,18 +1,25 @@
-
 <template>
     <div class="card h-100 mx-auto" style="width: 18rem;">
+        <!-- Project logo image -->
         <img class="card-img" :src="`/images/projects/${title}/logo.webp`" :alt="`${title} logo`">
         <div class="card-body">
-            <h1 class="card-header"><b> {{ title }} </b></h1>
+            <!-- Project title -->
+            <h1 class="card-header"><b>{{ title }}</b></h1>
+            <!-- Project preview/description -->
             <p class="card-description">{{ preview }}</p>
 
             <span class="float-start">
+                <!-- Project stage -->
                 <b>{{ stage }}</b>
             </span>
 
-            <span class="float-end">{{ year }}</span>
+            <span class="float-end">
+                <!-- Project year -->
+                {{ year }}
+            </span>
 
-            <NuxtLink :to="`/projects/${projectid}`" tag="button" type="button" class="card-btn ">
+            <!-- Learn more button linking to project details page -->
+            <NuxtLink :to="`/projects/${projectid}`" tag="button" type="button" class="card-btn">
                 <b>Learn more</b>
             </NuxtLink>
         </div>

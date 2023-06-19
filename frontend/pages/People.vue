@@ -1,7 +1,14 @@
 <script setup lang="js">
 import { makeCall } from '@/utils/common'
 import PeopleCard from '@/components/PeopleCard.vue'
+
+useSeoMeta({
+    title: 'People - HyperMeow',
+    description: 'Discover our team at HyperMeow. Fro, the CEO to the HR every single person that is supervising our projects. Get to know their names, roles, and backgrounds. Find contact information and connect with them on Linkedin.">',
+    keywords: 'people, hypermeow, hypermeow people, hypermeow people page, profiles, organization, team, names, roles, contact information, Linkedin ',
+})
 </script>
+
 <template>
     <div class="container-text-center">
         <div class="title">
@@ -14,14 +21,14 @@ import PeopleCard from '@/components/PeopleCard.vue'
                     <div v-for="user in people" class="col" style="margin-bottom: 70px;">
                         <!-- Pass user data as props to the PeopleCard component -->
                         <PeopleCard :personid="user.personid" :name="user.name" :surname="user.surname" :age="user.age"
-                            :email="user.email" :linkedin="user.linkedin" :Description="user.Description"
-                            :role="user.role" />
+                            :linkedin="user.linkedin" :Description="user.Description" :role="user.role" />
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </template>
+
 <script lang="js">
 export default {
     data() {
@@ -33,7 +40,6 @@ export default {
                     name: 'Paolo',
                     surname: 'Rossi',
                     age: 37,
-                    email: 'paolo.rossi@gmail.com',
                     linkedin: 'https://www.linkedin.com/feed/',
                     Description: 'Si occupa prettamente di imballaggio',
                     role: 'CEO',
@@ -99,13 +105,17 @@ export default {
     },
 }
 </script>
+
 <style scoped>
 .title {
-    text-align: center;  /* Centers the text horizontally within the element */
-    margin-bottom: 5rem;  /* Adds a bottom margin of 5rem to create space below the element */
+    text-align: center;
+    /* Centers the text horizontally within the element */
+    margin-bottom: 1rem;
+    /* Adds a bottom margin of 1rem to create space below the element */
 }
 
 .container-text-center {
-    margin-bottom: 10em;  /* Adds a bottom margin of 10em to create space below the element */
+    margin-bottom: 10em;
+    /* Adds a bottom margin of 10em to create space below the element */
 }
 </style>

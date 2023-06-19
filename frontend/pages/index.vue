@@ -3,6 +3,12 @@
 import { makeCall } from '@/utils/common'
 import ProjectCard from '@/components/ProjectCard.vue'
 import PeopleCard from '@/components/PeopleCard.vue'
+
+useSeoMeta({
+    title: 'Home - HyperMeow',
+    description: 'Discover our leading venture capital firm and discover our services and offers, our team, our projects and the areas that we cover. Contact us to have answers or to join our projects',
+    keywords: 'home, who we are, what we do, unicorns, founder in residence, team, our people, hypermeow, venture capital, contact us, areas, project areas, email',
+})
 </script>
 
 <template>
@@ -85,8 +91,8 @@ import PeopleCard from '@/components/PeopleCard.vue'
                 <div class="row mx-3 justify-content-center">
                     <div v-for="person in people.slice(0, 3)" class="col mb-3 d-flex justify-content-center">
                         <PeopleCard :personid="person.personid" :name="person.name" :surname="person.surname"
-                            :age="person.age" :email="person.email" :linkedin="person.linkedin" :CV="person.CV"
-                            :Description="person.Description" :role="person.role" />
+                            :age="person.age" :linkedin="person.linkedin" :Description="person.Description"
+                            :role="person.role" />
                     </div>
                 </div>
             </div>
@@ -330,7 +336,7 @@ export default {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    margin-top: -8em;
+    margin-top: -4em;
 }
 
 /* Styling for ::before pseudo-element of custom-row */
