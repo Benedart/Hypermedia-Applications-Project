@@ -110,10 +110,7 @@ useSeoMeta({
         </div>
         <!-- Row with investment philosophy -->
         <div class="row mx-3 justify-content-center custom-top-margin custom-margins text-style">
-            <div class="col-md-6" style="text-align: center;">
-                <br>
-                <br>
-                <br>
+            <div class="col-md-6 separator-margin" style="text-align: center;">
                 <h3 class="custom-bold" style="font-size: 1.5em;">“Investing in the future does not only mean foreseeing the
                     future, but creating it”
                 </h3>
@@ -133,14 +130,14 @@ useSeoMeta({
             </div>
         </div>
         <!-- Featured Portfolio Section -->
-        <div class="row separator-margin custom-margins">
+        <div class="row portfolio-margin custom-margins justify-content-center">
             <!-- Title -->
             <div class="row mx-3 justify-content-center">
                 <h1 style="text-align: center;color: #000022;"> Featured Portfolio </h1>
             </div>
             <br>
             <!-- Portfolio Cards -->
-            <div class="row mx-3 d-flex justify-content-center custom-margins">
+            <div class="row d-flex justify-content-center custom-margins">
                 <div class="row mx-3">
                     <div v-for="project in projects" class="col mb-3">
                         <ProjectCard :projectid="project.projectid" :title="project.title" :preview="project.preview"
@@ -152,12 +149,12 @@ useSeoMeta({
             <br>
             <div class="row mx-3 d-flex justify-content-center custom-margins">
                 <nuxt-link to="/projects" tag="button" type="button" class="btn btn-secondary">
-                    <b>Explore all projects</b>
+                    <b>Explore projects</b>
                 </nuxt-link>
             </div>
         </div>
         <!-- Meet Our Team Section -->
-        <div class="row custom-margins separator-margin">
+        <div class="row custom-margins portfolio-margin justify-content-center">
             <div class="row mx-3 justify-content-center">
                 <h1 style="text-align: center; color: #000022;"> Meet Our Team </h1>
             </div>
@@ -174,7 +171,7 @@ useSeoMeta({
             <br>
             <div class="row mx-3 d-flex justify-content-center custom-margins">
                 <nuxt-link to="/people" tag="button" type="button" class="btn btn-secondary">
-                    <b>Meet the whole team</b>
+                    <b>Meet the team</b>
                 </nuxt-link>
             </div>
         </div>
@@ -351,6 +348,11 @@ export default {
     margin-top: 140px;
 }
 
+/* A class for styling portofolio with a large top margin */
+.portfolio-margin {
+    margin-top: 140px;
+}
+
 /* A class for styling the text within testimonials */
 .testimonial-text {
     font-size: 1.6em;
@@ -399,6 +401,10 @@ export default {
         margin-top: 60px;
     }
 
+    .portfolio-margin {
+    margin-top: 65px;
+    }
+
     /* Center align text on smaller screens */
     .text2right {
         text-align: center;
@@ -439,8 +445,13 @@ export default {
     }
 
     .testimonial-margin {
-        margin-top: 30px;
+        margin-top: 50px;
     }
+
+    .portfolio-margin{
+        margin-top: 40px;
+    }
+
 }
 
 /* A class for h3 elements with larger font size, bold, and specific color */
