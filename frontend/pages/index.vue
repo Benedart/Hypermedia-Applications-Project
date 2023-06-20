@@ -115,7 +115,7 @@ useSeoMeta({
                     leveraging technology, and fostering growth, we are at the forefront of driving innovation.
                     <p>Join us on our mission to shape the future of these dynamic industries.</p>
                 </div>
-                <div class="col-md-4 mx-3 d-flex justify-content-start">
+                <div class="col-md-4 mx-md-3 mx-sm-1 d-flex">
                     <nuxt-link to="/areas" tag="button" type="button" class="custom-btn-a d-flex">
                         <b>All areas</b>
                     </nuxt-link>
