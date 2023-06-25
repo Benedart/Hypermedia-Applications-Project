@@ -251,7 +251,7 @@ export default {
 }
 
 /* For viewport widths less than or equal to 860px */
-@media(max-width: 860px) {
+@media(max-width: 890px) {
     .custom-row-c {
         position: relative;
         min-height: 60em;
@@ -261,8 +261,19 @@ export default {
     }
 }
 
+/* For viewport widths less than or equal to 780px */
+@media(max-width: 780px) {
+    .custom-row-c {
+        position: relative;
+        min-height: 60em;
+        margin-top: -10em;
+        /* Adjust the margin-top */
+        padding-bottom: 10em;
+    }
+}
+
 /* For viewport widths less than or equal to 770px */
-@media(max-width: 770px) {
+@media(max-width: 767px) {
     .custom-row-c {
         position: relative;
         min-height: 60em;
@@ -270,6 +281,18 @@ export default {
         /* Adjust the margin-top */
         padding-bottom: 10em;
     }
+}
+
+/* For viewport widths less than or equal to 670px */
+@media(max-width: 670px) {
+    .custom-row-c {
+        position: relative;
+        min-height: 60em;
+        margin-top: -10em;
+        /* Adjust the margin-top */
+        padding-bottom: 10em;
+    }
+
 }
 
 /* For viewport widths less than or equal to 640px */
@@ -284,8 +307,8 @@ export default {
 
 }
 
-/* For viewport widths less than or equal to 570px */
-@media(max-width: 570px) {
+/* For viewport widths less than or equal to 597px */
+@media(max-width: 597px) {
     .custom-row-c {
         position: relative;
         min-height: 60em;
@@ -295,8 +318,8 @@ export default {
     }
 }
 
-/* For viewport widths less than or equal to 450px */
-@media(max-width: 450px) {
+/* For viewport widths less than or equal to 480px */
+@media(max-width: 480px) {
     .custom-row-c {
         position: relative;
         min-height: 60em;
@@ -307,7 +330,7 @@ export default {
 }
 
 /* For viewport widths less than or equal to 425px */
-@media(max-width: 425px) {
+@media(max-width: 451px) {
     .custom-row-c {
         position: relative;
         min-height: 60em;
@@ -317,8 +340,8 @@ export default {
     }
 }
 
-/* For viewport widths less than or equal to 372px */
-@media(max-width: 372px) {
+/* For viewport widths less than or equal to 398px */
+@media(max-width: 398px) {
     .custom-row-c {
         position: relative;
         min-height: 60em;
@@ -630,7 +653,7 @@ export default {
 }
 
 /* CSS rules for screen widths up to 725px */
-@media(max-width: 725px) {
+@media(max-width: 767px) {
     .title {
         max-width: 50%;
         text-align: start;
@@ -694,7 +717,7 @@ export default {
         letter-spacing: 0.1rem;
         justify-content: start;
         margin-top: 1em;
-        margin-left: 5.5em;
+        margin-left: 14%;
 
     }
 
@@ -718,7 +741,113 @@ export default {
         margin-right: 5em;
 
     }
+
 }
+
+/* CSS rules for screen widths up to 672px */
+@media(max-width: 672px){
+    .custom-btn-a {
+        display: inline-block;
+        padding: .375rem .75rem;
+        vertical-align: middle;
+        user-select: none;
+        width: auto;
+        font-size: 1rem;
+        font-weight: 450;
+        text-align: start;
+        align-items: start;
+        color: #E5E5E5;
+        background-color: #086788;
+        border: none;
+        border-radius: 0.4rem;
+        transition: 0.2s;
+        cursor: pointer;
+        letter-spacing: 0.1rem;
+        justify-content: start;
+        margin-top: 1em;
+        margin-left: 16%;
+
+    }
+}
+
+/* CSS rules for screen widths up to 640px */
+ @media(max-width: 640px){
+    .custom-btn-a {
+        display: inline-block;
+        padding: .375rem .75rem;
+        vertical-align: middle;
+        user-select: none;
+        width: auto;
+        font-size: 1rem;
+        font-weight: 450;
+        text-align: start;
+        align-items: start;
+        color: #E5E5E5;
+        background-color: #086788;
+        border: none;
+        border-radius: 0.4rem;
+        transition: 0.2s;
+        cursor: pointer;
+        letter-spacing: 0.1rem;
+        justify-content: start;
+        margin-top: 1em;
+        margin-left: 17%;
+
+    }
+ }
+
+ /* CSS rules for screen widths up to 596px */
+@media(max-width: 596px){
+    .custom-btn-a {
+        display: inline-block;
+        padding: .375rem .75rem;
+        vertical-align: middle;
+        user-select: none;
+        width: auto;
+        font-size: 1rem;
+        font-weight: 450;
+        text-align: start;
+        align-items: start;
+        color: #E5E5E5;
+        background-color: #086788;
+        border: none;
+        border-radius: 0.4rem;
+        transition: 0.2s;
+        cursor: pointer;
+        letter-spacing: 0.1rem;
+        justify-content: start;
+        margin-top: 1em;
+        margin-left: 18%;
+
+    }
+}
+
+/* CSS rules for screen widths up to 575px */
+@media(max-width: 575px){
+    .custom-btn-a {
+        display: inline-block;
+        padding: .375rem .75rem;
+        vertical-align: middle;
+        user-select: none;
+        width: auto;
+        font-size: 1rem;
+        font-weight: 450;
+        text-align: start;
+        align-items: start;
+        color: #E5E5E5;
+        background-color: #086788;
+        border: none;
+        border-radius: 0.4rem;
+        transition: 0.2s;
+        cursor: pointer;
+        letter-spacing: 0.1rem;
+        justify-content: start;
+        margin-top: 1em;
+        margin-left: 19%;
+
+    }
+}
+
 
 /* CSS rules for screen widths up to 560px */
 @media(max-width: 560px) {
@@ -782,7 +911,7 @@ export default {
         cursor: pointer;
         letter-spacing: 0.1rem;
         margin-top: 0.5em;
-        margin-left: 5.5em;
+        margin-left: 20%;
 
         justify-content: center;
     }
@@ -804,6 +933,58 @@ export default {
         letter-spacing: 0.1rem;
         margin-top: 1em;
         margin-left: auto;
+    }
+}
+
+/* CSS rules for screen widths up to 517px */
+@media(max-width: 517px){
+    .custom-btn-a {
+        display: inline-block;
+        padding: .375rem .75rem;
+        vertical-align: middle;
+        user-select: none;
+        width: auto;
+        font-size: 1rem;
+        font-weight: 450;
+        text-align: start;
+        align-items: start;
+        color: #E5E5E5;
+        background-color: #086788;
+        border: none;
+        border-radius: 0.4rem;
+        transition: 0.2s;
+        cursor: pointer;
+        letter-spacing: 0.1rem;
+        justify-content: start;
+        margin-top: 1em;
+        margin-left: 21%;
+
+    }
+}
+
+/* CSS rules for screen widths up to 500px */
+@media(max-width: 500px){
+    .custom-btn-a {
+        display: inline-block;
+        padding: .375rem .75rem;
+        vertical-align: middle;
+        user-select: none;
+        width: auto;
+        font-size: 1rem;
+        font-weight: 450;
+        text-align: start;
+        align-items: start;
+        color: #E5E5E5;
+        background-color: #086788;
+        border: none;
+        border-radius: 0.4rem;
+        transition: 0.2s;
+        cursor: pointer;
+        letter-spacing: 0.1rem;
+        justify-content: start;
+        margin-top: 1em;
+        margin-left: 6.5em;
+
     }
 }
 </style>
