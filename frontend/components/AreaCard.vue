@@ -8,7 +8,8 @@
             <h1 class="card-header"><b> {{ title }} </b></h1>
 
             <!-- Projects text -->
-            <p style="top: 12%; left: 50%; transform: translate(-50%,100%); font-size: 1.2rem; text-align: center; color: var(--color-oxford-blue); position: absolute;">
+            <p
+                style="top: 12%; left: 50%; transform: translate(-50%,100%); font-size: 1.2rem; text-align: center; color: var(--color-oxford-blue); position: absolute;">
                 Projects</p>
 
             <!--Scroller showing projects for the area-->
@@ -36,7 +37,6 @@
 
 <script lang="js">
 export default {
-
     props: {
         areaid: Number,
         title: String,
@@ -44,8 +44,6 @@ export default {
         description: String,
         projects: Array
     },
-
-
 }
 </script>
 

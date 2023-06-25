@@ -79,21 +79,7 @@ export default {
                 Description: 'description',
             },
 
-            projects: [
-                {
-                    projectid: -1,
-                    title: 'example',
-                    preview: 'Questo progetto è bellissimo, davvero il futuro',
-                    stage: 'stage',
-                    areas: [
-                        {
-                            areaid: -1,
-                            title: 'area'
-                        }
-                    ],
-                    year: 2020,
-                }
-            ],
+            projects: [],
         }
     },
 
