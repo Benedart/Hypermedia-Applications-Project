@@ -15,7 +15,7 @@ useSeoMeta({
     <main>
         <!-- Custom row with introductory statement and a call to action -->
         <div class="custom-row" style="min-height: 60em; padding-bottom: 10em;">
-            <div class="title col-md-5" style="line-height: 95%;">If you don’t believe in it, we do.</div>
+            <div class="title col-md-5">Unleashing Innovation, Powering Growth</div>
             <div class="subtitle col-md-4">
                 Dedicated to fueling innovation and driving growth.
                 We collaborate with visionary entrepreneurs and disruptive startups igniting breakthrough technologies and
@@ -68,10 +68,15 @@ useSeoMeta({
         </div>
         <br>
         <div class="row mx-3 d-flex justify-content-center">
-            <div class="row mx-3 justify-content-center">
+            <div v-if="projects.length > 0" class="row mx-3 justify-content-center">
                 <div v-for="project in projects" class="col mb-3 d-flex justify-content-center">
                     <ProjectCard :projectid="project.projectid" :title="project.title" :preview="project.preview"
                         :stage="project.stage" :areas="project.areas" :year="project.year" :featured="project.featured" />
+                </div>
+            </div>
+            <div v-else class="d-flex justify-content-center">
+                <div class="spinner-border m-5" role="status">
+                    <span class="visually-hidden">Loading...</span>
                 </div>
             </div>
         </div>
@@ -88,11 +93,16 @@ useSeoMeta({
             </div>
             <br>
             <div class="row mx-3 d-flex justify-content-center">
-                <div class="row mx-3 justify-content-center">
+                <div v-if="people.length > 0" class="row mx-3 justify-content-center">
                     <div v-for="person in people.slice(0, 3)" class="col mb-3 d-flex justify-content-center">
                         <PeopleCard :personid="person.personid" :name="person.name" :surname="person.surname"
                             :age="person.age" :linkedin="person.linkedin" :Description="person.Description"
                             :role="person.role" />
+                    </div>
+                </div>
+                <div v-else class="d-flex justify-content-center">
+                    <div class="spinner-border m-5" role="status">
+                        <span class="visually-hidden">Loading...</span>
                     </div>
                 </div>
             </div>
@@ -178,7 +188,7 @@ export default {
                 this.people = peopleData;
             } catch (error) {
                 // Handle any errors during the fetch operation
-                alert("Error while fetching data")
+                console.error("Error while fetching data")
                 console.error(error);
             }
         }
@@ -461,7 +471,7 @@ export default {
     margin-left: 3.5em;
     margin-top: 4.8em;
     color: snow;
-
+    line-height: 1.1em;
 }
 
 /* CSS for areas title styling */

@@ -57,6 +57,10 @@ export default {
 </script> 
 
 <style scoped>
+.card {
+    transition: 0.2s;
+}
+
 /* Styles for the LinkedIn link */
 .float-end {
     height: auto;
@@ -183,8 +187,7 @@ export default {
 
 /* Hover effect for the card */
 .card:hover {
-    transition: 0.5s;
-    /* Adds transition effect */
-    margin-top: 5em;
-    /* Adjusts */
-}</style>
+    transform: translateY(-0.5%);
+    box-shadow: 0 4rem 8rem rgba(0, 0, 34, 0.5);
+}
+</style>

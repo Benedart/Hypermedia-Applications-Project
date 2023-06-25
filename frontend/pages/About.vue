@@ -138,11 +138,16 @@ useSeoMeta({
             <br>
             <!-- Portfolio Cards -->
             <div class="row d-flex justify-content-center custom-margins">
-                <div class="row mx-3">
+                <div v-if="projects.length > 0" class="row mx-3">
                     <div v-for="project in projects" class="col mb-3">
                         <ProjectCard :projectid="project.projectid" :title="project.title" :preview="project.preview"
                             :stage="project.stage" :areas="project.areas" :year="project.year"
                             :featured="project.featured" />
+                    </div>
+                </div>
+                <div v-else class="d-flex justify-content-center">
+                    <div class="spinner-border m-5" role="status">
+                        <span class="visually-hidden">Loading...</span>
                     </div>
                 </div>
             </div>
@@ -160,11 +165,16 @@ useSeoMeta({
             </div>
             <br>
             <div class="row mx-3 d-flex justify-content-center custom-margins">
-                <div class="row mx-3">
+                <div v-if="people.length > 0" class="row mx-3">
                     <div v-for="person in people.slice(0, 3)" class="col mb-3 d-flex justify-content-center">
                         <PeopleCard :personid="person.personid" :name="person.name" :surname="person.surname"
                             :age="person.age" :linkedin="person.linkedin" :Description="person.Description"
                             :role="person.role" />
+                    </div>
+                </div>
+                <div v-else class="d-flex justify-content-center">
+                    <div class="spinner-border m-5" role="status">
+                        <span class="visually-hidden">Loading...</span>
                     </div>
                 </div>
             </div>
@@ -248,7 +258,7 @@ export default {
                 this.people = peopleData;
             } catch (error) {
                 // Alert user about error and log error to console
-                alert("Error while fetching data")
+                console.error("Error while fetching data")
                 console.error(error);
             }
         }
@@ -402,7 +412,7 @@ export default {
     }
 
     .portfolio-margin {
-    margin-top: 65px;
+        margin-top: 65px;
     }
 
     /* Center align text on smaller screens */
@@ -448,7 +458,7 @@ export default {
         margin-top: 50px;
     }
 
-    .portfolio-margin{
+    .portfolio-margin {
         margin-top: 40px;
     }
 

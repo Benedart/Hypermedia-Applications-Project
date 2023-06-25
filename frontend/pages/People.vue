@@ -16,12 +16,17 @@ useSeoMeta({
         </div>
         <div class="container" style="background-color: #FFFBFA;">
             <div class="row d-flex justify-content-center">
-                <div class="row g-3">
+                <div v-if="people.length > 0" class="row g-3">
                     <!-- Loop through each user in the people array -->
                     <div v-for="user in people" class="col" style="margin-bottom: 70px;">
                         <!-- Pass user data as props to the PeopleCard component -->
                         <PeopleCard :personid="user.personid" :name="user.name" :surname="user.surname" :age="user.age"
                             :linkedin="user.linkedin" :Description="user.Description" :role="user.role" />
+                    </div>
+                </div>
+                <div v-else class="d-flex justify-content-center">
+                    <div class="spinner-border m-5" role="status">
+                        <span class="visually-hidden">Loading...</span>
                     </div>
                 </div>
             </div>
@@ -34,26 +39,7 @@ export default {
     data() {
         return {
             // This array will contain all the people data, used for filtering and resetting
-            people: [
-                {
-                    personid: -1,
-                    name: 'Paolo',
-                    surname: 'Rossi',
-                    age: 37,
-                    linkedin: 'https://www.linkedin.com/feed/',
-                    Description: 'Si occupa prettamente di imballaggio',
-                    role: 'CEO',
-                    projects: [
-                        {
-                            featured: 0,
-                            projectid: -1,
-                            title: 'project',
-                            stage: 'stage',
-                            year: 1024,
-                        }
-                    ],
-                },
-            ],
+            people: [],
 
             search: ""
         }
@@ -98,7 +84,7 @@ export default {
                 console.log(data);
                 this.people = data;
             } catch (error) {
-                alert("Error, couldn't retrieve people cards");
+                console.error("Error, couldn't retrieve people cards");
                 console.error(error);
             }
         },

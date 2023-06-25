@@ -15,11 +15,16 @@ useSeoMeta({
         <!-- Page title -->
         <div class="title">Featured projects</div>
         <div class="container-fluid">
-            <div class="row g-3">
+            <div v-if="projects.length > 0" class="row g-3">
                 <!-- Loop over projects and render ProjectCard component for each project -->
                 <div v-for="project in projects" class="col">
                     <ProjectCard :projectid="project.projectid" :title="project.title" :preview="project.preview"
                         :stage="project.stage" :areas="project.areas" :year="project.year" :featured="project.featured" />
+                </div>
+            </div>
+            <div v-else class="d-flex justify-content-center">
+                <div class="spinner-border m-5" role="status">
+                    <span class="visually-hidden">Loading...</span>
                 </div>
             </div>
         </div>
@@ -31,14 +36,7 @@ export default {
     data() {
         return {
             // this will contain only the projects that match the filters
-            projects: [
-                {
-                    projectid: -1,
-                    title: 'example',
-                    preview: 'Questo progetto è bellissimo, davvero il futuro',
-                    stage: 'stage'
-                },
-            ],
+            projects: [],
         }
     },
 
@@ -57,7 +55,7 @@ export default {
                 console.log(data);
                 this.projects = data
             } catch (error) {
-                alert("Error, couldn't retrieve project details");
+                console.error("Error, couldn't retrieve project details");
                 console.error(error);
             }
         },
