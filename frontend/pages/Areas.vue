@@ -21,11 +21,16 @@ useSeoMeta({
             <div class="container" style="background-color: #FFFBFA;">
                 <div class="row d-flex justify-content-center">
                     <!--grid containing all areas-->
-                    <div class="row g-3">
-                        <div v-for="area in areas " class="col" style="margin-bottom: 70px;">
+                    <div v-if="areas.length > 0" class="row g-3">
+                        <div v-for="area in areas" class="col" style="margin-bottom: 70px;">
                             <!-- Render AreaCard component with props -->
                             <AreaCard :areaid="area.AreaID" :title="area.Title" :projects="area.projects"
                                 style="margin-top: -5rem;" />
+                        </div>
+                    </div>
+                    <div v-else class="d-flex justify-content-center">
+                        <div class="spinner-border m-5" role="status">
+                            <span class="visually-hidden">Loading...</span>
                         </div>
                     </div>
                 </div>
@@ -38,18 +43,7 @@ useSeoMeta({
 export default {
     data() {
         return {
-            areas: [
-                {
-                    AreaID: -1,
-                    Title: 'area',
-                    projects: [
-                        {
-                            ProjectID: -1,
-                            Title: 'example'
-                        }
-                    ]
-                },
-            ],
+            areas: [],
         }
     },
 
@@ -68,7 +62,7 @@ export default {
                 console.log(data);
                 this.areas = data
             } catch (error) {
-                alert("Error, couldn't retrieve area cards");
+                console.error("Error, couldn't retrieve area cards");
                 console.error(error);
             }
         },

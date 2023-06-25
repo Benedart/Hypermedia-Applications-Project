@@ -118,69 +118,26 @@ export default {
     data() {
         return {
             // this will contain only the projects that match the filters
-            projects: [
-                {
-                    projectid: -1,
-                    title: 'example',
-                    preview: 'Questo progetto è bellissimo, davvero il futuro',
-                    stage: 'stage',
-                    areas: [
-                        {
-                            areaid: -1,
-                            title: 'area'
-                        }
-                    ],
-                    year: 2020,
-                },
-            ],
+            projects: [],
 
             // this will contain all the projects, used to reset the filters
-            allProjects: [
-                {
-                    projectid: -1,
-                    title: 'example',
-                    preview: 'Questo progetto è bellissimo, davvero il futuro',
-                    stage: 'stage',
-                    areas: [
-                        {
-                            areaid: -1,
-                            title: 'area'
-                        }
-                    ],
-                    year: 2020,
-                },
-            ],
+            allProjects: [],
 
             // this will contain the areas of the visible projects
-            areas: [
-                {
-                    areaid: -1,
-                    title: 'area',
-                }
-            ],
+            areas: [],
 
-            allAreas: [
-                {
-                    areaid: -1,
-                    title: 'area',
-                }
-            ],
+            allAreas: [],
 
             search: "",
 
             //this will contain the areas to filter
-            filterAreas: [
-                {
-                    areaid: -1,
-                    title: 'area'
-                }
-            ],
+            filterAreas: [],
 
             //this will contain the stages to filter
-            filterStages: ['stage'],
+            filterStages: [],
 
             //this will contain the years to filter
-            filterYears: [-1]
+            filterYears: []
         }
     },
 
@@ -306,7 +263,7 @@ export default {
                 this.projects = data
                 this.getAreas(this.allProjects)
             } catch (error) {
-                alert("Error, couldn't retrieve project details");
+                console.error("Error, couldn't retrieve project details");
                 console.error(error);
             }
 
@@ -316,7 +273,7 @@ export default {
 
                 this.allAreas = data
             } catch (error) {
-                alert("Error, couldn't retrieve project details");
+                console.error("Error, couldn't retrieve project details");
                 console.error(error);
             }
         },

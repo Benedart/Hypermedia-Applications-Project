@@ -229,7 +229,7 @@ def get_people():
     cursor = mysql.connection.cursor()
 
     query = """
-        select personid, name, surname, age, linkedin, Description, role
+        select personid, name, surname, age, linkedin, CV, Description, role
         from people
     """
     cursor.execute(query)

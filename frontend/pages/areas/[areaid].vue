@@ -58,6 +58,11 @@ import ProjectCard from '@/components/ProjectCard.vue'
                 </div>
             </span>
         </div>
+        <div v-else class="d-flex justify-content-center">
+            <div class="spinner-border m-5" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+        </div>
     </div>
 </template>
 
@@ -74,21 +79,7 @@ export default {
                 Description: 'description',
             },
 
-            projects: [
-                {
-                    projectid: -1,
-                    title: 'example',
-                    preview: 'Questo progetto è bellissimo, davvero il futuro',
-                    stage: 'stage',
-                    areas: [
-                        {
-                            areaid: -1,
-                            title: 'area'
-                        }
-                    ],
-                    year: 2020,
-                }
-            ],
+            projects: [],
         }
     },
 
@@ -109,7 +100,7 @@ export default {
                 console.log(data);
                 this.areaDetails = data
             } catch (error) {
-                alert("Error, couldn't retrieve area details");
+                console.error("Error, couldn't retrieve area details");
                 console.error(error);
             }
 
@@ -119,7 +110,7 @@ export default {
                 console.log(data);
                 this.projects = data
             } catch (error) {
-                alert("Error, couldn't retrieve projects");
+                console.error("Error, couldn't retrieve projects");
                 console.error(error);
             }
         }

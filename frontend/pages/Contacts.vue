@@ -12,11 +12,12 @@ useSeoMeta({
 
 <template>
   <main class="margin">
-    <div style="max-width: 98.1vw;">
+    <div class = "container-width">
       <!-- Header row with contact details -->
       <div class="row">
         <div class="col-md-6 d-flex align-items-center justify-content-center">
           <div class="text-center">
+            <br>
             <!-- Header title -->
             <div class="row custom-heading" style="line-height: 80%;">
               <b>Contact us</b>
@@ -125,6 +126,23 @@ useSeoMeta({
   height: auto;
   display: block;
   margin: 0;
+}
+
+/* Width of the general content*/
+.container-width{
+  max-width: 98.1vw;
+}
+
+@media(max-width: 620px){
+  .container-width{
+    max-width: 97.8vw;
+  }
+}
+
+@media(max-width: 500px){
+  .container-width{
+    max-width: 97.1vw;
+  }
 }
 
 .btn:hover,

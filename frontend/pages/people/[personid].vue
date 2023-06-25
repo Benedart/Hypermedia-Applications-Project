@@ -69,6 +69,11 @@ import ProjectCard from '@/components/ProjectCard.vue'
                     </div>
                 </span>
             </div>
+            <div v-else class="d-flex justify-content-center">
+                <div class="spinner-border m-5" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+            </div>
         </div>
     </div>
 </template>
@@ -93,21 +98,7 @@ export default {
             },
 
             // Data for projects supervised
-            projectsSupervised: [
-                {
-                    projectid: -1, //id project
-                    title: 'project', //name of the project
-                    preview: 'Questo progetto è bellissimo, davvero il futuro', // Project preview
-                    stage: 'stage', // Project stage
-                    areas: [
-                        {
-                            areaid: -1, //id area
-                            title: 'area' //name of the area
-                        }
-                    ],
-                    year: 2020, // Project year
-                }
-            ],
+            projectsSupervised: [],
         }
     },
 
@@ -131,7 +122,7 @@ export default {
                 console.log(data);
                 this.personDetails = data;
             } catch (error) {
-                alert("Error, couldn't retrieve person details");
+                console.error("Error, couldn't retrieve person details");
                 console.error(error);
             }
 
@@ -141,7 +132,7 @@ export default {
                 console.log(data);
                 this.projectsSupervised = data;
             } catch (error) {
-                alert("Error, couldn't retrieve projects supervised");
+                console.error("Error, couldn't retrieve projects supervised");
                 console.error(error);
             }
         },

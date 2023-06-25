@@ -113,7 +113,7 @@ export default {
                 console.log("karen lee")
                 console.log(this.projectDetails.supervisor)
             } catch (error) {
-                alert("Error, couldn't retrieve project details");
+                console.error("Error, couldn't retrieve project details");
                 console.error(error);
             }
 
@@ -122,7 +122,7 @@ export default {
                 console.log(data);
                 this.supervisor = data[this.projectDetails.supervisor]
             } catch (error) {
-                alert("Error, couldn't retrieve people ");
+                console.error("Error, couldn't retrieve people ");
                 console.error(error);
             }
         },
