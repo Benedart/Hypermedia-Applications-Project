@@ -397,14 +397,12 @@ export default {
         margin-top: 60px;
     }
 
-
-
     .separator-margin {
         margin-top: 40px;
     }
 
     .bottom-margin {
-        margin-bottom: 25px;
+        margin-bottom: 80px;
     }
 
     .testimonial-margin {
@@ -451,7 +449,7 @@ export default {
     }
 
     .bottom-margin {
-        margin-bottom: 15px;
+        margin-bottom: 40px;
     }
 
     .testimonial-margin {

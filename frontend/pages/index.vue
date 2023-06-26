@@ -248,6 +248,7 @@ export default {
         /* Adjust the margin-top */
         padding-bottom: 10em;
     }
+
 }
 
 /* For viewport widths less than or equal to 860px */
@@ -390,12 +391,6 @@ export default {
     /* Resize the background image to cover the entire container */
 }
 
-/* CSS to extend the background beyond the container bounds */
-.background-extender {
-    padding-left: 100px;
-    padding-right: 100px;
-}
-
 /* CSS to display a small background image */
 .image-wood {
     background-image: url("/images/index/wood.webp");
@@ -417,6 +412,7 @@ export default {
 .custom-margin {
     margin-top: 15px;
 }
+
 
 /* CSS for responsive design - when screen width is up to 768px */
 @media (max-width: 768px) {
@@ -987,4 +983,62 @@ export default {
 
     }
 }
+
+/* Query to manage the display of background images*/
+@media (max-width: 968px){
+    .custom-row::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    height: 100%;
+    max-width: calc(100vw);
+    /* Full viewport */
+    width: 100%;
+    background-image: none;
+    background-color: #56554f;
+    background-position: end;
+    /* Center the image */
+    background-repeat: no-repeat;
+    /* Do not repeat the image */
+    background-size: cover;
+    /* Resize the background image to cover the entire container */
+}
+
+
+.image-wood {
+    background-image: none;
+    background-repeat: no-repeat;
+    background-position-x: right;
+    flex-direction: column;
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: 0;
+    margin-left: 0;
+}
+
+.custom-row-c::before {
+    content: "";
+    /* No content inside the pseudo-element */
+    position: absolute;
+    /* Positioning is absolute to its nearest positioned ancestor */
+    top: 0;
+    /* Position the top edge at the top edge of the parent element */
+    /* Shift the element 50px to the left */
+    height: 100%;
+    /* The element should take up the full height of the parent */
+    max-width: calc(100vw);
+    /* Calculate the width based on the full viewport */
+    width: 100%;
+    background-image: none;
+    /* Set the background image of the element */
+    background-position: left;
+    /* Center the background image */
+    background-repeat: no-repeat;
+    /* Do not repeat the background image */
+    background-size: cover;
+    /* Resize the background image to cover the entire element */
+}
+
+}
+
 </style>
