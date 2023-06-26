@@ -1,5 +1,5 @@
 <template>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top" ref="navbarCollapse">
         <div class="container-fluid">
             <NuxtLink class="navbar-brand" to="/"><img src="/images/logo.png" width="50"> <b>HyperMeow</b>
             </NuxtLink>
@@ -43,6 +43,31 @@
         </div>
     </nav>
 </template>
+
+<script>
+export default {
+  mounted() {
+    // Attach touchstart event listener to the document
+    document.addEventListener('touchstart', this.handleClickOutside);
+  },
+  beforeUnmount() {
+    // Remove touchstart event listener when the component is unmounted
+    document.removeEventListener('touchstart', this.handleClickOutside);
+  },
+  methods: {
+    handleClickOutside(event) {
+      // If the clicked target is not within the .navbar-collapse element
+      if (!this.$refs.navbarCollapse.contains(event.target)) {
+        // Collapse every .navbar-collapse element
+        const navbarCollapses = document.querySelectorAll('.navbar-collapse');
+        navbarCollapses.forEach((navbarCollapse) => {
+          navbarCollapse.classList.remove('show');
+        });
+      }
+    },
+  },
+};
+</script>
 
 <style scoped>
 .navbar {
