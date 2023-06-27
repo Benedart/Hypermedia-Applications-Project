@@ -76,7 +76,7 @@ export default {
             areaDetails: {
                 AreaID: -1,
                 Title: 'area',
-                Description: 'description',
+                Section1: 'If you\'re seeing this content, there was an error while fetching data. Contact us at teamHyperMeow@gmail.com to let us know, thanks!',
             },
 
             projects: [],

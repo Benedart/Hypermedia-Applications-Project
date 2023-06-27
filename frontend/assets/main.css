@@ -68,3 +68,33 @@ a,
   opacity: 0;
   transform: translate(50px, 0);
 }
+
+.error {
+  color: var(--color-cerulean);
+  font-size: 1.5rem;
+  text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+
+  font-family: var(--font-family);
+  font-weight: var(--font-weight);
+  font-style: var(--font-style);
+  line-height: var(--line-height);
+  letter-spacing: var(--letter-spacing);
+}
+
+.error-subtitle {
+  font-size: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+
+  text-align: center;
+}
+
+.container-text-center .icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  text-align: center;
+
+  color: var(--color-cerulean);
+}

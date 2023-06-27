@@ -24,10 +24,15 @@ useSeoMeta({
                             :linkedin="user.linkedin" :Description="user.Description" :role="user.role" />
                     </div>
                 </div>
-                <div v-else class="d-flex justify-content-center">
+                <div v-else-if="!queryError" class="d-flex justify-content-center">
                     <div class="spinner-border m-5" role="status">
                         <span class="visually-hidden">Loading...</span>
                     </div>
+                </div>
+                <div v-else class="container-text-center">
+                    <div class="error">There was an error while fetching data</div>
+                    <div class="error-subtitle">Contact the website owner at teamHyperMeow@gmail.com</div>
+                    <div class="icon"><i class="bi bi-emoji-frown"></i></div>
                 </div>
             </div>
         </div>
@@ -41,7 +46,9 @@ export default {
             // This array will contain all the people data, used for filtering and resetting
             people: [],
 
-            search: ""
+            search: "",
+
+            queryError: false,
         }
     },
 
@@ -54,28 +61,6 @@ export default {
         this.getPersonData()
     },
 
-    computed: {
-        // Returns the list of people that match the search string
-        visiblePeople: function () {
-            // Filter the people array based on the search string
-            let matchingPeople = this.people.filter(p => {
-                let indexList = [0];
-                for (let i = 0; i < (p.name + " " + p.surname).length; i++) {
-                    const character = (p.name + " " + p.surname).charAt(i);
-                    if (character == " ")
-                        indexList.push(i + 1);
-                }
-                // Check if the search string is a substring of the person's name or surname
-                return indexList.includes((p.name + " " + p.surname).toLowerCase().indexOf(this.search.toLowerCase()));
-            });
-
-            console.log("SEARCH RESULTS:");
-            console.log(matchingPeople);
-
-            return matchingPeople;
-        },
-    },
-
     methods: {
         // Function to retrieve person data from the server
         getPersonData: async function () {
@@ -86,6 +71,7 @@ export default {
             } catch (error) {
                 console.error("Error, couldn't retrieve people cards");
                 console.error(error);
+                this.queryError = true;
             }
         },
     },

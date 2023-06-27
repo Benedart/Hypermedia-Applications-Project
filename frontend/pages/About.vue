@@ -145,10 +145,15 @@ useSeoMeta({
                             :featured="project.featured" />
                     </div>
                 </div>
-                <div v-else class="d-flex justify-content-center">
+                <div v-else-if="!queryErrorProjects" class="d-flex justify-content-center">
                     <div class="spinner-border m-5" role="status">
                         <span class="visually-hidden">Loading...</span>
                     </div>
+                </div>
+                <div v-else class="container-text-center">
+                    <div class="error">There was an error while fetching projects</div>
+                    <div class="error-subtitle">Contact the website owner at teamHyperMeow@gmail.com</div>
+                    <div class="icon"><i class="bi bi-emoji-frown"></i></div>
                 </div>
             </div>
             <br>
@@ -172,10 +177,15 @@ useSeoMeta({
                             :role="person.role" />
                     </div>
                 </div>
-                <div v-else class="d-flex justify-content-center">
+                <div v-else-if="!queryErrorPeople" class="d-flex justify-content-center">
                     <div class="spinner-border m-5" role="status">
                         <span class="visually-hidden">Loading...</span>
                     </div>
+                </div>
+                <div v-else class="container-text-center">
+                    <div class="error">There was an error while fetching people</div>
+                    <div class="error-subtitle">Contact the website owner at teamHyperMeow@gmail.com</div>
+                    <div class="icon"><i class="bi bi-emoji-frown"></i></div>
                 </div>
             </div>
             <br>
@@ -225,6 +235,8 @@ export default {
         return {
             projects: [],  // This will hold the projects data
             people: [],    // This will hold the people data
+            queryErrorProjects: false,  // This will be set to true if there is an error while fetching projects
+            queryErrorPeople: false,    // This will be set to true if there is an error while fetching people
         }
     },
 
@@ -246,20 +258,33 @@ export default {
             try {
                 // Making a GET request to get the featured projects data
                 const projectsData = await makeCall(this.$config.public.SERVER_URL + "/getFeaturedProjects", 'GET');
+
+                // Log the received data
+                console.log(projectsData);
+
+                // Assigning the fetched data to the component's data properties
+                this.projects = projectsData;
+            } catch (error) {
+                // Alert user about error and log error to console
+                console.error("Error while fetching projects")
+                console.error(error);
+                this.queryErrorProjects = true;
+            }
+
+            try {
                 // Making a GET request to get the people data
                 const peopleData = await makeCall(this.$config.public.SERVER_URL + "/getPeople", 'GET');
 
                 // Log the received data
-                console.log(projectsData);
                 console.log(peopleData);
 
                 // Assigning the fetched data to the component's data properties
-                this.projects = projectsData;
                 this.people = peopleData;
             } catch (error) {
                 // Alert user about error and log error to console
-                console.error("Error while fetching data")
+                console.error("Error while fetching people")
                 console.error(error);
+                this.queryErrorPeople = true;
             }
         }
     }

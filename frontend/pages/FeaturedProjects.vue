@@ -22,10 +22,15 @@ useSeoMeta({
                         :stage="project.stage" :areas="project.areas" :year="project.year" :featured="project.featured" />
                 </div>
             </div>
-            <div v-else class="d-flex justify-content-center">
+            <div v-else-if="!queryError" class="d-flex justify-content-center">
                 <div class="spinner-border m-5" role="status">
                     <span class="visually-hidden">Loading...</span>
                 </div>
+            </div>
+            <div v-else class="container-text-center">
+                <div class="error">There was an error while fetching data</div>
+                <div class="error-subtitle">Contact the website owner at teamHyperMeow@gmail.com</div>
+                <div class="icon"><i class="bi bi-emoji-frown"></i></div>
             </div>
         </div>
     </main>
@@ -37,6 +42,7 @@ export default {
         return {
             // this will contain only the projects that match the filters
             projects: [],
+            queryError: false,
         }
     },
 
@@ -57,6 +63,7 @@ export default {
             } catch (error) {
                 console.error("Error, couldn't retrieve project details");
                 console.error(error);
+                this.queryError = true;
             }
         },
     },

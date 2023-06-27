@@ -87,14 +87,14 @@ export default {
             // Data for person details
             personDetails: {
                 personid: -1, //id
-                name: 'Paolo', //name
-                surname: 'Rossi', //surname
-                age: '37', //age
-                email: 'paolo.rossi@gmail.com', //email
+                name: 'Name', //name
+                surname: 'Surname', //surname
+                age: '0', //age
+                email: 'name.surname@gmail.com', //email
                 linkedin: 'https://www.linkedin.com/feed/', //linkedin personal feed
-                CV: 'Laureato e molto bravo', // Academic background
-                Description: 'Gli piace giocare a golf', // Description of the person
-                role: 'CEO', // Job role
+                CV: 'If you\'re seeing this content, there was an error while fetching data. Contact us at teamHyperMeow@gmail.com to let us know, thanks!', // Academic background
+                Description: 'If you\'re seeing this content, there was an error while fetching data. Contact us at teamHyperMeow@gmail.com to let us know, thanks!', // Description of the person
+                role: 'role', // Job role
             },
 
             // Data for projects supervised
