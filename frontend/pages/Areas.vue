@@ -28,10 +28,15 @@ useSeoMeta({
                                 style="margin-top: -5rem;" />
                         </div>
                     </div>
-                    <div v-else class="d-flex justify-content-center">
+                    <div v-else-if="!queryError" class="d-flex justify-content-center">
                         <div class="spinner-border m-5" role="status">
                             <span class="visually-hidden">Loading...</span>
                         </div>
+                    </div>
+                    <div v-else class="container-text-center">
+                        <div class="error">There was an error while fetching data</div>
+                        <div class="error-subtitle">Contact the website owner at teamHyperMeow@gmail.com</div>
+                        <div class="icon"><i class="bi bi-emoji-frown"></i></div>
                     </div>
                 </div>
             </div>
@@ -44,6 +49,7 @@ export default {
     data() {
         return {
             areas: [],
+            queryError: false,
         }
     },
 
@@ -64,6 +70,7 @@ export default {
             } catch (error) {
                 console.error("Error, couldn't retrieve area cards");
                 console.error(error);
+                this.queryError = true;
             }
         },
     },

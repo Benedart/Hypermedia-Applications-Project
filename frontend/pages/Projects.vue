@@ -103,12 +103,16 @@ useSeoMeta({
             </div>
 
             <!-- if no projects are going to be shown (visibleProjects == 0 or areas empty), display a sad face -->
-            <div v-if="visibleProjects.length == 0 || areas.length == 0" class="container-text-center">
+            <div v-if="(visibleProjects.length == 0 || areas.length == 0) && !queryError" class="container-text-center">
                 <div class="error">No projects found</div>
                 <div class="error-subtitle">Try to remove some filters</div>
                 <div class="icon"><i class="bi bi-emoji-frown"></i></div>
             </div>
-
+            <div v-else-if="queryError" class="container-text-center">
+                <div class="error">There was an error while fetching data</div>
+                <div class="error-subtitle">Contact the website owner at teamHyperMeow@gmail.com</div>
+                <div class="icon"><i class="bi bi-emoji-frown"></i></div>
+            </div>
         </div>
     </main>
 </template>
@@ -137,7 +141,9 @@ export default {
             filterStages: [],
 
             //this will contain the years to filter
-            filterYears: []
+            filterYears: [],
+
+            queryError: false
         }
     },
 
@@ -265,6 +271,7 @@ export default {
             } catch (error) {
                 console.error("Error, couldn't retrieve project details");
                 console.error(error);
+                this.queryError = true;
             }
 
             try {
@@ -275,6 +282,7 @@ export default {
             } catch (error) {
                 console.error("Error, couldn't retrieve project details");
                 console.error(error);
+                this.queryError = true;
             }
         },
     },
@@ -282,36 +290,6 @@ export default {
 </script>
 
 <style scoped>
-.error {
-    color: var(--color-cerulean);
-    font-size: 1.5rem;
-    text-align: center;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-
-    font-family: var(--font-family);
-    font-weight: var(--font-weight);
-    font-style: var(--font-style);
-    line-height: var(--line-height);
-    letter-spacing: var(--letter-spacing);
-}
-
-.error-subtitle {
-    font-size: 1rem;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-
-    text-align: center;
-}
-
-.container-text-center .icon {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-    text-align: center;
-
-    color: var(--color-cerulean);
-}
-
 .container {
     margin-bottom: 10em;
 }

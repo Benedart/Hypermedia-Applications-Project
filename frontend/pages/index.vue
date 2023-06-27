@@ -74,10 +74,15 @@ useSeoMeta({
                         :stage="project.stage" :areas="project.areas" :year="project.year" :featured="project.featured" />
                 </div>
             </div>
-            <div v-else class="d-flex justify-content-center">
+            <div v-else-if="!queryErrorProjects" class="d-flex justify-content-center">
                 <div class="spinner-border m-5" role="status">
                     <span class="visually-hidden">Loading...</span>
                 </div>
+            </div>
+            <div v-else class="container-text-center">
+                <div class="error">There was an error while fetching projects</div>
+                <div class="error-subtitle">Contact the website owner at teamHyperMeow@gmail.com</div>
+                <div class="icon"><i class="bi bi-emoji-frown"></i></div>
             </div>
         </div>
         <br>
@@ -100,10 +105,15 @@ useSeoMeta({
                             :role="person.role" />
                     </div>
                 </div>
-                <div v-else class="d-flex justify-content-center">
+                <div v-else-if="!queryErrorPeople" class="d-flex justify-content-center">
                     <div class="spinner-border m-5" role="status">
                         <span class="visually-hidden">Loading...</span>
                     </div>
+                </div>
+                <div v-else class="container-text-center">
+                    <div class="error">There was an error while fetching people</div>
+                    <div class="error-subtitle">Contact the website owner at teamHyperMeow@gmail.com</div>
+                    <div class="icon"><i class="bi bi-emoji-frown"></i></div>
                 </div>
             </div>
 
@@ -157,6 +167,8 @@ export default {
         return {
             projects: [],
             people: [],
+            queryErrorPeople: false,
+            queryErrorProjects: false,
         }
     },
 
@@ -177,19 +189,33 @@ export default {
             try {
                 // Fetch data for projects and people
                 const projectsData = await makeCall(this.$config.public.SERVER_URL + "/getFeaturedProjects", 'GET');
-                const peopleData = await makeCall(this.$config.public.SERVER_URL + "/getPeople", 'GET');
 
                 // Log fetched data
                 console.log(projectsData);
-                console.log(peopleData);
 
                 // Assign fetched data to projects and people data properties
                 this.projects = projectsData;
+            } catch (error) {
+                // Handle any errors during the fetch operation
+                console.error("Error while fetching projects")
+                console.error(error);
+                this.queryErrorProjects = true;
+            }
+
+            try {
+                // Fetch data for people
+                const peopleData = await makeCall(this.$config.public.SERVER_URL + "/getPeople", 'GET');
+
+                // Log fetched data
+                console.log(peopleData);
+
+                // Assign fetched data to projects and people data properties
                 this.people = peopleData;
             } catch (error) {
                 // Handle any errors during the fetch operation
-                console.error("Error while fetching data")
+                console.error("Error while fetching people")
                 console.error(error);
+                this.queryErrorPeople = true;
             }
         }
     }
@@ -248,6 +274,7 @@ export default {
         /* Adjust the margin-top */
         padding-bottom: 10em;
     }
+
 }
 
 /* For viewport widths less than or equal to 860px */
@@ -390,12 +417,6 @@ export default {
     /* Resize the background image to cover the entire container */
 }
 
-/* CSS to extend the background beyond the container bounds */
-.background-extender {
-    padding-left: 100px;
-    padding-right: 100px;
-}
-
 /* CSS to display a small background image */
 .image-wood {
     background-image: url("/images/index/wood.webp");
@@ -417,6 +438,7 @@ export default {
 .custom-margin {
     margin-top: 15px;
 }
+
 
 /* CSS for responsive design - when screen width is up to 768px */
 @media (max-width: 768px) {
@@ -745,7 +767,7 @@ export default {
 }
 
 /* CSS rules for screen widths up to 672px */
-@media(max-width: 672px){
+@media(max-width: 672px) {
     .custom-btn-a {
         display: inline-block;
         padding: .375rem .75rem;
@@ -771,7 +793,7 @@ export default {
 }
 
 /* CSS rules for screen widths up to 640px */
- @media(max-width: 640px){
+@media(max-width: 640px) {
     .custom-btn-a {
         display: inline-block;
         padding: .375rem .75rem;
@@ -794,10 +816,10 @@ export default {
         margin-left: 17%;
 
     }
- }
+}
 
- /* CSS rules for screen widths up to 596px */
-@media(max-width: 596px){
+/* CSS rules for screen widths up to 596px */
+@media(max-width: 596px) {
     .custom-btn-a {
         display: inline-block;
         padding: .375rem .75rem;
@@ -823,7 +845,7 @@ export default {
 }
 
 /* CSS rules for screen widths up to 575px */
-@media(max-width: 575px){
+@media(max-width: 575px) {
     .custom-btn-a {
         display: inline-block;
         padding: .375rem .75rem;
@@ -937,7 +959,7 @@ export default {
 }
 
 /* CSS rules for screen widths up to 517px */
-@media(max-width: 517px){
+@media(max-width: 517px) {
     .custom-btn-a {
         display: inline-block;
         padding: .375rem .75rem;
@@ -963,7 +985,7 @@ export default {
 }
 
 /* CSS rules for screen widths up to 500px */
-@media(max-width: 500px){
+@media(max-width: 500px) {
     .custom-btn-a {
         display: inline-block;
         padding: .375rem .75rem;
@@ -986,5 +1008,62 @@ export default {
         margin-left: 6.5em;
 
     }
+}
+
+/* Query to manage the display of background images*/
+@media (max-width: 968px) {
+    .custom-row::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        height: 100%;
+        max-width: calc(100vw);
+        /* Full viewport */
+        width: 100%;
+        background-image: none;
+        background-color: #56554f;
+        background-position: end;
+        /* Center the image */
+        background-repeat: no-repeat;
+        /* Do not repeat the image */
+        background-size: cover;
+        /* Resize the background image to cover the entire container */
+    }
+
+
+    .image-wood {
+        background-image: none;
+        background-repeat: no-repeat;
+        background-position-x: right;
+        flex-direction: column;
+        display: flex;
+        flex-wrap: wrap;
+        margin-right: 0;
+        margin-left: 0;
+    }
+
+    .custom-row-c::before {
+        content: "";
+        /* No content inside the pseudo-element */
+        position: absolute;
+        /* Positioning is absolute to its nearest positioned ancestor */
+        top: 0;
+        /* Position the top edge at the top edge of the parent element */
+        /* Shift the element 50px to the left */
+        height: 100%;
+        /* The element should take up the full height of the parent */
+        max-width: calc(100vw);
+        /* Calculate the width based on the full viewport */
+        width: 100%;
+        background-image: none;
+        /* Set the background image of the element */
+        background-position: left;
+        /* Center the background image */
+        background-repeat: no-repeat;
+        /* Do not repeat the background image */
+        background-size: cover;
+        /* Resize the background image to cover the entire element */
+    }
+
 }
 </style>
