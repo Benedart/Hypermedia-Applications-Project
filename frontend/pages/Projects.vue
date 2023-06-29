@@ -32,11 +32,12 @@ useSeoMeta({
                     </div>
 
                     <!--button component to filter all over the charateristics of the projects-->
-                    <ProjectFilter ref="projectFilter" @applyFilters="filterProjects" />
+                    <!--it will be disabled if the searchbar is not empty-->
+                    <ProjectFilter ref="projectFilter" :disabled="search.length > 0" @applyFilters="filterProjects" />
                 </div>
 
                 <!--grid containing all the filters applied. empty if there are no filters applied-->
-                <span class="filter-grid">
+                <span v-if="!search" class="filter-grid">
                     <!--iteration showing the filters about the area title-->
                     <div v-for="filterArea in filterAreas">
                         <div class="filter-btn" @click="removeFilter(filterArea.AreaID)">

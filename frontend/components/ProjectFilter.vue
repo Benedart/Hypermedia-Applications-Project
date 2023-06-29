@@ -1,7 +1,8 @@
 <template>
     <div class="dropdown">
         <button type="button" class="custom-btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"
-            data-bs-auto-close="outside">
+            data-bs-auto-close="outside" :disabled="disabled ? true : false"
+            :title="disabled ? 'The fitler is disabled while using the searchbar' : ''">
             <div class="icon"><i class="bi bi-list-ul"></i></div>
             <b>Filter projects</b>
         </button>
@@ -74,6 +75,10 @@ export default {
             years: [],
             stages: [],
         }
+    },
+
+    props: {
+        disabled: Boolean,
     },
 
     created() {
@@ -420,5 +425,12 @@ export default {
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
     background: var(--color-cerulean);
+}
+
+/* style for the button when disabled */
+.custom-btn:disabled {
+    background: var(--color-platinum);
+    color: var(--color-black);
+    cursor: not-allowed;
 }
 </style>
