@@ -44,7 +44,7 @@ import ProjectCard from '@/components/ProjectCard.vue'
 
         <!-- Projects in this area -->
         <div class="custom-div" v-if="projects.length > 0">
-            <span class="row mx-3 custom-color justify-content-center" style="padding:2%;">
+            <span class="row custom-color justify-content-center" style="padding:2%;">
                 <!-- Section title -->
                 <h3 class="h3" style="margin-left : 10px; margin-top: 2px; padding:2%; float:left;">PROJECTS IN THIS AREA
                 </h3>
