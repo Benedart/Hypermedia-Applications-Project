@@ -50,7 +50,7 @@
                         <NuxtLink class="supervisor-link" :to="`/people/${projectDetails.supervisor}`">
                             {{ projectDetails.name + " " + projectDetails.surname }}
                         </NuxtLink>
-                    <p style="margin: 1rem;">{{ supervisor.CV }}</p>
+                    <p style="margin: 1rem; text-align: justify!important;">{{ supervisor.CV }}</p>
                     </p>
                 </span>
             </div>
@@ -177,20 +177,41 @@ export default {
         flex-direction: column;
         text-align: justify;
         font-size: 1em;
+        margin-top: 0;
     }
 
-    .section-1.custom-paragraph-1 {
+    .section-1 .custom-paragraph-1 {
         width: auto;
         justify-content: center;
         text-align: justify;
         border-right: 0;
-        padding-right: 0;
+        padding: 0 0 3rem 0;
         border-bottom: 1px solid var(--color-cerulean);
-        padding-bottom: 2rem;
-        font-size: 1.3em;
+        margin: 1rem!important;
+
+    }
+
+    .custom-paragraph-2{
+        text-align: justify!important;
+        padding: 0 0 3rem 0!important;
+        order: 1;
+        margin: 1rem!important;
+
+    }
+
+    .image-project{
+        order: 2;
+    }
+
+    .custom-paragraph-3{
+        padding: 0!important;
+        /*margin-bottom: 0!important;*/
+        margin: 1rem!important;
 
     }
 }
+
+
 
 .section-3 {
     display: flex;
@@ -206,7 +227,7 @@ export default {
     border-right: 1px solid var(--color-cerulean);
     padding-right: 2rem;
     padding: 3rem 3rem 3rem 0;
-    margin-bottom: auto;
+    margin-bottom: 0;
     text-align: justify;
     font-size: 1em;
 
@@ -226,6 +247,8 @@ export default {
 
     flex-grow: 1;
     text-align: justify;
+    padding: 0;
+
 
 }
 
@@ -239,13 +262,35 @@ export default {
 
 }
 
+@media screen and (max-width: 550px) {
+    .supervisor-span {
+        flex-direction: column;
+        text-align: justify;
+        font-size: 1em;
+        padding-left: 0!important;
+        padding-bottom: 0!important;
+    }
+
+    .supervisor-span .image-person{
+        margin-top: auto;
+        margin-left: auto;
+    }
+
+    .supervisor-p{
+        text-align: center;
+        margin-left: 0!important;
+        width: auto!important;
+    }
+    
+}
+
 .supervisor-p {
     width: 24rem;
-    text-align: left;
     margin-left: 2em;
     align-items: center;
     justify-content: center;
-    margin-top: -1.5em;
+    margin-bottom: auto;
+    margin-top: auto;
 }
 
 .supervisor-link {
@@ -270,8 +315,6 @@ export default {
     border-radius: 100%;
     width: 170px;
     margin: auto;
-    margin-top: -1em;
-    margin-left: 1em;
 }
 
 .image-project {
