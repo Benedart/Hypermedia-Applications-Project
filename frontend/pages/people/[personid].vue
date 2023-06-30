@@ -12,6 +12,7 @@ import ProjectCard from '@/components/ProjectCard.vue'
             <Meta name="description" :content="personDetails.Section1" />
         </Head>
 
+        <!-- bredcrump over the image -->
         <nav aria-label="breadcrumb" class="breadcrump">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item">
@@ -22,7 +23,7 @@ import ProjectCard from '@/components/ProjectCard.vue'
 
         <!-- Section 1: Person details -->
         <div class="row align-items-center justify-content-center">
-            <div class="col-md-5" style="background-color: snow;">
+            <div class="col-md-5 justify-content-center" style="background-color: snow;">
                 <!-- Person Image -->
                 <img class="image-person align-items-center justify-content-center"
                     :src="`/images/People/${personDetails.personid}.webp`" :alt="personDetails.personid">
@@ -69,6 +70,7 @@ import ProjectCard from '@/components/ProjectCard.vue'
                     </div>
                 </span>
             </div>
+            <!--Loading section of the page-->
             <div v-else class="d-flex justify-content-center">
                 <div class="spinner-border m-5" role="status">
                     <span class="visually-hidden">Loading...</span>
@@ -147,8 +149,9 @@ export default {
     margin-top: 6rem;
 }
 
+/* Styles for person's name */
 .name-person {
-    /* Styles for person's name */
+    
     color: #000022;
     /* Text color */
     margin: auto;
@@ -158,16 +161,18 @@ export default {
     margin-bottom: 0.2em;
 }
 
+/* Styles for formation part*/
 .formation {
-    /* Styles for formation part*/
+    
     font-size: 18px;
     /* Font size */
     color: #000022;
     /* Text color */
 }
 
+ /* Styles for heading */
 .h3 {
-    /* Styles for heading */
+   
     margin-top: 110px;
     /* Top margin */
     margin-left: -30px;
@@ -180,41 +185,36 @@ export default {
     /* Text alignment */
 }
 
+/*Style for the image of the person*/
 .image-person {
-    /* Styles for person's image */
     border-radius: 1rem;
     /* Border radius */
-    float: left;
-    /* Float left */
-    width: 400px;
+    width: 90%;
     /* Width of the image */
-    margin-right: 40px;
-    /* Right margin */
-    /* Top margin */
 }
 
-@media (max-width: 1200px) {
+/* Responsive styles for person's image on smaller screens */
+@media (max-width: 768px) {
     .image-person {
-        /* Responsive styles for person's image on smaller screens */
         float: none;
         /* Remove float */
         clear: both;
         /* Clear float */
-        display: flex;
-        /* Display as flex */
-        flex-wrap: wrap;
-        /* Allow wrapping */
-        margin: 2em auto 1em;
+        display: block;
+        /* Display as block */
+        margin: 3em auto;
+        margin-top:1em;
         /* Margin for centering */
-        justify-content: center;
-        /* Center horizontally */
-        width: 90%;
-        /* Width of the image */
+        max-width: 70%;
+        /* Maximum width of the image */
+        
     }
 }
 
+
+/* Styles for background color of project cards*/
 .custom-color {
-    /* Styles for background color of project cards*/
+    
     background-color: #e5e5e5;
     /* Background color */
 }
