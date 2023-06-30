@@ -7,7 +7,7 @@
             <b>Filter projects</b>
         </button>
         <form class="dropdown-menu">
-            <div class="hstack gap-3 ">
+            <div class="hstack gap-1 ">
                 <div class="filter-column custom-color custom-border p-2">
                     <div class="checkform-title border-bottom">
                         <b>Area</b>
@@ -231,6 +231,12 @@ export default {
     flex-direction: column;
     flex: 1;
     width: 10rem;
+}
+
+@media screen and (max-width: 550px) {
+    .filter-column{
+        width:auto!important;
+    }
 }
 
 .checkform-footer {
