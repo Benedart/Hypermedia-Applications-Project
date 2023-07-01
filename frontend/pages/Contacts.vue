@@ -41,7 +41,7 @@ useSeoMeta({
 
       <!-- Card container with contact details -->
       <div class="row justify-content-center pb-5 card-container" style="background: #E5E5E5;">
-        <div class="row mx-3 justify-content-center">
+        <div class="row justify-content-center">
           <!-- Office address card -->
           <div class="card mb-3 card-custom mx-auto mr-md-3 ml-md-3">
             <div class="row image-container">
@@ -129,8 +129,30 @@ useSeoMeta({
 }
 
 /* Width of the general content*/
-.container-width{
-  max-width: 98.1vw;
+@media(min-width: 2408px){
+  .container-width{
+  max-width: 83vw;
+}
+
+  .row{
+    --bs-gutter-x: 0;
+  }
+}
+
+@media(min-width: 2000px) and (max-width: 2307px){
+  .container-width{
+  max-width: 99.8vw;
+}
+
+  .row{
+    --bs-gutter-x: 0;
+  }
+}
+
+@media(max-width: 1999px){
+  .container-width{
+  max-width: 99.3vw;
+}
 }
 
 @media(max-width: 620px){
