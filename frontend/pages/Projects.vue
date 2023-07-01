@@ -305,12 +305,6 @@ export default {
     margin-bottom: 1rem;
 }
 
-@media screen and (max-width: 960px) {
-    .grid-container {
-        justify-content: center;
-    }
-}
-
 .filter-grid {
     display: flex;
     padding: 1.25rem;
