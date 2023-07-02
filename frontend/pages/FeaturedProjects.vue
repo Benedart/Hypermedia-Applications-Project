@@ -14,7 +14,7 @@ useSeoMeta({
     <main>
         <!-- Page title -->
         <div class="title">Featured projects</div>
-        <div class="container-fluid">
+        <div class="container-fluid container">
             <div v-if="projects.length > 0" class="row g-3">
                 <!-- Loop over projects and render ProjectCard component for each project -->
                 <div v-for="project in projects" class="col">
