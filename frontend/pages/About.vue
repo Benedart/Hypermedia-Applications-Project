@@ -12,20 +12,17 @@ useSeoMeta({
 </script>
 
 <template>
-    <main>
+    <main class="container">
         <!-- Header Row -->
         <div class="row mx-3 d-flex justifyWhenNeeded">
             <div class="title">About us</div>
         </div>
         <!-- Row with custom margins and separator-->
-        <div class="separator-margin py-5 " style="background-color: #9991A1;">
+        <div class="separator-margin py-5" style="background-color: #9991A1; border-radius: 50px;">
             <div class="row justify-content-center separator-margin custom-margins">
                 <div class="col-md-9 d-flex align-items-center justify-content-center">
                     <h3 class="custom-h3" style="text-align:center; line-height: 100%; font-size: 2em;">
-                        Embracing novel ideas, fueling unprecedented
-                        innovations, and
-                        committing to the creation of a future where sustainability is not just a concept, but an
-                        established practice.
+                        Embracing novel ideas, fueling unprecedented innovations, and committing to the creation of a future where sustainability is not just a concept, but an established practice.
                     </h3>
                 </div>
             </div>
@@ -33,7 +30,7 @@ useSeoMeta({
         <!-- Row with mission text and image -->
         <div class="row d-flex justify-content-center margin-t-1 custom-margins-l">
             <!-- Mission Text Column -->
-            <div class="col-md-7 my-3 justify-content-center text-style px-5">
+            <div class="col-md-7 my-3 justify-content-center text-style px-4">
                 <!-- Detailed information about company -->
                 <div class="my-auto">
                     We are a <strong>leading venture capital firm</strong> with a clear focus: to <strong>support and
@@ -450,20 +447,19 @@ export default {
 
     /* Further adjust margins for even smaller screens */
     .custom-margins {
-        margin-left: 20px;
-        margin-right: 20px;
+        margin-left: 10px;
+        margin-right: 10px;
     }
 
     .custom-margins-l {
-        margin-left: 30px;
-        margin-right: 20px;
+        margin-left: 10px;
+        margin-right: 10px;
     }
 
     .custom-margins-r {
-        margin-left: 20px;
-        margin-right: 30px;
+        margin-left: 10px;
+        margin-right: 10px;
     }
-
 
     .margin-t-1 {
         margin-top: 30px;

@@ -15,136 +15,147 @@ useSeoMeta({
     <main>
         <!-- Custom row with introductory statement and a call to action -->
         <div class="custom-row" style="min-height: 60em; padding-bottom: 10em;">
-            <div class="title col-md-5">Unleashing Innovation, Powering Growth</div>
-            <div class="subtitle col-md-4">
-                Dedicated to fueling innovation and driving growth.
-                We collaborate with visionary entrepreneurs and disruptive startups igniting breakthrough technologies and
-                ideas, empowering the next generation of game-changers.</div>
-            <div class="col-md-4 mx-3 d-flex justify-content-start">
-                <nuxt-link to="/about" tag="button" type="button" class="custom-btn d-flex">
-                    <b>About us</b>
-                </nuxt-link>
-            </div>
-        </div>
-        <!-- Presenting a statement about the company and its mission -->
-        <div class="col-md-7 d-flex justify-content-center mx-auto">
-            <h3 class="custom-bold" style="text-align: center; margin-top:2.5em;">HyperMeow is a global investment leader,
-                <p class="custom-bold">reshaping opportunities in Italy and beyond with unprecedented growth.</p>
-            </h3>
-        </div>
-        <!-- Section providing more details about the company's vision and goals -->
-        <div class="col-md-6 custom-margin justify-content-center mx-auto" style="text-align:justify; font-size:1.3em;">
-            <p>For over 50 years, we have been partnering with businesses, organizations, and institutions, assisting them
-                in overcoming their most complex challenges, creating value, and accelerating their growth through
-                sustainable and inclusive transformation processes.</p>
-            <p>We are dedicated to contributing to the development of the communities we serve and safeguarding our planet
-                through research projects in social, technological, healthcare, and environmental domains.</p>
-            <p>We ensure equal opportunities for professional growth for all individuals working with us, promoting the
-                values of diversity, inclusion, and meritocracy. </p>
-        </div>
-        <!-- Highlighting company's achievements -->
-        <div class="row mx-3 d-flex justify-content-center sm-separator">
-            <div class="col-md-6 rounded mb-3 text-center">
-                <div class="row" style="font-size: 7em;">
-                    <p class="custom-bold" style="font-family:'Times New Roman', Times, serif;">1000+</p>
-                </div>
-                <div class="row">
-                    <p class="custom-bold-num">Founders in Residence</p>
-                </div>
-            </div>
-            <div class="col-md-6 rounded mb-3 text-center">
-                <div class="row" style="font-size: 7em;">
-                    <p class="custom-bold" style="font-family:'Times New Roman', Times, serif;">5</p>
-                </div>
-                <div class="row">
-                    <p class="custom-bold-num">Incubated Unicorns</p>
+            <div class="container">
+                <div class="title col-md-5">Unleashing Innovation, Powering Growth</div>
+                <div class="subtitle col-md-4">
+                    Dedicated to fueling innovation and driving growth.
+                    We collaborate with visionary entrepreneurs and disruptive startups igniting breakthrough technologies and
+                    ideas, empowering the next generation of game-changers.</div>
+                <div class="col-md-4 mx-3 d-flex justify-content-start">
+                    <nuxt-link to="/about" tag="button" type="button" class="custom-btn d-flex">
+                        <b>About us</b>
+                    </nuxt-link>
                 </div>
             </div>
         </div>
-        <hr class="color-line" style="width: 70%; margin: 0 auto;">
-        <!-- Featured projects section, with each project presented using ProjectCard component -->
-        <div class="row mx-3 justify-content-center separator-margin">
-            <h1 style="text-align: center; color: #000022;"> Featured Projects </h1>
-        </div>
-        <br>
-        <div class="row mx-3 d-flex justify-content-center">
-            <div v-if="projects.length > 0" class="row mx-3 justify-content-center">
-                <div v-for="project in projects" class="col mb-3 d-flex justify-content-center">
-                    <ProjectCard :projectid="project.projectid" :title="project.title" :preview="project.preview"
-                        :stage="project.stage" :areas="project.areas" :year="project.year" :featured="project.featured" />
+        <div class="container">
+            <!-- Presenting a statement about the company and its mission -->
+            <div class="col-md-7 d-flex justify-content-center mx-auto">
+                <h3 class="custom-bold" style="text-align: center; margin-top:2.5em;">HyperMeow is a global investment leader,
+                    <p class="custom-bold">reshaping opportunities in Italy and beyond with unprecedented growth.</p>
+                </h3>
+            </div>
+            <!-- Section providing more details about the company's vision and goals -->
+            <div class="col-md-6 custom-margin justify-content-center mx-auto" style="text-align:justify; font-size:1.3em;">
+                <p>For over 50 years, we have been partnering with businesses, organizations, and institutions, assisting them
+                    in overcoming their most complex challenges, creating value, and accelerating their growth through
+                    sustainable and inclusive transformation processes.</p>
+                <p>We are dedicated to contributing to the development of the communities we serve and safeguarding our planet
+                    through research projects in social, technological, healthcare, and environmental domains.</p>
+                <p>We ensure equal opportunities for professional growth for all individuals working with us, promoting the
+                    values of diversity, inclusion, and meritocracy. </p>
+            </div>
+            <!-- Highlighting company's achievements -->
+            <div class="row mx-3 d-flex justify-content-center sm-separator">
+                <div class="col-md-6 rounded mb-3 text-center">
+                    <div class="row" style="font-size: 7em;">
+                        <p class="custom-bold" style="font-family:'Times New Roman', Times, serif;">1000+</p>
+                    </div>
+                    <div class="row">
+                        <p class="custom-bold-num">Founders in Residence</p>
+                    </div>
+                </div>
+                <div class="col-md-6 rounded mb-3 text-center">
+                    <div class="row" style="font-size: 7em;">
+                        <p class="custom-bold" style="font-family:'Times New Roman', Times, serif;">5</p>
+                    </div>
+                    <div class="row">
+                        <p class="custom-bold-num">Incubated Unicorns</p>
+                    </div>
                 </div>
             </div>
-            <div v-else-if="!queryErrorProjects" class="d-flex justify-content-center">
-                <div class="spinner-border m-5" role="status">
-                    <span class="visually-hidden">Loading...</span>
-                </div>
-            </div>
-            <div v-else class="container-text-center">
-                <div class="error">There was an error while fetching projects</div>
-                <div class="error-subtitle">Contact the website owner at teamHyperMeow@gmail.com</div>
-                <div class="icon"><i class="bi bi-emoji-frown"></i></div>
-            </div>
+            <hr class="color-line" style="width: 70%; margin: 0 auto;">
         </div>
-        <br>
-        <div class="row mx-3 d-flex justify-content-center">
-            <nuxt-link to="/projects" tag="button" type="button" class="btn btn-secondary d-flex justify-content-center">
-                <b>All projects</b>
-            </nuxt-link>
-        </div>
-        <!-- Our People section presented on a colored background -->
-        <div class="separator-margin py-5 " style="background-color: #D9D9D9;">
-            <div class="row mx-3 justify-content-center">
-                <h1 style="text-align: center; color: #000022; "> Our People </h1>
+        <div class="container">
+            <!-- Featured projects section, with each project presented using ProjectCard component -->
+            <div class="row mx-3 justify-content-center separator-margin">
+                <h1 style="text-align: center; color: #000022;"> Featured Projects </h1>
             </div>
             <br>
             <div class="row mx-3 d-flex justify-content-center">
-                <div v-if="people.length > 0" class="row mx-3 justify-content-center">
-                    <div v-for="person in people.slice(0, 3)" class="col mb-3 d-flex justify-content-center">
-                        <PeopleCard :personid="person.personid" :name="person.name" :surname="person.surname"
-                            :age="person.age" :linkedin="person.linkedin" :Description="person.Description"
-                            :role="person.role" />
+                <div v-if="projects.length > 0" class="row mx-3 justify-content-center">
+                    <div v-for="project in projects" class="col mb-3 d-flex justify-content-center">
+                        <ProjectCard :projectid="project.projectid" :title="project.title" :preview="project.preview"
+                            :stage="project.stage" :areas="project.areas" :year="project.year" :featured="project.featured" />
                     </div>
                 </div>
-                <div v-else-if="!queryErrorPeople" class="d-flex justify-content-center">
+                <div v-else-if="!queryErrorProjects" class="d-flex justify-content-center">
                     <div class="spinner-border m-5" role="status">
                         <span class="visually-hidden">Loading...</span>
                     </div>
                 </div>
                 <div v-else class="container-text-center">
-                    <div class="error">There was an error while fetching people</div>
+                    <div class="error">There was an error while fetching projects</div>
                     <div class="error-subtitle">Contact the website owner at teamHyperMeow@gmail.com</div>
                     <div class="icon"><i class="bi bi-emoji-frown"></i></div>
                 </div>
             </div>
-
             <br>
-            <div class="row mx-3 d-flex justify-content-center" style="margin-top:2em;">
-                <nuxt-link to="/people" tag="button" type="button" class="btn btn-secondary d-flex justify-content-center">
-                    <b>All people</b>
+            <div class="row mx-3 d-flex justify-content-center">
+                <nuxt-link to="/projects" tag="button" type="button" class="btn btn-secondary d-flex justify-content-center">
+                    <b>All projects</b>
                 </nuxt-link>
             </div>
         </div>
+        <div style="background-color: #D9D9D9;">
+            <!-- Our People section presented on a colored background -->
+            <div class="separator-margin py-5 container" >
+                <div class="row mx-3 justify-content-center">
+                    <h1 style="text-align: center; color: #000022; "> Our People </h1>
+                </div>
+                <br>
+                <div class="row mx-3 d-flex justify-content-center">
+                    <div v-if="people.length > 0" class="row mx-3 justify-content-center">
+                        <div v-for="person in people.slice(0, 3)" class="col mb-3 d-flex justify-content-center">
+                            <PeopleCard :personid="person.personid" :name="person.name" :surname="person.surname"
+                                :age="person.age" :linkedin="person.linkedin" :Description="person.Description"
+                                :role="person.role" />
+                        </div>
+                    </div>
+                    <div v-else-if="!queryErrorPeople" class="d-flex justify-content-center">
+                        <div class="spinner-border m-5" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                    </div>
+                    <div v-else class="container-text-center">
+                        <div class="error">There was an error while fetching people</div>
+                        <div class="error-subtitle">Contact the website owner at teamHyperMeow@gmail.com</div>
+                        <div class="icon"><i class="bi bi-emoji-frown"></i></div>
+                    </div>
+                </div>
+
+                <br>
+                <div class="row mx-3 d-flex justify-content-center" style="margin-top:2em;">
+                    <nuxt-link to="/people" tag="button" type="button" class="btn btn-secondary d-flex justify-content-center">
+                        <b>All people</b>
+                    </nuxt-link>
+                </div>
+            </div>
+        </div>
+        
         <!-- A brief on areas that the company explored -->
         <div style="background-color:#FFF">
-            <div class="row justify-content-center custom-bold" style="margin-top: 2em;"></div>
-            <h1 style="text-align: center; color: #000022; "> Areas that we explored </h1>
-            <div class="row image-wood" style="min-height: 60em;">
-                <div class="title-a col-md-5" style="line-height: 103%;">Investing in Healthcare, Ecosustainability,
-                    Technology, and Growth.</div>
-                <div class="subtitle-a col-md-4">From revolutionizing healthcare to championing ecosustainability,
-                    leveraging technology, and fostering growth, we are at the forefront of driving innovation.
-                    <p>Join us on our mission to shape the future of these dynamic industries.</p>
-                </div>
-                <div class="col-md-4 mx-md-3 mx-sm-1 d-flex">
-                    <nuxt-link to="/areas" tag="button" type="button" class="custom-btn-a d-flex">
-                        <b>All areas</b>
-                    </nuxt-link>
+            <div class="container">
+                <div class="row justify-content-center custom-bold" style="margin-top: 2em;"></div>
+                <h1 style="text-align: center; color: #000022; "> Areas that we explored </h1>
+                <div class="row image-wood" style="min-height: 60em;">
+                    <div class="title-a col-md-5" style="line-height: 103%;">Investing in Healthcare, Ecosustainability,
+                        Technology, and Growth.</div>
+                    <div class="subtitle-a col-md-4">From revolutionizing healthcare to championing ecosustainability,
+                        leveraging technology, and fostering growth, we are at the forefront of driving innovation.
+                        <p>Join us on our mission to shape the future of these dynamic industries.</p>
+                    </div>
+                    <div class="col-md-4 mx-md-3 mx-sm-1 d-flex">
+                        <nuxt-link to="/areas" tag="button" type="button" class="custom-btn-a d-flex">
+                            <b>All areas</b>
+                        </nuxt-link>
+                    </div>
                 </div>
             </div>
         </div>
         <!-- A final call to contact us -->
         <div style="background-color:#000022">
-            <div class="custom-row-c">
+            <div class="custom-row-c container">
                 <div class="content-right">
                     <div class="title-c col-md-5" style="line-height: 98%;">Ready to Transform Your Future? Let's <strong>
                             Connect.</strong></div>
@@ -405,7 +416,6 @@ export default {
     position: absolute;
     top: 0;
     height: 100%;
-    max-width: calc(100vw);
     /* Full viewport */
     width: 100%;
     background-image: url('/images/index/plant.webp');

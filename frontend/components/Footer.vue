@@ -2,7 +2,7 @@
     <hr class="color-line color-background" style="margin:0;">
     <footer class="py-5 color-background">
         <br>
-        <div class="row">
+        <div class="row container">
             <div class="col-6 col-md-2 mb-3">
                 <h5>Resources</h5>
                 <ul class="nav flex-column">
@@ -59,7 +59,7 @@
             </div>
         </div>
         <hr class="color-line">
-        <div class="d-flex flex-column flex-sm-row justify-content-between">
+        <div class="d-flex flex-column flex-sm-row justify-content-between container">
             <p class="ms-4">&copy; 2023 HyperMeow, All rights reserved.</p>
         </div>
     </footer>

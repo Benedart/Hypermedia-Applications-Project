@@ -12,12 +12,11 @@ useSeoMeta({
 
 <template>
   <main class="margin">
-    <div class = "container-width">
+    <div class = "container-width container">
       <!-- Header row with contact details -->
       <div class="row">
         <div class="col-md-6 d-flex align-items-center justify-content-center">
           <div class="text-center">
-            <br>
             <!-- Header title -->
             <div class="row custom-heading" style="line-height: 80%;">
               <b>Contact us</b>
@@ -40,7 +39,7 @@ useSeoMeta({
       </div>
 
       <!-- Card container with contact details -->
-      <div class="row justify-content-center pb-5 card-container" style="background: #E5E5E5;">
+      <div class="row justify-content-center pb-5" style="background: #E5E5E5;">
         <div class="row justify-content-center">
           <!-- Office address card -->
           <div class="card mb-3 card-custom mx-auto mr-md-3 ml-md-3">
@@ -129,32 +128,6 @@ useSeoMeta({
 }
 
 /* Width of the general content*/
-@media(min-width: 2408px){
-  .container-width{
-  max-width: 83vw;
-}
-
-  .row{
-    --bs-gutter-x: 0;
-  }
-}
-
-@media(min-width: 2000px) and (max-width: 2307px){
-  .container-width{
-  max-width: 99.8vw;
-}
-
-  .row{
-    --bs-gutter-x: 0;
-  }
-}
-
-@media(max-width: 1999px){
-  .container-width{
-  max-width: 99.3vw;
-}
-}
-
 @media(max-width: 620px){
   .container-width{
     max-width: 97.8vw;
@@ -249,8 +222,6 @@ useSeoMeta({
   width: auto;
   height: auto;
 }
-
-
 
 /* Styling the contact form container */
 .contact-form-container {

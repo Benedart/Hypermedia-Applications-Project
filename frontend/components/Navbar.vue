@@ -1,6 +1,6 @@
 <template>
     <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top" ref="navbarCollapse">
-        <div class="container-fluid">
+        <div class="container-fluid container">
             <NuxtLink class="navbar-brand" to="/"><img src="/images/logo.png" width="50"> <b>HyperMeow</b>
             </NuxtLink>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"

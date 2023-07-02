@@ -1,6 +1,6 @@
 <template>
   <!-- Card form main container -->
-  <div class="card-form">
+  <div class="card-form container">
     <!-- Decorative circles -->
     <div class="corner-circle top-left"></div>
     <div class="small-circle below-top-left"></div>
@@ -263,45 +263,6 @@ export default {
   
   .fade-enter, .fade-leave-to {
     opacity: 0;
-  }
-
-  /* Big screens responsive styles */
-  @media (min-width: 2800px) {
-     /* Large circle style */
-  .corner-circle {
-    background-color: #FFFBFA;
-    width: 280px;
-    height: 280px;
-  }
-
-  /* Small circle style */
-  .small-circle {
-    background-color: #D9D9D9;
-    width: 70px;
-    height: 70px;
-  }
-
-  /* Positioning for large circles */
-  .top-left {
-    top: 56px;
-    left: 56px;
-  }
-
-  .bottom-right {
-    bottom: 56px;
-    right: 56px;
-  }
-
-  /* Positioning for small circles */
-  .below-top-left {
-    top: 308px;
-    left: 308px;
-  }
-
-  .above-bottom-right {
-    bottom: 308px;
-    right: 308px;
-  }
   }
 
   /* Mobile responsive styles */
