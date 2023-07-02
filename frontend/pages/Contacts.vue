@@ -12,7 +12,7 @@ useSeoMeta({
 
 <template>
   <main class="margin">
-    <div class = "container-width container">
+    <div class = "container">
       <!-- Header row with contact details -->
       <div class="row">
         <div class="col-md-6 d-flex align-items-center justify-content-center">
@@ -127,27 +127,14 @@ useSeoMeta({
   margin: 0;
 }
 
-/* Width of the general content*/
-@media(max-width: 620px){
-  .container-width{
-    max-width: 97.8vw;
-  }
-}
-
-@media(max-width: 500px){
-  .container-width{
-    max-width: 97.1vw;
-  }
-}
-
 .btn:hover,
 .btn:active {
   background-color: rgb(13, 79, 106);
 
 }
 
-/* Media queries for screen width between 760px and 1460px */
-@media (min-width: 760px) and (max-width: 1460px) {
+/* Media queries for screen width between 260px and 1460px */
+@media (min-width: 260px) and (max-width: 1460px) {
 
   /* Adjusting margin for the first and second child of card-custom class */
   .card-custom:nth-child(1),
@@ -183,11 +170,6 @@ useSeoMeta({
 /* Media queries for screen width less than 767px */
 @media (max-width: 767px) {
 
-  /* Adjusting the card container padding */
-  .card-container {
-    padding-top: 30px;
-  }
-
   /* Adjusting the custom margin */
   .custom-margin {
     margin-top: 2%;
@@ -199,11 +181,6 @@ useSeoMeta({
     font-size: 3.5em;
     margin-top: 2%;
   }
-}
-
-/* Styling the card container */
-.card-container {
-  margin-bottom: 50px;
 }
 
 /* Styling the card custom */
