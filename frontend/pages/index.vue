@@ -145,7 +145,7 @@ useSeoMeta({
                         leveraging technology, and fostering growth, we are at the forefront of driving innovation.
                         <p>Join us on our mission to shape the future of these dynamic industries.</p>
                     </div>
-                    <div class="col-md-4 mx-md-3 mx-sm-1 d-flex">
+                    <div class="col-md-4 mx-md-3 mx-sm-1 d-flex custom-justify-center">
                         <nuxt-link to="/areas" tag="button" type="button" class="custom-btn-a d-flex">
                             <b>All areas</b>
                         </nuxt-link>
@@ -956,24 +956,28 @@ export default {
 /* CSS rules for screen widths up to 560px */
 @media(max-width: 560px) {
     .title {
-        max-width: 50%;
-        text-align: start;
+        max-width: 100%;
+        text-align: center;
         align-items: start;
-        margin-left: 2em;
+        margin-left: auto;
         margin-top: 3em;
         color: snow;
 
     }
 
     .subtitle {
-        max-width: 45%;
-        text-align: start;
-        align-items: start;
+        max-width: 100%;
+        text-align: justify;
         margin-top: 1em;
-        margin-left: 5.5em;
+        margin-left: 1.5em;
         color: snow;
         font-size: 1.3em;
+        margin-right: 1.5em;
 
+    }
+
+    .justify-content-start{
+        justify-content: center!important;
     }
 
     .custom-btn {
@@ -995,6 +999,7 @@ export default {
         letter-spacing: 0.1rem;
         margin-top: 1em;
         justify-content: center;
+        margin-left: 0;
     }
 
     .custom-btn-a {
@@ -1038,9 +1043,31 @@ export default {
         margin-top: 1em;
         margin-left: auto;
     }
+
+    .subtitle-a{
+        max-width: 100%;
+        text-align: justify;
+        margin-top: 2em;
+        margin-left: 0;
+    }
+
+    .title-a{
+        text-align: center;
+        margin-left: 0;
+        max-width: 100%;
+    }
+
+    .custom-btn-a{
+        margin-left: 0;
+
+    }
+
+    .custom-justify-center{
+        justify-content: center!important;
+    }
 }
 
-/* CSS rules for screen widths up to 517px */
+/* CSS rules for screen widths up to 517px 
 @media(max-width: 530px) {
     .custom-btn-a {
         display: inline-block;
@@ -1065,8 +1092,9 @@ export default {
 
     }
 }
+*/
 
-/* CSS rules for screen widths up to 500px */
+/* CSS rules for screen widths up to 500px 
 @media(max-width: 522px) {
     .custom-btn-a {
         display: inline-block;
@@ -1091,6 +1119,7 @@ export default {
 
     }
 }
+*/
 
 /* Query to manage the display of background images*/
 @media (max-width: 968px) {

@@ -153,13 +153,15 @@ export default {
     flex-grow: 1;
     margin: auto;
 
-    width: 20rem;
+    width: -webkit-fill-available;
+    max-width: 20rem;
 }
 
 .image-area-2 {
     border-radius: 5%;
     flex-grow: 1;
-    width: 25rem;
+    width: -webkit-fill-available;
+    max-width: 25rem;
     margin: auto;
 }
 

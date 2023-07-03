@@ -103,6 +103,13 @@ export default {
     margin-top: 2em !important;
 }
 
+@media screen and (max-width: 450px) {
+
+    .card {
+        width: 295px;
+    }
+    
+}
 
 .card:hover {
     transform: translateY(-0.5%);

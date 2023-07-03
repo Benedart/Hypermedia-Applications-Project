@@ -310,7 +310,8 @@ export default {
     border-radius: 5%;
     flex-grow: 1;
 
-    width: 20rem;
+    width: -webkit-fill-available;
+    max-width: 20rem;
     margin: auto;
     object-fit: cover;
 }
@@ -341,17 +342,17 @@ export default {
     position: relative;
     margin-top: 3em !important;
     margin-bottom: 5em !important;
-    max-width: 70%;
+    max-width: 700px;
     height: auto;
     margin: auto;
-    width: 1000px;
-    height: 550px;
+    width: -webkit-fill-available;
     border-top-right-radius: 5%;
     border-top-left-radius: 5%;
     border-bottom-right-radius: 5%;
     border-bottom-left-radius: 5%;
 }
 
+/*
 @media(max-width: 800px) {
     .image {
         position: relative;
@@ -368,6 +369,7 @@ export default {
         border-bottom-left-radius: 5%;
     }
 }
+*/
 
 
 
