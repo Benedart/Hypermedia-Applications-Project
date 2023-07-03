@@ -14,14 +14,14 @@ useSeoMeta({
 <template>
     <main class="container-fluid p-0">
         <!-- Custom row with introductory statement and a call to action -->
-        <div class="custom-row" style="min-height: 60em; padding-bottom: 10em;">
+        <div class="custom-row">
             <div class="container">
-                <div class="title col-md-5">Unleashing Innovation, Powering Growth</div>
-                <div class="subtitle col-md-4">
+                <div class="title">Unleashing Innovation, Powering Growth</div>
+                <div class="subtitle">
                     Dedicated to fueling innovation and driving growth.
                     We collaborate with visionary entrepreneurs and disruptive startups igniting breakthrough technologies and
                     ideas, empowering the next generation of game-changers.</div>
-                <div class="col-md-4 mx-3 d-flex justify-content-start">
+                <div class="mx-3 d-flex justify-content-start">
                     <nuxt-link to="/about" tag="button" type="button" class="custom-btn d-flex">
                         <b>About us</b>
                     </nuxt-link>
@@ -134,18 +134,16 @@ useSeoMeta({
         </div>
         
         <!-- A brief on areas that the company explored -->
-        <div style="background-color:#FFF" class = "btn-handler container-fluid">
+        <div style="background-color:#FFF" class = "image-wood btn-handler container-fluid">
             <div class="container">
-                <div class="row justify-content-center custom-bold" style="margin-top: 2em;"></div>
-                <h1 style="text-align: center; color: #000022; "> Areas that we explored </h1>
-                <div class="row image-wood" style="min-height: 60em;">
-                    <div class="title-a col-md-5" style="line-height: 103%;">Investing in Healthcare, Ecosustainability,
+                <div class="row area-row">
+                    <div class="title-a" style="line-height: 103%;">Investing in Healthcare, Ecosustainability,
                         Technology, and Growth.</div>
-                    <div class="subtitle-a col-md-4">From revolutionizing healthcare to championing ecosustainability,
+                    <div class="subtitle-a">From revolutionizing healthcare to championing ecosustainability,
                         leveraging technology, and fostering growth, we are at the forefront of driving innovation.
                         <p>Join us on our mission to shape the future of these dynamic industries.</p>
                     </div>
-                    <div class="col-md-4 mx-md-3 mx-sm-1 d-flex custom-justify-center">
+                    <div class="mx-md-3 mx-sm-1 d-flex custom-justify-center">
                         <nuxt-link to="/areas" tag="button" type="button" class="custom-btn-a d-flex">
                             <b>All areas</b>
                         </nuxt-link>
@@ -157,9 +155,9 @@ useSeoMeta({
         <div style="background-color:#000022" class="container-fluid">
             <div class="custom-row-c container">
                 <div class="content-right">
-                    <div class="title-c col-md-5" style="line-height: 98%;">Ready to Transform Your Future? Let's <strong>
+                    <div class="title-c" style="line-height: 98%;">Ready to Transform Your Future? Let's <strong>
                             Connect.</strong></div>
-                    <div class="col-md-4 mx-3 d-flex">
+                    <div class="mx-3 d-flex">
                         <nuxt-link to="/contacts" tag="button" type="button" class="custom-btn-c d-flex">
                             <b>Contact us</b>
                         </nuxt-link>
@@ -234,6 +232,9 @@ export default {
 </script>
 
 <style scoped>
+.area-row{
+    padding-bottom: 30em;
+}
 
 /* Define style for a custom row */
 .custom-row-c {
@@ -283,16 +284,15 @@ export default {
 
 @media (max-width: 504px) {
     .btn-handler{
-    margin-bottom: 8%;
-}
+        margin-bottom: 8%;
+    }
 }
 
 @media (max-width: 492px) {
     .btn-handler{
-    margin-bottom: 16%;
+        margin-bottom: 16%;
+    }
 }
-}
-
 
 /* Define styles for different viewport widths */
 /* For viewport widths less than or equal to 986px */
@@ -304,7 +304,6 @@ export default {
         /* Adjust the margin-top */
         padding-bottom: 10em;
     }
-
 }
 
 /* For viewport widths less than or equal to 860px */
@@ -330,7 +329,7 @@ export default {
 }
 
 /* For viewport widths less than or equal to 770px */
-@media(max-width: 767px) {
+@media(max-width: 1024px) {
     .custom-row-c {
         position: relative;
         min-height: 60em;
@@ -427,35 +426,38 @@ export default {
     flex-direction: column;
     flex-wrap: wrap;
     margin-top: -4em;
+    padding-bottom: 20em;
 }
 
 /* Styling for ::before pseudo-element of custom-row */
 .custom-row::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    height: 100%;
-    /* Full viewport */
-    width: 100%;
-    background-image: url('/images/index/plant.webp');
-    background-position: end;
-    /* Center the image */
-    background-repeat: no-repeat;
-    /* Do not repeat the image */
-    background-size: cover;
-    /* Resize the background image to cover the entire container */
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('/images/index/plant.webp');
+  background-position: center;
+  /* Center the background image */
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* Resize the background image to cover the entire container */
 }
+
 
 /* CSS to display a small background image */
 .image-wood {
     background-image: url("/images/index/wood.webp");
     background-repeat: no-repeat;
-    background-position-x: right;
+    background-position-x: 75%;
     flex-direction: column;
     display: flex;
     flex-wrap: wrap;
     margin-right: 0;
     margin-left: 0;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
 }
 
 /* CSS to create a space at the top of an element */
@@ -468,25 +470,50 @@ export default {
     margin-top: 15px;
 }
 
+@media (max-width: 1230px){
+    .image-wood{
+        background-color: #E5E5E5;
+        background-image: none;
+    }
 
-/* CSS for responsive design - when screen width is up to 768px */
-@media (max-width: 768px) {
+    .custom-row-c::before {
+        content: "";
+        /* No content inside the pseudo-element */
+        position: absolute;
+        /* Positioning is absolute to its nearest positioned ancestor */
+        top: 0;
+        /* Position the top edge at the top edge of the parent element */
+        /* Shift the element 50px to the left */
+        height: 100%;
+        /* The element should take up the full height of the parent */
+        max-width: calc(100vw);
+        /* Calculate the width based on the full viewport */
+        width: 100%;
+        background-image: none;
+        /* Set the background image of the element */
+        background-position: left;
+        /* Center the background image */
+        background-repeat: no-repeat;
+        /* Do not repeat the background image */
+        background-size: cover;
+        /* Resize the background image to cover the entire element */
+    }
+}
+
+
+/* CSS for responsive design - when screen width is up to 1024px */
+@media (max-width: 1024px) {
     .separator-margin {
         margin-top: 40px;
-
     }
 
     .custom-margin {
-
-        padding-left: 50px;
-        padding-right: 50px;
         margin-top: 15px;
-
     }
 
     .custom-bold {
-        padding-left: 20px;
-        padding-right: 20px;
+        padding-left: 10px;
+        padding-right: 10px;
     }
 
 }
@@ -542,7 +569,7 @@ export default {
 .title {
     max-width: 60%;
     text-align: start;
-    margin-left: 3.5em;
+    margin-left: 3em;
     margin-top: 4.8em;
     color: snow;
     line-height: 1.1em;
@@ -556,8 +583,7 @@ export default {
     color: #000022;
     margin-top: 2.5em;
     margin-left: 3.5em;
-    max-width: 60%;
-
+    max-width: 50%;
 }
 
 /* CSS for contact us title styling */
@@ -568,7 +594,6 @@ export default {
     margin-top: 4.5em;
     margin-right: 2em;
     max-width: 60%;
-
 }
 
 /* CSS for subtitles styling */
@@ -576,7 +601,7 @@ export default {
     max-width: 45%;
     text-align: start;
     margin-top: 2em;
-    margin-left: 9.5em;
+    margin-left: 8em;
     color: snow;
     font-size: 1.3em;
 
@@ -631,15 +656,12 @@ export default {
     /* Horizontal alignment of the button content */
     margin-top: 3em;
     /* Top margin */
-    margin-left: 10.5em;
+    margin-left: 8.75em;
     /* Left margin */
 
 }
 
-.custom-btn:hover,
-
-
-.custom-btn:active {
+.custom-btn:hover, .custom-btn:active {
     background-color: rgb(180, 205, 214);
 }
 
@@ -667,10 +689,7 @@ export default {
 
 }
 
-.custom-btn-a:hover,
-
-
-.custom-btn-a:active {
+.custom-btn-a:hover, .custom-btn-a:active {
     background-color: rgb(13, 79, 106);
 }
 
@@ -697,15 +716,12 @@ export default {
 
 }
 
-.custom-btn-c:hover,
-
-
-.custom-btn-c:active {
+.custom-btn-c:hover, .custom-btn-c:active {
     background-color: rgb(13, 79, 106);
 }
 
-/* CSS rules for screen widths up to 725px */
-@media(max-width: 767px) {
+/* CSS rules for screen widths up to 1024px */
+@media(max-width: 1024px) {
     .title {
         max-width: 50%;
         text-align: start;
@@ -713,7 +729,7 @@ export default {
         margin-left: 2em;
         margin-top: 3.5em;
         color: snow;
-
+        margin-bottom: 1em;
     }
 
     .subtitle {
@@ -722,9 +738,9 @@ export default {
         align-items: start;
         margin-top: 1.5em;
         margin-left: 5.5em;
+        margin-bottom: 1em;
         color: snow;
         font-size: 1.3em;
-
     }
 
     .custom-btn {
@@ -924,6 +940,10 @@ export default {
         margin-left: 18%;
 
     }
+
+    .area-row{
+        padding-bottom: 10em;
+    }
 }
 
 /* CSS rules for screen widths up to 575px */
@@ -952,9 +972,8 @@ export default {
     }
 }
 
-
-/* CSS rules for screen widths up to 560px */
-@media(max-width: 560px) {
+/* CSS rules for screen widths up to 768px */
+@media(max-width: 768px) {
     .title {
         max-width: 100%;
         text-align: center;
@@ -1122,7 +1141,11 @@ export default {
 */
 
 /* Query to manage the display of background images*/
-@media (max-width: 968px) {
+@media (max-width: 768px) {
+    .custom-row {
+        padding-bottom: 5em;
+    }
+    
     .custom-row::before {
         content: "";
         position: absolute;
@@ -1132,13 +1155,14 @@ export default {
         /* Full viewport */
         width: 100%;
         background-image: none;
-        background-color: #56554f;
+        background-color: #086788;
         background-position: end;
         /* Center the image */
         background-repeat: no-repeat;
         /* Do not repeat the image */
         background-size: cover;
         /* Resize the background image to cover the entire container */
+        
     }
 
 
@@ -1152,29 +1176,5 @@ export default {
         margin-right: 0;
         margin-left: 0;
     }
-
-    .custom-row-c::before {
-        content: "";
-        /* No content inside the pseudo-element */
-        position: absolute;
-        /* Positioning is absolute to its nearest positioned ancestor */
-        top: 0;
-        /* Position the top edge at the top edge of the parent element */
-        /* Shift the element 50px to the left */
-        height: 100%;
-        /* The element should take up the full height of the parent */
-        max-width: calc(100vw);
-        /* Calculate the width based on the full viewport */
-        width: 100%;
-        background-image: none;
-        /* Set the background image of the element */
-        background-position: left;
-        /* Center the background image */
-        background-repeat: no-repeat;
-        /* Do not repeat the background image */
-        background-size: cover;
-        /* Resize the background image to cover the entire element */
-    }
-
 }
 </style>
