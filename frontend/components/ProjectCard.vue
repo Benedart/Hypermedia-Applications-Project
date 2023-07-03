@@ -103,7 +103,7 @@ export default {
 .card-description {
     color: var(--color-oxford-blue);
     text-align: center;
-    font-size: 0.75em;
+    font-size: 0.9em;
     height: 3em;
 }
 

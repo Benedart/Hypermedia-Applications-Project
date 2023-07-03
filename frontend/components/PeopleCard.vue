@@ -132,7 +132,7 @@ export default {
     /* Sets the text color */
     text-align: center;
     /* Centers the text horizontally */
-    font-size: 0.75em;
+    font-size: 0.8em;
     /* Sets the font size */
     margin-top: 0.4em;
     /* Adjusts the top margin */
