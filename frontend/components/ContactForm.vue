@@ -1,6 +1,6 @@
 <template>
   <!-- Card form main container -->
-  <div class="card-form">
+  <div class="card-form container">
     <!-- Decorative circles -->
     <div class="corner-circle top-left"></div>
     <div class="small-circle below-top-left"></div>
@@ -159,37 +159,37 @@ export default {
   /* Large circle style */
   .corner-circle {
     background-color: #FFFBFA;
-    width: 10vw;
-    height: 10vw;
+    width: 13.56%;
+    aspect-ratio: 1 / 1;
   }
 
   /* Small circle style */
   .small-circle {
     background-color: #D9D9D9;
-    width: 2.5vw;
-    height: 2.5vw;
+    width: 3.39%;
+    aspect-ratio: 1 / 1;
   }
 
   /* Positioning for large circles */
   .top-left {
-    top: 2vw;
-    left: 2vw;
+    top: 5.71%;
+    left: 2.71%;
   }
 
   .bottom-right {
-    bottom: 2vw;
-    right: 2vw;
+    bottom: 5.71%;
+    right: 2.71%;
   }
 
   /* Positioning for small circles */
   .below-top-left {
-    top: 11vw;
-    left: 11vw;
+    top: 31.4%;
+    left: 14.91%;
   }
 
   .above-bottom-right {
-    bottom: 11vw;
-    right: 11vw;
+    bottom: 31.4%;
+    right: 14.91%;
   }
 
   /* Style for h2 */
@@ -306,5 +306,47 @@ export default {
       right: 50px;
     }
   }
+
+  @media (max-width: 400px) {
+    /* Adjust form content width */
+    .form-content {
+      width: 90%;
+    }
+
+    /* Adjust large circle size */
+    .corner-circle {
+      width: 30px;
+      height: 30px;
+    }
+
+    /* Adjust small circle size */
+    .small-circle {
+      width: 11.25px;
+      height: 11.25px;
+    }
+
+    /* Adjust large circle positions */
+    .top-left {
+      top:7.5px;
+      left: 7.5px;
+    }
+
+    .bottom-right {
+      bottom: 7.5px;
+      right: 7.5px;
+    }
+
+    /* Adjust small circle positions */
+    .below-top-left {
+      top: 37.5px;
+      left: 37.5px;
+    }
+
+    .above-bottom-right {
+      bottom: 37.5px;
+      right: 37.5px;
+    }
+  }
+
 </style>
 

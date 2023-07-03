@@ -1,7 +1,7 @@
 <template>
     <div class="card">
         <!-- Head image -->
-        <img class="card-img" :src="`/images/areas/${title}/logo.jpg`">
+        <img class="card-img" :src="`/images/areas/${title}/logo.jpg`" :alt="`${title} area logo`">
 
         <div class="card-content">
             <!-- Area title -->
@@ -103,6 +103,13 @@ export default {
     margin-top: 2em !important;
 }
 
+@media screen and (max-width: 450px) {
+
+    .card {
+        width: 295px;
+    }
+    
+}
 
 .card:hover {
     transform: translateY(-0.5%);

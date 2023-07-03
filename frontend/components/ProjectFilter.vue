@@ -7,7 +7,7 @@
             <b>Filter projects</b>
         </button>
         <form class="dropdown-menu">
-            <div class="hstack gap-3 ">
+            <div class="hstack gap-1 ">
                 <div class="filter-column custom-color custom-border p-2">
                     <div class="checkform-title border-bottom">
                         <b>Area</b>
@@ -166,7 +166,7 @@ export default {
             // get all the areas
             try {
                 const data = await makeCall(this.$config.public.SERVER_URL + "/getAreas", 'GET');
-                console.log(data);
+               // console.log(data);
                 this.areas = data;
             } catch (error) {
                 console.error(error);
@@ -175,7 +175,7 @@ export default {
             // get all the years
             try {
                 const data = await makeCall(this.$config.public.SERVER_URL + "/getYears", 'GET');
-                console.log(data);
+               // console.log(data);
                 this.years = data.map((year) => year.yearoffoundation)
             } catch (error) {
                 console.error(error);
@@ -184,7 +184,7 @@ export default {
             // get all the stages
             try {
                 const data = await makeCall(this.$config.public.SERVER_URL + "/getStages", 'GET');
-                console.log(data);
+               // console.log(data);
                 this.stages = data.map((stage) => stage.stage)
             } catch (error) {
                 console.error(error);
@@ -231,6 +231,12 @@ export default {
     flex-direction: column;
     flex: 1;
     width: 10rem;
+}
+
+@media screen and (max-width: 550px) {
+    .filter-column{
+        width:auto!important;
+    }
 }
 
 .checkform-footer {

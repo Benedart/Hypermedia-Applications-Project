@@ -44,14 +44,14 @@
                     <img class="image-person " :src="`/images/People/${projectDetails.supervisor}.webp`"
                         :alt="`Portrait of the supervisor ${projectDetails.name} ${projectDetails.surname}`">
                     <!-- Supervisor information -->
-                    <p class="supervisor-p">
+                    <div class="supervisor-p">
                         <b style="font-size: 20px; margin-left:0.7em; color:#000022">Supervisor: </b>
                         <!-- Link to supervisor page -->
                         <NuxtLink class="supervisor-link" :to="`/people/${projectDetails.supervisor}`">
                             {{ projectDetails.name + " " + projectDetails.surname }}
                         </NuxtLink>
-                    <p style="margin: 1rem;">{{ supervisor.CV }}</p>
-                    </p>
+                        <p style="margin: 1rem; text-align: justify!important;">{{ projectDetails.CV }}</p>
+                    </div>
                 </span>
             </div>
 
@@ -66,7 +66,7 @@
                 <!-- Third section description -->
                 <p class="custom-paragraph-3">{{ projectDetails.section3 }} </p>
                 <!-- Image associated with the project -->
-                <img class="image" :src="`/images/projects/${projectDetails.title}/image.webp`">
+                <img class="image" :src="`/images/projects/${projectDetails.title}/image.webp`" alt="">
             </div>
         </div>
     </div>
@@ -91,8 +91,6 @@ export default {
                 areas: [{ areaid: -1, title: "Area" }],
                 featured: 1,
             },
-
-            supervisor: { personid: -1, CV: "lorem ipsum" }
         }
     },
 
@@ -103,26 +101,17 @@ export default {
 
     methods: {
         getProjectData: async function (projectid) {
-            console.log(this.$route.params)
+           // console.log(this.$route.params)
 
             // get project details
             try {
                 const data = await makeCall(this.$config.public.SERVER_URL + "/getProject/" + projectid, 'GET');
                 //console.log(data);
                 this.projectDetails = data
-                console.log("karen lee")
-                console.log(this.projectDetails.supervisor)
+               // console.log(data)
+               // console.log(this.projectDetails.supervisor)
             } catch (error) {
                 console.error("Error, couldn't retrieve project details");
-                console.error(error);
-            }
-
-            try {
-                const data = await makeCall(this.$config.public.SERVER_URL + "/getPeople", 'GET');
-                console.log(data);
-                this.supervisor = data[this.projectDetails.supervisor]
-            } catch (error) {
-                console.error("Error, couldn't retrieve people ");
                 console.error(error);
             }
         },
@@ -177,20 +166,41 @@ export default {
         flex-direction: column;
         text-align: justify;
         font-size: 1em;
+        margin-top: 0;
     }
 
-    .section-1.custom-paragraph-1 {
+    .section-1 .custom-paragraph-1 {
         width: auto;
         justify-content: center;
         text-align: justify;
         border-right: 0;
-        padding-right: 0;
+        padding: 0 0 3rem 0;
         border-bottom: 1px solid var(--color-cerulean);
-        padding-bottom: 2rem;
-        font-size: 1.3em;
+        margin: 1rem!important;
+
+    }
+
+    .custom-paragraph-2{
+        text-align: justify!important;
+        padding: 0 0 3rem 0!important;
+        order: 1;
+        margin: 1rem!important;
+
+    }
+
+    .image-project{
+        order: 2;
+    }
+
+    .custom-paragraph-3{
+        padding: 0!important;
+        /*margin-bottom: 0!important;*/
+        margin: 1rem!important;
 
     }
 }
+
+
 
 .section-3 {
     display: flex;
@@ -206,7 +216,7 @@ export default {
     border-right: 1px solid var(--color-cerulean);
     padding-right: 2rem;
     padding: 3rem 3rem 3rem 0;
-    margin-bottom: auto;
+    margin-bottom: 0;
     text-align: justify;
     font-size: 1em;
 
@@ -226,6 +236,8 @@ export default {
 
     flex-grow: 1;
     text-align: justify;
+    padding: 0;
+
 
 }
 
@@ -239,13 +251,35 @@ export default {
 
 }
 
+@media screen and (max-width: 550px) {
+    .supervisor-span {
+        flex-direction: column;
+        text-align: justify;
+        font-size: 1em;
+        padding-left: 0!important;
+        padding-bottom: 0!important;
+    }
+
+    .supervisor-span .image-person{
+        margin-top: auto;
+        margin-left: auto;
+    }
+
+    .supervisor-p{
+        text-align: center;
+        margin-left: 0!important;
+        width: auto!important;
+    }
+    
+}
+
 .supervisor-p {
     width: 24rem;
-    text-align: left;
     margin-left: 2em;
     align-items: center;
     justify-content: center;
-    margin-top: -1.5em;
+    margin-bottom: auto;
+    margin-top: auto;
 }
 
 .supervisor-link {
@@ -270,15 +304,14 @@ export default {
     border-radius: 100%;
     width: 170px;
     margin: auto;
-    margin-top: -1em;
-    margin-left: 1em;
 }
 
 .image-project {
     border-radius: 5%;
     flex-grow: 1;
 
-    width: 20rem;
+    width: -webkit-fill-available;
+    max-width: 20rem;
     margin: auto;
     object-fit: cover;
 }
@@ -309,17 +342,17 @@ export default {
     position: relative;
     margin-top: 3em !important;
     margin-bottom: 5em !important;
-    max-width: 70%;
+    max-width: 700px;
     height: auto;
     margin: auto;
-    width: 1000px;
-    height: 550px;
+    width: -webkit-fill-available;
     border-top-right-radius: 5%;
     border-top-left-radius: 5%;
     border-bottom-right-radius: 5%;
     border-bottom-left-radius: 5%;
 }
 
+/*
 @media(max-width: 800px) {
     .image {
         position: relative;
@@ -336,6 +369,7 @@ export default {
         border-bottom-left-radius: 5%;
     }
 }
+*/
 
 
 

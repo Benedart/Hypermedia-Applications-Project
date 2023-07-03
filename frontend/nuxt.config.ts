@@ -19,6 +19,10 @@ export default defineNuxtConfig({
                 { name: 'keywords', content: 'hypermeow, venture capital, financing, projects, fields, technology, innovation' },
             ],
 
+            htmlAttrs: {
+                lang: 'en',
+            },
+
             link: [
                 { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
                 // bootstrap css

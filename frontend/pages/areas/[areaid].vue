@@ -22,7 +22,7 @@ import ProjectCard from '@/components/ProjectCard.vue'
 
         <!-- Section 1: Area details -->
         <div class="section-1">
-            <div style="flex-grow: 1; padding-right: 2rem;">
+            <div class="area-section">
                 <!-- Area title -->
                 <h1 class="name-area">{{ areaDetails.Title }}</h1>
                 <!-- Area description -->
@@ -43,12 +43,12 @@ import ProjectCard from '@/components/ProjectCard.vue'
         </div>
 
         <!-- Projects in this area -->
-        <div class="row" style="margin-top: 40px; margin-left: -60px; padding-block: 5%;" v-if="projects.length > 0">
-            <span class="row mx-3 custom-color justify-content-center" style="padding:2%;">
+        <div class="custom-div" v-if="projects.length > 0">
+            <span class="row custom-color justify-content-center" style="padding:2%;">
                 <!-- Section title -->
                 <h3 class="h3" style="margin-left : 10px; margin-top: 2px; padding:2%; float:left;">PROJECTS IN THIS AREA
                 </h3>
-                <div class="row g-3">
+                <div class="row g-3 justify-content-center">
                     <div v-for="project in projects" class="col-12 col-md-6 col-lg-4">
                         <!-- Render project card component for each project -->
                         <ProjectCard :projectid="project.projectid" :title="project.title" :preview="project.preview"
@@ -97,7 +97,7 @@ export default {
             // get area details
             try {
                 const data = await makeCall(this.$config.public.SERVER_URL + "/getArea/" + areaid, 'GET');
-                console.log(data);
+               // console.log(data);
                 this.areaDetails = data
             } catch (error) {
                 console.error("Error, couldn't retrieve area details");
@@ -107,7 +107,7 @@ export default {
             // get all projects which refer an area
             try {
                 const data = await makeCall(this.$config.public.SERVER_URL + "/getProjectsFromArea/" + areaid, 'GET');
-                console.log(data);
+               // console.log(data);
                 this.projects = data
             } catch (error) {
                 console.error("Error, couldn't retrieve projects");
@@ -135,9 +135,15 @@ export default {
     display: flex;
 }
 
+.area-section{
+    flex-grow: 1; 
+    padding-right: 2rem;
+}
+
 .custom-paragraph-1 {
     width: auto;
     justify-content: center;
+    text-align: justify;
 
 
 }
@@ -147,13 +153,15 @@ export default {
     flex-grow: 1;
     margin: auto;
 
-    width: 20rem;
+    width: -webkit-fill-available;
+    max-width: 20rem;
 }
 
 .image-area-2 {
     border-radius: 5%;
     flex-grow: 1;
-    width: 25rem;
+    width: -webkit-fill-available;
+    max-width: 25rem;
     margin: auto;
 }
 
@@ -182,6 +190,14 @@ export default {
         flex-direction: column;
     }
 
+    .area-section{
+        padding: 0!important;
+    }
+
+    .custom-paragraph-1{
+        margin:1rem;
+    }
+
     .section-2 {
         flex-direction: column;
         text-align: justify;
@@ -189,7 +205,22 @@ export default {
 
     }
 
+    .custom-paragraph-2{
+        margin: 1rem;
+        text-align: justify;
+        padding: 0!important;
+        order:1;
+    }
 
+    .image-area-2{
+        order:2;
+    }
+}
+
+.custom-div{
+    padding-block: 5%;
+    width: auto;
+    margin: 40px 1rem 0 1rem;
 }
 
 .h3 {

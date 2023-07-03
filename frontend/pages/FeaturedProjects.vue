@@ -14,7 +14,7 @@ useSeoMeta({
     <main>
         <!-- Page title -->
         <div class="title">Featured projects</div>
-        <div class="container-fluid">
+        <div class="container-fluid container">
             <div v-if="projects.length > 0" class="row g-3">
                 <!-- Loop over projects and render ProjectCard component for each project -->
                 <div v-for="project in projects" class="col">
@@ -58,7 +58,7 @@ export default {
         getData: async function () {
             try {
                 const data = await makeCall(this.$config.public.SERVER_URL + "/getFeaturedProjects", 'GET');
-                console.log(data);
+               // console.log(data);
                 this.projects = data
             } catch (error) {
                 console.error("Error, couldn't retrieve project details");

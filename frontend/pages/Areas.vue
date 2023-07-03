@@ -65,7 +65,7 @@ export default {
         getData: async function () {
             try {
                 const data = await makeCall(this.$config.public.SERVER_URL + "/getAreaCards", 'GET');
-                console.log(data);
+               // console.log(data);
                 this.areas = data
             } catch (error) {
                 console.error("Error, couldn't retrieve area cards");

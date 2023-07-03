@@ -66,7 +66,7 @@ export default {
         getPersonData: async function () {
             try {
                 const data = await makeCall(this.$config.public.SERVER_URL + "/getPeople", 'GET');
-                console.log(data);
+               // console.log(data);
                 this.people = data;
             } catch (error) {
                 console.error("Error, couldn't retrieve people cards");

@@ -103,7 +103,7 @@ def get_project(projectid):
     cursor = mysql.connection.cursor()
 
     query = """
-        select projectid, p.title, section1, section2, section3, stage, budget, yearoffoundation, featured, supervisor, name, surname
+        select projectid, p.title, section1, section2, section3, stage, budget, yearoffoundation, featured, supervisor, name, surname, CV
         from projects as p join people on personId = supervisor
         where ProjectID = %s
     """

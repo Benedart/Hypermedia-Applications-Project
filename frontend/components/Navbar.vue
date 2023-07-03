@@ -1,7 +1,7 @@
 <template>
     <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top" ref="navbarCollapse">
-        <div class="container-fluid">
-            <NuxtLink class="navbar-brand" to="/"><img src="/images/logo.png" width="50"> <b>HyperMeow</b>
+        <div class="container-fluid container">
+            <NuxtLink class="navbar-brand" to="/"><img src="/images/logo.png" width="50" alt="HyperMeow's logo"> <b>HyperMeow</b>
             </NuxtLink>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -103,27 +103,27 @@ export default {
 
 .router-link-active:not(.navbar-brand) {
     color: #ffffff;
-    background-color: #9991A1;
+    background-color: #5a5a69;
 }
 
 .router-link-active:hover:not(.navbar-brand) {
     color: #ffffff;
-    background-color: #9991A1;
+    background-color: #5a5a69;
 }
 
 .router-link-active:active:not(.navbar-brand) {
     color: #ffffff;
-    background-color: #9991A1;
+    background-color: #5a5a69;
 }
 
 .router-link-active:focus:not(.navbar-brand) {
     color: #ffffff;
-    background-color: #9991A1;
+    background-color: #5a5a69;
 }
 
 .router-link-active:visited:not(.navbar-brand) {
     color: #ffffff;
-    background-color: #9991A1;
+    background-color: #5a5a69;
 }
 
 /* the dropdown menu should be animated and highlighted when active */
@@ -143,22 +143,22 @@ export default {
 
 .dropdown-item:hover {
     color: #ffffff;
-    background-color: #9991A1;
+    background-color: #5a5a69;
 }
 
 .dropdown-item:active {
     color: #ffffff;
-    background-color: #9991A1;
+    background-color: #5a5a69;
 }
 
 .dropdown-item:focus {
     color: #ffffff;
-    background-color: #9991A1;
+    background-color: #5a5a69;
 }
 
 .dropdown-item:visited {
     color: #ffffff;
-    background-color: #9991A1;
+    background-color: #5a5a69;
 }
 
 .navbar-toggler {

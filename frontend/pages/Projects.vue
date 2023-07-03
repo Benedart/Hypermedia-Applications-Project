@@ -25,7 +25,7 @@ useSeoMeta({
                     <div class="search">
                         <div class="icon"></div>
                         <div class="input">
-                            <input type="text" v-model="search" placeholder="Search projects..." id="mysearch">
+                            <input type="text" v-model="search" placeholder="Search projects..." aria-label="Search projects" id="mysearch">
                         </div>
 
                         <span class="clear" onclick="document.getElementById('mysearch').value = ''"></span>
@@ -223,7 +223,7 @@ export default {
             this.filterStages = stages
             this.filterYears = years
 
-            console.log(this.filterAreas)
+           // console.log(this.filterAreas)
         },
 
         // trigger the removal of the selected filter on the projectFilter component
@@ -303,12 +303,6 @@ export default {
 .grid-container {
     display: flex;
     margin-bottom: 1rem;
-}
-
-@media screen and (max-width: 960px) {
-    .grid-container {
-        justify-content: center;
-    }
 }
 
 .filter-grid {
