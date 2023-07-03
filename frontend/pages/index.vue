@@ -200,7 +200,7 @@ export default {
                 const projectsData = await makeCall(this.$config.public.SERVER_URL + "/getFeaturedProjects", 'GET');
 
                 // Log fetched data
-                console.log(projectsData);
+               // console.log(projectsData);
 
                 // Assign fetched data to projects and people data properties
                 this.projects = projectsData;
@@ -216,7 +216,7 @@ export default {
                 const peopleData = await makeCall(this.$config.public.SERVER_URL + "/getPeople", 'GET');
 
                 // Log fetched data
-                console.log(peopleData);
+               // console.log(peopleData);
 
                 // Assign fetched data to projects and people data properties
                 this.people = peopleData;

@@ -101,15 +101,15 @@ export default {
 
     methods: {
         getProjectData: async function (projectid) {
-            console.log(this.$route.params)
+           // console.log(this.$route.params)
 
             // get project details
             try {
                 const data = await makeCall(this.$config.public.SERVER_URL + "/getProject/" + projectid, 'GET');
                 //console.log(data);
                 this.projectDetails = data
-                console.log(data)
-                console.log(this.projectDetails.supervisor)
+               // console.log(data)
+               // console.log(this.projectDetails.supervisor)
             } catch (error) {
                 console.error("Error, couldn't retrieve project details");
                 console.error(error);

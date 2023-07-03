@@ -58,7 +58,7 @@ export default {
         getData: async function () {
             try {
                 const data = await makeCall(this.$config.public.SERVER_URL + "/getFeaturedProjects", 'GET');
-                console.log(data);
+               // console.log(data);
                 this.projects = data
             } catch (error) {
                 console.error("Error, couldn't retrieve project details");

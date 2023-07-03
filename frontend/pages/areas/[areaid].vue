@@ -97,7 +97,7 @@ export default {
             // get area details
             try {
                 const data = await makeCall(this.$config.public.SERVER_URL + "/getArea/" + areaid, 'GET');
-                console.log(data);
+               // console.log(data);
                 this.areaDetails = data
             } catch (error) {
                 console.error("Error, couldn't retrieve area details");
@@ -107,7 +107,7 @@ export default {
             // get all projects which refer an area
             try {
                 const data = await makeCall(this.$config.public.SERVER_URL + "/getProjectsFromArea/" + areaid, 'GET');
-                console.log(data);
+               // console.log(data);
                 this.projects = data
             } catch (error) {
                 console.error("Error, couldn't retrieve projects");

@@ -223,7 +223,7 @@ export default {
             this.filterStages = stages
             this.filterYears = years
 
-            console.log(this.filterAreas)
+           // console.log(this.filterAreas)
         },
 
         // trigger the removal of the selected filter on the projectFilter component

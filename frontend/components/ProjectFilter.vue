@@ -166,7 +166,7 @@ export default {
             // get all the areas
             try {
                 const data = await makeCall(this.$config.public.SERVER_URL + "/getAreas", 'GET');
-                console.log(data);
+               // console.log(data);
                 this.areas = data;
             } catch (error) {
                 console.error(error);
@@ -175,7 +175,7 @@ export default {
             // get all the years
             try {
                 const data = await makeCall(this.$config.public.SERVER_URL + "/getYears", 'GET');
-                console.log(data);
+               // console.log(data);
                 this.years = data.map((year) => year.yearoffoundation)
             } catch (error) {
                 console.error(error);
@@ -184,7 +184,7 @@ export default {
             // get all the stages
             try {
                 const data = await makeCall(this.$config.public.SERVER_URL + "/getStages", 'GET');
-                console.log(data);
+               // console.log(data);
                 this.stages = data.map((stage) => stage.stage)
             } catch (error) {
                 console.error(error);

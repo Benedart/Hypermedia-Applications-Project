@@ -257,7 +257,7 @@ export default {
                 const projectsData = await makeCall(this.$config.public.SERVER_URL + "/getFeaturedProjects", 'GET');
 
                 // Log the received data
-                console.log(projectsData);
+               // console.log(projectsData);
 
                 // Assigning the fetched data to the component's data properties
                 this.projects = projectsData;
@@ -273,7 +273,7 @@ export default {
                 const peopleData = await makeCall(this.$config.public.SERVER_URL + "/getPeople", 'GET');
 
                 // Log the received data
-                console.log(peopleData);
+               // console.log(peopleData);
 
                 // Assigning the fetched data to the component's data properties
                 this.people = peopleData;

@@ -117,11 +117,11 @@ export default {
     methods: {
         // Method to fetch person details and update the personDetails object
         getPersonData: async function (personid) {
-            console.log(this.$route.params);
+           // console.log(this.$route.params);
             // Get person details
             try {
                 const data = await makeCall(this.$config.public.SERVER_URL + "/getPerson/" + personid, 'GET');
-                console.log(data);
+               // console.log(data);
                 this.personDetails = data;
             } catch (error) {
                 console.error("Error, couldn't retrieve person details");
@@ -131,7 +131,7 @@ export default {
             // Get projects supervised
             try {
                 const data = await makeCall(this.$config.public.SERVER_URL + "/getProjectsSupervisedFromPerson/" + personid, 'GET');
-                console.log(data);
+               // console.log(data);
                 this.projectsSupervised = data;
             } catch (error) {
                 console.error("Error, couldn't retrieve projects supervised");
