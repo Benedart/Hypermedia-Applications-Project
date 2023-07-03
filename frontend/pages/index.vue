@@ -12,7 +12,7 @@ useSeoMeta({
 </script>
 
 <template>
-    <main>
+    <main class="container-fluid p-0">
         <!-- Custom row with introductory statement and a call to action -->
         <div class="custom-row" style="min-height: 60em; padding-bottom: 10em;">
             <div class="container">
@@ -134,7 +134,7 @@ useSeoMeta({
         </div>
         
         <!-- A brief on areas that the company explored -->
-        <div style="background-color:#FFF" class = "btn-handler">
+        <div style="background-color:#FFF" class = "btn-handler container-fluid">
             <div class="container">
                 <div class="row justify-content-center custom-bold" style="margin-top: 2em;"></div>
                 <h1 style="text-align: center; color: #000022; "> Areas that we explored </h1>
@@ -154,7 +154,7 @@ useSeoMeta({
             </div>
         </div>
         <!-- A final call to contact us -->
-        <div style="background-color:#000022">
+        <div style="background-color:#000022" class="container-fluid">
             <div class="custom-row-c container">
                 <div class="content-right">
                     <div class="title-c col-md-5" style="line-height: 98%;">Ready to Transform Your Future? Let's <strong>
@@ -234,6 +234,7 @@ export default {
 </script>
 
 <style scoped>
+
 /* Define style for a custom row */
 .custom-row-c {
     position: relative;

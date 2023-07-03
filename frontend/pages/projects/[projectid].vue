@@ -44,14 +44,14 @@
                     <img class="image-person " :src="`/images/People/${projectDetails.supervisor}.webp`"
                         :alt="`Portrait of the supervisor ${projectDetails.name} ${projectDetails.surname}`">
                     <!-- Supervisor information -->
-                    <p class="supervisor-p">
+                    <div class="supervisor-p">
                         <b style="font-size: 20px; margin-left:0.7em; color:#000022">Supervisor: </b>
                         <!-- Link to supervisor page -->
                         <NuxtLink class="supervisor-link" :to="`/people/${projectDetails.supervisor}`">
                             {{ projectDetails.name + " " + projectDetails.surname }}
                         </NuxtLink>
-                    <p style="margin: 1rem; text-align: justify!important;">{{ supervisor.CV }}</p>
-                    </p>
+                        <p style="margin: 1rem; text-align: justify!important;">{{ projectDetails.CV }}</p>
+                    </div>
                 </span>
             </div>
 
@@ -91,8 +91,6 @@ export default {
                 areas: [{ areaid: -1, title: "Area" }],
                 featured: 1,
             },
-
-            supervisor: { personid: -1, CV: "lorem ipsum" }
         }
     },
 
@@ -110,19 +108,10 @@ export default {
                 const data = await makeCall(this.$config.public.SERVER_URL + "/getProject/" + projectid, 'GET');
                 //console.log(data);
                 this.projectDetails = data
-                console.log("karen lee")
+                console.log(data)
                 console.log(this.projectDetails.supervisor)
             } catch (error) {
                 console.error("Error, couldn't retrieve project details");
-                console.error(error);
-            }
-
-            try {
-                const data = await makeCall(this.$config.public.SERVER_URL + "/getPeople", 'GET');
-                console.log(data);
-                this.supervisor = data[this.projectDetails.supervisor]
-            } catch (error) {
-                console.error("Error, couldn't retrieve people ");
                 console.error(error);
             }
         },
