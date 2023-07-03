@@ -134,7 +134,7 @@ useSeoMeta({
         </div>
         
         <!-- A brief on areas that the company explored -->
-        <div style="background-color:#FFF">
+        <div style="background-color:#FFF" class = "btn-handler">
             <div class="container">
                 <div class="row justify-content-center custom-bold" style="margin-top: 2em;"></div>
                 <h1 style="text-align: center; color: #000022; "> Areas that we explored </h1>
@@ -274,6 +274,24 @@ export default {
     background-size: cover;
     /* Resize the background image to cover the entire element */
 }
+
+/* Class to avoid footer overlapping with the btn */
+.btn-handler{
+    margin-bottom: 6%;
+}
+
+@media (max-width: 504px) {
+    .btn-handler{
+    margin-bottom: 8%;
+}
+}
+
+@media (max-width: 492px) {
+    .btn-handler{
+    margin-bottom: 16%;
+}
+}
+
 
 /* Define styles for different viewport widths */
 /* For viewport widths less than or equal to 986px */
@@ -655,6 +673,7 @@ export default {
     background-color: rgb(13, 79, 106);
 }
 
+
 /* Custom style for contact us button*/
 .custom-btn-c {
     display: flex;
@@ -776,6 +795,32 @@ export default {
 
 }
 
+/* CSS rules for screen widths up to 715px */
+@media(max-width: 710px) {
+    .custom-btn-a {
+        display: inline-block;
+        padding: .375rem .75rem;
+        vertical-align: middle;
+        user-select: none;
+        width: auto;
+        font-size: 1rem;
+        font-weight: 450;
+        text-align: start;
+        align-items: start;
+        color: #E5E5E5;
+        background-color: #086788;
+        border: none;
+        border-radius: 0.4rem;
+        transition: 0.2s;
+        cursor: pointer;
+        letter-spacing: 0.1rem;
+        justify-content: start;
+        margin-top: 1em;
+        margin-left: 16.1%;
+
+    }
+}
+
 /* CSS rules for screen widths up to 672px */
 @media(max-width: 672px) {
     .custom-btn-a {
@@ -803,7 +848,7 @@ export default {
 }
 
 /* CSS rules for screen widths up to 640px */
-@media(max-width: 640px) {
+@media(max-width: 650px) {
     .custom-btn-a {
         display: inline-block;
         padding: .375rem .75rem;
@@ -824,6 +869,32 @@ export default {
         justify-content: start;
         margin-top: 1em;
         margin-left: 17%;
+
+    }
+}
+
+/* CSS rules for screen widths up to 612px */
+@media(max-width: 612px) {
+    .custom-btn-a {
+        display: inline-block;
+        padding: .375rem .75rem;
+        vertical-align: middle;
+        user-select: none;
+        width: auto;
+        font-size: 1rem;
+        font-weight: 450;
+        text-align: start;
+        align-items: start;
+        color: #E5E5E5;
+        background-color: #086788;
+        border: none;
+        border-radius: 0.4rem;
+        transition: 0.2s;
+        cursor: pointer;
+        letter-spacing: 0.1rem;
+        justify-content: start;
+        margin-top: 1em;
+        margin-left: 18.5%;
 
     }
 }
@@ -855,7 +926,7 @@ export default {
 }
 
 /* CSS rules for screen widths up to 575px */
-@media(max-width: 575px) {
+@media(max-width: 580px) {
     .custom-btn-a {
         display: inline-block;
         padding: .375rem .75rem;
@@ -969,7 +1040,7 @@ export default {
 }
 
 /* CSS rules for screen widths up to 517px */
-@media(max-width: 517px) {
+@media(max-width: 530px) {
     .custom-btn-a {
         display: inline-block;
         padding: .375rem .75rem;
@@ -995,7 +1066,7 @@ export default {
 }
 
 /* CSS rules for screen widths up to 500px */
-@media(max-width: 500px) {
+@media(max-width: 522px) {
     .custom-btn-a {
         display: inline-block;
         padding: .375rem .75rem;
