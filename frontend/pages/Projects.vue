@@ -25,7 +25,7 @@ useSeoMeta({
                     <div class="search">
                         <div class="icon"></div>
                         <div class="input">
-                            <input type="text" v-model="search" placeholder="Search projects..." id="mysearch">
+                            <input type="text" v-model="search" placeholder="Search projects..." aria-label="Search projects" id="mysearch">
                         </div>
 
                         <span class="clear" onclick="document.getElementById('mysearch').value = ''"></span>

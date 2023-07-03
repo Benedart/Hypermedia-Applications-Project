@@ -266,7 +266,7 @@ export default {
     max-width: calc(100vw);
     /* Calculate the width based on the full viewport */
     width: 100%;
-    background-image: url('/images/index/contact.gif');
+    background-image: url('/images/index/contact.webp');
     /* Set the background image of the element */
     background-position: left;
     /* Center the background image */

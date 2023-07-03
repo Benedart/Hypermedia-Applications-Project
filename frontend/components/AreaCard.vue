@@ -1,7 +1,7 @@
 <template>
     <div class="card">
         <!-- Head image -->
-        <img class="card-img" :src="`/images/areas/${title}/logo.jpg`">
+        <img class="card-img" :src="`/images/areas/${title}/logo.jpg`" :alt="`${title} area logo`">
 
         <div class="card-content">
             <!-- Area title -->

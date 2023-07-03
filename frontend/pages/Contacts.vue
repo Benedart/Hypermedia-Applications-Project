@@ -18,7 +18,7 @@ useSeoMeta({
         <div class="col-md-6 d-flex align-items-center justify-content-center">
           <div class="text-center">
             <!-- Header title -->
-            <div class="row custom-heading" style="line-height: 80%;">
+            <div class="row custom-heading" role="heading" style="line-height: 80%;">
               <b>Contact us</b>
             </div>
             <!-- Header description -->

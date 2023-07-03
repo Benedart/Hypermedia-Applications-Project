@@ -66,7 +66,7 @@
                 <!-- Third section description -->
                 <p class="custom-paragraph-3">{{ projectDetails.section3 }} </p>
                 <!-- Image associated with the project -->
-                <img class="image" :src="`/images/projects/${projectDetails.title}/image.webp`">
+                <img class="image" :src="`/images/projects/${projectDetails.title}/image.webp`" alt="">
             </div>
         </div>
     </div>
