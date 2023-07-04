@@ -91,7 +91,7 @@ useSeoMeta({
                 </div>
             </div>
             <br>
-            <div class="row mx-3 d-flex justify-content-center">
+            <div class="row mx-3 d-flex justify-content-center" style="padding-bottom :2em;">
                 <nuxt-link to="/projects" tag="button" type="button" class="btn btn-secondary d-flex justify-content-center">
                     <b>All projects</b>
                 </nuxt-link>
