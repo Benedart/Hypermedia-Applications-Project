@@ -1,7 +1,7 @@
 from flask import Flask
+from flask import abort
 from flask_cors import CORS
 from flask_mysqldb import MySQL
-import pandas as pd
 from dotenv import load_dotenv
 import json
 import os
@@ -112,19 +112,22 @@ def get_project(projectid):
     cursor.execute(query, tuple)
     project = cursor.fetchone()
 
-    # get all areas for the project
-    query = """
-        select areaid, title
-        from areas natural join refers
-        where projectid = %s
-    """
-    cursor.execute(query, tuple)
-    project['areas'] = cursor.fetchall()
-    cursor.close()
+    if project is not None:
+        # get all areas for the project
+        query = """
+            select areaid, title
+            from areas natural join refers
+            where projectid = %s
+        """
+        cursor.execute(query, tuple)
+        project['areas'] = cursor.fetchall()
 
-    # make the budget serializable for json
-    # probably casting it to a string it's not the best solution, but for now it works
-    project['budget'] = str(project['budget'])
+        # make the budget serializable for json
+        # probably casting it to a string it's not the best solution, but for now it works
+        project['budget'] = str(project['budget'])
+
+        cursor.close()
+    else: abort(404)
 
     return json.dumps(project)
 
@@ -168,19 +171,21 @@ def get_project_from_area(areaid):
     cursor.execute(query, tuple)
     projects = cursor.fetchall()
 
-    # get all areas for each project
-    for project in projects:
-        query = """
-            select areaid, title
-            from areas natural join refers
-            where projectid = %s
-        """
-        tuple = (project['projectid'],)
+    if projects is not None:
+        # get all areas for each project
+        for project in projects:
+            query = """
+                select areaid, title
+                from areas natural join refers
+                where projectid = %s
+            """
+            tuple = (project['projectid'],)
 
-        cursor.execute(query, tuple)
-        project['areas'] = cursor.fetchall()
+            cursor.execute(query, tuple)
+            project['areas'] = cursor.fetchall()
 
-    cursor.close()
+        cursor.close()
+    else: abort(404)
 
     return json.dumps(projects)
 
@@ -201,19 +206,21 @@ def get_projects_supervied_from_person(personid):
     cursor.execute(query, tuple)
     projects = cursor.fetchall()
 
-    # get all areas for each project
-    for project in projects:
-        query = """
-            select areaid, title
-            from areas natural join refers
-            where projectid = %s
-        """
-        tuple = (project['projectid'],)
+    if projects is not None:
+        # get all areas for each project
+        for project in projects:
+            query = """
+                select areaid, title
+                from areas natural join refers
+                where projectid = %s
+            """
+            tuple = (project['projectid'],)
 
-        cursor.execute(query, tuple)
-        project['areas'] = cursor.fetchall()
+            cursor.execute(query, tuple)
+            project['areas'] = cursor.fetchall()
 
-    cursor.close()
+        cursor.close()
+    else: abort(404)
 
     return json.dumps(projects)
 
@@ -254,6 +261,10 @@ def get_person(personid):
     cursor.execute(query, tuple)
     person = cursor.fetchone()
     cursor.close()
+
+    if person is None:
+        abort(404)
+
     return json.dumps(person)
 
 
@@ -315,10 +326,13 @@ def get_area(areaid):
     tuple = (areaid,)
 
     cursor.execute(query, tuple)
-    project = cursor.fetchone()
+    area = cursor.fetchone()
     cursor.close()
 
-    return json.dumps(project)
+    if area is None:
+        abort(404)
+
+    return json.dumps(area)
 
 
 
