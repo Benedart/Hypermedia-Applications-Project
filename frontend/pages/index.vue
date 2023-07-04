@@ -470,6 +470,12 @@ export default {
     margin-top: 15px;
 }
 
+@media (max-width: 1730px){
+    .image-wood{
+        background-position-x: right;
+    }
+}
+
 @media (max-width: 1230px){
     .image-wood{
         background-color: #E5E5E5;
