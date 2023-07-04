@@ -1143,7 +1143,7 @@ export default {
 /* Query to manage the display of background images*/
 @media (max-width: 768px) {
     .custom-row {
-        padding-bottom: 5em;
+        padding-bottom: 12em;
     }
     
     .custom-row::before {
