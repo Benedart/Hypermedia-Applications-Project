@@ -33,11 +33,11 @@ import ProjectCard from '@/components/ProjectCard.vue'
                 <h3 class="name-person">{{ personDetails.name + " " + personDetails.surname }}</h3>
                 <i>
                     <!-- Person Role -->
-                    <h3 style="margin-bottom: 15px; color: #000022; font-size: 18px;">{{ personDetails.role }}</h3>
+                    <h3 class="role">{{ personDetails.role }}</h3>
                 </i>
                 <hr>
                 <!-- Person Description -->
-                <p style="color:#000022;">{{ personDetails.Description }}</p>
+                <p class="description">{{ personDetails.Description }}</p>
                 <br>
                 <h3 class="formation">FORMATION</h3>
                 <!-- Person CV -->
@@ -208,6 +208,15 @@ export default {
         max-width: 70%;
         /* Maximum width of the image */
         
+        
+    }
+
+    .role{
+        text-align:center;
+    }
+
+    .name-person{
+        text-align:center;
     }
 }
 
@@ -217,5 +226,23 @@ export default {
     
     background-color: #e5e5e5;
     /* Background color */
+}
+
+/*Style of the formation of the person*/
+.formation{
+    text-align:justify;
+}
+
+/*Style of the description of the person*/
+.description{
+    color:#000022;
+    text-align:justify;
+}
+
+/*Style of the role of the person*/
+.role{
+    margin-bottom: 15px; 
+    color: #000022; 
+    font-size: 18px;
 }
 </style>

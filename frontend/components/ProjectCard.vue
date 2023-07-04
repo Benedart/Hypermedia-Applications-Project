@@ -1,5 +1,5 @@
 <template>
-    <div class="card h-100 mx-auto" style="width: 18rem;">
+    <div class="card mx-auto" style="width: 18rem;">
         <!-- Project logo image -->
         <img class="card-img" :src="`/images/projects/${title}/logo.webp`" :alt="`${title} logo`">
         <div class="card-body">
@@ -19,10 +19,11 @@
             </span>
 
             <!-- Learn more button linking to project details page -->
-            <NuxtLink :to="`/projects/${projectid}`" tag="button" type="button" class="card-btn">
-                <b>Learn more</b>
-            </NuxtLink>
+            
         </div>
+        <NuxtLink :to="`/projects/${projectid}`" tag="button" type="button" class="card-btn">
+            <b>Learn more</b>
+        </NuxtLink>
     </div>
 </template>
 
@@ -108,11 +109,12 @@ export default {
 }
 
 .card-btn {
+    display: block;
     width: 50%;
     padding: 0.2rem;
-    font-size: 1.0rem;
+    font-size: 1rem;
     font-weight: 450;
-    text-align: center;
+    text-align:center;
     margin: auto;
     color: #086788;
     background-color: #E5E5E5;
@@ -121,10 +123,12 @@ export default {
     transition: 0.2s;
     cursor: pointer;
     letter-spacing: 0.1rem;
-    margin-top: 1.5em;
-    margin-bottom: 1em;
-    margin-right: 4em;
-    margin-left: 4.5em;
+    margin-top: 0.5rem;
+    margin-bottom: 5rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-100%, 100%);
+   
 }
 
 .card-btn:hover,

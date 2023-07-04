@@ -29,7 +29,7 @@
 
             <!-- Link to area details -->
             <NuxtLink :to="`/areas/${areaid}`" class="card-btn" tag="button" type="button">
-                <b>Learn more </b>
+                <b>Learn more</b>
             </NuxtLink>
         </div>
     </div>
