@@ -46,14 +46,18 @@
                     <p>Monthly digest of what's new and exciting from us.</p>
                     <div class="d-flex flex-column flex-sm-row w-100 gap-2">
                         <label for="newsletter1" class="visually-hidden">Email address</label>
-                        <input id="newsletter1" type="text" class="form-control" placeholder="Email address">
+                        <input id="newsletter1" type="email" class="form-control" placeholder="Email address">
 
-                        <button class="btn btn-primary" @click="showSuccessMessage" type="button"
+                        <button class="btn btn-primary" @click="checkEmail" type="button"
                             id="liveAlertBtn">Subscribe</button>
                     </div>
                     <!-- Success message -->
                     <div v-if="isSuccessMessageVisible" class="success-message mt-4">
                         Success! You are now subscribed.
+                    </div>
+                    <!-- Error message -->
+                    <div v-else-if="isErrorMessageVisible" class="error-message mt-4">
+                        Please enter a valid email address.
                     </div>
                 </form>
             </div>
@@ -70,9 +74,36 @@ export default {
     data() {
         return {
             isSuccessMessageVisible: false,
+            isErrorMessageVisible: false,
         };
     },
     methods: {
+        // Check for valid email
+        isValidEmail() {
+            const email = document.getElementById("newsletter1").value;
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
+        },
+
+        checkEmail(email) {
+            if (this.isValidEmail(email)) {
+                this.showSuccessMessage();
+                return true;
+            }
+
+            this.showErrorMessage();
+            return false;
+        },
+
+        showErrorMessage() {
+            this.isErrorMessageVisible = true;
+
+            // Hide the error message after a certain duration
+            setTimeout(() => {
+                this.isErrorMessageVisible = false;
+            }, 5000);
+        },
+        
         showSuccessMessage() {
             this.isSuccessMessageVisible = true;
 
@@ -88,6 +119,13 @@ export default {
 <style scoped>
 .success-message {
     background-color: #7ad9ae;
+    color: white;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.error-message{
+    background-color: #f7b3b3;
     color: white;
     padding: 10px;
     border-radius: 4px;
