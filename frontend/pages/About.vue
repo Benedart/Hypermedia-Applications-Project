@@ -18,7 +18,7 @@ useSeoMeta({
             <div class="title">About us</div>
         </div>
         <!-- Row with custom margins and separator-->
-        <div class="separator-margin py-5" style="background-color: #9991A1; border-radius: 50px;">
+        <div class="separator-margin py-5" style="background-color: #086788; border-radius: 50px;">
             <div class="row justify-content-center separator-margin custom-margins">
                 <div class="col-md-9 d-flex align-items-center justify-content-center">
                     <h3 class="custom-h3" style="text-align:center; line-height: 100%; font-size: 2em;">
@@ -297,7 +297,6 @@ export default {
     /* Line height is 105% of the font size */
     color: #000022;
     text-align: justify;
-
 }
 
 
@@ -465,10 +464,6 @@ export default {
         margin-top: 30px;
     }
 
-    .separator-margin {
-        margin-top: 15px;
-    }
-
     .bottom-margin {
         margin-bottom: 40px;
     }
@@ -495,7 +490,7 @@ export default {
 @media(max-width: 768px) {
     .custom-h3 {
         font-size: 1.75em;
-        font-weight: 700;
+        font-weight: 400;
         color: snow;
         margin-top: -1em;
     }
