@@ -348,14 +348,12 @@ export default {
 }
 
 
-@media(max-width: 768px) {
+@media(max-width: 992px) {
     .title {
         font-size: 3.5em;
 
         color: #000022;
         text-align: center;
-
-
     }
 
     /* A class to justify the content only incertain dimensions */
@@ -395,13 +393,13 @@ export default {
     text-align: end;
 }
 
-/* Media query for screens up to 768px wide */
-@media (max-width: 768px) {
+/* Media query for screens up to 992px wide */
+@media (max-width: 992px) {
 
     /* Adjust margins and alignment for smaller screens */
     .custom-margins {
-        margin-left: 50px;
-        margin-right: 50px;
+        margin-left: 20px;
+        margin-right: 20px;
     }
 
     .custom-margins-l {
@@ -487,12 +485,16 @@ export default {
     font-style: italic;
 }
 
-@media(max-width: 768px) {
+@media(max-width: 992px) {
     .custom-h3 {
         font-size: 1.75em;
         font-weight: 400;
         color: snow;
         margin-top: -1em;
+    }
+
+    .container{
+        max-width: 1020px;
     }
 }
 
