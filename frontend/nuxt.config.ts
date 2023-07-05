@@ -14,7 +14,7 @@ export default defineNuxtConfig({
                 {
                     hid: 'description',
                     name: 'description',
-                    content: 'HyperMeow is a venture capital firm that funds innovative projects and startups. Their website features a portfolio of over 15 investments, including detailed descriptions and visuals of each project. The site also highlights key team members, providing brief profiles and expertise. HyperMeow focuses on thematic areas, such as Health, Green, Education, and technologies, offering insights into their investment strategy and the ventures they support.'
+                    content: 'HyperMeow is a venture capital firm that funds innovative projects and startups. Our website features a portfolio of over 15 investments, including detailed descriptions and visuals of each project. Key team members are also highlighted, providing brief profiles for each one of them. HyperMeow focuses on thematic areas, such as Health, Green, Education, and technologies, offering insights into their investment strategy and the ventures they support.'
                 },
                 { name: 'keywords', content: 'hypermeow, venture capital, financing, projects, fields, technology, innovation' },
             ],

@@ -6,7 +6,7 @@ import PeopleCard from '@/components/PeopleCard.vue'
 
 useSeoMeta({
     title: 'Home - HyperMeow',
-    description: 'Discover our leading venture capital firm and discover our services and offers, our team, our projects and the areas that we cover. Contact us to have answers or to join our projects',
+    description: 'Discover our leading venture capital firm and our services and offers, our team, our projects and the areas that we cover. Contact us to have answers or to join our projects',
     keywords: 'home, who we are, what we do, unicorns, founder in residence, team, our people, hypermeow, venture capital, contact us, areas, project areas, email',
 })
 </script>
