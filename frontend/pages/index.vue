@@ -456,7 +456,6 @@ export default {
     flex-wrap: wrap;
     margin-right: 0;
     margin-left: 0;
-    margin-top: 2rem;
     margin-bottom: 2rem;
 }
 
@@ -1182,6 +1181,8 @@ export default {
         flex-wrap: wrap;
         margin-right: 0;
         margin-left: 0;
+        margin-top:-2.5em;
+        margin-bottom: -5em;
     }
 }
 </style>
