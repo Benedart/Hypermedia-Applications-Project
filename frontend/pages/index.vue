@@ -74,7 +74,7 @@ useSeoMeta({
             <br>
             <div class="row mx-3 d-flex justify-content-center">
                 <div v-if="projects.length > 0" class="row mx-3 justify-content-center">
-                    <div v-for="project in projects" class="col mb-3 d-flex justify-content-center">
+                    <div v-for="project in projects" class="col mb-3 justify-content-center">
                         <ProjectCard :projectid="project.projectid" :title="project.title" :preview="project.preview"
                             :stage="project.stage" :areas="project.areas" :year="project.year" :featured="project.featured" />
                     </div>
@@ -563,6 +563,7 @@ export default {
     background-color: #086788;
     margin-top: 2%;
     font-size: 1.3em;
+    
 }
 
 .btn-secondary:hover,

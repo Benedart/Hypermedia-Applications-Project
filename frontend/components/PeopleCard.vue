@@ -18,7 +18,7 @@
             <!-- Shortened description  -->
             <p class="card-Description">{{ shorterDescription(Description) }}.</p>
             <!-- Learn more button -->
-            <NuxtLink :to="`/People/${personid}`" tag="button" type="button" class="card-btn ">
+            <NuxtLink :to="`/People/${personid}`" tag="button" type="button" class="card-btn">
                 <b>Learn more</b>
             </NuxtLink>
         </div>
@@ -94,6 +94,7 @@ export default {
 .card-title {
     margin-top: 0.7em;
     /* Adjusts the top margin */
+    margin-bottom: 0.5em;
     font-weight: bold;
     /* Sets the font weight to bold */
     font-size: 1.5em;
@@ -108,6 +109,7 @@ export default {
     /* Sets the font weight to lighter */
     font-size: 1.2em;
     /* Sets the font size */
+    margin-bottom: 1em;
 }
 
 /* Styles for the Linkedin icon */
@@ -124,6 +126,7 @@ export default {
     /* Sets the font size */
     margin-top: -1em;
     /* Adjusts the top margin */
+    
 }
 
 /* Styles for the card description */
@@ -142,40 +145,25 @@ export default {
 
 /* Styles for the "Learn more" button */
 .card-btn {
+    display: block;
     width: 50%;
-    /* Sets the width of the button */
     padding: 0.2rem;
-    /* Adds padding to the button */
-    font-size: 1.0rem;
-    /* Sets the font size */
+    font-size: 0.9rem;
     font-weight: 450;
-    /* Sets the font weight */
     text-align: center;
-    /* Centers the text horizontally */
     margin: auto;
-    /* Centers the button horizontally */
     color: #086788;
-    /* Sets the text color */
     background-color: #E5E5E5;
-    /* Sets the background color */
     border: none;
-    /* Removes the button border */
     border-radius: 0.4rem;
-    /* Adds border radius to the button */
     transition: 0.2s;
-    /* Adds transition effect */
     cursor: pointer;
-    /* Changes the cursor to a pointer */
     letter-spacing: 0.1rem;
-    /* Adds letter spacing to the text */
-    margin-top: 2em;
-    /* Adjusts the top margin */
-    margin-bottom: 1em;
-    /* Adjusts the bottom margin */
-    margin-right: 4em;
-    /* Adjusts the right margin */
-    margin-left: 4em;
-    /* Adjusts the left margin */
+    margin-top: 1rem;
+    margin-bottom: 2.5rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-100%, -150%);
 }
 
 /* Hover and active state styles for the button */
