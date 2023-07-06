@@ -223,6 +223,26 @@ export default {
     transform: scale(1.25);
 }
 
+@media (min-width: 768px) and (max-width: 1180px)
+{
+    .projectIcon {
+    width: 6rem;
+    height: 4rem;
+    object-fit:cover;
+    position: relative;
+    transition: transform 500ms ease;
+    justify-content: center;
+
+}
+
+.projectIcon:hover {
+    transform: scale(1.25);
+}
+
+
+}
+
+
 
 /* width */
 ::-webkit-scrollbar {

@@ -18,7 +18,7 @@
             <!-- Shortened description  -->
             <p class="card-Description">{{ shorterDescription(Description) }}.</p>
             <!-- Learn more button -->
-            <NuxtLink :to="`/People/${personid}`" tag="button" type="button" class="card-btn">
+            <NuxtLink :to="`/people/${personid}`" tag="button" type="button" class="card-btn ">
                 <b>Learn more</b>
             </NuxtLink>
         </div>
@@ -126,7 +126,7 @@ export default {
     /* Sets the font size */
     margin-top: -1em;
     /* Adjusts the top margin */
-    
+
 }
 
 /* Styles for the card description */
