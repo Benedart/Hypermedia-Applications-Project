@@ -313,7 +313,8 @@ export default {
 }
 
 @media screen and (max-width: 400px) {
-    .filter-grid {
+
+    .grid-container{
         flex-direction: column;
     }
 }
