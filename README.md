@@ -1,6 +1,10 @@
 # Hypermedia Applications Project 2022/23
 
-## Magiche istruzioni per il setup del progetto
+This project was developed as part of the Hypermedia Application course at Politecnico di Milano. It involved both design and implementation phases of creating a web application using modern technologies and best practices. The project showcases a venture capital website, featuring various functionalities such as showcasing team members, funded projects, and thematic areas of investment.
+
+[Link to the website](https://hypermeow.vercel.app/)
+
+## Project setup
 * [DB](#db)
 * [Backend](#backend)
 * [Frontend](#frontend)
@@ -8,7 +12,7 @@
 * [Useful resources](#useful-resources)
 
 ## DB
-You can find the db schema in the `deliverables` folder of the project. If something doesn't sound right about it, or if you encounter problems during your implementation (eg. you notice that you need to add some attributes), let everyone know asap, as db changes could impact the entire structure of the project. Thanksthanks.
+You can find the db schema in the `deliverables` folder of the project.
 
 ## Backend
 ### Quick start
