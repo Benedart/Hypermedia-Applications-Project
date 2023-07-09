@@ -110,8 +110,10 @@ Now, let's say you're ready to push your incredibly valuable work for everyone e
 Also, there's a really cool guide on the useful resources below :D
 
 
-## Cat
+## [Cat](https://hypermeow.vercel.app/cats)
 ![enter image description here](https://w0.peakpx.com/wallpaper/719/351/HD-wallpaper-happy-cat-pretty-beautiful-sweet-beauty-face-sleepy-animals-lovely-kitty-cat-sleeping-cat-face-hat-cute-paws-cats-kitten.jpg)
+
+We are called HyperMeow for a reason
 
 ## Useful resources
 [Introduction | Vue.js](https://vuejs.org/guide/introduction.html)
