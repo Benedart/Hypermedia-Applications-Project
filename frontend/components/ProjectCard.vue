@@ -123,8 +123,8 @@ export default {
     transition: 0.2s;
     cursor: pointer;
     letter-spacing: 0.1rem;
-    margin-top: 0.5rem;
-    margin-bottom: 5rem;
+    margin-top: -1.3rem;
+    margin-bottom: 3rem;
     top: 50%;
     left: 50%;
     transform: translate(-100%, 100%);
