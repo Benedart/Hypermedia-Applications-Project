@@ -53,10 +53,6 @@ export default {
     padding: 0;
 }
 
-*{
-    -webkit-appearance:none;
-}
-
 .grid {
     padding: 1rem;
     display: grid;

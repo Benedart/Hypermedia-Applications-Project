@@ -2,6 +2,7 @@
 
 * {
   --outline: 1px dotted red;
+  -webkit-appearance:none;
 }
 
 #app {

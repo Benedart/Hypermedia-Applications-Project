@@ -144,7 +144,7 @@ useSeoMeta({
                         <p>Join us on our mission to shape the future of these dynamic industries.</p>
                     </div>
                     <div class="mx-md-3 mx-sm-1 d-flex custom-justify-center">
-                        <nuxt-link to="/areas" tag="button" type="button" class="custom-btn-a d-flex">
+                        <nuxt-link to="/areas" tag="button" type="button" class="custom-btn-a d-flex mb-5">
                             <b>All areas</b>
                         </nuxt-link>
                     </div>
@@ -427,6 +427,7 @@ export default {
     flex-wrap: wrap;
     margin-top: -4em;
     padding-bottom: 20em;
+    background-color: #000022;
 }
 
 /* Styling for ::before pseudo-element of custom-row */
@@ -1161,7 +1162,7 @@ export default {
         /* Full viewport */
         width: 100%;
         background-image: none;
-        background-color: #086788;
+        background-color: #000022;
         background-position: end;
         /* Center the image */
         background-repeat: no-repeat;
