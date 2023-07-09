@@ -66,7 +66,7 @@
                 <!-- Third section description -->
                 <p class="custom-paragraph-3">{{ projectDetails.section3 }} </p>
                 <!-- Image associated with the project -->
-                <img class="image" :src="`/images/projects/${projectDetails.title}/image.webp`" alt="">
+                <img class="image" :src="`/images/projects/${projectDetails.title}/image.webp`" :alt="`${projectDetails.title} stock image`">
             </div>
         </div>
     </div>
@@ -241,8 +241,6 @@ export default {
 
 }
 
-
-
 .supervisor-span {
     display: flex;
     width: auto;
@@ -324,20 +322,6 @@ export default {
     object-fit: cover;
 }
 
-.image-container {
-    flex-grow: 1;
-    position: relative;
-    /* Imposta la posizione relativa per consentire il posizionamento assoluto dell'immagine */
-    height: 50vh;
-    /* Imposta l'altezza desiderata per visualizzare solo la metà superiore */
-    overflow: hidden;
-    border-top-right-radius: 5%;
-    border-top-left-radius: 5%;
-    margin-top: 3em;
-    margin-bottom: 5em;
-
-}
-
 .image {
     position: relative;
     margin-top: 3em !important;
@@ -352,33 +336,5 @@ export default {
     border-bottom-left-radius: 5%;
 }
 
-/*
-@media(max-width: 800px) {
-    .image {
-        position: relative;
-        margin-top: 3em !important;
-        margin-bottom: 5em !important;
-        max-width: 70%;
-        height: auto;
-        margin: auto;
-        width: 500px;
-        height: 275px;
-        border-top-right-radius: 5%;
-        border-top-left-radius: 5%;
-        border-bottom-right-radius: 5%;
-        border-bottom-left-radius: 5%;
-    }
-}
-*/
 
-
-
-.image-container img {
-    position: absolute;
-    /* Imposta la posizione assoluta per consentire il posizionamento all'interno del contenitore */
-    top: -60%;
-    width: 100%;
-    /* Imposta la larghezza al 100% per coprire l'intera larghezza del contenitore */
-    height: auto;
-}
 </style>

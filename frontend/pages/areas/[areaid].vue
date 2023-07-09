@@ -30,14 +30,14 @@ import ProjectCard from '@/components/ProjectCard.vue'
             </div>
 
             <!-- Area logo -->
-            <img class="image-area-1 " :src="`/images/areas/${areaDetails.Title}/logo.jpg`">
+            <img class="image-area-1 " :src="`/images/areas/${areaDetails.Title}/logo.jpg`" :alt="`${areaDetails.Title} logo`">
 
         </div>
 
         <!-- Section 2: Area image and additional information -->
         <div class="section-2">
             <!-- Area image -->
-            <img class="image-area-2 " :src="`/images/areas/${areaDetails.Title}/image.webp`">
+            <img class="image-area-2 " :src="`/images/areas/${areaDetails.Title}/image.webp`" :alt="`${areaDetails.Title} stock image`">
             <!-- Additional information about the area -->
             <p class="custom-paragraph-2">{{ areaDetails.Section2 }}</p>
         </div>
