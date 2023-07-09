@@ -41,6 +41,7 @@
                 </ul>
             </div>
         </div>
+        <hr class="color-line color-background" style="margin:0;">
     </nav>
 </template>
 
@@ -72,6 +73,12 @@ export default {
 <style scoped>
 .navbar {
     background-color: #000022 !important;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        border-bottom: #FFFBFA 1px solid;
+    }
 }
 
 .navbar-brand {

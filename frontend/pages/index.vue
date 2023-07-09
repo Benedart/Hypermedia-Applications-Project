@@ -144,7 +144,7 @@ useSeoMeta({
                         <p>Join us on our mission to shape the future of these dynamic industries.</p>
                     </div>
                     <div class="mx-md-3 mx-sm-1 d-flex custom-justify-center">
-                        <nuxt-link to="/areas" tag="button" type="button" class="custom-btn-a d-flex">
+                        <nuxt-link to="/areas" tag="button" type="button" class="custom-btn-a d-flex mb-5">
                             <b>All areas</b>
                         </nuxt-link>
                     </div>
@@ -427,6 +427,7 @@ export default {
     flex-wrap: wrap;
     margin-top: -4em;
     padding-bottom: 20em;
+    background-color: #000022;
 }
 
 /* Styling for ::before pseudo-element of custom-row */
@@ -1092,59 +1093,6 @@ export default {
     }
 }
 
-/* CSS rules for screen widths up to 517px 
-@media(max-width: 530px) {
-    .custom-btn-a {
-        display: inline-block;
-        padding: .375rem .75rem;
-        vertical-align: middle;
-        user-select: none;
-        width: auto;
-        font-size: 1rem;
-        font-weight: 450;
-        text-align: start;
-        align-items: start;
-        color: #E5E5E5;
-        background-color: #086788;
-        border: none;
-        border-radius: 0.4rem;
-        transition: 0.2s;
-        cursor: pointer;
-        letter-spacing: 0.1rem;
-        justify-content: start;
-        margin-top: 1em;
-        margin-left: 21%;
-
-    }
-}
-*/
-
-/* CSS rules for screen widths up to 500px 
-@media(max-width: 522px) {
-    .custom-btn-a {
-        display: inline-block;
-        padding: .375rem .75rem;
-        vertical-align: middle;
-        user-select: none;
-        width: auto;
-        font-size: 1rem;
-        font-weight: 450;
-        text-align: start;
-        align-items: start;
-        color: #E5E5E5;
-        background-color: #086788;
-        border: none;
-        border-radius: 0.4rem;
-        transition: 0.2s;
-        cursor: pointer;
-        letter-spacing: 0.1rem;
-        justify-content: start;
-        margin-top: 1em;
-        margin-left: 6.5em;
-
-    }
-}
-*/
 
 /* Query to manage the display of background images*/
 @media (max-width: 768px) {
@@ -1161,7 +1109,7 @@ export default {
         /* Full viewport */
         width: 100%;
         background-image: none;
-        background-color: #086788;
+        background-color: #000022;
         background-position: end;
         /* Center the image */
         background-repeat: no-repeat;

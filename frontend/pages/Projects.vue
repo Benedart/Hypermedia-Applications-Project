@@ -27,8 +27,6 @@ useSeoMeta({
                         <div class="input">
                             <input type="text" v-model="search" placeholder="Search projects..." aria-label="Search projects" id="mysearch">
                         </div>
-
-                        <span class="clear" onclick="document.getElementById('mysearch').value = ''"></span>
                     </div>
 
                     <!--button component to filter all over the charateristics of the projects-->
@@ -313,7 +311,7 @@ export default {
 }
 
 @media screen and (max-width: 400px) {
-    .filter-grid {
+    .grid-container{
         flex-direction: column;
     }
 }
@@ -322,7 +320,6 @@ export default {
     padding: 1rem;
     display: grid;
     gap: 1rem;
-
     grid-auto-flow: column;
     align-items: start;
 }
@@ -343,10 +340,6 @@ export default {
     transition: 0.5s;
     box-shadow: 0 0 0 3px var(--color-oxford-blue);
     overflow: hidden;
-}
-
-.search .active {
-    width: 250px;
 }
 
 .search .icon {
@@ -405,39 +398,6 @@ export default {
     font-size: 15px;
     padding: 8px 0;
     background: var(--color-snow);
-}
-
-.clear {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 12px;
-    height: 12px;
-    right: 12px;
-    background: var(--color-snow);
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-}
-
-clear::before {
-    position: absolute;
-    content: '';
-    width: 1px;
-    height: 12px;
-    background: var(--color-rose-quartz);
-    transform: rotate(45deg);
-}
-
-clear::after {
-    position: absolute;
-    content: '';
-    width: 1px;
-    height: 12px;
-    background: var(--color-rose-quartz);
-    transform: rotate(315deg);
 }
 
 .filter-btn {
