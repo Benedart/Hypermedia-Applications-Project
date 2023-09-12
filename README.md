@@ -4,6 +4,8 @@ This project was developed as part of the Hypermedia Application course at Polit
 
 [Link to the website](https://hypermeow.vercel.app/)
 
+**Grade**: 30
+
 ## Project setup
 * [DB](#db)
 * [Backend](#backend)
